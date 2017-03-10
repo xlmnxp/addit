@@ -17,8 +17,8 @@ class Template {
      * @access private
      * @var string
      */
-    private $l_delim = '{',
-        $r_delim = '}';
+    private $l_delim = '[',
+        $r_delim = ']';
 
     /**
      * Set template property in template file
