@@ -8,11 +8,10 @@
 
     include_once ("global.php");
 
-
-    $users = $db->table("users")->select()->results();
-    $iser = Array();
-    foreach ($users as $user){
-        array_push($iser, array(
+    $users_query = $db->table("users")->select()->results();
+    $users = Array();
+    foreach ($users_query as $user){
+        array_push($users, array(
             "id"        => $user->id,
             "username"  => $user->username,
             "fullname"  => $user->fullname,
@@ -22,11 +21,11 @@
         ));
     }
 
-    $template->items = $iser ;
+    $template->items = $users ;
     $template->follow = "Follow";
     $template->report = "Report";
 
-    $template->pages = false;
+    $template->pages = true;
     $template->previous = "Previous";
     $template->next = "Next";
 

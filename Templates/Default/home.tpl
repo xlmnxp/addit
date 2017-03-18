@@ -7,7 +7,7 @@
                 <h3 class="ovtxt">{$v['fullname']}</h3>
                 <h5 class="ovtxt">{$v['username']}</h5>
                 <p class="ovtxt">{$v['message']}</p>
-                <p><a href="snapchat://add/{$v['username']}" class="btn btn-primary" role="button">{$follow}</a> <a href="#" class="btn btn-danger" role="button">{$report}</a></p>
+                <p><a href="snapchat://add/{$v['username']}" class="btn btn-primary" role="button" target="_blank">{$follow}</a> <a href="#" class="btn btn-danger" role="button">{$report}</a></p>
             </div>
         </div>
     </div>

@@ -17,8 +17,9 @@
         }
         .avatar{
             display: block;
-            height: 250px;
-            width: 250px;
+            height: 250px !important;
+            width: 250px !important;
+            border-radius: 35px;
         }
         .nbtn{
             color: white !important;
