@@ -5,7 +5,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
-    <title>{$s_title}</title>
+    <title>{$title}</title>
     <style>
         body { padding-top: 70px; }
         .ovtxt{
@@ -19,6 +19,12 @@
             display: block;
             height: 250px;
             width: 250px;
+        }
+        .nbtn{
+            color: white !important;
+        }
+        .nbtn:hover,.nbtn:focus{
+            color: black !important;
         }
     </style>
     <!-- Bootstrap -->
@@ -45,7 +51,7 @@
                 <span class="icon-bar"></span>
                 <span class="icon-bar"></span>
             </button>
-            <a class="navbar-brand" href="#">Project name</a>
+            <a class="navbar-brand" href="#">{$title}</a>
         </div>
         <div id="navbar" class="navbar-collapse collapse">
             <ul class="nav navbar-nav">
@@ -66,9 +72,8 @@
                 </li>
             </ul>
             <ul class="nav navbar-nav navbar-right">
-                <li><a href="../navbar/">Default</a></li>
-                <li><a href="../navbar-static-top/">Static top</a></li>
-                <li class="active"><a href="./">Fixed top <span class="sr-only">(current)</span></a></li>
+                <li><a href="register.php" class="btn-primary nbtn">{$new_user}</a></li>
+                <li><a href="register-vip.php" class="btn-warning nbtn">{$new_vip}</a></li>
             </ul>
         </div><!--/.nav-collapse -->
     </div>

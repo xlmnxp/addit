@@ -6,14 +6,9 @@
  * Time: 11:00 م
  */
 
-    include_once ('Functions/inc.php');
-    include_once ('Functions/Template.php');
-    $settings = $db->table("settings")->select()->results();
-    $templateDirectory = $db->table("settings")->where("name","=","template")->select(["id","value"])[0]->value;
-    $template = new Template();
-    foreach ($settings as $setting){
-        eval("\$template->s_".$setting->name." = '".$setting->value."';");
-    }
+    include_once ("global.php");
+
+
     $users = $db->table("users")->select()->results();
     $iser = Array();
     foreach ($users as $user){
