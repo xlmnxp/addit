@@ -1,116 +1,153 @@
 <?php
-
 /**
- * Template engine
- * @author  Ruslan Ismagilov <ruslan.ismagilov.ufa@gmail.com>
+ * Template.php
+ * 
+ * Třída pro generování šablon využívající funkce eval
+ * Class for template generating using eval function
+ * 
+ * Licencováno pod New BSD licencí 
+ * Licenced under the New BSD License
+ * 
+ * Inspirováno Latte filtrem Nette frameworku (www.nette.org/cs) 
+ * Inspired by Nette framework's Latte filter (www.nette.org/en)
+ *
+ * @author Adam Tomeček
+ * 
  */
-class Template {
-    /**
-     * Content variables
-     * @access private
-     * @var array
-     */
-    private $vars = array();
+class Template{
+	private $file;
+	private $layout;
+	
+	/*array for not declared variables*/
+	public $vars = array();
 
-    /**
-     * Content delimiters
-     * @access private
-     * @var string
-     */
-    private $l_delim = '[',
-        $r_delim = ']';
+	public function __construct($template = NULL, $layout = NULL){
+		if(!empty($template)){
+			$this->setFile($template);
+		}
+		if(!empty($layout)){
+			$this->layout = $layout;
+		}
+		return $this;
+	}
 
-    /**
-     * Set template property in template file
-     * @access public
-     * @param string $key property name
-     * @param string $value property value
-     */
-    public function assign( $key, $value ) {
-        $this->vars[$key] = $value;
-        return $this;
-    }
+	/*get all not declared variables*/
+	public function getVars(){
+		return $this->vars;	
+	}
 
-    /**
-     * Parce template file
-     * @access public
-     * @param string $template_file
-     */
-    public function parse( $template_file ) {
-        if ( file_exists( $template_file ) ) {
-            $content = file_get_contents($template_file);
+	/*function for getting variables which are not declared in class*/
+	public function &__get($key){
+		if (array_key_exists($key, $this->vars)) {
+			return $this->vars[$key];
+		}
+	}
+	
+	/*function for setting variables which are not declared in class*/
+	public function __set($key, $val){
+		$this->vars[$key] = $val;
+	} 
 
-            foreach ( $this->vars as $key => $value ) {
-                if ( is_array( $value ) ) {
-                    $content = $this->parsePair($key, $value, $content);
-                } else {
-                    $content = @$this->parseSingle($key, $value, $content);
-                }
-            }
-            eval( '?> ' . $content . '<?php ' );
-            $this->vars = array();
-        } else {
-            exit( '<h1>Template error</h1>' );
-        }
-    }
 
-    /**
-     * Parsing content for single varliable
-     * @access private
-     * @param string $key property name
-     * @param string $value property value
-     * @param string $string content to replace
-     * @param integer $index index of loop item
-     * @return string replaced content
-     */
-    private function parseSingle( $key, $value, $string, $index ) {
-        if ( isset( $index ) ) {
-            $string = str_replace( $this->l_delim . '%index%' . $this->r_delim, $index, $string );
-        }
-        return str_replace( $this->l_delim . $key . $this->r_delim, $value, $string );
-    }
+	/*Inspired by Nette framework Latte filter*/
+	private function compile($file){
+		if(is_file($file)){
+			$keys = array(
+				'{if %%}' => '<?php if (\1): ?>',
+				'{elseif %%}' => '<?php ; elseif (\1): ?>',
+				'{for %%}' => '<?php for (\1): ?>',
+				'{foreach %%}' => '<?php foreach (\1): ?>',
+				'{while %%}' => '<?php while (\1): ?>',
+				'{/if}' => '<?php endif; ?>',
+				'{/for}' => '<?php endfor; ?>',
+				'{/foreach}' => '<?php endforeach; ?>',
+				'{/while}' => '<?php endwhile; ?>',
+				'{else}' => '<?php ; else: ?>',
+				'{continue}' => '<?php continue; ?>',
+				'{break}' => '<?php break; ?>',
+				'{$%% = %%}' => '<?php $\1 = \2; ?>',
+				'{$%%++}' => '<?php $\1++; ?>',
+				'{$%%--}' => '<?php $\1--; ?>',
+				'{$%%}' => '<?php echo $\1; ?>',
+				'{comment}' => '<?php /*',
+				'{/comment}' => '*/ ?>',
+				'{/*}' => '<?php /*',
+				'{*/}' => '*/ ?>',
+				);
+			
+			foreach ($keys as $key => $val) {
+				$patterns[] = '#' . str_replace('%%', '(.+)',
+					preg_quote($key, '#')) . '#U';
+				$replace[] = $val;
+			}
+		
+		/*replace our pseudo language in template with php code*/
+		return preg_replace($patterns, $replace, file_get_contents($file));
+		}else{
+			throw new Exception("Missing template file '$file'.");
+		}
+	}
 
-    /**
-     * Parsing content for loop varliable
-     * @access private
-     * @param string $variable loop name
-     * @param string $value loop data
-     * @param string $string content to replace
-     * @return string replaced content
-     */
-    private function parsePair( $variable, $data, $string ) {
-        $match = $this->matchPair($string, $variable);
-        if( $match == false ) return $string;
+	/*set function for layout only*/
+	public function setLayout($layout){
+		$this->layout = $layout;
+		return $this;
+	}
+	
+	/*set function for main template only*/
+	public function setFile($template){
+		$this->file = $template;
+		return $this;
+	}
+	
+	/*set function for main template and layout*/
+	public function setup($template, $layout){
+		$this->setFile($template);
+		$this->setLayout($layout);
+		return $this;
+	}
 
-        $str = '';
-        foreach ( $data as $k_row => $row ) {
-            $temp = $match['1'];
-            foreach( $row as $key => $val ) {
-                if( !is_array( $val ) ) {
-                    $index = array_search( $k_row, array_keys( $data ) );
-                    $temp = $this->parseSingle( $key, $val, $temp, $index );
-                } else {
-                    $temp = $this->parsePair( $key, $val, $temp );
-                }
-            }
-            $str .= $temp;
-        }
+	/*render main template file*/
+	private function renderContent(){
+		if(!empty($this->file)){
+			if(is_file($this->file)){
+				//compile template into php code
+				$template = $this->compile($this->file);
+				//evaluate compiled code
+				return $this->evaluate($template, $this->getVars());
+			}else{
+				throw new Exception("Missing main template file '".$this->file."'.");
+			}
+		}else{
+			//missing main template file
+			throw new Exception("Main template file wasn't set.");
+		}
+	}
 
-        return str_replace( $match['0'], $str, $string );
-    }
-
-    /**
-     * Match loop pair
-     * @access private
-     * @param string $string content with loop
-     * @param string $variable loop name
-     * @return string matched content
-     */
-    private function matchPair( $string, $variable ) {
-        if ( !preg_match("|" . preg_quote($this->l_delim) . 'loop ' . $variable . preg_quote($this->r_delim) . "(.+?)". preg_quote($this->l_delim) . 'end loop' . preg_quote($this->r_delim) . "|s", $string, $match ) ) {
-            return false;
-        }
-
-        return $match;
-    }
+	/*render template*/
+	public function render(){
+		//are we using layout?
+		if(!empty($this->layout)){
+			if(is_file($this->layout)){
+				//compile whole layout
+				$template = $this->compile($this->layout);
+			}else{
+				throw new Exception("Missing layout template file '".$this->layout."'.");
+			}
+		}else{
+			//or compile only main template file
+			$template = $this->compile($this->file);
+		}
+		//evaluate compiled code
+		return $this->evaluate($template, $this->getVars());
+	}
+	
+	/*extended base evaluate function*/
+	private function evaluate($code, array $variables = NULL){
+		//get variables from template so we can call them only $variable onstead of $this->variable
+		if($variables != NULL){
+			extract($variables);
+		}
+		return eval('?>' . $code);
+	}
 }
