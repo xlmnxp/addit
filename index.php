@@ -21,7 +21,7 @@
         ));
     }
 
-    $template->items    = $users ;
+    $template->users    = $users ;
     $template->pages    = true;
 
     $template->setFile($templateDirectory.'/home.tpl')->setLayout($templateDirectory.'/@main_layout.tpl')->render();

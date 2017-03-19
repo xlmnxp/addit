@@ -2,15 +2,15 @@
     <li class="active">{$lang->home}</li>
 </ol>
 <div class="row">
-    {foreach $items as $v}
+    {foreach $users as $user}
     <div class="col-sm-6 col-md-3">
         <div class="thumbnail">
-            <img class="avatar" src="{if $v['avatar'] != null}{$v['avatar']}{else}https://feelinsonice-hrd.appspot.com/web/deeplink/snapcode?username={$v['username']}&type=PNG{/if}" alt="{$v['username']}"/>
+            <img class="avatar" src="{if $user['avatar'] != null}{$user['avatar']}{else}https://feelinsonice-hrd.appspot.com/web/deeplink/snapcode?username={$user['username']}&type=PNG{/if}" alt="{$user['username']}"/>
             <div class="caption">
-                <h3 class="ovtxt">{$v['fullname']}</h3>
-                <h5 class="ovtxt">{$v['username']}</h5>
-                <p class="ovtxt">{$v['message']}</p>
-                <p><a href="snapchat://add/{$v['username']}" class="btn btn-primary" role="button" target="_blank">{$lang->follow}</a>
+                <h3 class="ovtxt">{$user['fullname']}</h3>
+                <h5 class="ovtxt">{$user['username']}</h5>
+                <p class="ovtxt">{$user['message']}</p>
+                <p><a href="snapchat://add/{$user['username']}" class="btn btn-primary" role="button" target="_blank">{$lang->follow}</a>
                     <a href="#" class="btn btn-danger" role="button">{$lang->report}</a></p>
             </div>
         </div>
