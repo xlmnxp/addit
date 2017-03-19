@@ -9,6 +9,55 @@
     include_once ("global.php");
     $template->page = $language->new_user;
 
+    if(isset($_POST["submit"])){
+            $errors= array();
+            $file = $_FILES['avatar'];
+            $file_name  = $file['name'];
+            $file_size  = $file['size'];
+            $file_tmp   = $file['tmp_name'];
+            $file_type  = $file['type'];
+            $file_ext=strtolower(end(explode('.',$file['name'])));
+            $dir = "Uploads/".md5(rand(0,1000000000000)).".".$file_ext;
+            $expensions= array("jpeg","jpg","png");
+
+            if(in_array($file_ext,$expensions)=== false){
+                $errors[]= $language->help_avatar;
+            }
+
+            if($file_size > 2097152){
+                $errors[]= $language->file_ecu .'2'. $lang->mb;
+            }
+
+
+
+            if(!trim($_POST['username'])){
+                $errors[]= $language->enter_username;
+            }
+            if(!trim($_POST['fullname'])){
+                $errors[]= $language->enter_fullname;
+            }
+
+            if(empty($errors)==true){
+                move_uploaded_file($file_tmp,$dir);
+                $db->table("users")->insert([
+                    "id" => "",
+                    "username"  => $_POST["username"],
+                    "fullname"  => $_POST["fullname"],
+                    "avatar"    => $template->url.$dir,
+                    "message"   => $_POST["message"],
+                    "sex"       => $_POST["sex"],
+                    "data"      => json_encode(array([
+                        "category" => $_POST["category"],
+                        "country"  => $_POST["country"]
+                    ]))
+                ]);
+                $language->dosuccess = true;
+            }else{
+                $language->dosuccess = false;
+                $template->errors = $errors;
+            }
+
+    }
 
     $template->setFile($templateDirectory.'/register.tpl')->setLayout($templateDirectory.'/@main_layout.tpl')->render();
 ?>

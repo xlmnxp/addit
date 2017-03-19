@@ -3,13 +3,51 @@
   "language_code" : "ar",
   "rtl" : true,
 
-  "new_user" : "إضافة حساب",
-  "new_vip" : "إضافة حساب VIP",
-  "follow" : "متابعة",
-  "report" : "إبلاغ",
-  "previous" : "السابق",
-  "next" : "التالي",
+
+  "_comments" : "// Header",
+
   "home" : "الرائيسية",
   "about" : "من نحن",
-  "contact" : "اتصل بنا"
+  "contact" : "اتصل بنا",
+
+  "new_user" : "إضافة حساب",
+  "new_vip" : "إضافة حساب VIP",
+
+
+  "_comments" : "// Home",
+
+  "follow" : "متابعة",
+  "report" : "إبلاغ",
+
+  "previous" : "السابق",
+  "next" : "التالي",
+
+
+  "_comments" : "// Register",
+
+  "username" : "اسم المستخدم",
+  "enter_username" : "ادخل اسم المستخدم",
+  "help_username" : "اسم المستخدم في سناب شات.",
+  "fullname": "الأسم الكامل",
+  "enter_fullname": "ادخل اسمك الكامل",
+  "sex" : "الجنس",
+  "male" : "ذكر",
+  "female" : "انثى",
+  "avatar" : "صورة المستخدم",
+  "help_avatar": "الأمتدادات المسموح بها هي JPG، JPEG أو PNG.",
+  "size_avatar": "يجب ان يكون حجم الملف اقل من ",
+  "category" : "تصنيف الحساب",
+  "message" : "الرسالة للزائرين",
+  "country" : "الدولة",
+  "submit" : "ارسال",
+
+  "success": "عملية ناجحة",
+  "success_register" : "تم التسجيل.",
+
+  "_comments" : "// sizes",
+  "byte": "بايت",
+  "kb": "كيلوبايت",
+  "mb": "ميجابايت",
+  "gb": "جيجابايت",
+  "tb": "تيرابايت"
 }

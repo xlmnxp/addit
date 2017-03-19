@@ -15,6 +15,9 @@
     $languageName = $db->table("settings")->where("name","=","language")->select(["id","value"])[0]->value;
     $languageFile = "Languages/".$languageName.".json";
     $language = json_decode(file_get_contents($languageFile));
+    if(!$language){
+        die("Error in Language File: ".$languageFile);
+    }
     $template = new Template();
     foreach ($settings as $setting){
         eval("\$template->".$setting->name." = '".$setting->value."';");
@@ -26,5 +29,4 @@
     $template->teplate_dir      = $templateDirectory;
 
     $template->lang = $language;
-
     global $template, $db, $language;

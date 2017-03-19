@@ -3,13 +3,50 @@
   "language_code" : "en",
   "rtl" : false,
 
-  "new_user" : "new User",
-  "new_vip" : "new VIP User",
-  "follow" : "Follow",
-  "report" : "Report",
-  "previous" : "Previous",
-  "next" : "Next",
+  "_comments" : "// Header",
+
   "home" : "home",
   "about" : "About",
-  "contact" : "Contact"
+  "contact" : "Contact",
+
+  "new_user" : "new User",
+  "new_vip" : "new VIP User",
+
+
+  "_comments" : "// Home",
+
+  "follow" : "Follow",
+  "report" : "Report",
+
+  "previous" : "Previous",
+  "next" : "Next",
+
+
+  "_comments" : "// Register",
+
+  "username" : "Username",
+  "enter_username": "Enter Username",
+  "help_username": "Username for SnapChat.",
+  "fullname": "Full name",
+  "enter_fullname": "Enter your full name",
+  "sex" : "Sex",
+  "male" : "Male",
+  "female" : "Female",
+  "avatar" : "Avatar",
+  "help_avatar": "Allowed Extensions is JPG , JPEG or PNG file.",
+  "size_avatar": "File size must be exactly ",
+  "category" : "Account Category",
+  "message" : "Message For Vistors",
+  "country" : "Country",
+  "submit" : "Submit",
+
+  "success": "Success",
+  "success_register": "Done.",
+
+  "_comments" : "// sizes",
+  "byte": "byte",
+  "kb": "kb",
+  "mb": "mb",
+  "gb": "gb",
+  "tb": "tb"
 }
