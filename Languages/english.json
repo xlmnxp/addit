@@ -1,0 +1,15 @@
+{
+  "language_name": "English",
+  "language_code" : "en",
+  "rtl" : false,
+
+  "new_user" : "new User",
+  "new_vip" : "new VIP User",
+  "follow" : "Follow",
+  "report" : "Report",
+  "previous" : "Previous",
+  "next" : "Next",
+  "home" : "home",
+  "about" : "About",
+  "contact" : "Contact"
+}

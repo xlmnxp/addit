@@ -1,0 +1,20 @@
+body { padding-top: 70px; }
+.ovtxt{
+    overflow:hidden;
+    white-space:nowrap;
+    text-overflow:ellipsis;
+    width:100%;
+    display:block;
+}
+.avatar{
+    display: block;
+    height: 250px !important;
+    width: 250px !important;
+    border-radius: 35px;
+}
+.nbtn{
+    color: white !important;
+}
+.nbtn:hover,.nbtn:focus{
+    color: black !important;
+}

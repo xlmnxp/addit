@@ -7,7 +7,7 @@
  */
 
     include_once ("global.php");
-
+    $template->page = $language->home;
     $users_query = $db->table("users")->select()->results();
     $users = Array();
     foreach ($users_query as $user){
@@ -21,13 +21,8 @@
         ));
     }
 
-    $template->items = $users ;
-    $template->follow = "Follow";
-    $template->report = "Report";
+    $template->items    = $users ;
+    $template->pages    = true;
 
-    $template->pages = true;
-    $template->previous = "Previous";
-    $template->next = "Next";
-
-    $template->setFile('Templates/'.$templateDirectory.'/home.tpl')->setLayout('Templates/'.$templateDirectory.'/@main_layout.tpl')->render();
+    $template->setFile($templateDirectory.'/home.tpl')->setLayout($templateDirectory.'/@main_layout.tpl')->render();
  ?>

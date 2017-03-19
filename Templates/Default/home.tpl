@@ -1,3 +1,6 @@
+<ol class="breadcrumb">
+    <li class="active">{$lang->home}</li>
+</ol>
 <div class="row">
     {foreach $items as $v}
     <div class="col-sm-6 col-md-3">
@@ -7,7 +10,8 @@
                 <h3 class="ovtxt">{$v['fullname']}</h3>
                 <h5 class="ovtxt">{$v['username']}</h5>
                 <p class="ovtxt">{$v['message']}</p>
-                <p><a href="snapchat://add/{$v['username']}" class="btn btn-primary" role="button" target="_blank">{$follow}</a> <a href="#" class="btn btn-danger" role="button">{$report}</a></p>
+                <p><a href="snapchat://add/{$v['username']}" class="btn btn-primary" role="button" target="_blank">{$lang->follow}</a>
+                    <a href="#" class="btn btn-danger" role="button">{$lang->report}</a></p>
             </div>
         </div>
     </div>
@@ -16,8 +20,8 @@
 {if $pages}
 <nav>
     <ul class="pager">
-        <li><a href="#">{$previous}</a></li>
-        <li><a href="#">{$next}</a></li>
+        <li><a href="#">{$lang->previous}</a></li>
+        <li><a href="#">{$lang->next}</a></li>
     </ul>
 </nav>
 {/if}

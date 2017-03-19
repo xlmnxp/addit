@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: localhost
--- Generation Time: Mar 18, 2017 at 05:48 PM
+-- Generation Time: Mar 19, 2017 at 08:00 PM
 -- Server version: 10.1.21-MariaDB
 -- PHP Version: 5.6.30
 
@@ -38,7 +38,9 @@ CREATE TABLE `settings` (
 
 INSERT INTO `settings` (`id`, `name`, `value`) VALUES
 (1, 'title', 'Addit v0'),
-(2, 'template', 'Default');
+(2, 'template', 'Default'),
+(3, 'url', 'http://localhost/addit/'),
+(4, 'language', 'arabic');
 
 -- --------------------------------------------------------
 
@@ -64,7 +66,8 @@ INSERT INTO `users` (`id`, `username`, `fullname`, `avatar`, `message`, `data`) 
 (2, 'ksa711', 'Saleh Yaslim', '', 'أرحبوا جميعًا كلكم :)', ''),
 (3, 'xzx711', 'Abdulaziz Moqbal', '', ':يامرحبا :) في حساب عبد العزيز مقبل ', ''),
 (4, 'xdx711', 'Naif', '', 'مرحبًا بكم كم احبكم\r\nتابعوني ارجوكم :)', ''),
-(5, 'Saeed', 'Saeed', '', 'ياهلا وسهلا', '');
+(5, 'Saeed', 'Saeed', '', 'ياهلا وسهلا', ''),
+(6, 'yos1818', 'سعودي قوي', 'https://pbs.twimg.com/profile_images/823982936894611456/Gf8jp-YM_400x400.jpg', 'سناب سعودي قوي وعزازي ابو حريقة ', '');
 
 --
 -- Indexes for dumped tables
@@ -90,12 +93,12 @@ ALTER TABLE `users`
 -- AUTO_INCREMENT for table `settings`
 --
 ALTER TABLE `settings`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
 --
 -- AUTO_INCREMENT for table `users`
 --
 ALTER TABLE `users`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=7;
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
 /*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;

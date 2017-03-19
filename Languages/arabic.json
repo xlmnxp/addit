@@ -1,3 +1,15 @@
 {
-  "KSA": "Kingdom Of Saudi Arabia"
+  "language_name": "Arabic",
+  "language_code" : "ar",
+  "rtl" : true,
+
+  "new_user" : "إضافة حساب",
+  "new_vip" : "إضافة حساب VIP",
+  "follow" : "متابعة",
+  "report" : "إبلاغ",
+  "previous" : "السابق",
+  "next" : "التالي",
+  "home" : "الرائيسية",
+  "about" : "من نحن",
+  "contact" : "اتصل بنا"
 }

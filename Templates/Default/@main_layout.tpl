@@ -6,34 +6,16 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
     <title>{$title}</title>
-    <style>
-        body { padding-top: 70px; }
-        .ovtxt{
-            overflow:hidden;
-            white-space:nowrap;
-            text-overflow:ellipsis;
-            width:100%;
-            display:block;
-        }
-        .avatar{
-            display: block;
-            height: 250px !important;
-            width: 250px !important;
-            border-radius: 35px;
-        }
-        .nbtn{
-            color: white !important;
-        }
-        .nbtn:hover,.nbtn:focus{
-            color: black !important;
-        }
-    </style>
     <!-- Bootstrap -->
     <!-- Latest compiled and minified CSS -->
+
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
-
-    <link href="https://maxcdn.bootstrapcdn.com/bootswatch/3.3.7/paper/bootstrap.min.css" rel="stylesheet" integrity="sha384-awusxf8AUojygHf2+joICySzB780jVvQaVCAt1clU3QsyAitLGul28Qxb2r1e5g+" crossorigin="anonymous">
-
+    <link href="https://maxcdn.bootstrapcdn.com/bootswatch/3.3.7/journal/bootstrap.min.css" rel="stylesheet" integrity="sha384-1L94saFXWAvEw88RkpRz8r28eQMvt7kG9ux3DdCqya/P3CfLNtgqzMnyaUa49Pl2" crossorigin="anonymous">
+    {if $rtl}
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-rtl/3.4.0/css/bootstrap-flipped.min.css" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-rtl/3.4.0/css/bootstrap-rtl.min.css" />
+    {/if}
+    <link rel="stylesheet" href="{$teplate_dir}/styles/main.css"/>
     <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
     <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
     <!--[if lt IE 9]>
@@ -52,14 +34,14 @@
                 <span class="icon-bar"></span>
                 <span class="icon-bar"></span>
             </button>
-            <a class="navbar-brand" href="#">{$title}</a>
+            <a class="navbar-brand" href="{$url}">{$title}</a>
         </div>
         <div id="navbar" class="navbar-collapse collapse">
             <ul class="nav navbar-nav">
-                <li class="active"><a href="#">Home</a></li>
-                <li><a href="#about">About</a></li>
-                <li><a href="#contact">Contact</a></li>
-                <li class="dropdown">
+                <li {if $page == $lang->home   }class="active"{/if}><a href="{$url}">{$lang->home}</a></li>
+                <li {if $page == $lang->about  }class="active"{/if}><a href="#about">{$lang->about}</a></li>
+                <li {if $page == $lang->contact}class="active"{/if}><a href="#contact">{$lang->contact}</a></li>
+                <!--li class="dropdown">
                     <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Dropdown <span class="caret"></span></a>
                     <ul class="dropdown-menu">
                         <li><a href="#">Action</a></li>
@@ -70,11 +52,11 @@
                         <li><a href="#">Separated link</a></li>
                         <li><a href="#">One more separated link</a></li>
                     </ul>
-                </li>
+                </li -->
             </ul>
             <ul class="nav navbar-nav navbar-right">
-                <li><a href="register.php" class="btn-primary nbtn">{$new_user}</a></li>
-                <li><a href="register-vip.php" class="btn-warning nbtn">{$new_vip}</a></li>
+                <li {if $page == $lang->new_user }class="active"{/if}><a href="register.php" class="btn-primary nbtn">{$lang->new_user}</a></li>
+                <li {if $page == $lang->new_vip  }class="active"{/if}><a href="register-vip.php" class="btn-warning nbtn">{$lang->new_vip}</a></li>
             </ul>
         </div><!--/.nav-collapse -->
     </div>

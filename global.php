@@ -11,13 +11,20 @@
 
     $settings = $db->table("settings")->select()->results();
     $templateDirectory = $db->table("settings")->where("name","=","template")->select(["id","value"])[0]->value;
+    $templateDirectory = "Templates/".$templateDirectory;
+    $languageName = $db->table("settings")->where("name","=","language")->select(["id","value"])[0]->value;
+    $languageFile = "Languages/".$languageName.".json";
+    $language = json_decode(file_get_contents($languageFile));
     $template = new Template();
     foreach ($settings as $setting){
         eval("\$template->".$setting->name." = '".$setting->value."';");
     }
 
-    $template->theme_directory = $templateDirectory;
-    $template->new_user = "New USER";
-    $template->new_vip = "New VIP";
+    $template->rtl = $language->rtl;
+    $template->language         = $language;
+    $template->language_file    = $languageFile;
+    $template->teplate_dir      = $templateDirectory;
 
-    global $template, $db;
+    $template->lang = $language;
+
+    global $template, $db, $language;
