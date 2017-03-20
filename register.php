@@ -25,7 +25,7 @@
             }
 
             if($file_size > 2097152){
-                $errors[]= $language->file_ecu .'2'. $lang->mb;
+                $errors[]= $language->file_ecu .'2'. $language->mb;
             }
 
 
@@ -39,11 +39,12 @@
 
             if(empty($errors)==true){
                 move_uploaded_file($file_tmp,$dir);
+                chmod($dir, 0755);
                 $db->table("users")->insert([
                     "id" => "",
                     "username"  => $_POST["username"],
                     "fullname"  => $_POST["fullname"],
-                    "avatar"    => $template->url.$dir,
+                    "avatar"    => $dir,
                     "message"   => $_POST["message"],
                     "sex"       => $_POST["sex"],
                     "data"      => json_encode(array([
