@@ -5,7 +5,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
-    <title>{$title}</title>
+    <title>{$settings_title}</title>
     <!-- Bootstrap -->
     <!-- Latest compiled and minified CSS -->
 
@@ -34,11 +34,11 @@
                 <span class="icon-bar"></span>
                 <span class="icon-bar"></span>
             </button>
-            <a class="navbar-brand" href="{$url}">{$title}</a>
+            <a class="navbar-brand" href="{$settings_url}">{$settings_title}</a>
         </div>
         <div id="navbar" class="navbar-collapse collapse">
             <ul class="nav navbar-nav">
-                <li {if $page == $lang->home   }class="active"{/if}><a href="{$url}">{$lang->home}</a></li>
+                <li {if $page == $lang->home   }class="active"{/if}><a href="{$settings_url}">{$lang->home}</a></li>
                 <li {if $page == $lang->about  }class="active"{/if}><a href="#about">{$lang->about}</a></li>
                 <li {if $page == $lang->contact}class="active"{/if}><a href="#contact">{$lang->contact}</a></li>
                 <!--li class="dropdown">

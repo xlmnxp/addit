@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: localhost
--- Generation Time: Mar 19, 2017 at 10:05 PM
+-- Generation Time: Mar 21, 2017 at 08:52 PM
 -- Server version: 10.1.21-MariaDB
 -- PHP Version: 5.6.30
 
@@ -71,8 +71,11 @@ INSERT INTO `users` (`id`, `username`, `fullname`, `avatar`, `message`, `sex`, `
 (6, 'yos1818', 'سعودي قوي', 'https://pbs.twimg.com/profile_images/823982936894611456/Gf8jp-YM_400x400.jpg', 'سناب سعودي قوي وعزازي ابو حريقة ', 0, ''),
 (7, 'albron', 'تم سالم', 'http://localhost/addit/Uploads/e90b113e5fda56d672b9263af0c8da9d.png', 'مرحبًا بكم', 0, '[{\"category\":\"2\",\"country\":\"3\"}]'),
 (8, 'dasdasd', 'dasdasda', 'http://localhost/addit/Uploads/b8ea012dbc3393a95f4625842ea70721.png', 'dasdasdasdasd', 0, '[{\"category\":\"4\",\"country\":\"4\"}]'),
-(9, 'albronwwq', 'ewqeqwewqeqweqweqweq', 'http://localhost/addit/Uploads/d03cabb32543a76d8f6488be3cd7518f.png', 'eqweqweqweqweq', 0, '[{\"category\":\"5\",\"country\":\"5\"}]'),
-(10, 'ksa711[2]', 'sdasdda', 'http://localhost/addit/Uploads/8e29fec442b66000a91e1edbebe912bc.jpg', 'صالح اثنين', 0, '[{\"category\":\"2\",\"country\":\"4\"}]');
+(9, 'albronwwq', 'ewqeqwewqeqweqweqweq', 'Uploads/d03cabb32543a76d8f6488be3cd7518f.png', 'eqweqweqweqweq', 0, '[{\"category\":\"5\",\"country\":\"5\"}]'),
+(10, 'ksa711[2]', 'sdasdda', 'Uploads/8e29fec442b66000a91e1edbebe912bc.jpg', 'صالح اثنين', 0, '[{\"category\":\"2\",\"country\":\"4\"}]'),
+(11, '\'.echo\"hello world\".\'', 'XSS', 'Uploads/a6c222296a161f7c862d95851c7c6a84.png', 'XSS Inject', 0, '[{\"category\":\"1\",\"country\":\"1\"}]'),
+(12, 'امبمبمملم', 'ظلظىظقمقمق', 'http://localhost/addit/Uploads/bd2da74fe73dd597d446fa8e0f853ce9.jpg', 'ببينميخيهب', 0, '[{\"category\":\"2\",\"country\":\"2\"}]'),
+(13, 'لظبمبمكبمى', 'اظلظبظبظق', 'http://localhost/addit/Uploads/9ff1f8e9da0d58f4b56d3b0de1a53c35.jpg', 'رظبحيمميبممب', 0, '[{\"category\":\"1\",\"country\":\"1\"}]');
 
 --
 -- Indexes for dumped tables
@@ -103,7 +106,7 @@ ALTER TABLE `settings`
 -- AUTO_INCREMENT for table `users`
 --
 ALTER TABLE `users`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=11;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=14;
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
 /*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;

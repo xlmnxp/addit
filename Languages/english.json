@@ -43,6 +43,12 @@
   "success": "Success",
   "success_register": "Done.",
 
+
+  "_comments" : "// user",
+
+  "comments" : "Comments",
+
+
   "_comments" : "// sizes",
   "byte": "byte",
   "kb": "kb",

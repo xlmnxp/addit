@@ -44,6 +44,12 @@
   "success": "عملية ناجحة",
   "success_register" : "تم التسجيل.",
 
+
+  "_comments" : "// user",
+
+  "comments" : "التعليقات",
+
+
   "_comments" : "// sizes",
   "byte": "بايت",
   "kb": "كيلوبايت",

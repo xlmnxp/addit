@@ -18,9 +18,10 @@
     if(!$language){
         die("Error in Language File: ".$languageFile);
     }
+
     $template = new Template();
     foreach ($settings as $setting){
-        eval("\$template->".$setting->name." = '".$setting->value."';");
+        eval("\$template->settings_".$setting->name." = '".$setting->value."';");
     }
 
     $template->rtl = $language->rtl;
