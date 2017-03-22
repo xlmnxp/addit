@@ -1,6 +1,6 @@
 <ol class="breadcrumb">
     <li><a href="{$settings_url}">{$lang->home}</a></li>
-    <li class="active">{$user->fullname}</li>
+    <li class="active">{$page}</li>
 </ol>
 <div class="">
 <div class="col-sm-6 col-md-3 thumbnail">

@@ -7,7 +7,7 @@
  */
 
     include_once ("global.php");
-    $user = $db->table("users")->where("id","=",@$_GET['id'])->select()->results()[0];
+    $user = $db->table("users")->where("id",@$_GET['id'])->select()->results()[0];
     $template->page = $user->fullname;
 
     $template->user    = $user;

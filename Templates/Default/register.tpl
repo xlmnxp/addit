@@ -1,6 +1,6 @@
 <ol class="breadcrumb">
     <li><a href="{$settings_url}">{$lang->home}</a></li>
-    <li class="active">{$lang->new_user}</li>
+    <li class="active">{$page}</li>
 </ol>
 
 <form method="post" enctype="multipart/form-data">

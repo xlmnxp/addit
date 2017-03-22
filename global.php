@@ -8,7 +8,6 @@
 
     include_once ('Functions/inc.php');
     include_once ('Functions/Template.php');
-
     $settings = $db->table("settings")->select()->results();
     $templateDirectory = $db->table("settings")->where("name","=","template")->select(["id","value"])[0]->value;
     $templateDirectory = "Templates/".$templateDirectory;
@@ -27,7 +26,7 @@
     $template->rtl = $language->rtl;
     $template->language         = $language;
     $template->language_file    = $languageFile;
-    $template->teplate_dir      = $templateDirectory;
+    $template->template_dir     = $templateDirectory;
 
     $template->lang = $language;
     global $template, $db, $language;
