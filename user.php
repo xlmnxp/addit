@@ -11,6 +11,9 @@
     $template->page = $user->fullname;
 
     $template->user    = $user;
+
+    $template->disqus_name = "addit-1";
+
     $template->setFile($templateDirectory.'/user.tpl')->setLayout($templateDirectory.'/@main_layout.tpl')->render();
 
 ?>

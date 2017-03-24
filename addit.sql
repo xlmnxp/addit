@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: localhost
--- Generation Time: Mar 21, 2017 at 08:52 PM
+-- Generation Time: Mar 24, 2017 at 06:32 PM
 -- Server version: 10.1.21-MariaDB
 -- PHP Version: 5.6.30
 
@@ -37,7 +37,7 @@ CREATE TABLE `settings` (
 --
 
 INSERT INTO `settings` (`id`, `name`, `value`) VALUES
-(1, 'title', 'Addit v0'),
+(1, 'title', 'Addit 0.0.6'),
 (2, 'template', 'Default'),
 (3, 'url', 'http://localhost/addit/'),
 (4, 'language', 'arabic');
