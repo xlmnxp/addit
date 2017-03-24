@@ -23,6 +23,8 @@
         eval("\$template->settings_".$setting->name." = '".$setting->value."';");
     }
 
+    //$template->settings_url = "http://".$_SERVER['SERVER_NAME']."/addit/";
+
     $template->rtl = $language->rtl;
     $template->language         = $language;
     $template->language_file    = $languageFile;

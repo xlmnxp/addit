@@ -7,10 +7,19 @@
  */
 
     include_once ("global.php");
-    $user = $db->table("users")->where("id",@$_GET['id'])->select()->results()[0];
+    $user = $db->table("users")->where("id",(@$_GET['id'] ? @$_GET['id'] : 1))->select()[0];
     $template->page = $user->fullname;
 
-    $template->user    = $user;
+    $template->user = array(
+        "id"        => $user->id,
+        "username"  => $user->username,
+        "fullname"  => $user->fullname,
+        "avatar"    => $user->avatar,
+        "message"   => $user->message,
+        "data"      => $user->data,
+        "sex"       => $user->sex,
+        "url"       => $user->id."-".str_replace(" ","-",$user->fullname)
+    );
 
     $template->disqus_name = "addit-1";
 
