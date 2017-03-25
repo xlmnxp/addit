@@ -4,21 +4,30 @@
 </ol>
 <div class="col-sm-12 col-md-12">
     <div class="col-sm-6 col-md-3 thumbnail">
-        <a href="u/{$user["url"]}">
+        <a href="{$user["url"]}">
             <img class="avatar" src="{if $user["avatar"] != null}{$user["avatar"]}{else}https://feelinsonice-hrd.appspot.com/web/deeplink/snapcode?username={$user["username"]}&type=PNG{/if}" alt="{$user["username"]}"/>
         </a>
     </div>
     <div class="col-sm-6 col-md-9 caption">
 
-        <a href="u/{$user["url"]}"><h3 style="padding: 5px;" class="ovtxt"><i class="fa fa-id-card"></i>&nbsp;{$user["fullname"]}</h3></a>
+        <a href="{$user["url"]}"><h3 style="padding: 5px;" class="ovtxt"><i class="fa fa-id-card"></i>&nbsp;{$user["fullname"]}</h3></a>
         <h5 class="ovtxt"><strong><i class="fa fa-user"></i>&nbsp;{$lang->username} </strong><br/> {$user["username"]}</h5>
         <hr/>
         <p><strong><i class="fa fa-id-card"></i>&nbsp;{$lang->message}<br/> </strong> {$user["message"]}</p>
         <hr/>
         <p class="ovtxt"><strong><i class="fa fa-venus-mars"></i>&nbsp;{$lang->sex} </strong><br/> {if $user["sex"] == 0}{$lang->male}{else}{$lang->female}{/if}</p>
         <hr/>
-        <p><a href="snapchat://add/{$user["username"]}" class="btn btn-primary" role="button" target="_blank">{$lang->follow}</a>
-            <a href="#" class="btn btn-danger" role="button">{$lang->report}</a></p>
+        <p>
+            <a href="snapchat://add/{$user['username']}" class="btn btn-primary" role="button" target="_blank">
+                <i class="fa fa-snapchat"></i>&nbsp;{$lang->follow}
+            </a>
+            <a href="#" class="btn btn-warning" role="button">
+                <i class="fa fa-copy"></i>&nbsp;{$lang->copy_username}
+            </a>
+            <a href="#" class="btn btn-danger" role="button">
+                <i class="fa fa-flag"></i>&nbsp;{$lang->report}
+            </a>
+        </p>
     </div>
 </div>
 <div class="col-sm-12 col-md-12">

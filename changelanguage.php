@@ -6,7 +6,7 @@
  * Time: 2:07 PM
  */
 
-    return;
+    //return;
     include_once ("global.php");
     $ifcon = $db->table("settings")->where("name","language")->select(["id","value"])[0]->value;
     if ($ifcon == "arabic"){

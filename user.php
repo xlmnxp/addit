@@ -18,7 +18,7 @@
         "message"   => $user->message,
         "data"      => $user->data,
         "sex"       => $user->sex,
-        "url"       => $user->id."-".str_replace(" ","-",$user->fullname)
+        "url"       => $template->settings_url."u/".$user->id."-".str_replace(" ","-",$user->fullname)
     );
 
     $template->disqus_name = "addit-1";

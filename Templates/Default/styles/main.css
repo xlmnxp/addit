@@ -15,6 +15,10 @@ body { padding-top: 70px; }
 .nbtn{
     color: white !important;
 }
-.nbtn:hover,.nbtn:focus{
-    color: black !important;
+.nbtn:hover,.nbtn:focus,.active .nbtn{
+    color: darkgrey !important;
+}
+.fullwidth{
+    width: 100% !important;
+    margin: 3px;
 }

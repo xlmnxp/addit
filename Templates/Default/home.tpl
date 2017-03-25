@@ -5,16 +5,38 @@
     {foreach $users as $user}
     <div class="col-sm-6 col-md-3">
         <div class="thumbnail">
-            <a href="u/{$user["url"]}">
+            <a href="{$user["url"]}">
                 <img class="avatar" src="{if $user['avatar'] != null}{$user['avatar']}{else}https://feelinsonice-hrd.appspot.com/web/deeplink/snapcode?username={$user['username']}&type=PNG{/if}" alt="{$user['username']}"/>
             </a>
             <div class="caption">
-                <a href="u/{$user["url"]}"><h3 class="ovtxt"><i class="fa fa-id-card"></i>&nbsp;{$user['fullname']}</h3></a>
+                <a href="{$user["url"]}"><h3 class="ovtxt"><i class="fa fa-id-card"></i>&nbsp;{$user['fullname']}</h3></a>
                 <h5 class="ovtxt"><i class="fa fa-user"></i>&nbsp;{$user['username']}</h5>
                 <p class="ovtxt"><i class="fa fa-envelope"></i>&nbsp;{$user['message']}</p>
                 <p class="ovtxt"><i class="fa fa-comment"></i>&nbsp;<a href="user.php?id={$user["id"]}#disqus_thread">{$lang->comments}</a></p>
-                <p><a href="snapchat://add/{$user['username']}" class="btn btn-primary" role="button" target="_blank">{$lang->follow}</a>
-                    <a href="#" class="btn btn-danger" role="button">{$lang->report}</a></p>
+                <p>
+                    <div class="row">
+                        <div class="col-sm-6">
+                            <a class="btn btn-warning fullwidth" href="#" role="button">
+                                <i class="fa fa-copy"></i>&nbsp;{$lang->copy_username}
+                            </a>
+                        </div>
+                        <div class="col-sm-6">
+                            <a class="btn btn-danger fullwidth" href="#" role="button">
+                                <i class="fa fa-flag"></i>&nbsp;{$lang->report}
+                            </a>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-sm-12">
+                            <a class="btn btn-primary fullwidth" href="snapchat://add/{$user['username']}" role="button" target="_blank">
+                                <i class="fa fa-snapchat"></i>&nbsp;{$lang->follow}
+                            </a>
+                        </div>
+                    </div>
+
+
+
+                </p>
             </div>
         </div>
     </div>

@@ -20,7 +20,7 @@
             "avatar"    => $user->avatar,
             "message"   => $user->message,
             "data"      => $user->data,
-            "url"       => $user->id."-".str_replace(" ","-",$user->fullname)
+            "url"       => $template->settings_url."u/".$user->id."-".str_replace(" ","-",$user->fullname)
         ));
     }
 
