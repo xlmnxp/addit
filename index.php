@@ -15,7 +15,7 @@
     foreach ($users_query as $user){
         array_push($users, array(
             "id"        => $user->id,
-            "username"  => $user->username,
+            "username"  => htmlspecialchars($user->username),
             "fullname"  => $user->fullname,
             "avatar"    => $user->avatar,
             "message"   => $user->message,

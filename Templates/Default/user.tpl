@@ -21,7 +21,7 @@
             <a href="snapchat://add/{$user['username']}" class="btn btn-primary" role="button" target="_blank">
                 <i class="fa fa-snapchat"></i>&nbsp;{$lang->follow}
             </a>
-            <a href="#" class="btn btn-warning" role="button">
+            <a class="btn btn-warning btn-copy" role="button" data-clipboard-text="{$user["username"]}">
                 <i class="fa fa-copy"></i>&nbsp;{$lang->copy_username}
             </a>
             <a href="#" class="btn btn-danger" role="button">

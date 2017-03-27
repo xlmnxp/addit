@@ -16,7 +16,7 @@
                 <p>
                     <div class="row">
                         <div class="col-sm-6">
-                            <a class="btn btn-warning fullwidth" href="#" role="button">
+                            <a class="btn btn-warning fullwidth btn-copy" role="button" data-clipboard-text="{$user["username"]}">
                                 <i class="fa fa-copy"></i>&nbsp;{$lang->copy_username}
                             </a>
                         </div>

@@ -30,5 +30,14 @@
     $template->language_file    = $languageFile;
     $template->template_dir     = $templateDirectory;
 
+    $template->header = '
+        <script src="https://cdn.jsdelivr.net/clipboard.js/1.6.0/clipboard.min.js"></script>
+    ';
+    $template->footer = '
+        <script>
+            new Clipboard(\'.btn-copy\');
+        </script>
+    ';
+
     $template->lang = $language;
     global $template, $db, $language;

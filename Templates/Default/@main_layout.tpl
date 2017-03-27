@@ -18,6 +18,8 @@
     {/if}
     <link rel="stylesheet" href="{$settings_url}{$template_dir}/styles/main.css"/>
     <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet" integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN" crossorigin="anonymous"/>
+
+    {$header}
     <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
     <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
     <!--[if lt IE 9]>
@@ -57,8 +59,8 @@
                 </li -->
             </ul>
             <ul class="nav navbar-nav navbar-right">
-                <li {if $page == $lang->new_user }class="active"{/if}><a href="register.php" class="btn-primary nbtn">{$lang->new_user}</a></li>
-                <li {if $page == $lang->new_vip  }class="active"{/if}><a href="register-vip.php" class="btn-warning nbtn">{$lang->new_vip}</a></li>
+                <li {if $page == $lang->new_user }class="active"{/if}><a href="{$settings_url}register" class="btn-primary nbtn">{$lang->new_user}</a></li>
+                <li {if $page == $lang->new_vip  }class="active"{/if}><a href="{$settings_url}register-vip" class="btn-warning nbtn">{$lang->new_vip}</a></li>
             </ul>
         </div><!--/.nav-collapse -->
     </div>
@@ -68,6 +70,7 @@
     {$this->renderContent()}
     <br/><br/>
 </div>
+{$footer}
 <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
 <!-- Include all compiled plugins (below), or include individual files as needed -->
