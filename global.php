@@ -15,7 +15,7 @@
     $languageFile = "Languages/".$languageName.".json";
     $language = json_decode(file_get_contents($languageFile));
     if(!$language){
-        die("Error in Language File: ".$languageFile);
+        die("[Error] Language File: ".$languageFile);
     }
 
     $template = new Template();
@@ -23,21 +23,36 @@
         eval("\$template->settings_".$setting->name." = '".$setting->value."';");
     }
 
-    //$template->settings_url = "http://".$_SERVER['SERVER_NAME']."/addit/";
+    $template->settings_url = "http://".$_SERVER['SERVER_NAME']."/addit/";
 
     $template->rtl = $language->rtl;
     $template->language         = $language;
     $template->language_file    = $languageFile;
     $template->template_dir     = $templateDirectory;
+    $template->lang = $language;
 
     $template->header = '
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/sweetalert2/6.4.4/sweetalert2.min.css" />
+        
         <script src="https://cdn.jsdelivr.net/clipboard.js/1.6.0/clipboard.min.js"></script>
+        <script src="https://cdn.jsdelivr.net/sweetalert2/6.4.4/sweetalert2.min.js"></script>
     ';
     $template->footer = '
         <script>
-            new Clipboard(\'.btn-copy\');
+            var cb = new Clipboard(\'.btn-copy\');
+            
+            cb.on(\'success\', function(e) {
+                swal({
+                  title: "'.$template->lang->success.'!",
+                  text: "'.$template->lang->copied.'!",
+                  type: "success",
+                  confirmButtonText: "'.$template->lang->confirm.'"
+                });
+
+                e.clearSelection();
+            });
+
         </script>
     ';
 
-    $template->lang = $language;
     global $template, $db, $language;

@@ -43,6 +43,8 @@
 
   "success": "Success",
   "success_register": "Done.",
+  "copied": "copied to clipboard",
+  "confirm" : "ok",
 
 
   "_comments" : "// user",

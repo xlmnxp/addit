@@ -44,6 +44,8 @@
 
   "success": "عملية ناجحة",
   "success_register" : "تم التسجيل.",
+  "copied" : "نسخ إلى الحافظة",
+  "confirm" : "موافق",
 
 
   "_comments" : "// user",
