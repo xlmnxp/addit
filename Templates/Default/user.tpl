@@ -5,7 +5,7 @@
 <div class="col-sm-12 col-md-12">
     <div class="col-sm-6 col-md-3 thumbnail">
         <a href="{$user["url"]}">
-            <img class="avatar" src="{if $user["avatar"] != null}{$user["avatar"]}{else}https://feelinsonice-hrd.appspot.com/web/deeplink/snapcode?username={$user["username"]}&type=PNG{/if}" alt="{$user["username"]}"/>
+            <img class="avatar" src="{if $user["avatar"] != null}{$settings_url}{$user["avatar"]}{else}https://feelinsonice-hrd.appspot.com/web/deeplink/snapcode?username={$user["username"]}&type=PNG{/if}" alt="{$user["username"]}"/>
         </a>
     </div>
     <div class="col-sm-6 col-md-9 caption">

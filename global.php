@@ -43,10 +43,10 @@
             
             cb.on(\'success\', function(e) {
                 swal({
-                  title: "'.$template->lang->success.'!",
-                  text: "'.$template->lang->copied.'!",
+                  title: "'.$language->success.'!",
+                  text: "'.$language->copied.'!",
                   type: "success",
-                  confirmButtonText: "'.$template->lang->confirm.'"
+                  confirmButtonText: "'.$language->confirm.'"
                 });
 
                 e.clearSelection();

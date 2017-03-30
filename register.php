@@ -17,7 +17,7 @@
             $file_tmp   = $file['tmp_name'];
             $file_type  = $file['type'];
             $file_ext=strtolower(end(explode('.',$file['name'])));
-            $dir = "Uploads/".md5(rand(0,1000000000000)).".".$file_ext;
+            $dir = "Uploads/".round(microtime(true)).".".$file_ext;
             $expensions= array("jpeg","jpg","png");
 
             if(in_array($file_ext,$expensions)=== false){
@@ -38,21 +38,22 @@
             }
 
             if(empty($errors)==true){
-                move_uploaded_file($file_tmp,$dir);
-                chmod($dir, 0755);
-                $db->table("users")->insert([
-                    "id" => "",
-                    "username"  => $_POST["username"],
-                    "fullname"  => $_POST["fullname"],
-                    "avatar"    => $dir,
-                    "message"   => $_POST["message"],
-                    "sex"       => $_POST["sex"],
-                    "data"      => json_encode(array([
-                        "category" => $_POST["category"],
-                        "country"  => $_POST["country"]
-                    ]))
-                ]);
-                $language->dosuccess = true;
+                if(move_uploaded_file($file_tmp,$dir)){
+                    chmod($dir, 0755);
+                    $db->table("users")->insert([
+                        "id" => "",
+                        "username"  => $_POST["username"],
+                        "fullname"  => $_POST["fullname"],
+                        "avatar"    => $dir,
+                        "message"   => $_POST["message"],
+                        "sex"       => $_POST["sex"],
+                        "data"      => json_encode(array([
+                            "category" => $_POST["category"],
+                            "country"  => $_POST["country"]
+                        ]))
+                    ]);
+                    $language->dosuccess = true;
+                }
             }else{
                 $language->dosuccess = false;
                 $template->errors = $errors;
