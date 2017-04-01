@@ -8,6 +8,8 @@
 
     include_once ('Functions/inc.php');
     include_once ('Functions/Template.php');
+    error_reporting(1);
+
     $settings = $db->table("settings")->select()->results();
     $templateDirectory = $db->table("settings")->where("name","=","template")->select(["id","value"])[0]->value;
     $templateDirectory = "Templates/".$templateDirectory;
@@ -19,16 +21,21 @@
     }
 
     $template = new Template();
+    $default = "";
     foreach ($settings as $setting){
-        eval("\$template->settings_".$setting->name." = '".$setting->value."';");
+        $default .= ',"'.$setting->name.'" => "'.htmlentities($setting->value).'"';
     }
+    $default[0] = "";
+    eval("\$template->default = array($default);");
+    $template->default["page-title"] = $template->default["title"]."";
 
-    $template->settings_url = "http://".$_SERVER['SERVER_NAME']."/addit/";
+
+    $template->default["url"] = "http://".$_SERVER['SERVER_NAME']."/addit/";
 
     $template->rtl = $language->rtl;
     $template->language         = $language;
     $template->language_file    = $languageFile;
-    $template->template_dir     = $templateDirectory;
+    $template->template_dir     = $template->default["url"].$templateDirectory;
     $template->lang = $language;
 
     $template->header = '
@@ -44,7 +51,7 @@
             cb.on(\'success\', function(e) {
                 swal({
                   title: "'.$language->success.'!",
-                  text: "'.$language->copied.'!",
+                  text: "'.$language->copied.'",
                   type: "success",
                   confirmButtonText: "'.$language->confirm.'"
                 });
@@ -53,6 +60,9 @@
             });
 
         </script>
+        <script type="text/javascript" src="//s7.addthis.com/js/300/addthis_widget.js#pubid=ra-58e0111c4be4cfd4"></script>
+
     ';
+
 
     global $template, $db, $language;

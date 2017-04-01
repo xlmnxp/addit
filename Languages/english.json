@@ -52,6 +52,11 @@
   "comments" : "Comments",
 
 
+  "_comments" : "// report",
+
+  "report_message" : "Message reporting",
+
+
   "_comments" : "// sizes",
   "byte": "byte",
   "kb": "kb",

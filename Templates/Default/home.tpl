@@ -6,7 +6,7 @@
     <div class="col-sm-6 col-md-3">
         <div class="thumbnail">
             <a href="{$user["url"]}">
-                <img class="avatar" src="{if $user['avatar'] != null}{$settings_url}{$user['avatar']}{else}https://feelinsonice-hrd.appspot.com/web/deeplink/snapcode?username={$user['username']}&type=PNG{/if}" alt="{$user['username']}"/>
+                <img class="avatar" src="{if $user['avatar'] != $default["url"]}{$user['avatar']}{else}https://feelinsonice-hrd.appspot.com/web/deeplink/snapcode?username={$user['username']}&type=PNG{/if}" alt="{$user['username']}"/>
             </a>
             <div class="caption">
                 <a href="{$user["url"]}"><h3 class="ovtxt"><i class="fa fa-id-card"></i>&nbsp;{$user['fullname']}</h3></a>
@@ -21,7 +21,7 @@
                             </a>
                         </div>
                         <div class="col-sm-6">
-                            <a class="btn btn-danger fullwidth" href="#" role="button">
+                            <a class="btn btn-danger fullwidth" href="{$default["url"]}report/{$user["id"]}" role="button">
                                 <i class="fa fa-flag"></i>&nbsp;{$lang->report}
                             </a>
                         </div>
@@ -33,9 +33,6 @@
                             </a>
                         </div>
                     </div>
-
-
-
                 </p>
             </div>
         </div>

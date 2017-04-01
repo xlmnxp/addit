@@ -17,10 +17,10 @@
             "id"        => $user->id,
             "username"  => htmlspecialchars($user->username),
             "fullname"  => $user->fullname,
-            "avatar"    => $user->avatar,
+            "avatar"    => (substr( $user->avatar, 0, 4 ) === "http" ? $user->avatar : $template->default["url"].$user->avatar),
             "message"   => $user->message,
             "data"      => $user->data,
-            "url"       => $template->settings_url."u/".$user->id."-".str_replace(" ","-",$user->fullname)
+            "url"       => $template->default["url"]."u/".$user->id."-".str_replace(" ","-",$user->fullname)
         ));
     }
 
@@ -35,7 +35,7 @@
 
     if(count($users_query->results()) >= 12){
         $next_page = $page+1;
-        $template->next = "href=\"{$template->settings_url}page/{$next_page}\"";
+        $template->next = "href=\"{$template->default["url"]}page/{$next_page}\"";
     }else{
         $template->class_next = 'class="disabled"';
     }
@@ -44,7 +44,10 @@
         $template->class_previous = 'class="disabled"';
     }else{
         $previous_page = $page-1;
-        $template->previous = "href=\"{$template->settings_url}page/{$previous_page}\"";
+        $template->previous = "href=\"{$template->default["url"]}page/{$previous_page}\"";
     }
+
+    $template->default["page-title"] = $template->default["title"]." | $language->home";
+
     $template->setFile($templateDirectory.'/home.tpl')->setLayout($templateDirectory.'/@main_layout.tpl')->render();
  ?>

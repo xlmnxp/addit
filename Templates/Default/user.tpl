@@ -1,32 +1,49 @@
 <ol class="breadcrumb" xmlns="http://www.w3.org/1999/html">
-    <li><a href="{$settings_url}">{$lang->home}</a></li>
+    <li><a href="{$default["url"]}">{$lang->home}</a></li>
     <li class="active">{$page}</li>
 </ol>
 <div class="col-sm-12 col-md-12">
     <div class="col-sm-6 col-md-3 thumbnail">
         <a href="{$user["url"]}">
-            <img class="avatar" src="{if $user["avatar"] != null}{$settings_url}{$user["avatar"]}{else}https://feelinsonice-hrd.appspot.com/web/deeplink/snapcode?username={$user["username"]}&type=PNG{/if}" alt="{$user["username"]}"/>
+            <img class="avatar" src="{if $user["avatar"] != $default["url"]}{$user["avatar"]}{else}https://feelinsonice-hrd.appspot.com/web/deeplink/snapcode?username={$user["username"]}&type=PNG{/if}" alt="{$user["username"]}"/>
         </a>
+        <hr/>
+        <p>
+            <div class="row">
+                <div class="col-sm-6">
+                    <a class="btn btn-warning fullwidth btn-copy" role="button" data-clipboard-text="{$user["username"]}">
+                        <i class="fa fa-copy"></i>&nbsp;{$lang->copy_username}
+                    </a>
+                </div>
+                <div class="col-sm-6">
+                    <a class="btn btn-danger fullwidth" href="{$default["url"]}report/{$user["id"]}" role="button">
+                        <i class="fa fa-flag"></i>&nbsp;{$lang->report}
+                    </a>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-sm-12">
+                    <a class="btn btn-primary fullwidth" href="snapchat://add/{$user['username']}" role="button" target="_blank">
+                        <i class="fa fa-snapchat"></i>&nbsp;{$lang->follow}
+                    </a>
+                </div>
+            </div>
+        </p>
     </div>
     <div class="col-sm-6 col-md-9 caption">
 
         <a href="{$user["url"]}"><h3 style="padding: 5px;" class="ovtxt"><i class="fa fa-id-card"></i>&nbsp;{$user["fullname"]}</h3></a>
-        <h5 class="ovtxt"><strong><i class="fa fa-user"></i>&nbsp;{$lang->username} </strong><br/> {$user["username"]}</h5>
+        <h5 class="ovtxt"><strong><i class="fa fa-user"></i>&nbsp;{$lang->username} </strong><br/>
+            {$user["username"]}</h5>
         <hr/>
-        <p><strong><i class="fa fa-id-card"></i>&nbsp;{$lang->message}<br/> </strong> {$user["message"]}</p>
+        <p><strong><i class="fa fa-envelope"></i>&nbsp;{$lang->message}<br/> </strong>
+            {$user["message"]}</p>
         <hr/>
-        <p class="ovtxt"><strong><i class="fa fa-venus-mars"></i>&nbsp;{$lang->sex} </strong><br/> {if $user["sex"] == 0}{$lang->male}{else}{$lang->female}{/if}</p>
+        <p class="ovtxt"><strong><i class="fa fa-venus-mars"></i>&nbsp;{$lang->sex} </strong>
+            <br/> {if $user["sex"] == 0}{$lang->male}{else}{$lang->female}{/if}</p>
         <hr/>
         <p>
-            <a href="snapchat://add/{$user['username']}" class="btn btn-primary" role="button" target="_blank">
-                <i class="fa fa-snapchat"></i>&nbsp;{$lang->follow}
-            </a>
-            <a class="btn btn-warning btn-copy" role="button" data-clipboard-text="{$user["username"]}">
-                <i class="fa fa-copy"></i>&nbsp;{$lang->copy_username}
-            </a>
-            <a href="#" class="btn btn-danger" role="button">
-                <i class="fa fa-flag"></i>&nbsp;{$lang->report}
-            </a>
+            <div class="addthis_inline_share_toolbox"></div>
         </p>
     </div>
 </div>
@@ -42,7 +59,7 @@
          *  LEARN WHY DEFINING THESE VARIABLES IS IMPORTANT: https://disqus.com/admin/universalcode/#configuration-variables*/
 
          var disqus_config = function () {
-            this.page.url = "{$settings_url}/u/{$user["url"]}";  // Replace PAGE_URL with your page's canonical URL variable
+            this.page.url = "{$user["url"]}";  // Replace PAGE_URL with your page's canonical URL variable
          };
 
         (function() { // DON'T EDIT BELOW THIS LINE

@@ -14,14 +14,16 @@
         "id"        => $user->id,
         "username"  => htmlspecialchars($user->username),
         "fullname"  => $user->fullname,
-        "avatar"    => $user->avatar,
+        "avatar"    => (substr( $user->avatar, 0, 4 ) === "http" ? $user->avatar : $template->default["url"].$user->avatar),
         "message"   => $user->message,
         "data"      => $user->data,
         "sex"       => $user->sex,
-        "url"       => $template->settings_url."u/".$user->id."-".str_replace(" ","-",$user->fullname)
+        "url"       => $template->default["url"]."u/".$user->id."-".str_replace(" ","-",$user->fullname)
     );
 
     $template->disqus_name = "addit-1";
+
+    $template->default["page-title"] = $template->default["title"]." | $user->fullname ($user->username)";
 
     $template->setFile($templateDirectory.'/user.tpl')->setLayout($templateDirectory.'/@main_layout.tpl')->render();
 

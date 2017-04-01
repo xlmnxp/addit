@@ -6,7 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1"/>
     <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
     <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
-    <title>{$settings_title}</title>
+    <title>{$default["page-title"]}</title>
     <!-- Bootstrap -->
     <!-- Latest compiled and minified CSS -->
 
@@ -16,7 +16,7 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-rtl/3.4.0/css/bootstrap-flipped.min.css" />
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-rtl/3.4.0/css/bootstrap-rtl.min.css" />
     {/if}
-    <link rel="stylesheet" href="{$settings_url}{$template_dir}/styles/main.css"/>
+    <link rel="stylesheet" href="{$template_dir}/styles/main.css"/>
     <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet" integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN" crossorigin="anonymous"/>
 
     {$header}
@@ -38,11 +38,11 @@
                 <span class="icon-bar"></span>
                 <span class="icon-bar"></span>
             </button>
-            <a class="navbar-brand" href="{$settings_url}">{$settings_title}</a>
+            <a class="navbar-brand" href="{$default["url"]}">{$default["title"]}</a>
         </div>
         <div id="navbar" class="navbar-collapse collapse">
             <ul class="nav navbar-nav">
-                <li {if $page == $lang->home   }class="active"{/if}><a href="{$settings_url}">{$lang->home}</a></li>
+                <li {if $page == $lang->home   }class="active"{/if}><a href="{$default["url"]}">{$lang->home}</a></li>
                 <li {if $page == $lang->about  }class="active"{/if}><a href="#about">{$lang->about}</a></li>
                 <li {if $page == $lang->contact}class="active"{/if}><a href="#contact">{$lang->contact}</a></li>
                 <!--li class="dropdown">
@@ -59,8 +59,8 @@
                 </li -->
             </ul>
             <ul class="nav navbar-nav navbar-right">
-                <li {if $page == $lang->new_user }class="active"{/if}><a href="{$settings_url}register" class="btn-primary nbtn">{$lang->new_user}</a></li>
-                <li {if $page == $lang->new_vip  }class="active"{/if}><a href="{$settings_url}register-vip" class="btn-warning nbtn">{$lang->new_vip}</a></li>
+                <li {if $page == $lang->new_user }class="active"{/if}><a href="{$default["url"]}register" class="btn-primary nbtn">{$lang->new_user}</a></li>
+                <li {if $page == $lang->new_vip  }class="active"{/if}><a href="{$default["url"]}register-vip" class="btn-warning nbtn">{$lang->new_vip}</a></li>
             </ul>
         </div><!--/.nav-collapse -->
     </div>

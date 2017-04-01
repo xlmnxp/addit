@@ -61,5 +61,7 @@
 
     }
 
+    $template->default["page-title"] = $template->default["title"]." | $language->new_user";
+
     $template->setFile($templateDirectory.'/register.tpl')->setLayout($templateDirectory.'/@main_layout.tpl')->render();
 ?>

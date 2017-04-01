@@ -53,6 +53,11 @@
   "comments" : "التعليقات",
 
 
+  "_comments" : "// report",
+
+  "report_message" : "رسالة الأبلاغ",
+
+
   "_comments" : "// sizes",
   "byte": "بايت",
   "kb": "كيلوبايت",

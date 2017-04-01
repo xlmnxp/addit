@@ -1,5 +1,5 @@
 <ol class="breadcrumb">
-    <li><a href="{$settings_url}">{$lang->home}</a></li>
+    <li><a href="{$default["url"]}">{$lang->home}</a></li>
     <li class="active">{$page}</li>
 </ol>
 
