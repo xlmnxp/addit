@@ -2,9 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="8458aa9b-747c-4bc6-8ad3-5992aecb43d7" name="Default" comment="">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Templates/Default/user.tpl" afterPath="$PROJECT_DIR$/Templates/Default/user.tpl" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/index.php" afterPath="$PROJECT_DIR$/index.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/user.php" afterPath="$PROJECT_DIR$/user.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/global.php" afterPath="$PROJECT_DIR$/global.php" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
@@ -19,10 +17,10 @@
   <component name="ExecutionTargetManager" SELECTED_TARGET="default_target" />
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="user.tpl" pinned="false" current-in-tab="true">
+      <file leaf-file-name="user.tpl" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/Templates/Default/user.tpl">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="360">
+            <state relative-caret-position="45">
               <caret line="42" column="32" lean-forward="false" selection-start-line="42" selection-start-column="32" selection-end-line="42" selection-end-column="32" />
               <folding />
             </state>
@@ -59,16 +57,16 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="global.php" pinned="false" current-in-tab="false">
+      <file leaf-file-name="global.php" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/global.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="225">
-              <caret line="29" column="68" lean-forward="false" selection-start-line="29" selection-start-column="68" selection-end-line="29" selection-end-column="68" />
+            <state relative-caret-position="360">
+              <caret line="29" column="66" lean-forward="false" selection-start-line="29" selection-start-column="66" selection-end-line="29" selection-end-column="66" />
               <folding>
-                <marker date="1491084929926" expanded="true" signature="1761:2183" ph="..." />
-                <marker date="1491084929926" expanded="true" signature="1870:2163" ph="{...}" />
-                <marker date="1491084929926" expanded="true" signature="1893:1972" ph="{&quot;title&quot;: &quot;EXTERNAL_FRAGMENT!&quot;...}" />
-                <marker date="1491084929926" expanded="true" signature="1893:2110" ph="{&quot;title&quot;: &quot;EXTERNAL_FRAGMENT!&quot;...}" />
+                <marker date="1491086574832" expanded="true" signature="1813:2235" ph="..." />
+                <marker date="1491086574832" expanded="true" signature="1922:2215" ph="{...}" />
+                <marker date="1491086574832" expanded="true" signature="1945:2024" ph="{&quot;title&quot;: &quot;EXTERNAL_FRAGMENT!&quot;...}" />
+                <marker date="1491086574832" expanded="true" signature="1945:2162" ph="{&quot;title&quot;: &quot;EXTERNAL_FRAGMENT!&quot;...}" />
               </folding>
             </state>
           </provider>
@@ -171,11 +169,11 @@
         <option value="$PROJECT_DIR$/Languages/english.json" />
         <option value="$PROJECT_DIR$/register.php" />
         <option value="$PROJECT_DIR$/report.php" />
-        <option value="$PROJECT_DIR$/global.php" />
         <option value="$PROJECT_DIR$/Templates/Default/@main_layout.tpl" />
         <option value="$PROJECT_DIR$/index.php" />
         <option value="$PROJECT_DIR$/user.php" />
         <option value="$PROJECT_DIR$/Templates/Default/user.tpl" />
+        <option value="$PROJECT_DIR$/global.php" />
       </list>
     </option>
   </component>
@@ -359,12 +357,12 @@
       <workItem from="1490720282648" duration="1491000" />
       <workItem from="1490803763436" duration="3070000" />
       <workItem from="1491012136922" duration="608000" />
-      <workItem from="1491079175136" duration="6263000" />
+      <workItem from="1491079175136" duration="6978000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="84182000" />
+    <option name="totallyTimeSpent" value="84897000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="24" width="1366" height="681" extended-state="6" />
@@ -661,19 +659,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/global.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="225">
-          <caret line="29" column="68" lean-forward="false" selection-start-line="29" selection-start-column="68" selection-end-line="29" selection-end-column="68" />
-          <folding>
-            <marker date="1491084929926" expanded="true" signature="1761:2183" ph="..." />
-            <marker date="1491084929926" expanded="true" signature="1870:2163" ph="{...}" />
-            <marker date="1491084929926" expanded="true" signature="1893:1972" ph="{&quot;title&quot;: &quot;EXTERNAL_FRAGMENT!&quot;...}" />
-            <marker date="1491084929926" expanded="true" signature="1893:2110" ph="{&quot;title&quot;: &quot;EXTERNAL_FRAGMENT!&quot;...}" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/register.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="413">
@@ -718,9 +703,22 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/Templates/Default/user.tpl">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="360">
+        <state relative-caret-position="45">
           <caret line="42" column="32" lean-forward="false" selection-start-line="42" selection-start-column="32" selection-end-line="42" selection-end-column="32" />
           <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/global.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="360">
+          <caret line="29" column="66" lean-forward="false" selection-start-line="29" selection-start-column="66" selection-end-line="29" selection-end-column="66" />
+          <folding>
+            <marker date="1491086574832" expanded="true" signature="1813:2235" ph="..." />
+            <marker date="1491086574832" expanded="true" signature="1922:2215" ph="{...}" />
+            <marker date="1491086574832" expanded="true" signature="1945:2024" ph="{&quot;title&quot;: &quot;EXTERNAL_FRAGMENT!&quot;...}" />
+            <marker date="1491086574832" expanded="true" signature="1945:2162" ph="{&quot;title&quot;: &quot;EXTERNAL_FRAGMENT!&quot;...}" />
+          </folding>
         </state>
       </provider>
     </entry>

@@ -27,7 +27,7 @@
     }
     $default[0] = "";
     eval("\$template->default = array($default);");
-    $template->default["page-title"] = $template->default["title"]."";
+    $template->default["page-title"] = $template->default["title"];
 
 
     $template->default["url"] = "http://".$_SERVER['SERVER_NAME']."/addit/";
@@ -37,6 +37,8 @@
     $template->language_file    = $languageFile;
     $template->template_dir     = $template->default["url"].$templateDirectory;
     $template->lang = $language;
+
+    $template->addthis_pubid = "ra-58e0111c4be4cfd4";
 
     $template->header = '
         <link rel="stylesheet" href="https://cdn.jsdelivr.net/sweetalert2/6.4.4/sweetalert2.min.css" />
@@ -60,7 +62,7 @@
             });
 
         </script>
-        <script type="text/javascript" src="//s7.addthis.com/js/300/addthis_widget.js#pubid=ra-58e0111c4be4cfd4"></script>
+        <script type="text/javascript" src="//s7.addthis.com/js/300/addthis_widget.js#pubid='.$template->addthis_pubid.'"></script>
 
     ';
 
