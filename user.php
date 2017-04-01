@@ -17,7 +17,7 @@
         "avatar"    => (substr( $user->avatar, 0, 4 ) === "http" ? $user->avatar : $template->default["url"].$user->avatar),
         "message"   => $user->message,
         "data"      => $user->data,
-        "sex"       => $user->sex,
+        "sex"       => ($user->sex == 0? $language->male : $language->female),
         "url"       => $template->default["url"]."u/".$user->id."-".str_replace(" ","-",$user->fullname)
     );
 

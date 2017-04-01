@@ -40,7 +40,7 @@
             {$user["message"]}</p>
         <hr/>
         <p class="ovtxt"><strong><i class="fa fa-venus-mars"></i>&nbsp;{$lang->sex} </strong>
-            <br/> {if $user["sex"] == 0}{$lang->male}{else}{$lang->female}{/if}</p>
+            <br/> {$user["sex"]}</p>
         <hr/>
         <p>
             <div class="addthis_inline_share_toolbox"></div>
