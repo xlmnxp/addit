@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: localhost
--- Generation Time: Apr 02, 2017 at 12:17 AM
+-- Generation Time: Apr 02, 2017 at 09:57 PM
 -- Server version: 10.1.21-MariaDB
 -- PHP Version: 5.6.30
 
@@ -19,6 +19,32 @@ SET time_zone = "+00:00";
 --
 -- Database: `addit`
 --
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `reports`
+--
+
+CREATE TABLE `reports` (
+  `id` int(11) NOT NULL,
+  `userid` int(11) NOT NULL,
+  `message` longtext COLLATE utf8_unicode_ci NOT NULL,
+  `date` varchar(255) COLLATE utf8_unicode_ci NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
+
+--
+-- Dumping data for table `reports`
+--
+
+INSERT INTO `reports` (`id`, `userid`, `message`, `date`) VALUES
+(1, 1, 'يسبب مشاكل', 'now()'),
+(2, 1, 'Hello', '2017-04-02 21:18:36'),
+(3, 1, 'dasdaHello', '2017-04-02 21:19:23'),
+(4, 1, 'Hello', '2017-04-02 21:20:32'),
+(5, 1, 'Hello', '2017-04-02 21:30:14'),
+(6, 1, 'HelloHelloHelloHelloHelloHelloHelloHelloHelloHelloHelloHelloHelloHelloHelloHelloHelloHelloHelloHelloHelloHelloHelloHelloHelloHelloHelloHelloHelloHelloHelloHelloHelloHelloHelloHelloHelloHelloHelloHelloHelloHelloHelloHelloHelloHelloHelloHelloHelloHelloHelloHelloHelloHelloHelloHelloHelloHelloHelloHelloHelloHelloHelloHelloHelloHelloHelloHelloHelloHelloHelloHelloHelloHelloHelloHelloHelloHelloHelloHelloHelloHelloHelloHelloHelloHelloHelloHelloHello', '2017-04-02 21:30:18'),
+(7, 1, 'Hello', '2017-04-02 21:30:57');
 
 -- --------------------------------------------------------
 
@@ -42,6 +68,19 @@ INSERT INTO `settings` (`id`, `name`, `value`) VALUES
 (3, 'url', 'http://localhost/addit/'),
 (4, 'language', 'arabic'),
 (5, 'report_message', 'Hello');
+
+-- --------------------------------------------------------
+
+--
+-- Stand-in structure for view `test`
+-- (See below for the actual view)
+--
+CREATE TABLE `test` (
+`id` int(11)
+,`userid` int(11)
+,`message` longtext
+,`date` varchar(255)
+);
 
 -- --------------------------------------------------------
 
@@ -79,11 +118,29 @@ INSERT INTO `users` (`id`, `username`, `fullname`, `avatar`, `message`, `sex`, `
 (13, 'لظبمبمكبمى', 'اظلظبظبظق', 'http://localhost/addit/Uploads/9ff1f8e9da0d58f4b56d3b0de1a53c35.jpg', 'رظبحيمميبممب', 0, '[{\"category\":\"1\",\"country\":\"1\"}]'),
 (14, 'safaf', 'Safer', 'Uploads/17606336ca94712389b9620aa5e69bf6.jpg', 'ياهلا', 0, '[{\"category\":\"5\",\"country\":\"3\"}]'),
 (15, 'xzx711', 'الصيعري', 'Uploads/c34ddcb570430eb7cbcd1692c76aa329.jpg', 'قويتشو', 0, '[{\"category\":\"5\",\"country\":\"5\"}]'),
-(16, 'xlmnxp3', 'sasdada', 'Uploads/1490826770.png', 'مرحبًا بكم :)', 0, '[{\"category\":\"2\",\"country\":\"3\"}]');
+(16, 'xlmnxp3', 'sasdada', 'Uploads/1490826770.png', 'مرحبًا بكم :)', 0, '[{\"category\":\"2\",\"country\":\"3\"}]'),
+(17, 'asdsadasd', 'dsadasd', 'Uploads/1491162769.png', 'sadasdasdsa', 0, '[{\"category\":\"2\",\"country\":\"1\"}]'),
+(18, 'dasdassdasdasda', 'dasdasdasdasdas', 'Uploads/1491162787.png', 'dasdsadadasda', 1, '[{\"category\":\"1\",\"country\":\"2\"}]');
+
+-- --------------------------------------------------------
+
+--
+-- Structure for view `test`
+--
+DROP TABLE IF EXISTS `test`;
+
+CREATE ALGORITHM=UNDEFINED DEFINER=`root`@`localhost` SQL SECURITY DEFINER VIEW `test`  AS  select `reports`.`id` AS `id`,`reports`.`userid` AS `userid`,`reports`.`message` AS `message`,`reports`.`date` AS `date` from `reports` ;
 
 --
 -- Indexes for dumped tables
 --
+
+--
+-- Indexes for table `reports`
+--
+ALTER TABLE `reports`
+  ADD PRIMARY KEY (`id`),
+  ADD KEY `id` (`id`);
 
 --
 -- Indexes for table `settings`
@@ -102,6 +159,11 @@ ALTER TABLE `users`
 --
 
 --
+-- AUTO_INCREMENT for table `reports`
+--
+ALTER TABLE `reports`
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=8;
+--
 -- AUTO_INCREMENT for table `settings`
 --
 ALTER TABLE `settings`
@@ -110,7 +172,7 @@ ALTER TABLE `settings`
 -- AUTO_INCREMENT for table `users`
 --
 ALTER TABLE `users`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=17;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=19;
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
 /*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;

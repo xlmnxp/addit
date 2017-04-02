@@ -12,15 +12,12 @@
                 <br>
             {/foreach}
         </div>
-    {elseif @$lang->dosuccess}
+    {elseif @$success}
         <div class="alert alert-success" role="alert"><strong>{$lang->success}</strong></div>
     {/if}
     <div class="form-group">
         <label for="username">{$lang->report_message}</label>
-        <div class="input-group" style="width: 100%">
-            <textarea class="form-control" id="MessageTextarea" name="report_message" rows="3">{$default["report_message"]}</textarea>
-        </div>
-        <small id="usernameHelp" class="form-text text-muted">{$lang->help_username}</small>
+        <textarea class="form-control" id="MessageTextarea" name="message" rows="3">{$default["report_message"]}</textarea>
     </div>
     <button type="submit" name="submit" class="btn btn-primary">{$lang->submit}</button>
 </form>

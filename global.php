@@ -8,7 +8,7 @@
 
     include_once ('Functions/inc.php');
     include_once ('Functions/Template.php');
-    error_reporting(1);
+    error_reporting(2);
 
     $settings = $db->table("settings")->select()->results();
     $templateDirectory = $db->table("settings")->where("name","=","template")->select(["id","value"])[0]->value;

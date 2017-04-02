@@ -55,6 +55,7 @@
 
   "_comments" : "// report",
 
+  "message_length" : "يجب أن تكون الرسالة أقل من 250 حرفًا.",
   "report_message" : "رسالة الأبلاغ",
 
 

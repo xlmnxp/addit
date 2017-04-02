@@ -52,10 +52,10 @@
                             "country"  => $_POST["country"]
                         ]))
                     ]);
-                    $language->dosuccess = true;
+                    $template->success = true;
                 }
             }else{
-                $language->dosuccess = false;
+                $template->success = false;
                 $template->errors = $errors;
             }
 

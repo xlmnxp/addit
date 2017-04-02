@@ -54,6 +54,7 @@
 
   "_comments" : "// report",
 
+  "message_length" : "The message must be less than 250 characters.",
   "report_message" : "Message reporting",
 
 

@@ -3,7 +3,7 @@
     <li class="active">{$page}</li>
 </ol>
 
-<form method="post" enctype="multipart/form-data">
+<form method="post" class="form-horizontal" enctype="multipart/form-data">
     {if @$errors}
         <div class="alert alert-danger" role="alert">
         {foreach @$errors as $error}
@@ -13,64 +13,95 @@
             <br>
         {/foreach}
         </div>
-    {elseif @$lang->dosuccess}
+    {elseif @$success}
         <div class="alert alert-success" role="alert"><strong>{$lang->success}!</strong> {$lang->success_register}</div>
     {/if}
-    <div class="form-group">
-        <label for="username">{$lang->username}</label>
-        <div class="input-group">
-            <span class="input-group-addon" id="basic-addon1">@</span>
-            <input type="text" class="form-control" placeholder="{$lang->enter_username}" aria-describedby="basic-addon1" id="username" name="username"/>
-        </div>
-        <small id="usernameHelp" class="form-text text-muted">{$lang->help_username}</small>
-    </div>
-    <div class="form-group">
-        <label for="fullname">{$lang->fullname}</label>
-        <input type="text" class="form-control" id="fullname" placeholder="{$lang->enter_fullname}" name="fullname"/>
-    </div>
-    <div class="form-group">
-        <label for="AvatarInputFile">{$lang->avatar}</label>
-        <input type="file" class="form-control-file" id="AvatarInputFile" aria-describedby="fileHelp" name="avatar"/>
-        <small id="fileHelp" class="form-text text-muted">{$lang->help_avatar}</small>
-    </div>
-    <div class="form-group">
-        <label for="CatagorySelect">{$lang->category}</label>
-        <select class="form-control" name="category" id="CatagorySelect">
-            <option>1</option>
-            <option>2</option>
-            <option>3</option>
-            <option>4</option>
-            <option>5</option>
-        </select>
-    </div>
-    <div class="form-group">
-        <label for="CountrySelect">{$lang->country}</label>
-        <select class="form-control" name="country" id="CountrySelect">
-            <option>1</option>
-            <option>2</option>
-            <option>3</option>
-            <option>4</option>
-            <option>5</option>
-        </select>
-    </div>
-    <div class="form-group">
-        <label for="MessageTextarea">{$lang->message}</label>
-        <textarea class="form-control" id="MessageTextarea" name="message" rows="3"></textarea>
-    </div>
-    <fieldset class="form-group">
-        <legend>{$lang->sex}</legend>
-        <div class="form-check">
-            <label class="form-check-label">
-                <input type="radio" class="form-check-input custom-control-input" name="sex" value="0" checked/>
-                {$lang->male}
-            </label>
-        </div>
-        <div class="form-check">
-            <label class="form-check-label">
-                <input type="radio" class="form-check-input custom-control-input" name="sex" value="1"/>
-                {$lang->female}
-            </label>
-        </div>
+    <fieldset>
+
+            <!-- Prepended text-->
+            <div class="form-group">
+                <label class="col-md-4 control-label" for="username">{$lang->username}</label>
+                <div class="col-md-4">
+                    <div class="input-group">
+                        <span class="input-group-addon">@</span>
+                        <input id="username" name="username" class="form-control" placeholder="{$lang->enter_username}" type="text" required="">
+                    </div>
+                    <p class="help-block">{$lang->help_username}</p>
+                </div>
+            </div>
+
+            <!-- Text input-->
+            <div class="form-group">
+                <label class="col-md-4 control-label" for="fullname">{$lang->fullname}</label>
+                <div class="col-md-4">
+                    <input id="fullname" name="fullname" type="text" placeholder="{$lang->enter_fullname}" class="form-control input-md" required="">
+                </div>
+            </div>
+
+            <!-- File Button -->
+            <div class="form-group">
+                <label class="col-md-4 control-label" for="avatar">{$lang->avatar}</label>
+                <div class="col-md-4">
+                    <input id="avatar" name="avatar" class="input-file" type="file">
+                    <p class="help-block">{$lang->help_avatar}</p>
+                </div>
+            </div>
+
+            <!-- Select Basic -->
+            <div class="form-group">
+                <label class="col-md-4 control-label" for="category">{$lang->category}</label>
+                <div class="col-md-4">
+                    <select id="category" name="category" class="form-control">
+                        <option value="1">Option one</option>
+                        <option value="2">Option two</option>
+                    </select>
+                </div>
+            </div>
+
+            <!-- Select Basic -->
+            <div class="form-group">
+                <label class="col-md-4 control-label" for="country">{$lang->country}</label>
+                <div class="col-md-4">
+                    <select id="country" name="country" class="form-control">
+                        <option value="1">Option one</option>
+                        <option value="2">Option two</option>
+                    </select>
+                </div>
+            </div>
+
+            <!-- Textarea -->
+            <div class="form-group">
+                <label class="col-md-4 control-label" for="message">{$lang->message}</label>
+                <div class="col-md-4">
+                    <textarea class="form-control" id="message" name="message"></textarea>
+                </div>
+            </div>
+
+            <!-- Multiple Radios -->
+            <div class="form-group">
+                <label class="col-md-4 control-label" for="sex">{$lang->sex}</label>
+                <div class="col-md-4">
+                    <div class="radio">
+                        <label for="sex-0">
+                            <input type="radio" name="sex" id="sex-0" value="0" checked="checked">
+                            {$lang->male}
+                        </label>
+                    </div>
+                    <div class="radio">
+                        <label for="sex-1">
+                            <input type="radio" name="sex" id="sex-1" value="1">
+                            {$lang->female}
+                        </label>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Button -->
+            <div class="form-group">
+                <label class="col-md-4 control-label" for="submit"></label>
+                <div class="col-md-4">
+                    <button id="submit" name="submit" class="btn btn-primary">{$lang->submit}</button>
+                </div>
+            </div>
     </fieldset>
-    <button type="submit" name="submit" class="btn btn-primary">{$lang->submit}</button>
 </form>
