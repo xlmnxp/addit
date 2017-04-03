@@ -2,6 +2,13 @@
     <li class="active">{$lang->home}</li>
 </ol>
 <div class="row">
+    <div >
+        {$lang->sex}:
+            <select>
+                <option value="0">{$lang->male}</option>
+                <option value="1">{$lang->female}</option>
+            </select>
+    </div>
     {foreach $users as $user}
     <div class="col-sm-6 col-md-3">
         <div class="thumbnail">

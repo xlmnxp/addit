@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: localhost
--- Generation Time: Apr 02, 2017 at 09:57 PM
+-- Generation Time: Apr 04, 2017 at 01:15 AM
 -- Server version: 10.1.21-MariaDB
 -- PHP Version: 5.6.30
 
@@ -19,6 +19,26 @@ SET time_zone = "+00:00";
 --
 -- Database: `addit`
 --
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `pages`
+--
+
+CREATE TABLE `pages` (
+  `id` int(11) NOT NULL,
+  `name` varchar(255) COLLATE utf8_unicode_ci NOT NULL,
+  `title` varchar(255) COLLATE utf8_unicode_ci NOT NULL,
+  `template` longtext COLLATE utf8_unicode_ci NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
+
+--
+-- Dumping data for table `pages`
+--
+
+INSERT INTO `pages` (`id`, `name`, `title`, `template`) VALUES
+(1, 'register-vip', '$lang->new_vip', '{$lang->message}');
 
 -- --------------------------------------------------------
 
@@ -44,7 +64,8 @@ INSERT INTO `reports` (`id`, `userid`, `message`, `date`) VALUES
 (4, 1, 'Hello', '2017-04-02 21:20:32'),
 (5, 1, 'Hello', '2017-04-02 21:30:14'),
 (6, 1, 'HelloHelloHelloHelloHelloHelloHelloHelloHelloHelloHelloHelloHelloHelloHelloHelloHelloHelloHelloHelloHelloHelloHelloHelloHelloHelloHelloHelloHelloHelloHelloHelloHelloHelloHelloHelloHelloHelloHelloHelloHelloHelloHelloHelloHelloHelloHelloHelloHelloHelloHelloHelloHelloHelloHelloHelloHelloHelloHelloHelloHelloHelloHelloHelloHelloHelloHelloHelloHelloHelloHelloHelloHelloHelloHelloHelloHelloHelloHelloHelloHelloHelloHelloHelloHelloHelloHelloHelloHello', '2017-04-02 21:30:18'),
-(7, 1, 'Hello', '2017-04-02 21:30:57');
+(7, 1, 'Hello', '2017-04-02 21:30:57'),
+(8, 1, 'Hello', '2017-04-03 02:02:49');
 
 -- --------------------------------------------------------
 
@@ -68,19 +89,6 @@ INSERT INTO `settings` (`id`, `name`, `value`) VALUES
 (3, 'url', 'http://localhost/addit/'),
 (4, 'language', 'arabic'),
 (5, 'report_message', 'Hello');
-
--- --------------------------------------------------------
-
---
--- Stand-in structure for view `test`
--- (See below for the actual view)
---
-CREATE TABLE `test` (
-`id` int(11)
-,`userid` int(11)
-,`message` longtext
-,`date` varchar(255)
-);
 
 -- --------------------------------------------------------
 
@@ -122,18 +130,15 @@ INSERT INTO `users` (`id`, `username`, `fullname`, `avatar`, `message`, `sex`, `
 (17, 'asdsadasd', 'dsadasd', 'Uploads/1491162769.png', 'sadasdasdsa', 0, '[{\"category\":\"2\",\"country\":\"1\"}]'),
 (18, 'dasdassdasdasda', 'dasdasdasdasdas', 'Uploads/1491162787.png', 'dasdsadadasda', 1, '[{\"category\":\"1\",\"country\":\"2\"}]');
 
--- --------------------------------------------------------
-
---
--- Structure for view `test`
---
-DROP TABLE IF EXISTS `test`;
-
-CREATE ALGORITHM=UNDEFINED DEFINER=`root`@`localhost` SQL SECURITY DEFINER VIEW `test`  AS  select `reports`.`id` AS `id`,`reports`.`userid` AS `userid`,`reports`.`message` AS `message`,`reports`.`date` AS `date` from `reports` ;
-
 --
 -- Indexes for dumped tables
 --
+
+--
+-- Indexes for table `pages`
+--
+ALTER TABLE `pages`
+  ADD PRIMARY KEY (`id`);
 
 --
 -- Indexes for table `reports`
@@ -159,10 +164,15 @@ ALTER TABLE `users`
 --
 
 --
+-- AUTO_INCREMENT for table `pages`
+--
+ALTER TABLE `pages`
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
+--
 -- AUTO_INCREMENT for table `reports`
 --
 ALTER TABLE `reports`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=8;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=9;
 --
 -- AUTO_INCREMENT for table `settings`
 --

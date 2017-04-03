@@ -60,7 +60,7 @@
             </ul>
             <ul class="nav navbar-nav navbar-right">
                 <li {if $page == $lang->new_user }class="active"{/if}><a href="{$default["url"]}register" class="btn-primary nbtn">{$lang->new_user}</a></li>
-                <li {if $page == $lang->new_vip  }class="active"{/if}><a href="{$default["url"]}register-vip" class="btn-warning nbtn">{$lang->new_vip}</a></li>
+                <li {if $page == $lang->new_vip  }class="active"{/if}><a href="{$default["url"]}p-register-vip" class="btn-warning nbtn">{$lang->new_vip}</a></li>
             </ul>
         </div><!--/.nav-collapse -->
     </div>

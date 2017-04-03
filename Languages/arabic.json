@@ -59,6 +59,11 @@
   "report_message" : "رسالة الأبلاغ",
 
 
+  "_comments" : "// error 404",
+
+  "page_not_found" : "الصفحة غير موجودة",
+  "error" : "خطأ",
+
   "_comments" : "// sizes",
   "byte": "بايت",
   "kb": "كيلوبايت",

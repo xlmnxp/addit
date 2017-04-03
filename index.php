@@ -51,4 +51,4 @@
     $template->default["page-title"] = $template->default["title"]." | $language->home";
 
     $template->setFile($templateDirectory.'/home.tpl')->setLayout($templateDirectory.'/@main_layout.tpl')->render();
- ?>
+?>

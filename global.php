@@ -68,3 +68,4 @@
 
 
     global $template, $db, $language;
+?>

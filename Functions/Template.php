@@ -45,7 +45,7 @@ class Template{
         $this->vars[$key] = $val;
     }
     /*Inspired by Nette framework Latte filter*/
-    private function compile($file){
+    private function compile($file,$template = false){
         if(is_file($file)){
             $keys = array(
                 '{if %%}' => '<?php if (\1): ?>',
@@ -79,6 +79,39 @@ class Template{
             /*replace our pseudo language in template with php code*/
             return preg_replace($patterns, $replace, file_get_contents($file));
         }else{
+            if($template){
+                $keys = array(
+                    '{if %%}' => '<?php if (\1): ?>',
+                    '{elseif %%}' => '<?php ; elseif (\1): ?>',
+                    '{for %%}' => '<?php for (\1): ?>',
+                    '{foreach %%}' => '<?php foreach (\1): ?>',
+                    '{while %%}' => '<?php while (\1): ?>',
+                    '{/if}' => '<?php endif; ?>',
+                    '{/for}' => '<?php endfor; ?>',
+                    '{/foreach}' => '<?php endforeach; ?>',
+                    '{/while}' => '<?php endwhile; ?>',
+                    '{else}' => '<?php ; else: ?>',
+                    '{continue}' => '<?php continue; ?>',
+                    '{break}' => '<?php break; ?>',
+                    '{$%% = %%}' => '<?php $\1 = \2; ?>',
+                    '{$%%++}' => '<?php $\1++; ?>',
+                    '{$%%--}' => '<?php $\1--; ?>',
+                    '{$%%}' => '<?php echo $\1; ?>',
+                    '{comment}' => '<?php /*',
+                    '{/comment}' => '*/ ?>',
+                    '{/*}' => '<?php /*',
+                    '{*/}' => '*/ ?>',
+                );
+
+                foreach ($keys as $key => $val) {
+                    $patterns[] = '#' . str_replace('%%', '(.+)',
+                            preg_quote($key, '#')) . '#U';
+                    $replace[] = $val;
+                }
+
+                /*replace our pseudo language in template with php code*/
+                return preg_replace($patterns, $replace, ($file));
+            }
             throw new Exception("Missing template file '$file'.");
         }
     }
@@ -109,7 +142,14 @@ class Template{
                 //evaluate compiled code
                 return $this->evaluate($template, $this->getVars());
             }else{
-                throw new Exception("Missing main template file '".$this->file."'.");
+                if($this->__template){
+                    //compile template into php code
+                    $template = $this->compile($this->file,$this->__template);
+                    //evaluate compiled code
+                    return $this->evaluate($template, $this->getVars());
+                }else{
+                    throw new Exception("Missing main template file '".$this->file."'.");
+                }
             }
         }else{
             //missing main template file
@@ -117,18 +157,22 @@ class Template{
         }
     }
     /*render template*/
-    public function render(){
+    public function render($_template = false){
+        $this->__template = $_template;
         //are we using layout?
         if(!empty($this->layout)){
             if(is_file($this->layout)){
                 //compile whole layout
                 $template = $this->compile($this->layout);
             }else{
-                throw new Exception("Missing layout template file '".$this->layout."'.");
+                if($_template){
+                    $template = $this->compile($this->layout,true);
+                }else{
+                    throw new Exception("Missing layout template file '".$this->layout."'.");
+                }
             }
         }else{
-            //or compile only main template file
-            $template = $this->compile($this->file);
+            $template = $this->compile($this->file,$_template);
         }
         //evaluate compiled code
         return $this->evaluate($template, $this->getVars());

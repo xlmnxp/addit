@@ -57,6 +57,11 @@
   "message_length" : "The message must be less than 250 characters.",
   "report_message" : "Message reporting",
 
+  "_comments" : "// error 404",
+
+  "page_not_found" : "Page Not Found",
+  "error" : "Error",
+
 
   "_comments" : "// sizes",
   "byte": "byte",
