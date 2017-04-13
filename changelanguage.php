@@ -18,3 +18,4 @@
             "value" => "arabic"
         ]);
     }
+    header("location: /");

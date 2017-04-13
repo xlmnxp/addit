@@ -2,14 +2,14 @@
     <li><a href="{$default["url"]}">{$lang->home}</a></li>
     <li class="active">{$page}</li>
 </ol>
-<div class="col-sm-12 col-md-12">
-    <div class="col-sm-6 col-md-3 thumbnail">
+<div class="col-md-12">
+    <div class="col-md-3 thumbnail">
         <a href="{$user["url"]}">
             <img class="avatar" src="{if $user["avatar"] != $default["url"]}{$user["avatar"]}{else}https://feelinsonice-hrd.appspot.com/web/deeplink/snapcode?username={$user["username"]}&type=PNG{/if}" alt="{$user["username"]}"/>
         </a>
         <hr/>
         <p>
-            <div class="row">
+            <div >
                 <div class="col-sm-6">
                     <a class="btn btn-warning fullwidth btn-copy" role="button" data-clipboard-text="{$user["username"]}">
                         <i class="fa fa-copy"></i>&nbsp;{$lang->copy_username}
@@ -21,7 +21,7 @@
                     </a>
                 </div>
             </div>
-            <div class="row">
+            <div>
                 <div class="col-sm-12">
                     <a class="btn btn-primary fullwidth" href="snapchat://add/{$user['username']}" role="button" target="_blank">
                         <i class="fa fa-snapchat"></i>&nbsp;{$lang->follow}
@@ -30,7 +30,7 @@
             </div>
         </p>
     </div>
-    <div class="col-sm-6 col-md-9 caption">
+    <div class="col-md-9 caption">
 
         <a href="{$user["url"]}"><h3 style="padding: 5px;" class="ovtxt"><i class="fa fa-id-card"></i>&nbsp;{$user["fullname"]}</h3></a>
         <h5 class="ovtxt"><strong><i class="fa fa-user"></i>&nbsp;{$lang->username} </strong><br/>
@@ -47,7 +47,7 @@
         </p>
     </div>
 </div>
-<div class="col-sm-12 col-md-12">
+<div class="col-md-12">
     <ol class="breadcrumb" xmlns="http://www.w3.org/1999/html">
         <li class="active">{$lang->comments}</li>
     </ol>
