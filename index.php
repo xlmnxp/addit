@@ -9,7 +9,7 @@
     include_once ("global.php");
     $template->page = $language->home;
 
-    $page = (@$_GET["page"]? $_GET["page"]:1);
+    $page = (isset($_GET["page"])? $_GET["page"]:1);
     $users_query = $db->table("users")->limit(12*($page-1),12)->select();
     $users = Array();
     foreach ($users_query as $user){
