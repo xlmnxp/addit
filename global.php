@@ -21,12 +21,15 @@
     }
 
     $template = new Template();
-    $default = "";
+    $requireDefault = "";
     foreach ($settings as $setting){
-        $default .= ',"'.$setting->name.'" => "'.htmlentities($setting->value).'"';
+        $requireDefault .= ',"'.$setting->name.'" => "'.htmlentities($setting->value).'"';
     }
-    $default[0] = "";
-    eval("\$template->default = array($default);");
+    $requireDefault[0] = "";
+    $default;
+    eval("\$template->default = array($requireDefault);");
+    $default = $template->default;
+
     $template->default["page-title"] = $template->default["title"];
 
 
@@ -37,7 +40,7 @@
     $template->language_file    = $languageFile;
     $template->template_dir     = $template->default["url"].$templateDirectory;
     $template->lang = $language;
-
+    $lang = $language;
     $template->addthis_pubid = "ra-58e0111c4be4cfd4";
 
     $template->header = '
@@ -66,6 +69,10 @@
 
     ';
 
+    ob_start();
+    eval ('?> '.$template->compile(file_get_contents($template->template_dir."/search_form.tpl"),true));
+    $search_form = ob_get_clean();
+    $template->search_form = $search_form;
 
     global $template, $db, $language;
 ?>

@@ -42,14 +42,14 @@
                     chmod($dir, 0755);
                     $db->table("users")->insert([
                         "id" => "",
-                        "username"  => $_POST["username"],
-                        "fullname"  => $_POST["fullname"],
+                        "username"  => htmlspecialchars($_POST["username"], ENT_QUOTES, 'UTF-8'),
+                        "fullname"  => htmlspecialchars($_POST["fullname"], ENT_QUOTES, 'UTF-8'),
                         "avatar"    => $dir,
-                        "message"   => $_POST["message"],
-                        "sex"       => $_POST["sex"],
+                        "message"   => htmlspecialchars($_POST["message"], ENT_QUOTES, 'UTF-8'),
+                        "sex"       => htmlspecialchars($_POST["sex"], ENT_QUOTES, 'UTF-8'),
                         "data"      => json_encode(array([
-                            "category" => $_POST["category"],
-                            "country"  => $_POST["country"]
+                            "category" => htmlspecialchars($_POST["category"], ENT_QUOTES, 'UTF-8'),
+                            "country"  => htmlspecialchars($_POST["country"], ENT_QUOTES, 'UTF-8')
                         ]))
                     ]);
                     $template->success = true;

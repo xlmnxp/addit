@@ -2,6 +2,9 @@
     <li><a href="{$default["url"]}">{$lang->home}</a></li>
     <li class="active">{$page}</li>
 </ol>
+
+{$search_form}
+
 <div class="col-md-12">
     <div class="col-md-3 thumbnail">
         <a href="{$user["url"]}">

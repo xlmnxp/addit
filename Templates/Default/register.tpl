@@ -3,6 +3,8 @@
     <li class="active">{$page}</li>
 </ol>
 
+{$search_form}
+
 <form id="register" method="post" class="form-horizontal" enctype="multipart/form-data">
     {if @$errors}
         <div class="alert alert-danger" role="alert">

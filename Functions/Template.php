@@ -45,7 +45,7 @@ class Template{
         $this->vars[$key] = $val;
     }
     /*Inspired by Nette framework Latte filter*/
-    private function compile($file,$template = false){
+    public function compile($file,$template = false){
         if(is_file($file)){
             $keys = array(
                 '{if %%}' => '<?php if (\1): ?>',

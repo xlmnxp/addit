@@ -2,6 +2,9 @@
     <li><a href="{$default["url"]}">{$lang->home}</a></li>
     <li class="active">{$page}</li>
 </ol>
+
+{$search_form}
+
 <form method="post">
     {if @$errors}
         <div class="alert alert-danger" role="alert">

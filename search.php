@@ -20,9 +20,8 @@
             setcookie('search', json_encode($_POST), time() + (86400 * 7), "/"); // 86400 = 1 day
         }
     }
-
+    $nPOST->search = htmlspecialchars($nPOST->search, ENT_QUOTES, 'UTF-8');
     $page = (isset($_GET["page"])? $_GET["page"]:1);
-    die($_GET["page"]);
     $users_query = $db->table("users");
     $users_query
         ->where('username','LIKE','%'.$nPOST->search.'%')
@@ -54,7 +53,7 @@
 
     if(count($users_query->results()) >= 12){
         $next_page = $page+1;
-        $template->next = "href=\"{$template->default["url"]}search/page/{$next_page}\"";
+        $template->next = "href=\"{$template->default["url"]}search?page={$next_page}\"";
     }else{
         $template->class_next = 'class="disabled"';
     }
@@ -63,7 +62,7 @@
         $template->class_previous = 'class="disabled"';
     }else{
         $previous_page = $page-1;
-        $template->previous = "href=\"{$template->default["url"]}search/page/{$previous_page}\"";
+        $template->previous = "href=\"{$template->default["url"]}search?page={$previous_page}\"";
     }
 
     $template->default["page-title"] = $template->default["title"]." | $language->search";
