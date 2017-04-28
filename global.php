@@ -25,8 +25,7 @@
     foreach ($settings as $setting){
         $requireDefault .= ',\''.$setting->name.'\' => "'.htmlentities($setting->value).'"';
     }
-    $requireDefault[0] = "";
-    $default;
+    $requireDefault = substr($requireDefault, 1);
     eval('$template->default = array('.$requireDefault.');');
     $default = $template->default;
 
