@@ -10,14 +10,14 @@
     <!-- Bootstrap -->
     <!-- Latest compiled and minified CSS -->
 
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous"/>
-    <link href="https://maxcdn.bootstrapcdn.com/bootswatch/3.3.7/journal/bootstrap.min.css" rel="stylesheet" integrity="sha384-1L94saFXWAvEw88RkpRz8r28eQMvt7kG9ux3DdCqya/P3CfLNtgqzMnyaUa49Pl2" crossorigin="anonymous"/>
+    <link rel="stylesheet" href="{$template_dir}/css/bootstrap.min.css" />
+    <link href="{$template_dir}/css/journal-bootstrap.min.css" rel="stylesheet" />
     {if $rtl}
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-rtl/3.4.0/css/bootstrap-flipped.min.css" />
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-rtl/3.4.0/css/bootstrap-rtl.min.css" />
+    <link rel="stylesheet" href="{$template_dir}/css/bootstrap-flipped.min.css" />
+    <link rel="stylesheet" href="{$template_dir}/css/bootstrap-rtl.min.css" />
     {/if}
-    <link rel="stylesheet" href="{$template_dir}/styles/main.css"/>
-    <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet" integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN" crossorigin="anonymous"/>
+    <link rel="stylesheet" href="{$template_dir}/css/main.css"/>
+    <link href="{$template_dir}/css/font-awesome.min.css" rel="stylesheet" />
 
     {$header}
     <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
@@ -72,9 +72,9 @@
 </div>
 {$footer}
 <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
-<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+<script src="{$template_dir}/js/jquery.min.js"></script>
 <!-- Include all compiled plugins (below), or include individual files as needed -->
 <!-- Latest compiled and minified JavaScript -->
-<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+<script src="{$template_dir}/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
 </body>
 </html>

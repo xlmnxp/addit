@@ -23,11 +23,11 @@
     $template = new Template();
     $requireDefault = "";
     foreach ($settings as $setting){
-        $requireDefault .= ',"'.$setting->name.'" => "'.htmlentities($setting->value).'"';
+        $requireDefault .= ',\''.$setting->name.'\' => "'.htmlentities($setting->value).'"';
     }
     $requireDefault[0] = "";
     $default;
-    eval("\$template->default = array($requireDefault);");
+    eval('$template->default = array('.$requireDefault.');');
     $default = $template->default;
 
     $template->default["page-title"] = $template->default["title"];
@@ -44,10 +44,10 @@
     $template->addthis_pubid = "ra-58e0111c4be4cfd4";
 
     $template->header = '
-        <link rel="stylesheet" href="https://cdn.jsdelivr.net/sweetalert2/6.4.4/sweetalert2.min.css" />
+        <link rel="stylesheet" href="'.$default['url'].'/global-templates/css/sweetalert2.min.css" />
         
-        <script src="https://cdn.jsdelivr.net/clipboard.js/1.6.0/clipboard.min.js"></script>
-        <script src="https://cdn.jsdelivr.net/sweetalert2/6.4.4/sweetalert2.min.js"></script>
+        <script src="'.$default['url'].'/global-templates/javascript/clipboard.min.js"></script>
+        <script src="'.$default['url'].'/global-templates/javascript/sweetalert2.min.js"></script>
     ';
     $template->footer = '
         <script>
@@ -55,10 +55,10 @@
             
             cb.on(\'success\', function(e) {
                 swal({
-                  title: "'.$language->success.'!",
-                  text: "'.$language->copied.'",
+                  title: "'.$lang->success.'!",
+                  text: "'.$lang->copied.'",
                   type: "success",
-                  confirmButtonText: "'.$language->confirm.'"
+                  confirmButtonText: "'.$lang->confirm.'"
                 });
 
                 e.clearSelection();
