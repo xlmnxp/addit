@@ -5,7 +5,12 @@
 
 {$search_form}
 
-<form id="register" method="post" class="form-horizontal" enctype="multipart/form-data">
+<div class="col-lg-12">
+
+    <ol class="breadcrumb">
+        <li class="active">{$page}</li>
+    </ol>
+    <form id="register" method="post" class="form-horizontal" enctype="multipart/form-data">
     {if @$errors}
         <div class="alert alert-danger" role="alert">
         {foreach @$errors as $error}
@@ -107,3 +112,4 @@
             </div>
     </fieldset>
 </form>
+</div>
