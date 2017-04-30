@@ -38,9 +38,11 @@
     $template->language         = $language;
     $template->language_file    = $languageFile;
     $template->template_dir     = $template->default["url"].$templateDirectory;
-    $template->lang = $language;
+    $template->lang             = $language;
+    $template->addthis_pubid    = "ra-58e0111c4be4cfd4";
+    $template->disqus_name      = "addit-1";
+
     $lang = $language;
-    $template->addthis_pubid = "ra-58e0111c4be4cfd4";
 
     $template->header = '
         <link rel="stylesheet" href="'.$default['url'].'/global-templates/css/sweetalert2.min.css" />
@@ -65,7 +67,6 @@
 
         </script>
         <script type="text/javascript" src="//s7.addthis.com/js/300/addthis_widget.js#pubid='.$template->addthis_pubid.'"></script>
-
     ';
 
     ob_start();

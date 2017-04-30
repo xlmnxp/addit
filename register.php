@@ -37,7 +37,10 @@
                 $errors[]= $language->enter_fullname;
             }
 
-            if(empty($errors)==true){
+            if(strlen(htmlspecialchars($_POST["message"], ENT_QUOTES, 'UTF-8')) > 450){
+                $errors[]= $language->message_length;
+            }
+            if(empty($errors)){
                 if(move_uploaded_file($file_tmp,$dir)){
                     chmod($dir, 0755);
                     $db->table("users")->insert([

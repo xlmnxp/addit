@@ -21,8 +21,6 @@
         "url"       => $template->default["url"]."u/".$user->id."-".str_replace(" ","-",$user->fullname)
     );
 
-    $template->disqus_name = "addit-1";
-
     $template->default["page-title"] = $template->default["title"]." | $user->fullname ($user->username)";
 
     $template->setFile($templateDirectory.'/user.tpl')->setLayout($templateDirectory.'/@main_layout.tpl')->render();
