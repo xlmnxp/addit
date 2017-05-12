@@ -8,7 +8,6 @@
 
     include_once ('Functions/inc.php');
     include_once ('Functions/Template.php');
-    //error_reporting(2);
 
     $settings = $db->table("settings")->select()->results();
     $templateDirectory = $db->table("settings")->where("name","=","template")->select(["id","value"])[0]->value;
@@ -42,14 +41,26 @@
     $template->addthis_pubid    = "ra-58e0111c4be4cfd4";
     $template->disqus_name      = "addit-1";
 
-    $lang = $language;
+    $template->search           = array(
+                                    "value"    =>  "",
+                                    "sex"       => -1
+                                    );
+
+    $search                     = $template->search;
+    $lang                       = $language;
+
+    $search_sex = '
+        <option value="0">{$lang->male}</option>
+        <option value="1">{$lang->female}</option>
+        ';
 
     $template->header = '
         <link rel="stylesheet" href="'.$default['url'].'/global-templates/css/sweetalert2.min.css" />
         
         <script src="'.$default['url'].'/global-templates/javascript/clipboard.min.js"></script>
         <script src="'.$default['url'].'/global-templates/javascript/sweetalert2.min.js"></script>
-    ';
+        ';
+    
     $template->footer = '
         <script>
             var cb = new Clipboard(\'.btn-copy\');
@@ -67,12 +78,7 @@
 
         </script>
         <script type="text/javascript" src="//s7.addthis.com/js/300/addthis_widget.js#pubid='.$template->addthis_pubid.'"></script>
-    ';
-
-    ob_start();
-    eval ('?> '.$template->compile(file_get_contents($template->template_dir."/search_form.tpl"),true));
-    $search_form = ob_get_clean();
-    $template->search_form = $search_form;
+        ';
 
     global $template, $db, $language;
 ?>

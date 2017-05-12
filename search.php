@@ -21,12 +21,19 @@
         }
     }
     $nPOST->search = htmlspecialchars($nPOST->search, ENT_QUOTES, 'UTF-8');
+    $nPOST->sex = htmlspecialchars($nPOST->sex, ENT_QUOTES, 'UTF-8');
+
+    $template->search["value"] = $nPOST->search;
+    $template->search["sex"] = $nPOST->sex;
+    $search = $template->search;
+
     $page = (isset($_GET["page"])? $_GET["page"]:1);
     $users_query = $db->table("users");
     $users_query
         ->where('username','LIKE','%'.$nPOST->search.'%')
         ->orWhere('fullname','LIKE','%'.$nPOST->search.'%')
         ->orWhere('message','LIKE','%'.$nPOST->search.'%')
+        ->where('sex',$nPOST->sex)
         ->limit(12*($page-1),12)->select();
     $users = Array();
     foreach ($users_query as $user){
@@ -66,5 +73,12 @@
     }
 
     $template->default["page-title"] = $template->default["title"]." | $language->search";
+
+    $search_sex = "<option value=\"0\" ".($nPOST->sex==0?'selected':'').">{$lang->male}</option>"
+                 ."<option value=\"1\" ".($nPOST->sex==1?'selected':'').">{$lang->female}</option>";
+    ob_start();
+    eval ('?> '.$template->compile(file_get_contents($template->template_dir."/search_form.tpl"),true));
+    $search_form = ob_get_clean();
+    $template->search_form = $search_form;
 
     $template->setFile($templateDirectory.'/home.tpl')->setLayout($templateDirectory.'/@main_layout.tpl')->render();

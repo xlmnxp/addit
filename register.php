@@ -66,5 +66,10 @@
 
     $template->default["page-title"] = $template->default["title"]." | $language->new_user";
 
+    ob_start();
+    eval ('?> '.$template->compile(file_get_contents($template->template_dir."/search_form.tpl"),true));
+    $search_form = ob_get_clean();
+    $template->search_form = $search_form;
+
     $template->setFile($templateDirectory.'/register.tpl')->setLayout($templateDirectory.'/@main_layout.tpl')->render();
 ?>

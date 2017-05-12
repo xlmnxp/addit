@@ -3,14 +3,13 @@
     <div class="form-group">
         <div class="col-sm-4">
             <label for="search" class="ovtxt">{$lang->search}</label>
-            <input class="form-control" name="search" id="search" type="text" placeholder="{$lang->search}">
+            <input class="form-control" name="search" id="search" type="text" placeholder="{$lang->search}" value="{$search["value"]}">
         </div>
         <div class="col-sm-2">
             <label for="sex" class="ovtxt">{$lang->sex}</label>
-            <select name="sex" id="sex" class="form-control">
+            <select name="sex" id="sex" class="form-control" onload="this.selectedIndex = {$search["sex"]};">
                 <option value="-1"></option>
-                <option value="0">{$lang->male}</option>
-                <option value="1">{$lang->female}</option>
+                {$search_sex}
             </select>
         </div>
         <div class="col-sm-2">

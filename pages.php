@@ -14,6 +14,12 @@
     if(!$queryFile){
         header("location: {$default["url"]}404");
     }
+
+    ob_start();
+    eval ('?> '.$template->compile(file_get_contents($template->template_dir."/search_form.tpl"),true));
+    $search_form = ob_get_clean();
+    $template->search_form = $search_form;
+
     $template->setFile(
         '<ol class="breadcrumb" xmlns="http://www.w3.org/1999/html">
             <li><a href="{$default["url"]}">{$lang->home}</a></li>

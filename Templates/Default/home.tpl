@@ -15,7 +15,14 @@
                 <a href="{$user["url"]}"><h3 class="ovtxt"><i class="fa fa-id-card"></i>&nbsp;{$user['fullname']}</h3></a>
                 <h5 class="ovtxt"><i class="fa fa-user"></i>&nbsp;{$user['username']}</h5>
                 <p class="ovtxt"><i class="fa fa-envelope"></i>&nbsp;{$user['message']}</p>
-                <p class="ovtxt"><i class="fa fa-comment"></i>&nbsp;<a href="{$user["url"]}#disqus_thread">{$lang->comments}</a></p>
+                <div class="row">
+                    <div class="col-sm-6">
+                        <p class="ovtxt"><i class="fa fa-venus-mars"></i>&nbsp;{$user['sex']}</p>
+                    </div>
+                    <div class="col-sm-6">
+                        <p class="ovtxt"><i class="fa fa-comment"></i>&nbsp;<a href="{$user["url"]}#disqus_thread">{$lang->comments}</a></p>
+                    </div>
+                </div>
                 <p>
                     <div class="row">
                         <div class="col-sm-6">
