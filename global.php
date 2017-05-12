@@ -54,13 +54,15 @@
         <option value="1">{$lang->female}</option>
         ';
 
+    $template->search_sex       = $search_sex;
+
     $template->header = '
         <link rel="stylesheet" href="'.$default['url'].'/global-templates/css/sweetalert2.min.css" />
         
         <script src="'.$default['url'].'/global-templates/javascript/clipboard.min.js"></script>
         <script src="'.$default['url'].'/global-templates/javascript/sweetalert2.min.js"></script>
         ';
-    
+
     $template->footer = '
         <script>
             var cb = new Clipboard(\'.btn-copy\');

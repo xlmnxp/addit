@@ -3,18 +3,7 @@
   <component name="ChangeListManager">
     <list default="true" id="8458aa9b-747c-4bc6-8ad3-5992aecb43d7" name="Default" comment="">
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Languages/arabic.json" afterPath="$PROJECT_DIR$/Languages/arabic.json" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Languages/english.json" afterPath="$PROJECT_DIR$/Languages/english.json" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Templates/Default/home.tpl" afterPath="$PROJECT_DIR$/Templates/Default/home.tpl" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Templates/Default/search_form.tpl" afterPath="$PROJECT_DIR$/Templates/Default/search_form.tpl" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/addit.sql" afterPath="$PROJECT_DIR$/addit.sql" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/global.php" afterPath="$PROJECT_DIR$/global.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/index.php" afterPath="$PROJECT_DIR$/index.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/pages.php" afterPath="$PROJECT_DIR$/pages.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/register.php" afterPath="$PROJECT_DIR$/register.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/report.php" afterPath="$PROJECT_DIR$/report.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/search.php" afterPath="$PROJECT_DIR$/search.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/user.php" afterPath="$PROJECT_DIR$/user.php" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
@@ -42,13 +31,13 @@
       <file leaf-file-name="global.php" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/global.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="143">
-              <caret line="62" column="4" lean-forward="false" selection-start-line="62" selection-start-column="4" selection-end-line="62" selection-end-column="4" />
+            <state relative-caret-position="210">
+              <caret line="56" column="45" lean-forward="false" selection-start-line="56" selection-start-column="45" selection-end-line="56" selection-end-column="45" />
               <folding>
                 <element signature="e#6#87#0#PHP" expanded="true" />
-                <marker date="1494559076717" expanded="true" signature="2375:2785" ph="..." />
-                <marker date="1494559076717" expanded="true" signature="2484:2765" ph="{...}" />
-                <marker date="1494559076717" expanded="true" signature="2507:2712" ph="{&quot;title&quot;: &quot;EXTERNAL_FRAGMENT!&quot;...}" />
+                <marker date="1494559303706" expanded="true" signature="2419:2829" ph="..." />
+                <marker date="1494559303706" expanded="true" signature="2528:2809" ph="{...}" />
+                <marker date="1494559303706" expanded="true" signature="2551:2756" ph="{&quot;title&quot;: &quot;EXTERNAL_FRAGMENT!&quot;...}" />
               </folding>
             </state>
           </provider>
@@ -354,12 +343,12 @@
       <workItem from="1493929568878" duration="323000" />
       <workItem from="1494005190334" duration="7000" />
       <workItem from="1494263282226" duration="1199000" />
-      <workItem from="1494553489063" duration="5375000" />
+      <workItem from="1494553489063" duration="5600000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="121684000" />
+    <option name="totallyTimeSpent" value="121909000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="24" width="1366" height="681" extended-state="6" />
@@ -681,13 +670,13 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/global.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="143">
-          <caret line="62" column="4" lean-forward="false" selection-start-line="62" selection-start-column="4" selection-end-line="62" selection-end-column="4" />
+        <state relative-caret-position="210">
+          <caret line="56" column="45" lean-forward="false" selection-start-line="56" selection-start-column="45" selection-end-line="56" selection-end-column="45" />
           <folding>
             <element signature="e#6#87#0#PHP" expanded="true" />
-            <marker date="1494559076717" expanded="true" signature="2375:2785" ph="..." />
-            <marker date="1494559076717" expanded="true" signature="2484:2765" ph="{...}" />
-            <marker date="1494559076717" expanded="true" signature="2507:2712" ph="{&quot;title&quot;: &quot;EXTERNAL_FRAGMENT!&quot;...}" />
+            <marker date="1494559303706" expanded="true" signature="2419:2829" ph="..." />
+            <marker date="1494559303706" expanded="true" signature="2528:2809" ph="{...}" />
+            <marker date="1494559303706" expanded="true" signature="2551:2756" ph="{&quot;title&quot;: &quot;EXTERNAL_FRAGMENT!&quot;...}" />
           </folding>
         </state>
       </provider>
