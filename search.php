@@ -28,13 +28,13 @@
     $search = $template->search;
 
     $page = (isset($_GET["page"])? $_GET["page"]:1);
-    $users_query = $db->table("users");
-    $users_query
-        ->where('username','LIKE','%'.$nPOST->search.'%')
+    $users_query = $db->table("users")
+        ->where('(username','LIKE','%'.$nPOST->search.'%')
         ->orWhere('fullname','LIKE','%'.$nPOST->search.'%')
-        ->orWhere('message','LIKE','%'.$nPOST->search.'%')
+        ->orWhere('message','LIKE','%'.$nPOST->search.'%\') AND \'\' = \'')
         ->where('sex',$nPOST->sex)
         ->limit(12*($page-1),12)->select();
+
     $users = Array();
     foreach ($users_query as $user){
         array_push($users, array(
@@ -50,32 +50,12 @@
     }
 
     $template->users    = $users;
-    $template->pages    = true;
-
-    $template->previous = '';
-    $template->next = '';
-
-    $template->class_next = '';
-    $template->class_previous = '';
-
-    if(count($users_query->results()) >= 12){
-        $next_page = $page+1;
-        $template->next = "href=\"{$template->default["url"]}search?page={$next_page}\"";
-    }else{
-        $template->class_next = 'class="disabled"';
-    }
-
-    if($page <= 1){
-        $template->class_previous = 'class="disabled"';
-    }else{
-        $previous_page = $page-1;
-        $template->previous = "href=\"{$template->default["url"]}search?page={$previous_page}\"";
-    }
+    $template->pages = pagination(12,10,$db->table("users")->count(),$page);
 
     $template->default["page-title"] = $template->default["title"]." | $language->search";
 
-    $search_sex = "<option value=\"0\" ".($nPOST->sex==0?'selected':'').">{$lang->male}</option>"
-                 ."<option value=\"1\" ".($nPOST->sex==1?'selected':'').">{$lang->female}</option>";
+    $search_sex = "<option value=\"0\" ".($nPOST->sex==0?'selected':'').">{$language->male}</option>"
+                 ."<option value=\"1\" ".($nPOST->sex==1?'selected':'').">{$language->female}</option>";
     ob_start();
     eval ('?> '.$template->compile(file_get_contents($template->template_dir."/search_form.tpl"),true));
     $search_form = ob_get_clean();

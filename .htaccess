@@ -5,7 +5,6 @@ ErrorDocument 404 404
 RewriteCond %{REQUEST_FILENAME} !-d
 RewriteCond %{REQUEST_FILENAME} !-f
 RewriteRule ^u/(.*)-(.*)$ user.php?id=$1&username=$2 [NC,L]
-RewriteRule ^page/(.*)$ index.php?page=$1 [NC,L]
 RewriteRule ^report/(.*)$ report.php?id=$1 [NC,L]
 RewriteRule ^p-(.*)$ pages.php?name=$1 [NC,L]
 RewriteRule ^(.*)/$ $1.php [NC,L]

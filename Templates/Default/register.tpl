@@ -11,9 +11,9 @@
         <li class="active">{$page}</li>
     </ol>
     <form id="register" method="post" class="form-horizontal" enctype="multipart/form-data">
-    {if @$errors}
+    {if isset($errors)}
         <div class="alert alert-danger" role="alert">
-        {foreach @$errors as $error}
+        {foreach $errors as $error}
             <span class="glyphicon glyphicon-exclamation-sign" aria-hidden="true"></span>
             <span class="sr-only">Error:</span>
             {$error}

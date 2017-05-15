@@ -49,11 +49,11 @@
     </div>
     {/foreach}
 </div>
-{if $pages}
-<nav>
-    <ul class="pager">
-        <li {$class_previous}><a {$previous}>{$lang->previous}</a></li>
-        <li {$class_next}><a {$next}>{$lang->next}</a></li>
+<center>
+    <ul class="pagination">
+        {foreach $pages as $number}
+            <li{if $number["active"]} class="active" {/if}><a href="?page={$number["page"]}">{$number["name"]}</a></li>
+        {/foreach}
     </ul>
-</nav>
-{/if}
+</center>
+

@@ -5,7 +5,6 @@
  * Date: 3/18/17
  * Time: 8:08 PM
  */
-
     include_once ('Functions/inc.php');
     include_once ('Functions/Template.php');
 
@@ -50,8 +49,8 @@
     $lang                       = $language;
 
     $search_sex = '
-        <option value="0">{$lang->male}</option>
-        <option value="1">{$lang->female}</option>
+        <option value="0">'.$lang->male.'</option>
+        <option value="1">'.$lang->female.'</option>
         ';
 
     $template->search_sex       = $search_sex;

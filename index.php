@@ -26,27 +26,8 @@
     }
 
     $template->users    = $users;
-    $template->pages    = true;
 
-    $template->previous = '';
-    $template->next = '';
-
-    $template->class_next = '';
-    $template->class_previous = '';
-
-    if(count($users_query->results()) >= 12){
-        $next_page = $page+1;
-        $template->next = "href=\"{$template->default["url"]}page/{$next_page}\"";
-    }else{
-        $template->class_next = 'class="disabled"';
-    }
-
-    if($page <= 1){
-        $template->class_previous = 'class="disabled"';
-    }else{
-        $previous_page = $page-1;
-        $template->previous = "href=\"{$template->default["url"]}page/{$previous_page}\"";
-    }
+    $template->pages = pagination(12,10,$db->table("users")->count(),$page);
 
     $template->default["page-title"] = $template->default["title"]." | $language->home";
 
