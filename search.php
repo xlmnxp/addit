@@ -23,17 +23,29 @@
     $nPOST->search = htmlspecialchars($nPOST->search, ENT_QUOTES, 'UTF-8');
     $nPOST->sex = htmlspecialchars($nPOST->sex, ENT_QUOTES, 'UTF-8');
 
+    if(!($nPOST->sex == -1 OR $nPOST->sex == 0 OR $nPOST->sex == 1)){
+        $nPOST->sex = -1;
+    }
     $template->search["value"] = $nPOST->search;
     $template->search["sex"] = $nPOST->sex;
     $search = $template->search;
 
     $page = (isset($_GET["page"])? $_GET["page"]:1);
-    $users_query = $db->table("users")
-        ->where('(username','LIKE','%'.$nPOST->search.'%')
-        ->orWhere('fullname','LIKE','%'.$nPOST->search.'%')
-        ->orWhere('message','LIKE','%'.$nPOST->search.'%\') AND \'\' = \'')
-        ->where('sex',$nPOST->sex)
-        ->limit(12*($page-1),12)->select();
+    $users_query;
+
+    if($nPOST->sex != -1){
+        $users_query = $db->table("users")
+            ->where('(username','LIKE','%'.$nPOST->search.'%')
+            ->orWhere('fullname','LIKE','%'.$nPOST->search.'%')
+            ->orWhere('message','LIKE','%'.$nPOST->search.'%\') AND \'\' = \'')
+            ->where('sex',$nPOST->sex);
+    }else{
+        $users_query = $db->table("users")
+            ->where('username','LIKE','%'.$nPOST->search.'%')
+            ->orWhere('fullname','LIKE','%'.$nPOST->search.'%')
+            ->orWhere('message','LIKE','%'.$nPOST->search.'%');
+    }
+    $users_query = $users_query->limit(12*($page-1),12)->select();
 
     $users = Array();
     foreach ($users_query as $user){
