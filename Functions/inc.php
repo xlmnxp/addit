@@ -17,7 +17,6 @@
 
         $numberOfPages = $pages;
         $resultsPerPage = $results;
-        $startResults = ($page - 1) * $resultsPerPage;
         $numberOfRows = $total;
         $totalPages = ceil($numberOfRows / $resultsPerPage);
 
@@ -59,7 +58,7 @@
                 array_push($result,array("page" => ($i), "name" => $i, "active" => false ));
             }
         }
-        
+
         if ($page < $totalPages){
             array_push($result,array("page" => ($page + 1), "name" => ($language->next), "active" => false ));
         }

@@ -30,9 +30,10 @@
     $template->search["sex"] = $nPOST->sex;
     $search = $template->search;
 
-    $page = (isset($_GET["page"])? $_GET["page"]:1);
-    $users_query;
+    $page = isset($_GET["page"]) ? $_GET["page"] : 1;
+    $page = $page <= 0 ? 1 : $page;
 
+    $users_query;
     if($nPOST->sex != -1){
         $users_query = $db->table("users")
             ->where('(username','LIKE','%'.$nPOST->search.'%')
@@ -62,7 +63,23 @@
     }
 
     $template->users    = $users;
-    $template->pages = pagination(12,10,$db->table("users")->count(),$page);
+
+    $search_count;
+    if($nPOST->sex != -1){
+        $search_count = $db->table("users")
+            ->where('(username','LIKE','%'.$nPOST->search.'%')
+            ->orWhere('fullname','LIKE','%'.$nPOST->search.'%')
+            ->orWhere('message','LIKE','%'.$nPOST->search.'%\') AND \'\' = \'')
+            ->where('sex',$nPOST->sex);
+    }else{
+        $search_count = $db->table("users")
+            ->where('username','LIKE','%'.$nPOST->search.'%')
+            ->orWhere('fullname','LIKE','%'.$nPOST->search.'%')
+            ->orWhere('message','LIKE','%'.$nPOST->search.'%');
+    }
+
+    $search_count = $search_count->select(["id"])->count();
+    $template->pages = pagination(10,12,$search_count,$page);
 
     $template->default["page-title"] = $template->default["title"]." | $language->search";
 
