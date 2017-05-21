@@ -7,6 +7,7 @@
  */
 
     include_once ("global.php");
+    global $db,$template,$templateDirectory;
     $template->page = $language->home;
 
     $page = isset($_GET["page"]) ? $_GET["page"] : 1;
@@ -39,4 +40,3 @@
     $template->search_form = $search_form;
 
     $template->setFile($templateDirectory.'/home.tpl')->setLayout($templateDirectory.'/@main_layout.tpl')->render();
-?>

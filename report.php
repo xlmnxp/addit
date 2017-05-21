@@ -7,6 +7,8 @@
  */
 
     include_once ("global.php");
+    global $db,$template,$templateDirectory,$default;
+
     $user = $db->table("users")->where("id",(@$_GET['id'] ? @$_GET['id'] : 1))->select()[0];
     $template->page = $language->report;
 
@@ -37,4 +39,3 @@
     $template->search_form = $search_form;
 
     $template->setFile($templateDirectory.'/report.tpl')->setLayout($templateDirectory.'/@main_layout.tpl')->render();
-?>

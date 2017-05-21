@@ -7,6 +7,8 @@
  */
 
     include_once ("global.php");
+    global $db,$template,$templateDirectory,$default;
+
     $template->page = $language->search;
     $nPOST = json_decode(json_encode($_POST));
     if((!isset($_POST['search']) || !isset($_POST['sex']) || !isset($_POST['category']) || !isset($_POST['country']))){
@@ -33,15 +35,15 @@
     $page = isset($_GET["page"]) ? $_GET["page"] : 1;
     $page = $page <= 0 ? 1 : $page;
 
-    $users_query;
+    $users_query = $db;
     if($nPOST->sex != -1){
-        $users_query = $db->table("users")
+        $users_query = $users_query->table("users")
             ->where('(username','LIKE','%'.$nPOST->search.'%')
             ->orWhere('fullname','LIKE','%'.$nPOST->search.'%')
             ->orWhere('message','LIKE','%'.$nPOST->search.'%\') AND \'\' = \'')
             ->where('sex',$nPOST->sex);
     }else{
-        $users_query = $db->table("users")
+        $users_query = $users_query->table("users")
             ->where('username','LIKE','%'.$nPOST->search.'%')
             ->orWhere('fullname','LIKE','%'.$nPOST->search.'%')
             ->orWhere('message','LIKE','%'.$nPOST->search.'%');
@@ -64,7 +66,6 @@
 
     $template->users    = $users;
 
-    $search_count;
     if($nPOST->sex != -1){
         $search_count = $db->table("users")
             ->where('(username','LIKE','%'.$nPOST->search.'%')

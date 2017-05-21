@@ -7,6 +7,8 @@
  */
 
     include_once ("global.php");
+    global $db,$template,$templateDirectory,$default;
+
     $template->page = $language->new_user;
 
     if(isset($_POST["submit"])){
@@ -72,4 +74,3 @@
     $template->search_form = $search_form;
 
     $template->setFile($templateDirectory.'/register.tpl')->setLayout($templateDirectory.'/@main_layout.tpl')->render();
-?>
