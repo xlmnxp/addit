@@ -28,12 +28,12 @@
     $template->default["url"] = "http://".$_SERVER['SERVER_NAME']."/addit/";
 
     if(isset($_POST["language"])){
-        setcookie('language', htmlspecialchars($_POST["language"]), time() + (86400 * 360), "/"); // 86400 = 1 day
+        setcookie('language', ($_POST["language"]), time() + (86400 * 360), "/"); // 86400 = 1 day
         header('Location: '.$_SERVER['REQUEST_URI']);
     }
 
     if(isset($_COOKIE["language"])){
-        setlanguage($_COOKIE["language"]);
+        setlanguage(htmlspecialchars($_COOKIE["language"]));
     }else{
         setlanguage("default");
     }
@@ -41,6 +41,7 @@
     $languageFile = "Languages/".$languageName.".json";
     $language = json_decode(file_get_contents($languageFile));
     if(!$language){
+        setcookie('language', setlanguage("default"), time() + (86400 * 360), "/"); // 86400 = 1 day
         die("[Error] Language File: ".$languageFile);
     }
 

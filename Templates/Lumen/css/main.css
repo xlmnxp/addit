@@ -1,0 +1,43 @@
+@import url("https://fonts.googleapis.com/css?family=Cairo");
+*{
+    font-family: 'Cairo', serif, FontAwesome !important;
+}
+
+body { padding-top: 70px; }
+.ovtxt{
+    overflow:hidden;
+    white-space:nowrap;
+    text-overflow:ellipsis;
+    width:100%;
+    display:block;
+}
+.avatar{
+    display: block;
+    height: 250px !important;
+    width: 250px !important;
+    border-radius: 35px;
+}
+.nbtn{
+    color: white !important;
+}
+.nbtn:hover,.nbtn:focus,.active .nbtn{
+    color: darkgrey !important;
+}
+.fullwidth{
+    width: 100% !important;
+    margin: 3px;
+}
+
+#search select,#register select{
+    padding: 0px;
+}
+
+#language_select select{
+    padding: 0px;
+    padding-left: 15px;
+    padding-right: 15px;
+}
+
+.error-template {padding: 40px 15px;text-align: center;}
+.error-actions {margin-top:15px;margin-bottom:15px;}
+.error-actions .btn { margin-right:10px; }

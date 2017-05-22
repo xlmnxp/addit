@@ -11,7 +11,7 @@
 
     $user = $db->table("users")->where("id",(@$_GET['id'] ? @$_GET['id'] : 1))->select()[0];
     $template->page = $language->report;
-
+    $template->user = $user;
     if(isset($_POST["submit"])) {
         $errors= array();
         if (strlen($_POST["message"]) < 250) {

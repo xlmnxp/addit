@@ -81,7 +81,7 @@
     function language_select(){
         global $db;
         $_default = $db->table("settings")->where("name","language")->select(["id","value"])[0]->value;
-        $form  = "<form class='navbar-form pull-left' method='post' id='language_select'>";
+        $form  = "<form class='navbar-form' method='post' id='language_select'>";
         $form .= "<select class='form-control' onchange='this.parentNode.submit()' name='language'>";
         foreach (glob("Languages/*.json") as $filename) {
             $file = json_decode(file_get_contents($filename));

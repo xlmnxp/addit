@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: localhost
--- Generation Time: May 01, 2017 at 12:16 AM
+-- Generation Time: May 22, 2017 at 05:36 PM
 -- Server version: 10.1.21-MariaDB
 -- PHP Version: 5.6.30
 
@@ -84,11 +84,11 @@ CREATE TABLE `settings` (
 --
 
 INSERT INTO `settings` (`id`, `name`, `value`) VALUES
-(1, 'title', 'Addit 0.0.7'),
-(2, 'template', 'Default'),
+(1, 'title', 'Addit (سكربت إضافات سناب شات)'),
+(2, 'template', 'Lumen'),
 (3, 'url', 'http://localhost/addit/'),
 (4, 'language', 'arabic'),
-(5, 'report_message', 'Hello');
+(5, 'report_message', 'ممنوع كود الـPHP');
 
 -- --------------------------------------------------------
 
