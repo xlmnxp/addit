@@ -11,12 +11,7 @@
     $settings = $db->table("settings")->select()->results();
     $templateDirectory = $db->table("settings")->where("name","=","template")->select(["id","value"])[0]->value;
     $templateDirectory = "Templates/".$templateDirectory;
-    $languageName = $db->table("settings")->where("name","=","language")->select(["id","value"])[0]->value;
-    $languageFile = "Languages/".$languageName.".json";
-    $language = json_decode(file_get_contents($languageFile));
-    if(!$language){
-        die("[Error] Language File: ".$languageFile);
-    }
+    $languageName = '';
 
     $template = new Template();
     $requireDefault = "";
@@ -32,13 +27,31 @@
 
     $template->default["url"] = "http://".$_SERVER['SERVER_NAME']."/addit/";
 
-    $template->rtl = $language->rtl;
+    if(isset($_POST["language"])){
+        setcookie('language', htmlspecialchars($_POST["language"]), time() + (86400 * 360), "/"); // 86400 = 1 day
+        header('Location: '.$_SERVER['REQUEST_URI']);
+    }
+
+    if(isset($_COOKIE["language"])){
+        setlanguage($_COOKIE["language"]);
+    }else{
+        setlanguage("default");
+    }
+
+    $languageFile = "Languages/".$languageName.".json";
+    $language = json_decode(file_get_contents($languageFile));
+    if(!$language){
+        die("[Error] Language File: ".$languageFile);
+    }
+
+    $template->rtl              = $language->rtl;
     $template->language         = $language;
     $template->language_file    = $languageFile;
     $template->template_dir     = $template->default["url"].$templateDirectory;
     $template->lang             = $language;
     $template->addthis_pubid    = "ra-58e0111c4be4cfd4";
     $template->disqus_name      = "addit-1";
+    $template->language_select = language_select();
 
     $template->search           = array(
                                     "value"    =>  "",
@@ -82,4 +95,3 @@
         ';
 
     global $template, $db, $language;
-?>

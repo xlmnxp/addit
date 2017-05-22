@@ -65,4 +65,35 @@
 
         return $result;
     }
-?>
+
+    function setlanguage($to){
+        global $db,$languageName;
+        if($to == "default"){
+            $_default = $db->table("settings")->where("name","language")->select(["id","value"])[0]->value;
+            $languageName = $_default;
+            return $_default;
+        }else{
+            $languageName = $to;
+            return $to;
+        }
+    }
+
+    function language_select(){
+        global $db;
+        $_default = $db->table("settings")->where("name","language")->select(["id","value"])[0]->value;
+        $form  = "<form class='navbar-form pull-left' method='post' id='language_select'>";
+        $form .= "<select class='form-control' onchange='this.parentNode.submit()' name='language'>";
+        foreach (glob("Languages/*.json") as $filename) {
+            $file = json_decode(file_get_contents($filename));
+            preg_match('/Languages\/(.*)\.json/', $filename, $matches,PREG_OFFSET_CAPTURE);
+            if(isset($_COOKIE["language"])){
+                $selected = $_COOKIE["language"] == $matches[1][0] ? 'selected ' : ' ';
+            }else{
+                $selected = $_default == $matches[1][0] ? 'selected ' : ' ';
+            }
+            $form .= "<option {$selected}value='{$matches[1][0]}'>{$file->language_name}</option>";
+        }
+        $form .= "</select>";
+        $form .= "</form>";
+        return $form;
+    }
