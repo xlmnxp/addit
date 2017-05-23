@@ -686,7 +686,20 @@ class Database implements \IteratorAggregate, \ArrayAccess
     	return $this;
     }
 
-	/**
+    /**
+     * add limit rows to query
+     * @param int $from
+     * @param int $to
+     * @return $this
+     */
+    public function orderby($column = "id",$order = 'DESC')
+    {
+        $this->_query .= " ORDER BY `$column` {$order}";
+        return $this;
+    }
+
+
+    /**
 	 * @param $offset
 	 * @return $this
 	 */

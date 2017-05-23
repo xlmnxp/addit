@@ -48,7 +48,7 @@
             ->orWhere('fullname','LIKE','%'.$nPOST->search.'%')
             ->orWhere('message','LIKE','%'.$nPOST->search.'%');
     }
-    $users_query = $users_query->limit(12*($page-1),12)->select();
+    $users_query = $users_query->orderby()->limit(12*($page-1),12)->select();
 
     $users = Array();
     foreach ($users_query as $user){
@@ -79,7 +79,7 @@
             ->orWhere('message','LIKE','%'.$nPOST->search.'%');
     }
 
-    $search_count = $search_count->select(["id"])->count();
+    $search_count = $search_count->orderby()->select(["id"])->count();
     $template->pages = pagination(10,12,$search_count,$page);
 
     $template->default["page-title"] = $template->default["title"]." | $language->search";

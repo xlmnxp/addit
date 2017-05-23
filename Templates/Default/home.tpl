@@ -39,7 +39,7 @@
                     <div class="row">
                         <div class="col-sm-12">
                             <a class="btn btn-primary fullwidth" href="snapchat://add/{$user['username']}" role="button" target="_blank">
-                                <i class="fa fa-snapchat"></i>&nbsp;{$lang->follow}
+                                <i class="fa fa-snapchat-ghost"></i>&nbsp;{$lang->follow}
                             </a>
                         </div>
                     </div>
