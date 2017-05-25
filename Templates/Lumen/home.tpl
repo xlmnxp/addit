@@ -12,34 +12,34 @@
                 <img class="avatar" src="{if $user['avatar'] != $default["url"]}{$user['avatar']}{else}https://feelinsonice-hrd.appspot.com/web/deeplink/snapcode?username={$user['username']}&type=PNG{/if}" alt="{$user['username']}"/>
             </a>
             <div class="caption">
-                <a href="{$user["url"]}"><h3 class="ovtxt"><i class="fa fa-id-card"></i>&nbsp;{$user['fullname']}</h3></a>
-                <h5 class="ovtxt"><i class="fa fa-user"></i>&nbsp;{$user['username']}</h5>
-                <p class="ovtxt"><i class="fa fa-envelope"></i>&nbsp;{$user['message']}</p>
+                <a href="{$user["url"]}"><h3 class="ovtxt"><i class="ion ion-card"></i>&nbsp;{$user['fullname']}</h3></a>
+                <h5 class="ovtxt"><i class="ion ion-ios-person"></i>&nbsp;{$user['username']}</h5>
+                <p class="ovtxt"><i class="ion ion-ios-paper"></i>&nbsp;{$user['message']}</p>
                 <div class="row">
                     <div class="col-sm-6">
-                        <p class="ovtxt"><i class="fa fa-venus-mars"></i>&nbsp;{$user['sex']}</p>
+                        <p class="ovtxt"><i class="ion ion-man"></i>&nbsp;{$user['sex']}</p>
                     </div>
                     <div class="col-sm-6">
-                        <p class="ovtxt"><i class="fa fa-comment"></i>&nbsp;<a href="{$user["url"]}#disqus_thread">{$lang->comments}</a></p>
+                        <p class="ovtxt"><i class="ion ion-ios-email"></i>&nbsp;<a href="{$user["url"]}#disqus_thread">{$lang->comments}</a></p>
                     </div>
                 </div>
                 <p>
                     <div class="row">
                         <div class="col-sm-6">
                             <a class="btn btn-warning fullwidth btn-copy" role="button" data-clipboard-text="{$user["username"]}">
-                                <i class="fa fa-copy"></i>&nbsp;{$lang->copy_username}
+                                <i class="ion ion-ios-copy"></i>&nbsp;{$lang->copy_username}
                             </a>
                         </div>
                         <div class="col-sm-6">
                             <a class="btn btn-danger fullwidth" href="{$default["url"]}report/{$user["id"]}" role="button">
-                                <i class="fa fa-flag"></i>&nbsp;{$lang->report}
+                                <i class="ion ion-ios-flag"></i>&nbsp;{$lang->report}
                             </a>
                         </div>
                     </div>
                     <div class="row">
                         <div class="col-sm-12">
                             <a class="btn btn-primary fullwidth" href="snapchat://add/{$user['username']}" role="button" target="_blank">
-                                <i class="fa fa-snapchat-ghost"></i>&nbsp;{$lang->follow}
+                                <i class="ion ion-social-snapchat"></i>&nbsp;{$lang->follow}
                             </a>
                         </div>
                     </div>

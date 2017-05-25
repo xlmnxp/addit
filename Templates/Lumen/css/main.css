@@ -38,6 +38,10 @@ body { padding-top: 70px; }
     padding-right: 15px;
 }
 
+.ion:before{
+    font-size: 19px;
+}
+
 .error-template {padding: 40px 15px;text-align: center;}
 .error-actions {margin-top:15px;margin-bottom:15px;}
 .error-actions .btn { margin-right:10px; }

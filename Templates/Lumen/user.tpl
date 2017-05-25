@@ -15,19 +15,19 @@
             <div >
                 <div class="col-sm-6">
                     <a class="btn btn-warning fullwidth btn-copy" role="button" data-clipboard-text="{$user["username"]}">
-                        <i class="fa fa-copy"></i>&nbsp;{$lang->copy_username}
+                        <i class="ion ion-ios-copy"></i>&nbsp;{$lang->copy_username}
                     </a>
                 </div>
                 <div class="col-sm-6">
                     <a class="btn btn-danger fullwidth" href="{$default["url"]}report/{$user["id"]}" role="button">
-                        <i class="fa fa-flag"></i>&nbsp;{$lang->report}
+                        <i class="ion ion-ios-flag"></i>&nbsp;{$lang->report}
                     </a>
                 </div>
             </div>
             <div>
                 <div class="col-sm-12">
                     <a class="btn btn-primary fullwidth" href="snapchat://add/{$user['username']}" role="button" target="_blank">
-                        <i class="fa fa-snapchat-ghost"></i>&nbsp;{$lang->follow}
+                        <i class="ion ion-social-snapchat"></i>&nbsp;{$lang->follow}
                     </a>
                 </div>
             </div>
@@ -35,14 +35,14 @@
     </div>
     <div class="col-md-9 caption">
 
-        <a href="{$user["url"]}"><h3 style="padding: 5px;" class="ovtxt"><i class="fa fa-id-card"></i>&nbsp;{$user["fullname"]}</h3></a>
-        <h5 class="ovtxt"><strong><i class="fa fa-user"></i>&nbsp;{$lang->username} </strong><br/>
+        <a href="{$user["url"]}"><h3 style="padding: 5px;" class="ovtxt"><i class="ion ion-card"></i>&nbsp;{$user["fullname"]}</h3></a>
+        <h5 class="ovtxt"><strong><i class="ion ion-ios-person"></i>&nbsp;{$lang->username} </strong><br/>
             {$user["username"]}</h5>
         <hr/>
-        <p><strong><i class="fa fa-envelope"></i>&nbsp;{$lang->message}<br/> </strong>
+        <p><strong><i class="ion ion-ios-paper"></i>&nbsp;{$lang->message}<br/> </strong>
             {$user["message"]}</p>
         <hr/>
-        <p class="ovtxt"><strong><i class="fa fa-venus-mars"></i>&nbsp;{$lang->sex} </strong>
+        <p class="ovtxt"><strong><i class="ion ion-man"></i>&nbsp;{$lang->sex} </strong>
             <br/> {$user["sex"]}</p>
         <hr/>
         <p>
