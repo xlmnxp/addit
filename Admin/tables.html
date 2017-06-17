@@ -92,102 +92,36 @@
 		<div class="row">
 			<ol class="breadcrumb">
 				<li><a href="#"><svg class="glyph stroked home"><use xlink:href="#stroked-home"></use></svg></a></li>
-				<li class="active">Icons</li>
+				<li class="active">Users</li>
 			</ol>
 		</div><!--/.row-->
 		
 		<div class="row">
 			<div class="col-lg-12">
-				<h1 class="page-header">Tables</h1>
+				<h1 class="page-header">Users</h1>
 			</div>
 		</div><!--/.row-->
 				
 		
-		<div class="row">
-			<div class="col-lg-12">
-				<div class="panel panel-default">
-					<div class="panel-heading">Advanced Table</div>
-					<div class="panel-body">
-						<table data-toggle="table" data-url="tables/data1.json"  data-show-refresh="true" data-show-toggle="true" data-show-columns="true" data-search="true" data-select-item-name="toolbar1" data-pagination="true" data-sort-name="name" data-sort-order="desc">
-						    <thead>
-						    <tr>
-						        <th data-field="state" data-checkbox="true" >Item ID</th>
-						        <th data-field="id" data-sortable="true">Item ID</th>
-						        <th data-field="name"  data-sortable="true">Item Name</th>
-						        <th data-field="price" data-sortable="true">Item Price</th>
-						    </tr>
-						    </thead>
-						</table>
-					</div>
+		<div class="col-lg-12">
+			<div class="panel panel-default">
+				<div class="panel-heading">Users</div>
+				<div class="panel-body">
+					<table id="users" data-toggle="table" data-url="tables/users.php"  data-show-refresh="true" data-show-toggle="false" data-show-columns="false" data-search="true" data-select-item-name="toolbar1" data-pagination="true" data-sort-name="name" data-sort-order="desc">
+						<thead>
+						<tr>
+							<th data-field="id" data-sortable="true">ID</th>
+							<th data-field="avatar">Avatar</th>
+							<th data-field="username"  data-sortable="true">User Name</th>
+							<th data-field="fullname" data-sortable="true">Full Name</th>
+							<th>Controls</th>
+						</tr>
+						</thead>
+					</table>
 				</div>
 			</div>
-		</div><!--/.row-->	
-		<div class="row">
-			<div class="col-md-6">
-				<div class="panel panel-default">
-					<div class="panel-heading">Basic Table</div>
-					<div class="panel-body">
-						<table data-toggle="table" data-url="tables/data2.json" >
-						    <thead>
-						    <tr>
-						        <th data-field="id" data-align="right">Item ID</th>
-						        <th data-field="name">Item Name</th>
-						        <th data-field="price">Item Price</th>
-						    </tr>
-						    </thead>
-						</table>
-					</div>
-				</div>
-			</div>
-			<div class="col-md-6">
-				<div class="panel panel-default">
-					<div class="panel-heading">Styled Table</div>
-					<div class="panel-body">
-						<table data-toggle="table" id="table-style" data-url="tables/data2.json" data-row-style="rowStyle">
-						    <thead>
-						    <tr>
-						        <th data-field="id" data-align="right" >Item ID</th>
-						        <th data-field="name" >Item Name</th>
-						        <th data-field="price" >Item Price</th>
-						    </tr>
-						    </thead>
-						</table>
-						<script>
-						    $(function () {
-						        $('#hover, #striped, #condensed').click(function () {
-						            var classes = 'table';
-						
-						            if ($('#hover').prop('checked')) {
-						                classes += ' table-hover';
-						            }
-						            if ($('#condensed').prop('checked')) {
-						                classes += ' table-condensed';
-						            }
-						            $('#table-style').bootstrapTable('destroy')
-						                .bootstrapTable({
-						                    classes: classes,
-						                    striped: $('#striped').prop('checked')
-						                });
-						        });
-						    });
-						
-						    function rowStyle(row, index) {
-						        var classes = ['active', 'success', 'info', 'warning', 'danger'];
-						
-						        if (index % 2 === 0 && index / 2 < classes.length) {
-						            return {
-						                classes: classes[index / 2]
-						            };
-						        }
-						        return {};
-						    }
-						</script>
-					</div>
-				</div>
-			</div>
-		</div><!--/.row-->	
-		
-		
+		</div>
+
 	</div><!--/.main-->
 
 	<script src="js/jquery-1.11.1.min.js"></script>
@@ -212,7 +146,21 @@
 		$(window).on('resize', function () {
 		  if ($(window).width() <= 767) $('#sidebar-collapse').collapse('hide')
 		})
-	</script>	
+	</script>
+
+	<script>
+        var sTimer = setInterval(function (){
+            document.querySelectorAll("#users tbody tr").forEach(function (element,index){
+                var el = element.querySelectorAll('td');
+                if(el[1].innerText != ''){
+                    el[1].innerText = el[1].innerText.indexOf('http') < 0 ? 'http://localhost/addit/' + el[1].innerText : el[1].innerText;
+                    el[1].innerHTML = '<center><img class="img-circle" height="50" width="50" src="'+el[1].innerText+'"/></center>';
+                }
+                el[el.length-1].innerHTML = '<a class="btn btn-primary" style="margin-left: 5px;margin-right: 5px;" href="edit?id='+el[0].innerText+'">Edit</a><a class="btn btn-danger" href="delete?id='+el[0].innerText+'">Delete</a><a class="btn btn-warning" style="margin-left: 5px;margin-right: 5px;" href="https://www.snapchat.com/add/'+el[2].innerText+'" target="_blank">Snapchat</a>';
+            });
+        },500);
+	</script>
+
 </body>
 
 </html>
