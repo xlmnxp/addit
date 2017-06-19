@@ -5,7 +5,8 @@
 
 {$search_form}
 
-<form method="post">
+<form class="col-sm-12" method="post">
+    {$validate->key}
     {if @$errors}
         <div class="alert alert-danger" role="alert">
             {foreach @$errors as $error}

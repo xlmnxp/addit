@@ -14,7 +14,12 @@
     $template->user = $user;
     if(isset($_POST["submit"])) {
         $errors= array();
-        if (strlen($_POST["message"]) < 250) {
+
+        if(!isset($_POST['form_key']) || !$form->validate()){
+            $errors[]= $language->error_validate_key;
+        }
+
+        if (strlen($_POST["message"]) < 250 && empty($errors)) {
             $db->table("reports")->insert([
                 "id" => null,
                 "userid" => $user->id,

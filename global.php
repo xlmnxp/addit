@@ -5,13 +5,15 @@
  * Date: 3/18/17
  * Time: 8:08 PM
  */
+
     include_once ('Functions/inc.php');
     include_once ('Functions/Template.php');
 
-    $settings = $db->table("settings")->select()->results();
-    $templateDirectory = $db->table("settings")->where("name","=","template")->select(["id","value"])[0]->value;
-    $templateDirectory = "Templates/".$templateDirectory;
-    $languageName = '';
+    $settings           = $db->table("settings")->select()->results();
+    $form               = new formValidate();
+    $templateDirectory  = $db->table("settings")->where("name","=","template")->select(["id","value"])[0]->value;
+    $templateDirectory  = "Templates/".$templateDirectory;
+    $languageName       = '';
 
     $template = new Template();
     $requireDefault = "";
@@ -59,6 +61,11 @@
                                     "sex"       => -1
                                     );
 
+    $template->validate         = json_decode(json_encode(array(
+                                    "key" => $form->outputKey()
+                                    )));
+
+    $validate                   = $template->validate;
     $search                     = $template->search;
     $lang                       = $language;
 

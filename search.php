@@ -12,14 +12,14 @@
     $template->page = $language->search;
     $nPOST = json_decode(json_encode($_POST));
     if((!isset($_POST['search']) || !isset($_POST['sex']) || !isset($_POST['category']) || !isset($_POST['country']))){
-        if(!isset($_COOKIE['search'])){
+        if(!isset($_SESSION['search'])){
             header('location: '.$template->default['url']);
         }else{
-            $nPOST = json_decode($_COOKIE['search']);
+            $nPOST = json_decode($_SESSION['search']);
         }
     }else{
         if(isset($_POST)) {
-            setcookie('search', json_encode($_POST), time() + (86400 * 7), "/"); // 86400 = 1 day
+            $_SESSION['search'] = json_encode($_POST);
         }
     }
     $nPOST->search = htmlspecialchars($nPOST->search, ENT_QUOTES, 'UTF-8');

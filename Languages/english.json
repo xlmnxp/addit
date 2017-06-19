@@ -69,5 +69,10 @@
   "kb": "kb",
   "mb": "mb",
   "gb": "gb",
-  "tb": "tb"
+  "tb": "tb",
+
+  "_comments" : "// global",
+
+  "error_validate_key": "Invalid verification key"
+
 }

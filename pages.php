@@ -28,6 +28,7 @@
             <li class='active'>{\$page}</li>
         </ol>
         {\$search_form}
-        "
-        .$queryFile->template)->setLayout($templateDirectory.'/@main_layout.tpl')->render(true);
+        <div class=\"col-sm-12\">"
+        .$queryFile->template
+        ."</div>")->setLayout($templateDirectory.'/@main_layout.tpl')->render(true);
 ?>

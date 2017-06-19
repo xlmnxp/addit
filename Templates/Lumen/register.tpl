@@ -24,7 +24,7 @@
         <div class="alert alert-success" role="alert"><strong>{$lang->success}!</strong> {$lang->success_register}</div>
     {/if}
     <fieldset>
-
+            {$validate->key}
             <!-- Prepended text-->
             <div class="form-group">
                 <label class="col-md-4 control-label" for="username">{$lang->username}</label>

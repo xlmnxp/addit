@@ -156,7 +156,7 @@
                     el[1].innerText = el[1].innerText.indexOf('http') < 0 ? 'http://localhost/addit/' + el[1].innerText : el[1].innerText;
                     el[1].innerHTML = '<center><img class="img-circle" height="50" width="50" src="'+el[1].innerText+'"/></center>';
                 }
-                el[el.length-1].innerHTML = '<a class="btn btn-primary" style="margin-left: 5px;margin-right: 5px;" href="edit?id='+el[0].innerText+'">Edit</a><a class="btn btn-danger" href="delete?id='+el[0].innerText+'">Delete</a><a class="btn btn-warning" style="margin-left: 5px;margin-right: 5px;" href="https://www.snapchat.com/add/'+el[2].innerText+'" target="_blank">Snapchat</a>';
+                el[el.length-1].innerHTML = '<a class="btn btn-primary" style="margin: 2px;" href="edit?id='+el[0].innerText+'">Edit</a><a class="btn btn-danger" style="margin: 2px;" href="delete?id='+el[0].innerText+'">Delete</a><a class="btn btn-warning" style="margin: 2px;" href="https://www.snapchat.com/add/'+el[2].innerText+'" target="_blank">Snapchat</a>';
             });
         },500);
 	</script>

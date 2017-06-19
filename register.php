@@ -19,8 +19,12 @@
             $file_tmp   = $file['tmp_name'];
             $file_type  = $file['type'];
             $file_ext=strtolower(end(explode('.',$file['name'])));
-            $dir = "Uploads/".round(microtime(true)).".".$file_ext;
+            $dir = "Uploads/".uniqid("img_").".".$file_ext;
             $expensions= array("jpeg","jpg","png");
+
+            if(!isset($_POST['form_key']) || !$form->validate()){
+                $errors[]= $language->error_validate_key;
+            }
 
             if(in_array($file_ext,$expensions)=== false){
                 $errors[]= $language->help_avatar;
