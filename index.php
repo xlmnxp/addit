@@ -14,7 +14,7 @@
     $page = $page <= 0 ? 1 : $page;
 
 
-    $users_query = $db->table("users")->orderby()->limit(12*($page-1),12)->select();
+    $users_query = $db->table("users")->orderBy('id','desc')->limit(12*($page-1),12)->select();
     $users = Array();
     foreach ($users_query as $user){
         array_push($users, array(

@@ -8,8 +8,9 @@
 
     session_start();
 
-    include_once('Database.php');
-    use PHPtricks\Database\Database;
+    include_once('vendor/autoload.php');
+    include_once('phptricksORM/Database.php');
+    use PHPtricks\Orm\Database;
     $db = Database::connect();
 
     function pagination($pages,$results,$total,$page){

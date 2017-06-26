@@ -35,20 +35,27 @@
     $page = isset($_GET["page"]) ? $_GET["page"] : 1;
     $page = $page <= 0 ? 1 : $page;
 
+    $userSearch = [
+        [
+            'username', 'LIKE', '%'.$nPOST->search.'%'
+        ],
+        'OR' => [
+            'message', 'LIKE', '%'.$nPOST->search.'%'
+        ],
+        'OR' => [
+            'fullname', 'LIKE', '%'.$nPOST->search.'%'
+        ]
+    ];
+
     $users_query = $db;
     if($nPOST->sex != -1){
-        $users_query = $users_query->table("users")
-            ->where('(username','LIKE','%'.$nPOST->search.'%')
-            ->orWhere('fullname','LIKE','%'.$nPOST->search.'%')
-            ->orWhere('message','LIKE','%'.$nPOST->search.'%\') AND \'\' = \'')
-            ->where('sex',$nPOST->sex);
+        $users_query = $db->table("users")
+            ->where('sex',$nPOST->sex)->parseWhere($userSearch);
     }else{
-        $users_query = $users_query->table("users")
-            ->where('username','LIKE','%'.$nPOST->search.'%')
-            ->orWhere('fullname','LIKE','%'.$nPOST->search.'%')
-            ->orWhere('message','LIKE','%'.$nPOST->search.'%');
+        $users_query = $db->table("users")
+            ->parseWhere($userSearch);
     }
-    $users_query = $users_query->orderby()->limit(12*($page-1),12)->select();
+    $users_query = $users_query->orderBy('id','desc')->limit(12*($page-1),12)->select();
 
     $users = Array();
     foreach ($users_query as $user){
@@ -68,18 +75,13 @@
 
     if($nPOST->sex != -1){
         $search_count = $db->table("users")
-            ->where('(username','LIKE','%'.$nPOST->search.'%')
-            ->orWhere('fullname','LIKE','%'.$nPOST->search.'%')
-            ->orWhere('message','LIKE','%'.$nPOST->search.'%\') AND \'\' = \'')
-            ->where('sex',$nPOST->sex);
+            ->where('sex',$nPOST->sex)->parseWhere($userSearch);
     }else{
         $search_count = $db->table("users")
-            ->where('username','LIKE','%'.$nPOST->search.'%')
-            ->orWhere('fullname','LIKE','%'.$nPOST->search.'%')
-            ->orWhere('message','LIKE','%'.$nPOST->search.'%');
+            ->parseWhere($userSearch);
     }
 
-    $search_count = $search_count->orderby()->select(["id"])->count();
+    $search_count = $search_count->orderBy('id','desc')->select(["id"])->count();
     $template->pages = pagination(10,12,$search_count,$page);
 
     $template->default["page-title"] = $template->default["title"]." | $language->search";
