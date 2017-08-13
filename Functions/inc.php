@@ -102,6 +102,91 @@
         return $form;
     }
 
+    function getIp(){
+        $client  = @$_SERVER['HTTP_CLIENT_IP'];
+        $forward = @$_SERVER['HTTP_X_FORWARDED_FOR'];
+        $remote  = $_SERVER['REMOTE_ADDR'];
+
+        if(filter_var($client, FILTER_VALIDATE_IP))
+        {
+            $ip = $client;
+        }
+        elseif(filter_var($forward, FILTER_VALIDATE_IP))
+        {
+            $ip = $forward;
+        }
+        else
+        {
+            $ip = $remote;
+        }
+
+        return $ip;
+    }
+
+    /**
+     * update Statistics
+     */
+    function updateStatistics(){
+        global $db;
+        $day = date("Y-m-d");
+        $month = date("Y-m");
+        $year = date("Y");
+        $path = $_SERVER['REQUEST_URI'];
+
+        $getYear = $db->table("statistics")->where('name',$year)->select(['id','value']);
+        $getMonth = $db->table("statistics")->where('name',$month)->select(['id','value']);
+        $getDay = $db->table("statistics")->where('name',$day)->select(['id','value']);
+
+        if($getYear[0]){
+            $db->table("statistics")->where('id',$getYear[0]->id)->update([
+                'date' => date('Y-m-d H:i:s'),
+                'value' => ($getYear[0]->value || 0) + 1
+            ]);
+        }else{
+            $db->table("statistics")->insert([
+                'id' => null,
+                'date' => date('Y-m-d H:i:s'),
+                'name' => $year,
+                'value' => 1
+            ]);
+        }
+
+        if($getMonth[0]){
+            $db->table("statistics")->where('id',$getMonth[0]->id)->update([
+                'date' => date('Y-m-d H:i:s'),
+                'value' => ($getMonth[0]->value || 0) + 1
+            ]);
+        }else{
+            $db->table("statistics")->insert([
+                'id' => null,
+                'date' => date('Y-m-d H:i:s'),
+                'name' => $month,
+                'value' => 1
+            ]);
+        }
+
+        if($getDay[0]){
+            $db->table("statistics")->where('id',$getDay[0]->id)->update([
+                'date' => date('Y-m-d H:i:s'),
+                'value' => (@$getDay[0]->value || 0) + 1
+            ]);
+        }else{
+            $db->table("statistics")->insert([
+                'id' => null,
+                'date' => date('Y-m-d H:i:s'),
+                'name' => $day,
+                'value' => 1
+            ]);
+        }
+
+        $db->table("statistics")->insert([
+            'date' => date('Y-m-d H:i:s'),
+            'name' => date('Y-m-d H:i:s'),
+            'value' => $path,
+            'ip' => getIp()
+        ]);
+    }
+
     class formValidate
     {
         //Here we store the generated form key

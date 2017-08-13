@@ -8,6 +8,9 @@
 
     include_once ('Functions/inc.php');
     include_once ('Functions/Template.php');
+    global $db;
+
+    updateStatistics();
 
     $settings           = $db->table("settings")->select()->results();
     $form               = new formValidate();

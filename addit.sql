@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: localhost
--- Generation Time: May 22, 2017 at 05:36 PM
+-- Generation Time: Aug 13, 2017 at 06:31 PM
 -- Server version: 10.1.21-MariaDB
 -- PHP Version: 5.6.30
 
@@ -53,20 +53,6 @@ CREATE TABLE `reports` (
   `date` varchar(255) COLLATE utf8_unicode_ci NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
 
---
--- Dumping data for table `reports`
---
-
-INSERT INTO `reports` (`id`, `userid`, `message`, `date`) VALUES
-(1, 1, 'يسبب مشاكل', 'now()'),
-(2, 1, 'Hello', '2017-04-02 21:18:36'),
-(3, 1, 'dasdaHello', '2017-04-02 21:19:23'),
-(4, 1, 'Hello', '2017-04-02 21:20:32'),
-(5, 1, 'Hello', '2017-04-02 21:30:14'),
-(6, 1, 'HelloHelloHelloHelloHelloHelloHelloHelloHelloHelloHelloHelloHelloHelloHelloHelloHelloHelloHelloHelloHelloHelloHelloHelloHelloHelloHelloHelloHelloHelloHelloHelloHelloHelloHelloHelloHelloHelloHelloHelloHelloHelloHelloHelloHelloHelloHelloHelloHelloHelloHelloHelloHelloHelloHelloHelloHelloHelloHelloHelloHelloHelloHelloHelloHelloHelloHelloHelloHelloHelloHelloHelloHelloHelloHelloHelloHelloHelloHelloHelloHelloHelloHelloHelloHelloHelloHelloHelloHello', '2017-04-02 21:30:18'),
-(7, 1, 'Hello', '2017-04-02 21:30:57'),
-(8, 1, 'Hello', '2017-04-03 02:02:49');
-
 -- --------------------------------------------------------
 
 --
@@ -88,7 +74,23 @@ INSERT INTO `settings` (`id`, `name`, `value`) VALUES
 (2, 'template', 'Lumen'),
 (3, 'url', 'http://localhost/addit/'),
 (4, 'language', 'arabic'),
-(5, 'report_message', 'ممنوع كود الـPHP');
+(5, 'report_message', 'ممنوع كود الـPHP'),
+(6, 'cp_username', 'admin'),
+(7, 'cp_password', 'admin');
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `statistics`
+--
+
+CREATE TABLE `statistics` (
+  `id` int(11) NOT NULL,
+  `date` varchar(255) COLLATE utf8_unicode_ci NOT NULL,
+  `name` varchar(255) COLLATE utf8_unicode_ci NOT NULL,
+  `value` varchar(255) COLLATE utf8_unicode_ci NOT NULL,
+  `ip` varchar(255) COLLATE utf8_unicode_ci NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
 
 -- --------------------------------------------------------
 
@@ -128,7 +130,12 @@ INSERT INTO `users` (`id`, `username`, `fullname`, `avatar`, `message`, `sex`, `
 (15, 'xzx711', 'الصيعري', 'Uploads/c34ddcb570430eb7cbcd1692c76aa329.jpg', 'قويتشو', 0, '[{\"category\":\"5\",\"country\":\"5\"}]'),
 (16, 'xlmnxp3', 'sasdada', 'Uploads/1490826770.png', 'مرحبًا بكم :)', 0, '[{\"category\":\"2\",\"country\":\"3\"}]'),
 (17, 'asdsadasd', 'dsadasd', 'Uploads/1491162769.png', 'sadasdasdsa', 0, '[{\"category\":\"2\",\"country\":\"1\"}]'),
-(18, 'dasdassdasdasda', 'dasdasdasdasdas', 'Uploads/1491162787.png', 'dasdsadadasda', 1, '[{\"category\":\"1\",\"country\":\"2\"}]');
+(18, 'dasdassdasdasda', 'dasdasdasdasdas', 'Uploads/1491162787.png', 'dasdsadadasda', 1, '[{\"category\":\"1\",\"country\":\"2\"}]'),
+(19, 'Salem', 'salem', 'Uploads/1495541182.png', 'مرحبًا', 0, '[{\"category\":\"1\",\"country\":\"1\"}]'),
+(20, 'xlmnxp', 'Salem Yaslim', 'Uploads/1495543298.jpg', 'مربحًا بكم بحسابي الشخصي', 0, '[{\"category\":\"1\",\"country\":\"1\"}]'),
+(21, 'uuid()', 'uuid()', 'uuid()', 'uuid()', 0, 'uuid()'),
+(22, 'ramdan', 'رمضان كريم', 'Uploads/1497844663.png', 'رمضان كريم وكل عام وانتم بخير', 0, '[{\"category\":\"1\",\"country\":\"1\"}]'),
+(23, 'shms', 'شمس وقمر إخوه', 'Uploads/1497844806.png', 'TEST XSS \r\n&lt;?php echo &quot;ramdan kreem&quot;; ?&gt;', 0, '[{\"category\":\"1\",\"country\":\"1\"}]');
 
 --
 -- Indexes for dumped tables
@@ -155,6 +162,12 @@ ALTER TABLE `settings`
   ADD PRIMARY KEY (`id`);
 
 --
+-- Indexes for table `statistics`
+--
+ALTER TABLE `statistics`
+  ADD PRIMARY KEY (`id`);
+
+--
 -- Indexes for table `users`
 --
 ALTER TABLE `users`
@@ -173,17 +186,22 @@ ALTER TABLE `pages`
 -- AUTO_INCREMENT for table `reports`
 --
 ALTER TABLE `reports`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=9;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
 --
 -- AUTO_INCREMENT for table `settings`
 --
 ALTER TABLE `settings`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=8;
+--
+-- AUTO_INCREMENT for table `statistics`
+--
+ALTER TABLE `statistics`
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
 --
 -- AUTO_INCREMENT for table `users`
 --
 ALTER TABLE `users`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=19;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=24;
 --
 -- Constraints for dumped tables
 --
