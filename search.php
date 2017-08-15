@@ -39,7 +39,7 @@
         [
             'username', 'LIKE', '%'.$nPOST->search.'%'
         ],
-        'OR' => [
+        'Or' => [
             'message', 'LIKE', '%'.$nPOST->search.'%'
         ],
         'OR' => [
@@ -48,14 +48,17 @@
     ];
 
     $users_query = $db;
+
     if($nPOST->sex != -1){
-        $users_query = $db->table("users")
+        $users_query = $users_query->table("users")
             ->where('sex',$nPOST->sex)->parseWhere($userSearch);
     }else{
-        $users_query = $db->table("users")
-            ->parseWhere($userSearch);
+        $users_query = $users_query->table("users")
+            ->where('sex', "LIKE", '%%')->parseWhere($userSearch);
     }
-    $users_query = $users_query->orderBy('id','desc')->limit(12*($page-1),12)->select();
+
+    $users_query = $users_query->orderBy('`id`','DESC')->limit(12*($page-1),12)->select();
+
 
     $users = Array();
     foreach ($users_query as $user){
@@ -78,7 +81,7 @@
             ->where('sex',$nPOST->sex)->parseWhere($userSearch);
     }else{
         $search_count = $db->table("users")
-            ->parseWhere($userSearch);
+            ->where('sex', "LIKE", '%%')->parseWhere($userSearch);
     }
 
     $search_count = $search_count->orderBy('id','desc')->select(["id"])->count();
@@ -87,7 +90,7 @@
     $template->default["page-title"] = $template->default["title"]." | $language->search";
 
     $search_sex = "<option value=\"0\" ".($nPOST->sex==0?'selected':'').">{$language->male}</option>"
-                 ."<option value=\"1\" ".($nPOST->sex==1?'selected':'').">{$language->female}</option>";
+        ."<option value=\"1\" ".($nPOST->sex==1?'selected':'').">{$language->female}</option>";
     ob_start();
     eval ('?> '.$template->compile(file_get_contents($template->template_dir."/search_form.tpl"),true));
     $search_form = ob_get_clean();
