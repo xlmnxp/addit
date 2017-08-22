@@ -7,7 +7,7 @@
  */
 
     include_once ("global.php");
-    global $db,$template,$templateDirectory,$default;
+    global $db,$template,$templateDirectory,$default,$language;
 
     $user = $db->table("users")->where("id", @$_GET['id'])->select()[0];
     $template->page = $language->report;
@@ -23,7 +23,7 @@
             $errors[] = $language->message_length;
         }
 
-        if(!$user){
+        if(!isset($user)){
             $errors[] = $language->user_not_found;
         }
 
@@ -41,7 +41,7 @@
         }
     }
 
-    $template->default["page-title"] = $template->default["title"]." | $language->report ($user->username)";
+    $template->default["page-title"] = $template->default["title"]." | $language->report (". (isset($user) ? $user->username : $language->user_not_found) .")";
 
     ob_start();
     eval ('?> '.$template->compile(file_get_contents($template->template_dir."/search_form.tpl"),true));

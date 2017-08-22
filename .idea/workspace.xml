@@ -1,7 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="8458aa9b-747c-4bc6-8ad3-5992aecb43d7" name="Default" comment="" />
+    <list default="true" id="8458aa9b-747c-4bc6-8ad3-5992aecb43d7" name="Default" comment="">
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/report.php" afterPath="$PROJECT_DIR$/report.php" />
+    </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -28,8 +30,8 @@
       <file leaf-file-name="report.php" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/report.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="330">
-              <caret line="27" column="9" lean-forward="true" selection-start-line="27" selection-start-column="9" selection-end-line="27" selection-end-column="9" />
+            <state relative-caret-position="60">
+              <caret line="9" column="62" lean-forward="false" selection-start-line="9" selection-start-column="62" selection-end-line="9" selection-end-column="62" />
               <folding />
             </state>
           </provider>
@@ -459,15 +461,15 @@
       <workItem from="1498440785669" duration="4529000" />
       <workItem from="1502635842425" duration="5981000" />
       <workItem from="1502813354796" duration="2923000" />
-      <workItem from="1503392500504" duration="4612000" />
+      <workItem from="1503392500504" duration="4735000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="172310000" />
+    <option name="totallyTimeSpent" value="172433000" />
   </component>
   <component name="ToolWindowManager">
-    <frame x="0" y="0" width="1366" height="726" extended-state="6" />
+    <frame x="0" y="0" width="1366" height="726" extended-state="7" />
     <editor active="true" />
     <layout>
       <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.2489019" sideWeight="0.5" order="1" side_tool="false" content_ui="combo" />
@@ -866,8 +868,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/report.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="330">
-          <caret line="27" column="9" lean-forward="true" selection-start-line="27" selection-start-column="9" selection-end-line="27" selection-end-column="9" />
+        <state relative-caret-position="60">
+          <caret line="9" column="62" lean-forward="false" selection-start-line="9" selection-start-column="62" selection-end-line="9" selection-end-column="62" />
           <folding />
         </state>
       </provider>
