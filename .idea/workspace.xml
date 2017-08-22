@@ -1,20 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="8458aa9b-747c-4bc6-8ad3-5992aecb43d7" name="Default" comment="">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.htaccess" afterPath="$PROJECT_DIR$/.htaccess" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Functions/inc.php" afterPath="$PROJECT_DIR$/Functions/inc.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Functions/phptricksORM/Database.php" afterPath="$PROJECT_DIR$/Functions/phptricksORM/Database.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Languages/arabic.json" afterPath="$PROJECT_DIR$/Languages/arabic.json" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Languages/english.json" afterPath="$PROJECT_DIR$/Languages/english.json" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Templates/Default/@main_layout.tpl" afterPath="$PROJECT_DIR$/Templates/Default/@main_layout.tpl" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Templates/Default/report.tpl" afterPath="$PROJECT_DIR$/Templates/Default/report.tpl" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Templates/Lumen/@main_layout.tpl" afterPath="$PROJECT_DIR$/Templates/Lumen/@main_layout.tpl" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Templates/Lumen/report.tpl" afterPath="$PROJECT_DIR$/Templates/Lumen/report.tpl" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/global.php" afterPath="$PROJECT_DIR$/global.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/report.php" afterPath="$PROJECT_DIR$/report.php" />
-    </list>
+    <list default="true" id="8458aa9b-747c-4bc6-8ad3-5992aecb43d7" name="Default" comment="" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -472,12 +459,12 @@
       <workItem from="1498440785669" duration="4529000" />
       <workItem from="1502635842425" duration="5981000" />
       <workItem from="1502813354796" duration="2923000" />
-      <workItem from="1503392500504" duration="4502000" />
+      <workItem from="1503392500504" duration="4612000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="172200000" />
+    <option name="totallyTimeSpent" value="172310000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="0" width="1366" height="726" extended-state="6" />
