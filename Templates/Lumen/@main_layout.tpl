@@ -13,13 +13,13 @@
     <link rel="stylesheet" href="{$template_dir}/css/bootstrap.min.css" />
     <link href="{$template_dir}/css/lumen-bootstrap.min.css" rel="stylesheet" />
     {if $rtl}
-    <link rel="stylesheet" href="{$template_dir}/css/bootstrap-flipped.min.css" />
-    <link rel="stylesheet" href="{$template_dir}/css/bootstrap-rtl.min.css" />
+        <link rel="stylesheet" href="{$template_dir}/css/bootstrap-flipped.min.css" />
+        <link rel="stylesheet" href="{$template_dir}/css/bootstrap-rtl.min.css" />
     {/if}
     <link rel="stylesheet" href="{$template_dir}/css/main.css"/>
     <link href="{$template_dir}/css/ionicons.min.css" rel="stylesheet" />
 
-    {$header}
+    {$include_header}
     <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
     <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
     <!--[if lt IE 9]>
@@ -38,7 +38,7 @@
                 <span class="icon-bar"></span>
                 <span class="icon-bar"></span>
             </button>
-            <a class="navbar-brand" href="{$default["url"]}">{$default["title"]}</a>
+            <a class="navbar-brand" href="{$default['url']}">{$default['title']}</a>
         </div>
         <div id="navbar" class="navbar-collapse collapse">
             <ul class="nav navbar-nav">
@@ -74,7 +74,21 @@
     <br/>
     <br/>
 </div>
-{$footer}
+<div class="container">
+    <div class="row">
+        <hr>
+        <div class="col-lg-12">
+            <div class="col-md-4">
+                <center><a href="{$default["url"]}p-tos">{$lang->terms_of_service}</a> | <a href="{$default["url"]}p-privacy">{$lang->privacy}</a></center>
+            </div>
+            <div class="col-md-8">
+                <center><p class="muted pull-right">© {$year} {$default['title']}. {$lang->copyright}</p></center>
+            </div>
+        </div>
+    </div>
+</div>
+
+{$include_footer}
 <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
 <script src="{$template_dir}/js/jquery.min.js"></script>
 <!-- Include all compiled plugins (below), or include individual files as needed -->

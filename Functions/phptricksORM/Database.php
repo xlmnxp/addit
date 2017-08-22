@@ -170,7 +170,7 @@ class Database implements \IteratorAggregate, \ArrayAccess
 	 */
 	public function offsetGet($offset)
 	{
-		return $this->_results[$offset];
+		return @$this->_results[$offset];
 	}
 
 	/**

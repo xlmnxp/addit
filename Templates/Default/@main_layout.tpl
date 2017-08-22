@@ -19,7 +19,7 @@
     <link rel="stylesheet" href="{$template_dir}/css/main.css"/>
     <link href="{$template_dir}/css/font-awesome.min.css" rel="stylesheet" />
 
-    {$header}
+    {$include_header}
     <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
     <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
     <!--[if lt IE 9]>
@@ -74,7 +74,21 @@
     <br/>
     <br/>
 </div>
-{$footer}
+<div class="container">
+    <div class="row">
+        <hr>
+        <div class="col-lg-12">
+            <div class="col-md-4">
+                <center><a href="{$default["url"]}p-tos">{$lang->terms_of_service}</a> | <a href="{$default["url"]}p-privacy">{$lang->privacy}</a></center>
+            </div>
+            <div class="col-md-8">
+                <center><p class="muted pull-right">© {$year} {$default['title']}. {$lang->copyright}</p></center>
+            </div>
+        </div>
+    </div>
+</div>
+
+{$include_footer}
 <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
 <script src="{$template_dir}/js/jquery.min.js"></script>
 <!-- Include all compiled plugins (below), or include individual files as needed -->

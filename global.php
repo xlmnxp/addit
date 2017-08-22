@@ -8,7 +8,7 @@
 
     include_once ('Functions/inc.php');
     include_once ('Functions/Template.php');
-    global $db;
+    global $template, $db, $language;
 
     updateStatistics();
 
@@ -57,6 +57,7 @@
     $template->lang             = $language;
     $template->addthis_pubid    = "ra-58e0111c4be4cfd4";
     $template->disqus_name      = "addit-1";
+    $template->year             = date("Y");
     $template->language_select = language_select();
 
     $template->search           = array(
@@ -79,14 +80,14 @@
 
     $template->search_sex       = $search_sex;
 
-    $template->header = '
+    $template->include_header = '
         <link rel="stylesheet" href="'.$default['url'].'/global-templates/css/sweetalert2.min.css" />
         
         <script src="'.$default['url'].'/global-templates/javascript/clipboard.min.js"></script>
         <script src="'.$default['url'].'/global-templates/javascript/sweetalert2.min.js"></script>
         ';
 
-    $template->footer = '
+    $template->include_footer = '
         <script>
             var cb = new Clipboard(\'.btn-copy\');
             
@@ -104,5 +105,3 @@
         </script>
         <script type="text/javascript" src="//s7.addthis.com/js/300/addthis_widget.js#pubid='.$template->addthis_pubid.'"></script>
         ';
-
-    global $template, $db, $language;

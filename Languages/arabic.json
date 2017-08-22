@@ -24,6 +24,11 @@
   "previous" : "السابق",
   "next" : "التالي",
 
+  "_comments" : "// footer",
+
+  "copyright": "جميع الحقوق محفوظة",
+  "terms_of_service": "شروط الخدمة",
+  "privacy": "الخصوصية",
 
   "_comments" : "// Register",
 
@@ -58,6 +63,7 @@
 
   "message_length" : "يجب أن تكون الرسالة أقل من 250 حرفًا.",
   "report_message" : "رسالة الأبلاغ",
+  "user_not_found" : "لم يتم العثور على المستخدم",
 
 
   "_comments" : "// error 404",
