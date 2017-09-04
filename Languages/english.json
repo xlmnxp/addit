@@ -1,83 +1,66 @@
 {
   "language_name": "English",
-  "language_code" : "en",
-  "rtl" : false,
+  "language_code": "en",
+  "rtl": false,
 
-  "_comments" : "// Header",
+  "search": "search",
+  "home": "home",
+  "about": "About",
+  "contact": "Contact",
 
-  "search" : "search",
-  "home" : "home",
-  "about" : "About",
-  "contact" : "Contact",
+  "new_user": "new User",
+  "new_vip": "new VIP User",
 
-  "new_user" : "new User",
-  "new_vip" : "new VIP User",
-
-
-  "_comments" : "// Home",
-
-  "follow" : "Follow",
-  "report" : "Report",
+  "follow": "Follow",
+  "report": "Report",
+  "edit": "Edit",
+  "delete": "Delete",
   "copy_username" : "Copy",
 
-  "previous" : "Previous",
-  "next" : "Next",
-
-  "_comments" : "// footer",
+  "previous": "Previous",
+  "next": "Next",
 
   "copyright" : "All rights reserved",
   "terms_of_service": "Terms of Service",
   "privacy": "privacy",
 
-  "_comments" : "// Register",
-
-  "username" : "Username",
+  "username": "Username",
+  "password": "Password",
+  "username_or_password_incorrect": "The username or password is incorrect",
   "enter_username": "Enter Username",
   "help_username": "Username for SnapChat.",
   "fullname": "Full name",
   "enter_fullname": "Enter your full name",
-  "sex" : "Sex",
-  "male" : "Male",
-  "female" : "Female",
-  "avatar" : "Avatar",
+  "sex": "Sex",
+  "male": "Male",
+  "female": "Female",
+  "avatar": "Avatar",
   "help_avatar": "Allowed Extensions is JPG , JPEG or PNG file.",
   "size_avatar": "File size must be exactly ",
-  "category" : "Account Category",
-  "message" : "Message",
-  "country" : "Country",
-  "submit" : "Submit",
+  "category": "Account Category",
+  "message": "Message",
+  "country": "Country",
+  "submit": "Submit",
 
   "success": "Success",
   "success_register": "Done.",
   "copied": "copied to clipboard",
-  "confirm" : "ok",
+  "confirm": "ok",
 
+  "comments": "Comments",
 
-  "_comments" : "// user",
+  "message_length": "The message must be less than 250 characters.",
+  "report_message": "Message reporting",
+  "user_not_found": "user not found",
 
-  "comments" : "Comments",
+  "page_not_found": "Page Not Found",
+  "error": "Error",
 
-
-  "_comments" : "// report",
-
-  "message_length" : "The message must be less than 250 characters.",
-  "report_message" : "Message reporting",
-  "user_not_found" : "user not found",
-
-  "_comments" : "// error 404",
-
-  "page_not_found" : "Page Not Found",
-  "error" : "Error",
-
-
-  "_comments" : "// sizes",
   "byte": "byte",
   "kb": "kb",
   "mb": "mb",
   "gb": "gb",
   "tb": "tb",
-
-  "_comments" : "// global",
 
   "error_validate_key": "Invalid verification key"
 

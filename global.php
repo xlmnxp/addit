@@ -43,7 +43,7 @@
         setlanguage("default");
     }
 
-    $languageFile = "Languages/".$languageName.".json";
+    $languageFile = ( isset($languageFile) ? $languageFile : "Languages/" ) . $languageName . ".json";
     $language = json_decode(file_get_contents($languageFile));
     if(!$language){
         setcookie('language', setlanguage("default"), time() + (86400 * 360), "/"); // 86400 = 1 day

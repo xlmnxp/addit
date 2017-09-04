@@ -253,6 +253,43 @@
         ]);
     }
 
+    function getStatistics($peer= 'day'){
+        global $db;
+
+        $day = date("Y-m-d");
+        $month = date("Y-m");
+        $year = date("Y");
+        switch ($peer){
+            case 'day':
+                $getYear = $db->table("statistics")->where('name',$year)->select(['id','value']);
+                if($getYear[0]){
+                    return $getYear[0]->value;
+                }else{
+                    return false;
+                }
+                break;
+            case 'month':
+                $getMonth = $db->table("statistics")->where('name',$month)->select(['id','value']);
+                if($getMonth[0]){
+                    return $getMonth[0]->value;
+                }else{
+                    return false;
+                }
+                break;
+            case 'year':
+                $getDay = $db->table("statistics")->where('name',$day)->select(['id','value']);
+                if($getDay[0]){
+                    return $getDay[0]->value;
+                }else{
+                    return false;
+                }
+                break;
+
+            default:
+                return false;
+        }
+    }
+
     /**
      * @return array
      */

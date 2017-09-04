@@ -1,38 +1,32 @@
 {
   "language_name": "العربية",
-  "language_code" : "ar",
+  "language_code": "ar",
   "rtl" : true,
 
+  "home": "الرائيسية",
+  "about": "من نحن",
+  "contact": "اتصل بنا",
 
-  "_comments" : "// Header",
+  "new_user": "إضافة حساب",
+  "new_vip": "إضافة حساب VIP",
 
-  "home" : "الرائيسية",
-  "about" : "من نحن",
-  "contact" : "اتصل بنا",
-
-  "new_user" : "إضافة حساب",
-  "new_vip" : "إضافة حساب VIP",
-
-
-  "_comments" : "// Home",
-
-  "search" : "بحث",
-  "follow" : "متابعة",
-  "report" : "إبلاغ",
+  "search": "بحث",
+  "follow": "متابعة",
+  "report": "إبلاغ",
+  "edit": "تعديل",
+  "delete": "حذف",
   "copy_username" : "نسخ",
 
   "previous" : "السابق",
   "next" : "التالي",
 
-  "_comments" : "// footer",
-
   "copyright": "جميع الحقوق محفوظة",
   "terms_of_service": "شروط الخدمة",
   "privacy": "الخصوصية",
 
-  "_comments" : "// Register",
-
   "username" : "اسم المستخدم",
+  "password" : "كلمة السر",
+  "username_or_password_incorrect": "خطأ في اسم المستخدم أو كلمة السر",
   "enter_username" : "ادخل اسم المستخدم",
   "help_username" : "اسم المستخدم في سناب شات.",
   "fullname": "الأسم الكامل",
@@ -49,37 +43,24 @@
   "submit" : "ارسال",
 
   "success": "عملية ناجحة",
-  "success_register" : "تم التسجيل.",
-  "copied" : "نسخ إلى الحافظة",
-  "confirm" : "موافق",
+  "success_register": "تم التسجيل.",
+  "copied": "نسخ إلى الحافظة",
+  "confirm": "موافق",
 
+  "comments": "التعليقات",
 
-  "_comments" : "// user",
+  "message_length": "يجب أن تكون الرسالة أقل من 250 حرفًا.",
+  "report_message": "رسالة الأبلاغ",
+  "user_not_found": "لم يتم العثور على المستخدم",
 
-  "comments" : "التعليقات",
-
-
-  "_comments" : "// report",
-
-  "message_length" : "يجب أن تكون الرسالة أقل من 250 حرفًا.",
-  "report_message" : "رسالة الأبلاغ",
-  "user_not_found" : "لم يتم العثور على المستخدم",
-
-
-  "_comments" : "// error 404",
-
-  "page_not_found" : "الصفحة غير موجودة",
-  "error" : "خطأ",
-
-  "_comments" : "// sizes",
+  "page_not_found": "الصفحة غير موجودة",
+  "error": "خطأ",
 
   "byte": "بايت",
   "kb": "كيلوبايت",
   "mb": "ميجابايت",
   "gb": "جيجابايت",
   "tb": "تيرابايت",
-
-  "_comments" : "// global",
 
   "error_validate_key": "مفتاح التحقق غير صحيح"
 }

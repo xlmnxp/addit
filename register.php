@@ -7,7 +7,7 @@
  */
 
     include_once ("global.php");
-    global $db,$template,$templateDirectory,$default;
+    global $db, $template, $language, $templateDirectory, $default;
 
     $template->page = $language->new_user;
 

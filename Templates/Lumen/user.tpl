@@ -66,6 +66,7 @@
 
          var disqus_config = function () {
             this.page.url = "{$user["url"]}";  // Replace PAGE_URL with your page's canonical URL variable
+            this.language = '{$lang->language_code}';
          };
 
         (function() { // DON'T EDIT BELOW THIS LINE
