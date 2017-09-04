@@ -49,7 +49,7 @@
         }
 
         function editbtns(value,row,index) {
-            return '<a class="btn btn-primary" style="margin: 2px;" href="edit?id='+row.id+'">Edit</a><a class="btn btn-danger" style="margin: 2px;" href="delete?id='+row.id+'">Delete</a><a class="btn btn-warning" style="margin: 2px;" href="https://www.snapchat.com/add/'+row.username+'" target="_blank"><?= $language->follow ?></a>'
+            return '<a class="btn btn-primary" style="margin: 2px;" href="edit?id='+row.id+'"><?= $language->edit ?></a><a class="btn btn-danger" style="margin: 2px;" href="delete?id='+row.id+'"><?= $language->delete?></a><a class="btn btn-warning" style="margin: 2px;" href="https://www.snapchat.com/add/'+row.username+'" target="_blank"><?= $language->follow ?></a>'
         }
 
         function flags(value,row,index) {

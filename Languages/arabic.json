@@ -24,6 +24,10 @@
   "terms_of_service": "شروط الخدمة",
   "privacy": "الخصوصية",
 
+  "control_panel": "لوحة التحكم",
+  "remember_me": "تذكرني",
+  "login" : "تسجيل الدخول",
+
   "username" : "اسم المستخدم",
   "password" : "كلمة السر",
   "username_or_password_incorrect": "خطأ في اسم المستخدم أو كلمة السر",

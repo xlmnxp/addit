@@ -24,6 +24,10 @@
   "terms_of_service": "Terms of Service",
   "privacy": "privacy",
 
+  "control_panel": "Control Panel",
+  "remember_me": "Remember Me",
+  "login" : "Login",
+
   "username": "Username",
   "password": "Password",
   "username_or_password_incorrect": "The username or password is incorrect",

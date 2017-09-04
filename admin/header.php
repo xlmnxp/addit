@@ -7,6 +7,7 @@
  */
 
     include_once('Functions/login.php');
+    global $language;
     if(!isset($noheader) || $noheader == false) {
 ?>
 <!DOCTYPE html>
@@ -14,7 +15,7 @@
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>Control Panel</title>
+    <title><?= $language->control_panel ?></title>
 
     <link href="css/bootstrap.min.css" rel="stylesheet">
     <link href="css/datepicker3.css" rel="stylesheet">
