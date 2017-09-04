@@ -62,6 +62,10 @@
 
     $users = Array();
     foreach ($users_query as $user){
+        $data = json_decode($user->data);
+        $data->country_name = getCountries()[$data->country];
+        $data->country = mb_strtolower($data->country);
+
         array_push($users, array(
             "id"        => $user->id,
             "username"  => htmlspecialchars($user->username),
@@ -69,7 +73,7 @@
             "avatar"    => (substr( $user->avatar, 0, 4 ) === "http" ? $user->avatar : $template->default["url"].$user->avatar),
             "message"   => $user->message,
             "sex"   => ($user->sex == 0? $language->male : $language->female),
-            "data"      => $user->data,
+            "data"      => $data,
             "url"       => $template->default["url"]."u/".$user->id."-".str_replace(" ","-",$user->fullname)
         ));
     }

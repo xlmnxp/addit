@@ -16,16 +16,14 @@
             <label for="category" class="ovtxt">{$lang->category}</label>
             <select name="category" id="category" class="form-control">
                 <option value="-1"></option>
-                <option value="0">{$lang->male}</option>
-                <option value="1">{$lang->female}</option>
+                {$categories}
             </select>
         </div>
         <div class="col-sm-2">
             <label for="country" class="ovtxt">{$lang->country}</label>
             <select name="country" id="country" class="form-control">
                 <option value="-1"></option>
-                <option value="0">{$lang->male}</option>
-                <option value="1">{$lang->female}</option>
+                {$countries}
             </select>
         </div>
         <div class="col-sm-2">

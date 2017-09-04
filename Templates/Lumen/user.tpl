@@ -39,6 +39,9 @@
         <h5 class="ovtxt"><strong><i class="ion ion-ios-person"></i>&nbsp;{$lang->username} </strong><br/>
             {$user["username"]}</h5>
         <hr/>
+        <p class="ovtxt"><strong><i class="ion ion-ios-world"></i>&nbsp;{$lang->country} </strong>
+            <br/> <img src="{$default['url']}Flags/{$user["data"]->country}.png" alt="{$user["data"]->country_name}" width="30" height="20"> {$user["data"]->country_name}</p>
+        <hr/>
         <p><strong><i class="ion ion-ios-paper"></i>&nbsp;{$lang->message}<br/> </strong>
             {$user["message"]}</p>
         <hr/>

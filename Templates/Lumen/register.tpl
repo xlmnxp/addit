@@ -59,8 +59,7 @@
                 <label class="col-md-4 control-label" for="category">{$lang->category}</label>
                 <div class="col-md-4">
                     <select id="category" name="category" class="form-control">
-                        <option value="1">Option one</option>
-                        <option value="2">Option two</option>
+                        {$categories}
                     </select>
                 </div>
             </div>
@@ -70,8 +69,7 @@
                 <label class="col-md-4 control-label" for="country">{$lang->country}</label>
                 <div class="col-md-4">
                     <select id="country" name="country" class="form-control">
-                        <option value="1">Option one</option>
-                        <option value="2">Option two</option>
+                        {$countries}
                     </select>
                 </div>
             </div>

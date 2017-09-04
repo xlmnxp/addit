@@ -56,10 +56,10 @@
                         "avatar"    => $dir,
                         "message"   => htmlspecialchars($_POST["message"], ENT_QUOTES, 'UTF-8'),
                         "sex"       => htmlspecialchars($_POST["sex"], ENT_QUOTES, 'UTF-8'),
-                        "data"      => json_encode(array([
+                        "data"      => json_encode(array(
                             "category" => htmlspecialchars($_POST["category"], ENT_QUOTES, 'UTF-8'),
                             "country"  => htmlspecialchars($_POST["country"], ENT_QUOTES, 'UTF-8')
-                        ]))
+                        ))
                     ]);
                     $template->success = true;
                 }

@@ -12,13 +12,17 @@
     $user = $db->table("users")->where("id",(@$_GET['id'] ? @$_GET['id'] : 1))->select()[0];
     $template->page = $user->fullname;
 
+    $data = json_decode($user->data);
+    $data->country_name = getCountries()[$data->country];
+    $data->country = mb_strtolower($data->country);
+
     $template->user = array(
         "id"        => $user->id,
         "username"  => htmlspecialchars($user->username),
         "fullname"  => $user->fullname,
         "avatar"    => (substr( $user->avatar, 0, 4 ) === "http" ? $user->avatar : $template->default["url"].$user->avatar),
         "message"   => $user->message,
-        "data"      => $user->data,
+        "data"      => $data,
         "sex"       => ($user->sex == 0? $language->male : $language->female),
         "url"       => $template->default["url"]."u/".$user->id."-".str_replace(" ","-",$user->fullname)
     );

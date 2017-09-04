@@ -80,6 +80,17 @@
 
     $template->search_sex       = $search_sex;
 
+    $categories = "<option></option>";
+    $countries = '';
+
+    foreach (getCountries() as $key => $value)
+    {
+        $countries .= "<option value='$key'>$value</option>\n";
+    }
+
+    $template->categories = $categories;
+    $template->countries = $countries;
+
     $template->include_header = '
         <link rel="stylesheet" href="'.$default['url'].'/global-templates/css/sweetalert2.min.css" />
         
