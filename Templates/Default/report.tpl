@@ -23,5 +23,6 @@
         <label for="username">{$lang->report_message}</label>
         <textarea class="form-control" id="MessageTextarea" name="message" rows="3">{$default["report_message"]}</textarea>
     </div>
+    <div class="g-recaptcha" data-sitekey="{$grecaptcha_key}"></div>
     <button type="submit" name="submit" class="btn btn-primary">{$lang->submit}</button>
 </form>

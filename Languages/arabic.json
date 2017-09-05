@@ -25,6 +25,10 @@
   "privacy": "الخصوصية",
 
   "control_panel": "لوحة التحكم",
+  "users": "مستخدمين",
+  "views_today": "مشاهدات اليوم",
+  "views_month": "مشاهدات الشهر",
+  "views_year": "مشاهدات السنة",
   "remember_me": "تذكرني",
   "login" : "تسجيل الدخول",
 

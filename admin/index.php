@@ -1,5 +1,5 @@
 <?php include_once ('header.php');
-    global $db;
+    global $db, $language;
     $total = $db->table('users')->select()->count();
 
 ?>
@@ -8,7 +8,7 @@
 		<div class="row">
 			<ol class="breadcrumb">
 				<li><a href="#"><svg class="glyph stroked home"><use xlink:href="#stroked-home"></use></svg></a></li>
-				<li class="active">Dashboard</li>
+				<li class="active"><?= $language->home ?></li>
 			</ol>
 		</div><!--/.row-->
 									
@@ -21,7 +21,7 @@
 						</div>
 						<div class="col-sm-9 col-lg-7 widget-right">
 							<div class="large"><?= $total; ?></div>
-							<div class="text-muted">Users</div>
+							<div class="text-muted"><?= $language->users ?></div>
 						</div>
 					</div>
 				</div>
@@ -34,7 +34,7 @@
 						</div>
 						<div class="col-sm-9 col-lg-7 widget-right">
 							<div class="large"><?= getStatistics('day'); ?></div>
-							<div class="text-muted">Views today</div>
+							<div class="text-muted"><?= $language->views_today ?></div>
 						</div>
 					</div>
 				</div>
@@ -47,7 +47,7 @@
 						</div>
 						<div class="col-sm-9 col-lg-7 widget-right">
 							<div class="large"><?= getStatistics('month'); ?></div>
-							<div class="text-muted">Views Month</div>
+							<div class="text-muted"><?= $language->views_month ?></div>
 						</div>
 					</div>
 				</div>
@@ -60,7 +60,7 @@
 						</div>
 						<div class="col-sm-9 col-lg-7 widget-right">
 							<div class="large"><?= getStatistics('year'); ?></div>
-							<div class="text-muted">Views Year</div>
+							<div class="text-muted"><?= $language->views_year ?></div>
 						</div>
 					</div>
 				</div>

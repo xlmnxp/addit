@@ -55,8 +55,9 @@
     $template->language_file    = $languageFile;
     $template->template_dir     = $template->default["url"].$templateDirectory;
     $template->lang             = $language;
-    $template->addthis_pubid    = "ra-58e0111c4be4cfd4";
-    $template->disqus_name      = "addit-1";
+    $template->addthis_pubid    = $default["addthis_pubid"];
+    $template->grecaptcha_key   = $default['recaptcha_site_key'];
+    $template->disqus_name      = $default["disqus_name"];
     $template->year             = date("Y");
     $template->language_select = language_select();
 
@@ -96,6 +97,7 @@
         
         <script src="'.$default['url'].'/global-templates/javascript/clipboard.min.js"></script>
         <script src="'.$default['url'].'/global-templates/javascript/sweetalert2.min.js"></script>
+        <script src="https://www.google.com/recaptcha/api.js" async defer></script>
         ';
 
     $template->include_footer = '

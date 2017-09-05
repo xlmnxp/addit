@@ -12,14 +12,14 @@
 		
 		<div class="row">
 			<div class="col-lg-12">
-				<h1 class="page-header">Users</h1>
+				<h1 class="page-header"><?= $language->users ?></h1>
 			</div>
 		</div><!--/.row-->
 				
 		
 		<div class="col-lg-12">
 			<div class="panel panel-default">
-				<div class="panel-heading">Users</div>
+				<div class="panel-heading"><?= $language->users ?></div>
 				<div class="panel-body">
 					<table id="users" data-toggle="table" data-url="tables/users.php"  data-show-refresh="true" data-show-toggle="false" data-show-columns="false" data-search="true" data-select-item-name="toolbar1" data-pagination="true" data-sort-name="id" data-sort-order="desc" data-side-pagination="server">
 						<thead>

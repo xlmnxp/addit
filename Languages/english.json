@@ -25,6 +25,10 @@
   "privacy": "privacy",
 
   "control_panel": "Control Panel",
+  "users": "Users",
+  "views_today": "views today",
+  "views_month": "views month",
+  "views_year": "views year",
   "remember_me": "Remember Me",
   "login" : "Login",
 

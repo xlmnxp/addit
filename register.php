@@ -7,7 +7,7 @@
  */
 
     include_once ("global.php");
-    global $db, $template, $language, $templateDirectory, $default;
+    global $db, $template, $language, $templateDirectory, $default, $form;
 
     $template->page = $language->new_user;
 
@@ -31,10 +31,12 @@
             }
 
             if($file_size > 2097152){
-                $errors[]= $language->file_ecu .'2'. $language->mb;
+                $errors[]= $language->size_avatar .'2'. $language->mb;
             }
 
-
+            if(!isset($_POST['g-recaptcha-response']) || !recaptcha_vaild($_POST['g-recaptcha-response'],$default['recaptcha_secret_key'])){
+                $errors[]= 'recaptcha ' . $language->error_validate_key;
+            }
 
             if(!trim($_POST['username'])){
                 $errors[]= $language->enter_username;

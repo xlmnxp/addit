@@ -7,7 +7,7 @@
  */
 
     include_once ("global.php");
-    global $db,$template,$templateDirectory,$default,$language;
+    global $db, $template, $templateDirectory, $default, $language;
 
     $user = $db->table("users")->where("id", @$_GET['id'])->select()[0];
     $template->page = $language->report;
@@ -25,6 +25,10 @@
 
         if(!isset($user)){
             $errors[] = $language->user_not_found;
+        }
+
+        if(!isset($_POST['g-recaptcha-response']) || !recaptcha_vaild($_POST['g-recaptcha-response'],$default['recaptcha_secret_key'])){
+            $errors[] = "recaptcha " . $language->error_validate_key;
         }
 
         if (empty($errors)) {

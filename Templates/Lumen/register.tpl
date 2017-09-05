@@ -14,7 +14,7 @@
     {if isset($errors)}
         <div class="alert alert-danger" role="alert">
         {foreach $errors as $error}
-            <span class="glyphicon glyphicon-exclamation-sign" aria-hidden="true"></span>
+            <span class="ion ion-alert-circled" aria-hidden="true"></span>
             <span class="sr-only">Error:</span>
             {$error}
             <br>
@@ -101,7 +101,13 @@
                 </div>
             </div>
 
-            <!-- Button -->
+            <div class="form-group">
+                <label class="col-md-4 control-label" for="recaptcha"></label>
+                <div class="col-md-4">
+                    <div id="recaptcha" class="g-recaptcha" data-sitekey="{$grecaptcha_key}"></div>
+                </div>
+            </div>
+
             <div class="form-group">
                 <label class="col-md-4 control-label" for="submit"></label>
                 <div class="col-md-4">

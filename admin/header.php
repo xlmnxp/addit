@@ -13,19 +13,29 @@
 <!DOCTYPE html>
 <html>
 <head>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta charset="utf-8"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1"/>
     <title><?= $language->control_panel ?></title>
 
-    <link href="css/bootstrap.min.css" rel="stylesheet">
-    <link href="css/datepicker3.css" rel="stylesheet">
-    <link href="css/styles.css" rel="stylesheet">
+    <link href="css/bootstrap.min.css" rel="stylesheet"/>
+    <link href="css/datepicker3.css" rel="stylesheet"/>
+    <?php if ($language->rtl) {?>
+    <link rel="stylesheet" href="css/bootstrap-flipped.min.css" />
+    <link rel="stylesheet" href="css/bootstrap-rtl.min.css" />
+        <style>
+            @media (min-width: 768px){
+                .sidebar{
+                    right: 0;
+                }
+            }</style>
+    <?php } ?>
+    <link href="css/styles.css" rel="stylesheet"/>
 
     <!--Icons-->
     <script src="js/lumino.glyphs.js"></script>
 
     <!--[if lt IE 9]>
-    <script src="js/html5shiv.js"></script>
+    <script src="js/html5shiv.min.js"></script>
     <script src="js/respond.min.js"></script>
     <![endif]-->
 
@@ -41,7 +51,7 @@
                 <span class="icon-bar"></span>
                 <span class="icon-bar"></span>
             </button>
-            <a class="navbar-brand" href="#"><span>Lumino</span>Admin</a>
+            <a class="navbar-brand" href="#"><?= $language->control_panel ?></a>
             <ul class="user-menu">
                 <li class="dropdown pull-right">
                     <a href="#" class="dropdown-toggle" data-toggle="dropdown"><svg class="glyph stroked male-user"><use xlink:href="#stroked-male-user"></use></svg> <?= $_SESSION['username'] ?> <span class="caret"></span></a>
@@ -63,8 +73,8 @@
         </div>
     </form>
     <ul class="nav menu">
-        <li class="active"><a href="index.php"><svg class="glyph stroked dashboard-dial"><use xlink:href="#stroked-dashboard-dial"></use></svg> Dashboard</a></li>
-        <li><a href="users.php"><svg class="glyph stroked calendar"><use xlink:href="#stroked-calendar"></use></svg> Users</a></li>
+        <li class="active"><a href="index.php"><svg class="glyph stroked dashboard-dial"><use xlink:href="#stroked-dashboard-dial"></use></svg> <?= $language->home ?></a></li>
+        <li><a href="users.php"><svg class="glyph stroked calendar"><use xlink:href="#stroked-calendar"></use></svg> <?= $language->users ?></a></li>
         <li class="parent ">
             <a href="#">
                 <span data-toggle="collapse" href="#sub-item-1"><svg class="glyph stroked chevron-down"><use xlink:href="#stroked-chevron-down"></use></svg></span> Dropdown
@@ -87,8 +97,6 @@
                 </li>
             </ul>
         </li>
-        <li role="presentation" class="divider"></li>
-        <li><a href="login.php"><svg class="glyph stroked male-user"><use xlink:href="#stroked-male-user"></use></svg> Login Page</a></li>
     </ul>
 </div><!--/.sidebar-->
 <?php } ?>
