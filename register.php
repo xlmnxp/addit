@@ -34,7 +34,7 @@
                 $errors[]= $language->size_avatar .'2'. $language->mb;
             }
 
-            if(!isset($_POST['g-recaptcha-response']) || !recaptcha_vaild($_POST['g-recaptcha-response'],$default['recaptcha_secret_key'])){
+            if(!isset($_POST['g-recaptcha-response']) || !recaptcha_vaild($default['recaptcha_secret_key'])){
                 $errors[]= 'recaptcha ' . $language->error_validate_key;
             }
 

@@ -299,26 +299,24 @@
     }
 
 
-    function recaptcha_vaild($response,$secret_key) {
-        $fields_string = '';
-        $fields = array(
+    function recaptcha_vaild($secret_key) {
+        $url = 'https://www.google.com/recaptcha/api/siteverify';
+        $data = array(
             'secret' => $secret_key,
-            'response' => $response
+            'response' => $_POST["g-recaptcha-response"]
         );
-        foreach($fields as $key=>$value)
-            $fields_string .= $key . '=' . $value . '&';
-        $fields_string = rtrim($fields_string, '&');
+        $options = array(
+            'http' => array (
+                'method' => 'POST',
+                'header' => "Content-Type: application/x-www-form-urlencoded",
+                'content' => http_build_query($data)
+            )
+        );
+        $context  = stream_context_create($options);
+        $verify = file_get_contents($url, false, $context);
+        $captcha_success= json_decode($verify);
 
-        $ch = curl_init();
-        curl_setopt($ch, CURLOPT_URL, 'https://www.google.com/recaptcha/api/siteverify');
-        curl_setopt($ch, CURLOPT_POST, count($fields));
-        curl_setopt($ch, CURLOPT_POSTFIELDS, $fields_string);
-        curl_setopt($ch, CURLOPT_RETURNTRANSFER, True);
-
-        $result = curl_exec($ch);
-        curl_close($ch);
-
-        return isset (json_decode($result, true)->success ) ? json_decode($result, true)->success : false;
+        return $captcha_success->success;
     }
 
     class formValidate
