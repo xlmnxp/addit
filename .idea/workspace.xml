@@ -2,266 +2,8 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="8458aa9b-747c-4bc6-8ad3-5992aecb43d7" name="Default" comment="">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Flags/ai.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Flags/aq.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Flags/as.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Flags/aw.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Flags/ax.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Flags/bl.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Flags/bm.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Flags/bv.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Flags/cc.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Flags/ck.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Flags/cw.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Flags/cx.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Flags/fk.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Flags/fo.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Flags/gb-eng.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Flags/gb-nir.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Flags/gb-sct.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Flags/gb-wls.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Flags/gf.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Flags/gg.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Flags/gi.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Flags/gl.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Flags/gp.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Flags/gs.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Flags/gu.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Flags/hk.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Flags/hm.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Flags/im.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Flags/io.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Flags/je.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Flags/kosovo.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Flags/ky.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Flags/mf.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Flags/mo.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Flags/mp.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Flags/mq.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Flags/ms.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Flags/nc.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Flags/nf.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Flags/nu.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Flags/pf.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Flags/pm.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Flags/pn.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Flags/pr.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Flags/ps.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Flags/re.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Flags/sh.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Flags/sj.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Flags/ss.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Flags/sx.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Flags/tc.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Flags/tf.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Flags/tk.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Flags/um.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Flags/vg.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Flags/vi.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Flags/wf.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Flags/yt.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Uploads/img_59ae463e37c1f.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Uploads/img_59ae46c3ed5d1.png" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Flags/ks.png" afterPath="" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Flags/ad.png" afterPath="$PROJECT_DIR$/Flags/ad.png" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Flags/ae.png" afterPath="$PROJECT_DIR$/Flags/ae.png" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Flags/af.png" afterPath="$PROJECT_DIR$/Flags/af.png" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Flags/ag.png" afterPath="$PROJECT_DIR$/Flags/ag.png" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Flags/al.png" afterPath="$PROJECT_DIR$/Flags/al.png" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Flags/am.png" afterPath="$PROJECT_DIR$/Flags/am.png" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Flags/ao.png" afterPath="$PROJECT_DIR$/Flags/ao.png" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Flags/ar.png" afterPath="$PROJECT_DIR$/Flags/ar.png" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Flags/at.png" afterPath="$PROJECT_DIR$/Flags/at.png" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Flags/au.png" afterPath="$PROJECT_DIR$/Flags/au.png" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Flags/az.png" afterPath="$PROJECT_DIR$/Flags/az.png" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Flags/ba.png" afterPath="$PROJECT_DIR$/Flags/ba.png" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Flags/bb.png" afterPath="$PROJECT_DIR$/Flags/bb.png" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Flags/bd.png" afterPath="$PROJECT_DIR$/Flags/bd.png" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Flags/be.png" afterPath="$PROJECT_DIR$/Flags/be.png" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Flags/bf.png" afterPath="$PROJECT_DIR$/Flags/bf.png" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Flags/bg.png" afterPath="$PROJECT_DIR$/Flags/bg.png" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Flags/bh.png" afterPath="$PROJECT_DIR$/Flags/bh.png" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Flags/bi.png" afterPath="$PROJECT_DIR$/Flags/bi.png" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Flags/bj.png" afterPath="$PROJECT_DIR$/Flags/bj.png" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Flags/bn.png" afterPath="$PROJECT_DIR$/Flags/bn.png" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Flags/bo.png" afterPath="$PROJECT_DIR$/Flags/bo.png" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Flags/br.png" afterPath="$PROJECT_DIR$/Flags/br.png" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Flags/bs.png" afterPath="$PROJECT_DIR$/Flags/bs.png" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Flags/bt.png" afterPath="$PROJECT_DIR$/Flags/bt.png" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Flags/bw.png" afterPath="$PROJECT_DIR$/Flags/bw.png" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Flags/by.png" afterPath="$PROJECT_DIR$/Flags/by.png" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Flags/bz.png" afterPath="$PROJECT_DIR$/Flags/bz.png" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Flags/ca.png" afterPath="$PROJECT_DIR$/Flags/ca.png" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Flags/cd.png" afterPath="$PROJECT_DIR$/Flags/cd.png" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Flags/cf.png" afterPath="$PROJECT_DIR$/Flags/cf.png" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Flags/cg.png" afterPath="$PROJECT_DIR$/Flags/cg.png" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Flags/ch.png" afterPath="$PROJECT_DIR$/Flags/ch.png" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Flags/ci.png" afterPath="$PROJECT_DIR$/Flags/ci.png" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Flags/cl.png" afterPath="$PROJECT_DIR$/Flags/cl.png" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Flags/cm.png" afterPath="$PROJECT_DIR$/Flags/cm.png" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Flags/cn.png" afterPath="$PROJECT_DIR$/Flags/cn.png" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Flags/co.png" afterPath="$PROJECT_DIR$/Flags/co.png" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Flags/cr.png" afterPath="$PROJECT_DIR$/Flags/cr.png" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Flags/cu.png" afterPath="$PROJECT_DIR$/Flags/cu.png" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Flags/cv.png" afterPath="$PROJECT_DIR$/Flags/cv.png" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Flags/cy.png" afterPath="$PROJECT_DIR$/Flags/cy.png" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Flags/cz.png" afterPath="$PROJECT_DIR$/Flags/cz.png" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Flags/de.png" afterPath="$PROJECT_DIR$/Flags/de.png" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Flags/dj.png" afterPath="$PROJECT_DIR$/Flags/dj.png" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Flags/dk.png" afterPath="$PROJECT_DIR$/Flags/dk.png" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Flags/dm.png" afterPath="$PROJECT_DIR$/Flags/dm.png" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Flags/do.png" afterPath="$PROJECT_DIR$/Flags/do.png" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Flags/dz.png" afterPath="$PROJECT_DIR$/Flags/dz.png" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Flags/ec.png" afterPath="$PROJECT_DIR$/Flags/ec.png" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Flags/ee.png" afterPath="$PROJECT_DIR$/Flags/ee.png" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Flags/eg.png" afterPath="$PROJECT_DIR$/Flags/eg.png" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Flags/eh.png" afterPath="$PROJECT_DIR$/Flags/eh.png" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Flags/er.png" afterPath="$PROJECT_DIR$/Flags/er.png" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Flags/es.png" afterPath="$PROJECT_DIR$/Flags/es.png" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Flags/et.png" afterPath="$PROJECT_DIR$/Flags/et.png" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Flags/fi.png" afterPath="$PROJECT_DIR$/Flags/fi.png" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Flags/fj.png" afterPath="$PROJECT_DIR$/Flags/fj.png" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Flags/fm.png" afterPath="$PROJECT_DIR$/Flags/fm.png" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Flags/fr.png" afterPath="$PROJECT_DIR$/Flags/fr.png" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Flags/ga.png" afterPath="$PROJECT_DIR$/Flags/ga.png" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Flags/gb.png" afterPath="$PROJECT_DIR$/Flags/gb.png" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Flags/gd.png" afterPath="$PROJECT_DIR$/Flags/gd.png" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Flags/ge.png" afterPath="$PROJECT_DIR$/Flags/ge.png" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Flags/gh.png" afterPath="$PROJECT_DIR$/Flags/gh.png" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Flags/gm.png" afterPath="$PROJECT_DIR$/Flags/gm.png" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Flags/gn.png" afterPath="$PROJECT_DIR$/Flags/gn.png" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Flags/gq.png" afterPath="$PROJECT_DIR$/Flags/gq.png" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Flags/gr.png" afterPath="$PROJECT_DIR$/Flags/gr.png" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Flags/gt.png" afterPath="$PROJECT_DIR$/Flags/gt.png" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Flags/gw.png" afterPath="$PROJECT_DIR$/Flags/gw.png" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Flags/gy.png" afterPath="$PROJECT_DIR$/Flags/gy.png" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Flags/hn.png" afterPath="$PROJECT_DIR$/Flags/hn.png" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Flags/hr.png" afterPath="$PROJECT_DIR$/Flags/hr.png" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Flags/ht.png" afterPath="$PROJECT_DIR$/Flags/ht.png" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Flags/hu.png" afterPath="$PROJECT_DIR$/Flags/hu.png" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Flags/id.png" afterPath="$PROJECT_DIR$/Flags/id.png" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Flags/ie.png" afterPath="$PROJECT_DIR$/Flags/ie.png" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Flags/il.png" afterPath="$PROJECT_DIR$/Flags/il.png" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Flags/in.png" afterPath="$PROJECT_DIR$/Flags/in.png" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Flags/iq.png" afterPath="$PROJECT_DIR$/Flags/iq.png" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Flags/ir.png" afterPath="$PROJECT_DIR$/Flags/ir.png" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Flags/is.png" afterPath="$PROJECT_DIR$/Flags/is.png" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Flags/it.png" afterPath="$PROJECT_DIR$/Flags/it.png" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Flags/jm.png" afterPath="$PROJECT_DIR$/Flags/jm.png" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Flags/jo.png" afterPath="$PROJECT_DIR$/Flags/jo.png" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Flags/jp.png" afterPath="$PROJECT_DIR$/Flags/jp.png" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Flags/ke.png" afterPath="$PROJECT_DIR$/Flags/ke.png" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Flags/kg.png" afterPath="$PROJECT_DIR$/Flags/kg.png" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Flags/kh.png" afterPath="$PROJECT_DIR$/Flags/kh.png" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Flags/ki.png" afterPath="$PROJECT_DIR$/Flags/ki.png" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Flags/km.png" afterPath="$PROJECT_DIR$/Flags/km.png" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Flags/kn.png" afterPath="$PROJECT_DIR$/Flags/kn.png" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Flags/kp.png" afterPath="$PROJECT_DIR$/Flags/kp.png" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Flags/kr.png" afterPath="$PROJECT_DIR$/Flags/kr.png" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Flags/kw.png" afterPath="$PROJECT_DIR$/Flags/kw.png" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Flags/kz.png" afterPath="$PROJECT_DIR$/Flags/kz.png" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Flags/la.png" afterPath="$PROJECT_DIR$/Flags/la.png" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Flags/lb.png" afterPath="$PROJECT_DIR$/Flags/lb.png" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Flags/lc.png" afterPath="$PROJECT_DIR$/Flags/lc.png" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Flags/li.png" afterPath="$PROJECT_DIR$/Flags/li.png" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Flags/lk.png" afterPath="$PROJECT_DIR$/Flags/lk.png" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Flags/lr.png" afterPath="$PROJECT_DIR$/Flags/lr.png" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Flags/ls.png" afterPath="$PROJECT_DIR$/Flags/ls.png" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Flags/lt.png" afterPath="$PROJECT_DIR$/Flags/lt.png" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Flags/lu.png" afterPath="$PROJECT_DIR$/Flags/lu.png" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Flags/lv.png" afterPath="$PROJECT_DIR$/Flags/lv.png" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Flags/ly.png" afterPath="$PROJECT_DIR$/Flags/ly.png" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Flags/ma.png" afterPath="$PROJECT_DIR$/Flags/ma.png" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Flags/mc.png" afterPath="$PROJECT_DIR$/Flags/mc.png" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Flags/md.png" afterPath="$PROJECT_DIR$/Flags/md.png" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Flags/me.png" afterPath="$PROJECT_DIR$/Flags/me.png" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Flags/mg.png" afterPath="$PROJECT_DIR$/Flags/mg.png" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Flags/mh.png" afterPath="$PROJECT_DIR$/Flags/mh.png" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Flags/mk.png" afterPath="$PROJECT_DIR$/Flags/mk.png" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Flags/ml.png" afterPath="$PROJECT_DIR$/Flags/ml.png" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Flags/mm.png" afterPath="$PROJECT_DIR$/Flags/mm.png" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Flags/mn.png" afterPath="$PROJECT_DIR$/Flags/mn.png" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Flags/mr.png" afterPath="$PROJECT_DIR$/Flags/mr.png" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Flags/mt.png" afterPath="$PROJECT_DIR$/Flags/mt.png" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Flags/mu.png" afterPath="$PROJECT_DIR$/Flags/mu.png" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Flags/mv.png" afterPath="$PROJECT_DIR$/Flags/mv.png" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Flags/mw.png" afterPath="$PROJECT_DIR$/Flags/mw.png" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Flags/mx.png" afterPath="$PROJECT_DIR$/Flags/mx.png" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Flags/my.png" afterPath="$PROJECT_DIR$/Flags/my.png" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Flags/mz.png" afterPath="$PROJECT_DIR$/Flags/mz.png" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Flags/na.png" afterPath="$PROJECT_DIR$/Flags/na.png" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Flags/ne.png" afterPath="$PROJECT_DIR$/Flags/ne.png" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Flags/ng.png" afterPath="$PROJECT_DIR$/Flags/ng.png" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Flags/ni.png" afterPath="$PROJECT_DIR$/Flags/ni.png" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Flags/nl.png" afterPath="$PROJECT_DIR$/Flags/nl.png" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Flags/no.png" afterPath="$PROJECT_DIR$/Flags/no.png" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Flags/np.png" afterPath="$PROJECT_DIR$/Flags/np.png" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Flags/nr.png" afterPath="$PROJECT_DIR$/Flags/nr.png" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Flags/nz.png" afterPath="$PROJECT_DIR$/Flags/nz.png" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Flags/om.png" afterPath="$PROJECT_DIR$/Flags/om.png" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Flags/pa.png" afterPath="$PROJECT_DIR$/Flags/pa.png" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Flags/pe.png" afterPath="$PROJECT_DIR$/Flags/pe.png" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Flags/pg.png" afterPath="$PROJECT_DIR$/Flags/pg.png" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Flags/ph.png" afterPath="$PROJECT_DIR$/Flags/ph.png" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Flags/pk.png" afterPath="$PROJECT_DIR$/Flags/pk.png" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Flags/pl.png" afterPath="$PROJECT_DIR$/Flags/pl.png" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Flags/pt.png" afterPath="$PROJECT_DIR$/Flags/pt.png" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Flags/pw.png" afterPath="$PROJECT_DIR$/Flags/pw.png" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Flags/py.png" afterPath="$PROJECT_DIR$/Flags/py.png" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Flags/qa.png" afterPath="$PROJECT_DIR$/Flags/qa.png" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Flags/ro.png" afterPath="$PROJECT_DIR$/Flags/ro.png" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Flags/rs.png" afterPath="$PROJECT_DIR$/Flags/rs.png" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Flags/ru.png" afterPath="$PROJECT_DIR$/Flags/ru.png" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Flags/rw.png" afterPath="$PROJECT_DIR$/Flags/rw.png" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Flags/sa.png" afterPath="$PROJECT_DIR$/Flags/sa.png" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Flags/sb.png" afterPath="$PROJECT_DIR$/Flags/sb.png" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Flags/sc.png" afterPath="$PROJECT_DIR$/Flags/sc.png" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Flags/sd.png" afterPath="$PROJECT_DIR$/Flags/sd.png" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Flags/se.png" afterPath="$PROJECT_DIR$/Flags/se.png" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Flags/sg.png" afterPath="$PROJECT_DIR$/Flags/sg.png" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Flags/si.png" afterPath="$PROJECT_DIR$/Flags/si.png" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Flags/sk.png" afterPath="$PROJECT_DIR$/Flags/sk.png" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Flags/sl.png" afterPath="$PROJECT_DIR$/Flags/sl.png" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Flags/sm.png" afterPath="$PROJECT_DIR$/Flags/sm.png" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Flags/sn.png" afterPath="$PROJECT_DIR$/Flags/sn.png" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Flags/so.png" afterPath="$PROJECT_DIR$/Flags/so.png" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Flags/sr.png" afterPath="$PROJECT_DIR$/Flags/sr.png" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Flags/st.png" afterPath="$PROJECT_DIR$/Flags/st.png" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Flags/sv.png" afterPath="$PROJECT_DIR$/Flags/sv.png" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Flags/sy.png" afterPath="$PROJECT_DIR$/Flags/sy.png" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Flags/sz.png" afterPath="$PROJECT_DIR$/Flags/sz.png" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Flags/td.png" afterPath="$PROJECT_DIR$/Flags/td.png" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Flags/tg.png" afterPath="$PROJECT_DIR$/Flags/tg.png" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Flags/th.png" afterPath="$PROJECT_DIR$/Flags/th.png" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Flags/tj.png" afterPath="$PROJECT_DIR$/Flags/tj.png" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Flags/tl.png" afterPath="$PROJECT_DIR$/Flags/tl.png" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Flags/tm.png" afterPath="$PROJECT_DIR$/Flags/tm.png" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Flags/tn.png" afterPath="$PROJECT_DIR$/Flags/tn.png" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Flags/to.png" afterPath="$PROJECT_DIR$/Flags/to.png" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Flags/tr.png" afterPath="$PROJECT_DIR$/Flags/tr.png" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Flags/tt.png" afterPath="$PROJECT_DIR$/Flags/tt.png" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Flags/tv.png" afterPath="$PROJECT_DIR$/Flags/tv.png" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Flags/tw.png" afterPath="$PROJECT_DIR$/Flags/tw.png" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Flags/tz.png" afterPath="$PROJECT_DIR$/Flags/tz.png" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Flags/ua.png" afterPath="$PROJECT_DIR$/Flags/ua.png" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Flags/ug.png" afterPath="$PROJECT_DIR$/Flags/ug.png" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Flags/us.png" afterPath="$PROJECT_DIR$/Flags/us.png" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Flags/uy.png" afterPath="$PROJECT_DIR$/Flags/uy.png" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Flags/uz.png" afterPath="$PROJECT_DIR$/Flags/uz.png" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Flags/va.png" afterPath="$PROJECT_DIR$/Flags/va.png" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Flags/vc.png" afterPath="$PROJECT_DIR$/Flags/vc.png" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Flags/ve.png" afterPath="$PROJECT_DIR$/Flags/ve.png" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Flags/vn.png" afterPath="$PROJECT_DIR$/Flags/vn.png" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Flags/vu.png" afterPath="$PROJECT_DIR$/Flags/vu.png" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Flags/ws.png" afterPath="$PROJECT_DIR$/Flags/ws.png" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Flags/ye.png" afterPath="$PROJECT_DIR$/Flags/ye.png" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Flags/za.png" afterPath="$PROJECT_DIR$/Flags/za.png" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Flags/zm.png" afterPath="$PROJECT_DIR$/Flags/zm.png" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Flags/zw.png" afterPath="$PROJECT_DIR$/Flags/zw.png" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Functions/inc.php" afterPath="$PROJECT_DIR$/Functions/inc.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/register.php" afterPath="$PROJECT_DIR$/register.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/report.php" afterPath="$PROJECT_DIR$/report.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/global.php" afterPath="$PROJECT_DIR$/global.php" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
@@ -276,12 +18,26 @@
   <component name="ExecutionTargetManager" SELECTED_TARGET="default_target" />
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="register.php" pinned="false" current-in-tab="true">
+      <file leaf-file-name="register.php" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/register.php">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="408">
-              <caret line="36" column="84" lean-forward="true" selection-start-line="36" selection-start-column="84" selection-end-line="36" selection-end-column="93" />
+              <caret line="36" column="84" lean-forward="false" selection-start-line="36" selection-start-column="84" selection-end-line="36" selection-end-column="93" />
               <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="global.php" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/global.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="180">
+              <caret line="32" column="15" lean-forward="false" selection-start-line="32" selection-start-column="0" selection-end-line="33" selection-end-column="0" />
+              <folding>
+                <marker date="1504787276569" expanded="true" signature="3746:4156" ph="..." />
+                <marker date="1504787276569" expanded="true" signature="3855:4136" ph="{...}" />
+                <marker date="1504787276569" expanded="true" signature="3878:4083" ph="{&quot;title&quot;: &quot;EXTERNAL_FRAGMENT!&quot;...}" />
+              </folding>
             </state>
           </provider>
         </entry>
@@ -339,7 +95,7 @@
       <file leaf-file-name="inc.php" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/Functions/inc.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="303">
+            <state relative-caret-position="4365">
               <caret line="296" column="25" lean-forward="false" selection-start-line="296" selection-start-column="13" selection-end-line="296" selection-end-column="25" />
               <folding />
             </state>
@@ -349,8 +105,8 @@
       <file leaf-file-name="index.php" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/index.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-57">
-              <caret line="11" column="0" lean-forward="true" selection-start-line="11" selection-start-column="0" selection-end-line="11" selection-end-column="0" />
+            <state relative-caret-position="90">
+              <caret line="11" column="0" lean-forward="false" selection-start-line="11" selection-start-column="0" selection-end-line="11" selection-end-column="0" />
               <folding />
             </state>
           </provider>
@@ -446,13 +202,13 @@
         <option value="$PROJECT_DIR$/admin/index.php" />
         <option value="$PROJECT_DIR$/Templates/Default/report.tpl" />
         <option value="$PROJECT_DIR$/Templates/Lumen/report.tpl" />
-        <option value="$PROJECT_DIR$/global.php" />
         <option value="$PROJECT_DIR$/Templates/Lumen/register.tpl" />
         <option value="$PROJECT_DIR$/Templates/Default/register.tpl" />
         <option value="$PROJECT_DIR$/register.php" />
         <option value="$PROJECT_DIR$/Functions/inc.php" />
         <option value="$PROJECT_DIR$/index.php" />
         <option value="$PROJECT_DIR$/report.php" />
+        <option value="$PROJECT_DIR$/global.php" />
       </list>
     </option>
   </component>
@@ -504,7 +260,6 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
-      <pane id="Scratches" />
       <pane id="ProjectPane">
         <subPane>
           <PATH>
@@ -534,6 +289,7 @@
         </subPane>
       </pane>
       <pane id="Scope" />
+      <pane id="Scratches" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -685,12 +441,13 @@
       <workItem from="1503392500504" duration="5333000" />
       <workItem from="1504490923135" duration="184000" />
       <workItem from="1504491123656" duration="17888000" />
-      <workItem from="1504572488316" duration="7424000" />
+      <workItem from="1504572488316" duration="8023000" />
+      <workItem from="1504787186754" duration="691000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="198527000" />
+    <option name="totallyTimeSpent" value="199817000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="0" width="1366" height="726" extended-state="6" />
@@ -846,7 +603,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="105">
           <caret line="7" column="42" lean-forward="false" selection-start-line="7" selection-start-column="42" selection-end-line="7" selection-end-column="42" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -854,7 +610,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
           <caret line="0" column="36" lean-forward="false" selection-start-line="0" selection-start-column="36" selection-end-line="0" selection-end-column="36" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -862,7 +617,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
           <caret line="0" column="36" lean-forward="false" selection-start-line="0" selection-start-column="36" selection-end-line="0" selection-end-column="36" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -870,7 +624,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
           <caret line="0" column="36" lean-forward="false" selection-start-line="0" selection-start-column="36" selection-end-line="0" selection-end-column="36" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -894,7 +647,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="15">
           <caret line="1" column="0" lean-forward="false" selection-start-line="1" selection-start-column="0" selection-end-line="1" selection-end-column="0" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -902,9 +654,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="225">
           <caret line="15" column="0" lean-forward="false" selection-start-line="15" selection-start-column="0" selection-end-line="19" selection-end-column="50" />
-          <folding>
-            <element signature="e#6#86#0#PHP" expanded="false" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -913,7 +662,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="75">
           <caret line="5" column="0" lean-forward="false" selection-start-line="5" selection-start-column="0" selection-end-line="5" selection-end-column="0" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -946,7 +694,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
           <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -954,7 +701,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="210">
           <caret line="14" column="0" lean-forward="false" selection-start-line="14" selection-start-column="0" selection-end-line="17" selection-end-column="9" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1000,7 +746,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="270">
           <caret line="30" column="27" lean-forward="false" selection-start-line="30" selection-start-column="27" selection-end-line="30" selection-end-column="27" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1008,7 +753,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="192">
           <caret line="28" column="0" lean-forward="false" selection-start-line="28" selection-start-column="0" selection-end-line="30" selection-end-column="32" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1017,18 +761,6 @@
         <state relative-caret-position="-825">
           <caret line="62" column="77" lean-forward="false" selection-start-line="62" selection-start-column="77" selection-end-line="62" selection-end-column="77" />
           <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/global.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="198">
-          <caret line="59" column="55" lean-forward="false" selection-start-line="59" selection-start-column="55" selection-end-line="59" selection-end-column="55" />
-          <folding>
-            <marker date="1504592321038" expanded="true" signature="3744:4154" ph="..." />
-            <marker date="1504592321038" expanded="true" signature="3853:4134" ph="{...}" />
-            <marker date="1504592321038" expanded="true" signature="3876:4081" ph="{&quot;title&quot;: &quot;EXTERNAL_FRAGMENT!&quot;...}" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -1066,7 +798,7 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/Functions/inc.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="303">
+        <state relative-caret-position="4365">
           <caret line="296" column="25" lean-forward="false" selection-start-line="296" selection-start-column="13" selection-end-line="296" selection-end-column="25" />
           <folding />
         </state>
@@ -1074,8 +806,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/index.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-57">
-          <caret line="11" column="0" lean-forward="true" selection-start-line="11" selection-start-column="0" selection-end-line="11" selection-end-column="0" />
+        <state relative-caret-position="90">
+          <caret line="11" column="0" lean-forward="false" selection-start-line="11" selection-start-column="0" selection-end-line="11" selection-end-column="0" />
           <folding />
         </state>
       </provider>
@@ -1091,8 +823,20 @@
     <entry file="file://$PROJECT_DIR$/register.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="408">
-          <caret line="36" column="84" lean-forward="true" selection-start-line="36" selection-start-column="84" selection-end-line="36" selection-end-column="93" />
+          <caret line="36" column="84" lean-forward="false" selection-start-line="36" selection-start-column="84" selection-end-line="36" selection-end-column="93" />
           <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/global.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="180">
+          <caret line="32" column="15" lean-forward="false" selection-start-line="32" selection-start-column="0" selection-end-line="33" selection-end-column="0" />
+          <folding>
+            <marker date="1504787276569" expanded="true" signature="3746:4156" ph="..." />
+            <marker date="1504787276569" expanded="true" signature="3855:4136" ph="{...}" />
+            <marker date="1504787276569" expanded="true" signature="3878:4083" ph="{&quot;title&quot;: &quot;EXTERNAL_FRAGMENT!&quot;...}" />
+          </folding>
         </state>
       </provider>
     </entry>
