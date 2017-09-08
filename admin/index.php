@@ -1,4 +1,6 @@
-<?php include_once ('header.php');
+<?php
+    $page = 'home';
+    include_once ('header.php');
     global $db, $language;
     $total = $db->table('users')->select()->count();
 

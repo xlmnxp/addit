@@ -1,8 +1,9 @@
 <?php
+    $page = 'users';
     include_once ('header.php');
     global $default, $language;
 ?>
-	<div class="col-sm-9 col-sm-offset-3 col-lg-10 col-lg-offset-2 main">			
+	<div class="col-sm-9 col-sm-offset-3 col-lg-10 col-lg-offset-2 main">
 		<div class="row">
 			<ol class="breadcrumb">
 				<li><a href="#"><svg class="glyph stroked home"><use xlink:href="#stroked-home"></use></svg></a></li>
@@ -21,17 +22,20 @@
 			<div class="panel panel-default">
 				<div class="panel-heading"><?= $language->users ?></div>
 				<div class="panel-body">
-					<table id="users" data-toggle="table" data-url="tables/users.php"  data-show-refresh="true" data-show-toggle="false" data-show-columns="false" data-search="true" data-select-item-name="toolbar1" data-pagination="true" data-sort-name="id" data-sort-order="desc" data-side-pagination="server">
+					<table id="users" data-toggle="table" data-url="tables/users.php"
+                           data-show-refresh="true" data-show-toggle="false" data-show-columns="false"
+                           data-search="true" data-select-item-name="toolbar1" data-pagination="true"
+                           data-sort-name="id" data-sort-order="desc" data-side-pagination="server">
 						<thead>
-						<tr>
-							<th data-field="id" data-sortable="true"></th>
-                            <th data-field="avatar" data-formatter="imagerow"></th>
-                            <th data-formatter="flags"><?= $language->country ?></th>
-							<th data-field="username"  data-sortable="true"><?= $language->username ?></th>
-                            <th data-field="fullname" data-sortable="true"><?= $language->fullname ?></th>
-                            <th data-field="message" data-sortable="true"><?= $language->message ?></th>
-							<th data-field="id" data-formatter="editbtns"></th>
-						</tr>
+                            <tr>
+                                <th data-field="id" data-sortable="true"></th>
+                                <th data-field="avatar" data-formatter="imagerow"></th>
+                                <th data-formatter="flags"><?= $language->country ?></th>
+                                <th data-field="username"  data-sortable="true"><?= $language->username ?></th>
+                                <th data-field="fullname" data-sortable="true"><?= $language->fullname ?></th>
+                                <th data-field="message" data-sortable="true"><?= $language->message ?></th>
+                                <th data-field="id" data-formatter="editbtns"></th>
+                            </tr>
 						</thead>
 					</table>
 				</div>
@@ -57,5 +61,9 @@
 
             return '<center> <img src="<?= $default['url']; ?>Flags/'+ flag +'.png" width="30" height="20"/> </center>'
         }
+        
+        $(function () {
+            $('.search input').attr('placeholder','<?=$language->search ?>');
+        })
     </script>
 <?php include_once ('footer.php') ?>

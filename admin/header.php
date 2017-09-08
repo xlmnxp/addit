@@ -7,7 +7,7 @@
  */
 
     include_once('Functions/login.php');
-    global $language;
+    global $language, $page;
     if(!isset($noheader) || $noheader == false) {
 ?>
 <!DOCTYPE html>
@@ -67,32 +67,27 @@
     </div><!-- /.container-fluid -->
 </nav>
 <div id="sidebar-collapse" class="col-sm-3 col-lg-2 sidebar">
-    <form role="search">
-        <div class="form-group">
-            <input type="text" class="form-control" placeholder="Search">
-        </div>
-    </form>
+<!--    <form role="search">-->
+<!--        <div class="form-group">-->
+<!--            <input type="text" class="form-control" placeholder="Search">-->
+<!--        </div>-->
+<!--    </form>-->
     <ul class="nav menu">
-        <li class="active"><a href="index.php"><svg class="glyph stroked dashboard-dial"><use xlink:href="#stroked-dashboard-dial"></use></svg> <?= $language->home ?></a></li>
-        <li><a href="users.php"><svg class="glyph stroked calendar"><use xlink:href="#stroked-calendar"></use></svg> <?= $language->users ?></a></li>
-        <li class="parent ">
-            <a href="#">
-                <span data-toggle="collapse" href="#sub-item-1"><svg class="glyph stroked chevron-down"><use xlink:href="#stroked-chevron-down"></use></svg></span> Dropdown
+        <li <?= ($page == 'home') ? "class=\"active\"" : '' ?>><a href="index.php"><svg class="glyph stroked dashboard-dial"><use xlink:href="#stroked-dashboard-dial"></use></svg> <?= $language->home ?></a></li>
+        <li <?= ($page == 'users') ? "class=\"active\"" : '' ?>><a href="users.php"><svg class="glyph stroked calendar"><use xlink:href="#stroked-calendar"></use></svg> <?= $language->users ?></a></li>
+        <li class="parent">
+            <a data-toggle="collapse" href="#settings">
+                <span><svg class="glyph stroked chevron-down"><use xlink:href="#stroked-chevron-down"></use></svg></span> الإعدادات
             </a>
-            <ul class="children collapse" id="sub-item-1">
+            <ul class="children collapse" id="settings">
                 <li>
                     <a class="" href="#">
-                        <svg class="glyph stroked chevron-right"><use xlink:href="#stroked-chevron-right"></use></svg> Sub Item 1
+                        <svg class="glyph stroked chevron-right"><use xlink:href="#stroked-chevron-right"></use></svg> إعدادات الموقع
                     </a>
                 </li>
                 <li>
                     <a class="" href="#">
-                        <svg class="glyph stroked chevron-right"><use xlink:href="#stroked-chevron-right"></use></svg> Sub Item 2
-                    </a>
-                </li>
-                <li>
-                    <a class="" href="#">
-                        <svg class="glyph stroked chevron-right"><use xlink:href="#stroked-chevron-right"></use></svg> Sub Item 3
+                        <svg class="glyph stroked chevron-right"><use xlink:href="#stroked-chevron-right"></use></svg> إعدادات حساب الإداري
                     </a>
                 </li>
             </ul>

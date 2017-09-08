@@ -39,7 +39,7 @@
                         </div>
                         <div class="col-sm-6">
                             <a class="btn btn-danger fullwidth" href="{$default["url"]}report/{$user["id"]}" role="button">
-                                <i class="fa fa-flag"></i>&nbsp;{$lang->report}
+                                <i class="fa fa-flag-o"></i>&nbsp;{$lang->report}
                             </a>
                         </div>
                     </div>

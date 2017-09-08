@@ -51,8 +51,8 @@
         }
 
         if($page > 1){
-            array_push($result,array("page" => ($page - 1), "name" => ($language->previous), "active" => false ));
             array_push($result,array("page" => 1, "name" => ($language->first), "active" => false ));
+            array_push($result,array("page" => ($page - 1), "name" => ($language->previous), "active" => false ));
         }
         for ($i = $range['start']; $i <= $range['end']; $i++)
         {
@@ -65,8 +65,8 @@
 
 
         if ($page < $totalPages){
-            array_push($result,array("page" => $totalPages, "name" => ($language->last), "active" => false ));
             array_push($result,array("page" => ($page + 1), "name" => ($language->next), "active" => false ));
+            array_push($result,array("page" => $totalPages, "name" => ($language->last), "active" => false ));
         }
 
         return $result;
