@@ -19,6 +19,8 @@
 
   "previous": "Previous",
   "next": "Next",
+  "first": "First",
+  "last": "Last",
 
   "copyright" : "All rights reserved",
   "terms_of_service": "Terms of Service",

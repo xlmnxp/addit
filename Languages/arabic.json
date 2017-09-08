@@ -17,8 +17,10 @@
   "delete": "حذف",
   "copy_username" : "نسخ",
 
-  "previous" : "السابق",
-  "next" : "التالي",
+  "previous": "السابق",
+  "next": "التالي",
+  "first": "الأول",
+  "last": "الأخير",
 
   "copyright": "جميع الحقوق محفوظة",
   "terms_of_service": "شروط الخدمة",
