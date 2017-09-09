@@ -15,6 +15,10 @@
   "report": "Report",
   "edit": "Edit",
   "delete": "Delete",
+  "cancel": "Cancel",
+  "you_wont_be_able_to_revert_this": "You won't be able to revert this!",
+  "are_you_sure": "Are you sure?",
+  "user_deleted_successfully": "User deleted successfully",
   "copy_username" : "Copy",
 
   "previous": "Previous",

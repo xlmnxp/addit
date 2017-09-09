@@ -3,6 +3,7 @@
   "language_code": "ar",
   "rtl" : true,
 
+  "search": "بحث",
   "home": "الرائيسية",
   "about": "من نحن",
   "contact": "اتصل بنا",
@@ -10,11 +11,14 @@
   "new_user": "إضافة حساب",
   "new_vip": "إضافة حساب VIP",
 
-  "search": "بحث",
   "follow": "متابعة",
   "report": "إبلاغ",
   "edit": "تعديل",
   "delete": "حذف",
+  "cancel": "الغاء",
+  "you_wont_be_able_to_revert_this": "لا يمكنك التراجع لاحقًا!",
+  "are_you_sure": "هل انت متأكد ؟",
+  "user_deleted_successfully": "تم حذف المستخدم بنجاح",
   "copy_username" : "نسخ",
 
   "previous": "السابق",

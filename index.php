@@ -34,7 +34,7 @@
     }
 
     $template->users    = $users;
-    $template->pages = pagination(10,12,$db->table("users")->select(['id'])->count(),$page);
+    $template->pages = pagination(5,12,$db->table("users")->select(['id'])->count(),$page);
 
     $template->default["page-title"] = $template->default["title"]." | $language->home";
 

@@ -89,7 +89,7 @@
     }
 
     $search_count = $search_count->orderBy('id','desc')->select(["id"])->count();
-    $template->pages = pagination(10,12,$search_count,$page);
+    $template->pages = pagination(5,12,$search_count,$page);
 
     $template->default["page-title"] = $template->default["title"]." | $language->search";
 

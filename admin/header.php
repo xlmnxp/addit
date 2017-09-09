@@ -7,7 +7,7 @@
  */
 
     include_once('Functions/login.php');
-    global $language, $page;
+    global $language, $page, $template;
     if(!isset($noheader) || $noheader == false) {
 ?>
 <!DOCTYPE html>
@@ -38,7 +38,7 @@
     <script src="js/html5shiv.min.js"></script>
     <script src="js/respond.min.js"></script>
     <![endif]-->
-
+    <?= $template->include_header ?>
 </head>
 
 <body>
@@ -73,20 +73,20 @@
 <!--        </div>-->
 <!--    </form>-->
     <ul class="nav menu">
-        <li <?= ($page == 'home') ? "class=\"active\"" : '' ?>><a href="index.php"><svg class="glyph stroked dashboard-dial"><use xlink:href="#stroked-dashboard-dial"></use></svg> <?= $language->home ?></a></li>
-        <li <?= ($page == 'users') ? "class=\"active\"" : '' ?>><a href="users.php"><svg class="glyph stroked calendar"><use xlink:href="#stroked-calendar"></use></svg> <?= $language->users ?></a></li>
-        <li class="parent">
+        <li <?= ($page == 'home') ? 'class="active"' : '' ?>><a href="index.php"><svg class="glyph stroked dashboard-dial"><use xlink:href="#stroked-dashboard-dial"></use></svg> <?= $language->home ?></a></li>
+        <li <?= ($page == 'users') ? 'class="active"' : '' ?>><a href="users.php"><svg class="glyph stroked calendar"><use xlink:href="#stroked-calendar"></use></svg> <?= $language->users ?></a></li>
+        <li class="parent <?= ($page == 'website_settings' || $page == 'admin_settings') ? 'active' : '' ?>">
             <a data-toggle="collapse" href="#settings">
                 <span><svg class="glyph stroked chevron-down"><use xlink:href="#stroked-chevron-down"></use></svg></span> الإعدادات
             </a>
             <ul class="children collapse" id="settings">
-                <li>
-                    <a class="" href="#">
+                <li <?= ($page == 'website_settings') ? "class=\"active\"" : '' ?>>
+                    <a href="website_settings.php">
                         <svg class="glyph stroked chevron-right"><use xlink:href="#stroked-chevron-right"></use></svg> إعدادات الموقع
                     </a>
                 </li>
-                <li>
-                    <a class="" href="#">
+                <li <?= ($page == 'admin_settings') ? "class=\"active\"" : '' ?>>
+                    <a href="admin_settings.php">
                         <svg class="glyph stroked chevron-right"><use xlink:href="#stroked-chevron-right"></use></svg> إعدادات حساب الإداري
                     </a>
                 </li>

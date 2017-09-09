@@ -53,7 +53,7 @@
         }
 
         function editbtns(value,row,index) {
-            return '<a class="btn btn-primary" style="margin: 2px;" href="edit?id='+row.id+'"><?= $language->edit ?></a><a class="btn btn-danger" style="margin: 2px;" href="delete?id='+row.id+'"><?= $language->delete?></a><a class="btn btn-warning" style="margin: 2px;" href="https://www.snapchat.com/add/'+row.username+'" target="_blank"><?= $language->follow ?></a>'
+            return '<a class="btn btn-primary" style="margin: 2px;" href="edit.php?id='+row.id+'"><?= $language->edit ?></a><a class="btn btn-danger" style="margin: 2px;" onclick="delete_user(\''+row.id+'\')"><?= $language->delete?></a><a class="btn btn-warning" style="margin: 2px;" href="https://www.snapchat.com/add/'+row.username+'" target="_blank"><?= $language->follow ?></a>'
         }
 
         function flags(value,row,index) {
@@ -61,7 +61,37 @@
 
             return '<center> <img src="<?= $default['url']; ?>Flags/'+ flag +'.png" width="30" height="20"/> </center>'
         }
-        
+
+        function delete_user(id) {
+
+            swal({
+                title: '<?= $language->are_you_sure ?>',
+                text: "<?= $language->you_wont_be_able_to_revert_this ?>",
+                type: 'warning',
+                showCancelButton: true,
+                confirmButtonColor: '#d33',
+                cancelButtonColor: '#3085d6',
+                cancelButtonText: '<?= $language->cancel ?>',
+                confirmButtonText: '<?= $language->confirm ?>'
+            }).then(function () {
+                $.getJSON('delete_user.php?id='+id).done(function (data) {
+                    if(data.status == 'success'){
+                        swal(
+                            '<?= $language->success ?>!',
+                            '<?= $language->user_deleted_successfully ?>.',
+                            'success'
+                        );
+                    }else{
+                        swal(
+                            '<?= $language->error ?>!',
+                            data.message,
+                            'error'
+                        );
+                    }
+                })
+            })
+        }
+
         $(function () {
             $('.search input').attr('placeholder','<?=$language->search ?>');
         })
