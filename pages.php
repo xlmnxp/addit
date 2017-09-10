@@ -6,7 +6,7 @@
  * Time: 1:14 AM
  */
     include_once("global.php");
-    global $db,$template,$templateDirectory,$default;
+    global $db, $template, $templateDirectory, $default, $language;
 
     $queryFile = $db->table("pages")->where("name",$_GET["name"])->select()[0];
     $lang = $language;

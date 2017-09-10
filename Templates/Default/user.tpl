@@ -12,7 +12,7 @@
         </a>
         <hr/>
         <p>
-            <div >
+            <div>
                 <div class="col-sm-6">
                     <a class="btn btn-warning fullwidth btn-copy" role="button" data-clipboard-text="{$user["username"]}">
                         <i class="fa fa-copy"></i>&nbsp;{$lang->copy_username}

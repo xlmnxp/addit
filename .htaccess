@@ -1,9 +1,8 @@
-options +MultiViews
 RewriteEngine On
-RewriteCond %{REQUEST_FILENAME} !-d
 RewriteCond %{REQUEST_FILENAME} !-f
+RewriteCond %{REQUEST_FILENAME} !-d
 
-RewriteRule ^u/(.*)-(.*)$ user.php?id=$1&username=$2 [NC,L]
-RewriteRule ^p-(.*)$ pages.php?name=$1 [NC,L]
-RewriteRule ^report/(.*)$ report.php?id=$1 [R,NC]
-RewriteRule ^(.*)/$ $1.php [NC,L]
+RewriteRule ^users/(.*)-(.*)$ user.php?id=$1&username=$2 [NC]
+RewriteRule ^pages/(.*)$ pages.php?name=$1 [NC]
+RewriteRule ^report/(.*)$ report.php?id=$1 [NC]
+RewriteRule ^([^\.]+)$ $1.php [NC,L]

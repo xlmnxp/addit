@@ -62,7 +62,7 @@
                 <li>{$language_select}</li>
                 <li {if $page == $lang->new_user }class="active"{/if}><a href="{$default["url"]}register" class="btn-primary nbtn"><i class="fa fa-share-alt" aria-hidden="true"></i>
                         {$lang->new_user}</a></li>
-                <li {if $page == $lang->new_vip  }class="active"{/if}><a href="{$default["url"]}p-register-vip" class="btn-warning nbtn"><i class="fa fa-trophy" aria-hidden="true"></i>
+                <li {if $page == $lang->new_vip  }class="active"{/if}><a href="{$default["url"]}pages/register-vip" class="btn-warning nbtn"><i class="fa fa-trophy" aria-hidden="true"></i>
                         {$lang->new_vip}</a></li>
             </ul>
         </div><!--/.nav-collapse -->
@@ -79,7 +79,7 @@
         <hr>
         <div class="col-lg-12">
             <div class="col-md-4">
-                <center><a href="{$default["url"]}p-tos">{$lang->terms_of_service}</a> | <a href="{$default["url"]}p-privacy">{$lang->privacy}</a></center>
+                <center><a href="{$default["url"]}pages/tos">{$lang->terms_of_service}</a> | <a href="{$default["url"]}pages/privacy">{$lang->privacy}</a></center>
             </div>
             <div class="col-md-8">
                 <center><p class="muted pull-right">© {$year} {$default['title']}. {$lang->copyright}</p></center>
