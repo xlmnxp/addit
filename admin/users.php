@@ -74,13 +74,14 @@
                 cancelButtonText: '<?= $language->cancel ?>',
                 confirmButtonText: '<?= $language->confirm ?>'
             }).then(function () {
-                $.getJSON('delete_user.php?id='+id).done(function (data) {
+                $.getJSON('delete_user.php?id='+id, function (data) {
                     if(data.status == 'success'){
                         swal(
                             '<?= $language->success ?>!',
                             '<?= $language->user_deleted_successfully ?>.',
                             'success'
                         );
+                        $('#users').bootstrapTable('refresh');
                     }else{
                         swal(
                             '<?= $language->error ?>!',
@@ -88,7 +89,7 @@
                             'error'
                         );
                     }
-                })
+                });
             })
         }
 

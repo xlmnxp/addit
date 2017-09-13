@@ -12,8 +12,8 @@
 
     if(!isset($_GET['id'])){
         echo json_encode(array(
-            "status" => "error",
-            "message" => "id parameter undefined"
+            'status' => 'error',
+            'message' => 'id parameter undefined'
         ));
         return;
     }
@@ -25,8 +25,8 @@
 
     if(!$user[0] && ($userid != -1)){
         echo json_encode(array(
-            "status" => "error",
-            "message" => "user undefined"
+            'status' => 'error',
+            'message' => 'user undefined'
         ));
         return;
     }
@@ -34,11 +34,10 @@
 
     if(count($user) > 0){
 
-        $db->table('users')->where('id', $userid)->delete();
-
-        echo "{
-                    'status': 'success',
-                    'message': '". $language->user_deleted_successfully ."'
-                }";
+        $db->table('users')->find($userid)->delete();
+        echo json_encode(array(
+            'status' => 'success',
+            'message' => $language->user_deleted_successfully
+        ));
         return;
     }

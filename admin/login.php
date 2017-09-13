@@ -10,12 +10,20 @@ if(isset($_POST['submit'])){
         $errors[]= $language->error_validate_key;
     }
 
-    if($_POST['username'] == $default['cp_username'] && $_POST['password'] == $default['cp_password']){
-        $_SESSION['login'] = true;
-        $_SESSION['username'] = $_POST['username'];
-        $_SESSION['password'] = $_POST['password'];
+    if(!isset($_POST['g-recaptcha-response']) || !recaptcha_vaild($default['recaptcha_secret_key'])){
+        $errors[]= 'recaptcha ' . $language->error_validate_key;
+    }
 
-        header('location: index.php');
+    if($_POST['username'] == $default['cp_username'] && $_POST['password'] == $default['cp_password']){
+        if(!$errors) {
+            $_SESSION['login'] = true;
+            $_SESSION['username'] = $_POST['username'];
+            $_SESSION['password'] = $_POST['password'];
+
+            header('location: index.php');
+        }else{
+            $errors[]= $language->username_or_password_incorrect;
+        }
     }else{
         $errors[]= $language->username_or_password_incorrect;
     }
@@ -42,9 +50,10 @@ if(isset($_POST['submit'])){
     <script src="js/lumino.glyphs.js"></script>
 
     <!--[if lt IE 9]>
-    <script src="js/html5shiv.js"></script>
+    <script src="js/html5shiv.min.js"></script>
     <script src="js/respond.min.js"></script>
     <![endif]-->
+    <?= $template->include_header; ?>
 
 </head>
 
@@ -80,6 +89,9 @@ if(isset($_POST['submit'])){
 							<div class="form-group">
 								<input class="form-control" placeholder="Password" name="password" type="password" value="">
 							</div>
+                            <div class="form-group">
+                                <div id="recaptcha" class="g-recaptcha" data-sitekey="<?= $template->grecaptcha_key; ?>"></div>
+                            </div>
 							<div class="checkbox">
 								<label>
 									<input name="remember" type="checkbox" value="Remember Me"><?= $language->remember_me ?>
@@ -92,25 +104,5 @@ if(isset($_POST['submit'])){
 			</div>
 		</div><!-- /.col-->
 	</div><!-- /.row -->
-<script src="js/jquery-1.11.1.min.js"></script>
-<script src="js/bootstrap.min.js"></script>
-<script src="js/chart.min.js"></script>
-<script src="js/chart-data.js"></script>
-<script src="js/easypiechart.js"></script>
-<script src="js/easypiechart-data.js"></script>
-<script src="js/bootstrap-datepicker.js"></script>
-<script>
-    !function ($) {
-        $(document).on("click","ul.nav li.parent > a > span.icon", function(){
-            $(this).find('em:first').toggleClass("glyphicon-minus");
-        });
-        $(".sidebar span.icon").find('em:first').addClass("glyphicon-plus");
-    }(window.jQuery);
-
-    $(window).on('resize', function () {
-        if ($(window).width() > 768) $('#sidebar-collapse').collapse('show')
-    })
-    $(window).on('resize', function () {
-        if ($(window).width() <= 767) $('#sidebar-collapse').collapse('hide')
-    })
-</script>
+</body>
+</html>

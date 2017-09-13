@@ -97,7 +97,7 @@
             }else{
                 $selected = $_default == $matches[1][0] ? 'selected ' : ' ';
             }
-            $form .= "<option {$selected}value='{$matches[1][0]}'>{$file->language_name}</option>";
+            $form .= "<option {$selected}value='{$matches[1][0]}'> {$file->language_name} </option>";
         }
         $form .= "</select>";
         $form .= "</form>";

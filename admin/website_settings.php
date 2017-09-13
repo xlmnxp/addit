@@ -22,9 +22,8 @@
 				<div class="panel panel-default">
 					<div class="panel-heading">Form Elements</div>
 					<div class="panel-body">
-						<div class="col-md-12">
-							<form role="form">
-							
+                        <form role="form">
+						    <div class="col-md-12">
 								<div class="form-group">
 									<label>Text Input</label>
 									<input class="form-control" placeholder="Placeholder">
@@ -63,7 +62,6 @@
 								</div>
 								
 							</div>
-
 						</form>
 					</div>
 				</div>
