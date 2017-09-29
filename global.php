@@ -30,7 +30,7 @@
     $template->default["page-title"] = $template->default["title"];
 
 
-//    $template->default["url"] = "http://".$_SERVER['SERVER_NAME']."/addit/";
+    $template->default["url"] = "http://".$_SERVER['SERVER_NAME']."/addit/";
 
     if(isset($_POST["language"])){
         setcookie('language', ($_POST["language"]), time() + (86400 * 360), "/"); // 86400 = 1 day

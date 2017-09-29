@@ -1,0 +1,145 @@
+<div class="views">
+  <div class="view view-main">
+    <div class="pages navbar-fixed">
+      <div data-page="home" class="page">
+        <div class="navbar">
+          <div class="navbar-inner">
+            <div class="left"> </div>
+            <div class="center sliding">{{name}}</div>
+            <div class="right">
+                <a href="javascript:void" onclick="window.location.href = 'https://goo.gl/b5r3CZ'" class="link icon-only">
+                   تحديث
+                </a>
+            </div>
+          </div>
+        </div>
+        <form data-search-list=".list-block-search" data-search-in=".item-title" class="searchbar searchbar-init">
+          <div class="searchbar-input">
+            <input type="search" placeholder="بحث">
+            <a href="#" class="searchbar-clear"></a>
+          </div><a href="#" class="searchbar-cancel">الغاء</a>
+        </form>
+        <div class="searchbar-overlay"></div>
+        <div class="page-content">
+          <div class="list-block accordion-list">
+          <ul>
+            <li class="accordion-item">
+              <a class="item-link item-content">
+                <div class="item-inner">
+                    <div class="item-title">ماذا تعني بالرموز التالية 🔇 🔈 📄 ؟</div>
+                </div>
+              </a>
+              <div class="accordion-item-content">
+                <div style="padding: 12px;">
+                    الرمز 🔇 يعني ان التطبيق ليس فيه اشعارات
+                    <br/>
+                    اما الرمز 🔈 يعني ان التطبيق يحتوي على إشعارات
+                    <br/>
+                    اما الرمز 📄 يعني ان بإستطاعتك تحميل التطبيق فوق التطبيق الاصلي الغير معدل علية ( التطبيق يمكن تكرارة )
+                </div>
+              </div>
+            </li>
+          </ul>
+        </div>
+        <div class="list-block accordion-list">
+          <ul>
+            <li class="accordion-item">
+                <a class="item-link item-content">
+                  <div class="item-inner">
+                      <div class="item-title">انشر التطبيق بين اصدقائك</div>
+                  </div>
+                </a>
+                <div class="accordion-item-content">
+                  <div style="padding: 12px;">
+                    <center>
+                      <img src="images/qrcode.png">
+                      <br/> او انسخ الرابط التالي
+                      <br/> <a href="https://goo.gl/W1XPPC" target="_blank">https://goo.gl/W1XPPC</a>
+                    </center>
+                  </div>
+                </div>
+              </li>
+            <li class="accordion-item">
+                <a class="item-link item-content">
+                  <div class="item-inner">
+                      <div class="item-title">سناب عثمان نسخة اخرى</div>
+                  </div>
+                </a>
+                <div class="accordion-item-content list-block media-list">
+                <ul>
+                  <li *ngFor="#item of OthmanApp; #i = index" (click)="click(item)">
+                    <a class="item-content item-link">
+                    <div class="item-media"><img [src]="item.logo" width="80" height="80" style="border-radius:12px;"></div>
+                    <div class="item-inner">
+                      <div class="item-title-row">
+                        <div class="item-title">{{ item.name }}</div>
+                        <div class="item-after">التثبيت</div>
+                      </div>
+                      <div class="item-subtitle">{{ item.description }}</div>
+                      <div *ngIf="item.feature" class="item-text" style="color: red">{{ item.feature }}</div>
+                    </div>
+                  </a>
+                  </li>
+                </ul>
+                </div>
+            </li>
+            </ul>
+          </div>
+          <div class="content-block searchbar-not-found">
+            <div class="content-block-inner"><center>لا يوجد</center></div>
+          </div>
+          <div class="list-block list-block-search searchbar-found media-list">
+            <ul>
+              <li *ngFor="#item of Apps; #i = index" (click)="click(item)">
+                <a class="item-content item-link">
+                <div class="item-media"><img [src]="item.logo" width="80" height="80" style="border-radius:12px;"></div>
+                <div class="item-inner">
+                  <div class="item-title-row">
+                    <div class="item-title">{{ item.name }}</div>
+                    <div class="item-after">التثبيت</div>
+                  </div>
+                  <div class="item-subtitle">{{ item.description }}</div>
+                  <div *ngIf="item.feature" class="item-text" style="color: red">{{ item.feature }}</div>
+                </div>
+              </a>
+              </li>
+            </ul>
+          </div>
+          <div class="list-block accordion-list">
+            <ul>
+              <li class="accordion-item">
+                <a class="item-link item-content">
+                  <div class="item-inner">
+                      <div class="item-title">شكرًا لكل من ساعد في نشر التطبيق</div>
+                  </div>
+                </a>
+                <div class="accordion-item-content list-block list-block-search searchbar-found media-list">
+                  <li *ngFor="#item of KApps; #i = index" (click)="Addclick(item)">
+                    <a class="item-content item-link">
+                    <div class="item-inner">
+                      <div class="item-title-row">
+                        <div class="item-title">{{ item.name }}</div>
+                        <div class="item-after">متابعة</div>
+                      </div>
+                      <div class="item-subtitle">{{ item.description }}</div>
+                    </div>
+                  </a>
+                  </li>
+                </div>
+              </li>
+            </ul>
+          </div>
+          <div class="content-block-title">تابعني على</div>
+          <div class="list-block inset">
+            <ul>
+              <li>
+                <a href="https://twitter.com/DuplicateApps" onclick="window.open(this.href,'popUpWindow','height=400,width=600,left=10,top=10,,scrollbars=yes,menubar=no'); return false;" class="item-link list-button">تويتر @DuplicateApps</a>
+                <a href="https://twitter.com/xlmnxp" onclick="window.open(this.href,'popUpWindow','height=400,width=600,left=10,top=10,,scrollbars=yes,menubar=no'); return false;" class="item-link list-button">تويتر @xlmnxp</a>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
