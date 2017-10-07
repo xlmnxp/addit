@@ -29,7 +29,7 @@
             <div class="navbar-inner">
               <div class="left">
                 {if $page != $lang->home}
-                  <a href="{$default["url"]}" class="link">
+                  <a href="#" onclick="(document.referrer && document.referrer != window.location.href) ? window.history.back() : (window.location.href = '{$default["url"]}')" class="link">
                     <i class="icon icon-back"></i>
                     <span>{$default["title"]}</span>
                   </a>
@@ -47,6 +47,13 @@
             {$this->renderContent()}
         </div>
         </div>
+        <br/>
+        <br/>
+        <br/>
+        <div style="clear: both;s"></div>
+        <a href="#" class="floating-button floating-button-to-popover open-popover color-purple">
+          <i class="fa fa-plus"></i>
+        </a>
       </div>
     </div>
   </div>
