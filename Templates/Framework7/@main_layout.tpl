@@ -17,6 +17,15 @@
   <!-- Color theme for statusbar -->
   <meta name="theme-color" content="#ffffff">
   <script src="{$template_dir}/lib/js/framework7.min.js"></script>
+  <script>
+    function goback() {
+        if (document.referrer && document.referrer != window.location.href) {
+            window.history.back();
+        } else {
+            window.location.href = '{$default["url"]}';
+        }
+    }
+  </script>
   {$include_header}
 </head>
 
@@ -29,7 +38,7 @@
             <div class="navbar-inner">
               <div class="left">
                 {if $page != $lang->home}
-                  <a href="#" onclick="(document.referrer && document.referrer != window.location.href) ? window.history.back() : (window.location.href = '{$default["url"]}')" class="link">
+                  <a href="#" onclick="goback();" class="link">
                     <i class="icon icon-back"></i>
                     <span>{$default["title"]}</span>
                   </a>
@@ -50,8 +59,8 @@
         <br/>
         <br/>
         <br/>
-        <div style="clear: both;s"></div>
-        <a href="#" class="floating-button floating-button-to-popover open-popover color-purple">
+        <div style="clear: both;"></div>
+        <a href="register" class="floating-button floating-button-to-popover open-popover color-purple">
           <i class="fa fa-plus"></i>
         </a>
       </div>

@@ -1,3 +1,5 @@
+{$search_form}
+
 <div class="card">
     <div class="card-content">
         <div class="list-block media-list">
