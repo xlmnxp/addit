@@ -2,11 +2,14 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="8458aa9b-747c-4bc6-8ad3-5992aecb43d7" name="Default" comment="">
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Templates/Framework7/images/loading-gear.gif" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Templates/Framework7/images/qrcode.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Templates/Framework7/src/app.component.html" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Templates/Framework7/src/app.ts" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Templates/Framework7/src/framework7.d.ts" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Templates/Framework7/src/main.ts" afterPath="" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Templates/Default/report.tpl" afterPath="$PROJECT_DIR$/Templates/Default/report.tpl" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Templates/Framework7/@main_layout.tpl" afterPath="$PROJECT_DIR$/Templates/Framework7/@main_layout.tpl" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Templates/Framework7/report.tpl" afterPath="$PROJECT_DIR$/Templates/Framework7/report.tpl" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Templates/Framework7/user.tpl" afterPath="$PROJECT_DIR$/Templates/Framework7/user.tpl" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Templates/Lumen/report.tpl" afterPath="$PROJECT_DIR$/Templates/Lumen/report.tpl" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -33,6 +36,16 @@
                 <element signature="n#style#0;n#div#0;n#div#7;n#form#0;n#div#0;n#!!top" expanded="true" />
                 <element signature="n#style#0;n#div#16;n#form#0;n#div#0;n#!!top" expanded="true" />
               </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="home.tpl" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/Templates/Framework7/home.tpl">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="394">
+              <caret line="29" column="12" lean-forward="false" selection-start-line="29" selection-start-column="12" selection-end-line="29" selection-end-column="12" />
+              <folding />
             </state>
           </provider>
         </entry>
@@ -91,21 +104,31 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="@main_layout.tpl" pinned="false" current-in-tab="false">
+      <file leaf-file-name="@main_layout.tpl" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/Templates/Framework7/@main_layout.tpl">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="330">
-              <caret line="22" column="33" lean-forward="false" selection-start-line="22" selection-start-column="33" selection-end-line="22" selection-end-column="33" />
+            <state relative-caret-position="93">
+              <caret line="65" column="52" lean-forward="true" selection-start-line="65" selection-start-column="52" selection-end-line="65" selection-end-column="52" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="report.tpl" pinned="false" current-in-tab="true">
+      <file leaf-file-name="@main_layout.tpl" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/Templates/Default/@main_layout.tpl">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="417">
+              <caret line="81" column="33" lean-forward="false" selection-start-line="81" selection-start-column="33" selection-end-line="81" selection-end-column="50" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="report.tpl" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/Templates/Lumen/report.tpl">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="120">
-              <caret line="8" column="19" lean-forward="false" selection-start-line="8" selection-start-column="6" selection-end-line="8" selection-end-column="19" />
+            <state relative-caret-position="165">
+              <caret line="11" column="21" lean-forward="false" selection-start-line="11" selection-start-column="21" selection-end-line="11" selection-end-column="21" />
               <folding />
             </state>
           </provider>
@@ -203,13 +226,13 @@
         <option value="$PROJECT_DIR$/Templates/Framework7/home.tpl" />
         <option value="$PROJECT_DIR$/Templates/Framework7/search_form.tpl" />
         <option value="$PROJECT_DIR$/Templates/Default/report.tpl" />
-        <option value="$PROJECT_DIR$/Templates/Lumen/report.tpl" />
         <option value="$PROJECT_DIR$/Templates/Framework7/register.tpl" />
         <option value="$PROJECT_DIR$/Templates/Framework7/user.tpl" />
-        <option value="$PROJECT_DIR$/Templates/Framework7/@main_layout.tpl" />
         <option value="$PROJECT_DIR$/Templates/Framework7/report.tpl" />
         <option value="$PROJECT_DIR$/report.php" />
         <option value="$PROJECT_DIR$/register.php" />
+        <option value="$PROJECT_DIR$/Templates/Lumen/report.tpl" />
+        <option value="$PROJECT_DIR$/Templates/Framework7/@main_layout.tpl" />
       </list>
     </option>
   </component>
@@ -320,6 +343,10 @@
             </PATH_ELEMENT>
             <PATH_ELEMENT>
               <option name="myItemId" value="Templates" />
+              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Default" />
               <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
             </PATH_ELEMENT>
           </PATH>
@@ -494,12 +521,12 @@
       <workItem from="1506701732209" duration="2277000" />
       <workItem from="1506704515956" duration="687000" />
       <workItem from="1507382057766" duration="3536000" />
-      <workItem from="1507865803867" duration="4829000" />
+      <workItem from="1507865803867" duration="7438000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="246504000" />
+    <option name="totallyTimeSpent" value="249113000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="0" width="1366" height="726" extended-state="6" />
@@ -537,16 +564,6 @@
     <watches-manager />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/Uploads/a6c222296a161f7c862d95851c7c6a84.png">
-      <provider selected="true" editor-type-id="images">
-        <state />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Uploads/8e29fec442b66000a91e1edbebe912bc.jpg">
-      <provider selected="true" editor-type-id="images">
-        <state />
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/Uploads/img_59acc3f782a68.png">
       <provider selected="true" editor-type-id="images">
         <state />
@@ -771,13 +788,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/Templates/Default/@main_layout.tpl">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1350">
-          <caret line="90" column="0" lean-forward="false" selection-start-line="90" selection-start-column="0" selection-end-line="90" selection-end-column="17" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/Templates/Default/home.tpl">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="915">
@@ -811,14 +821,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
           <caret line="5" column="41" lean-forward="false" selection-start-line="5" selection-start-column="35" selection-end-line="5" selection-end-column="41" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Templates/Framework7/home.tpl">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="435">
-          <caret line="29" column="12" lean-forward="false" selection-start-line="29" selection-start-column="12" selection-end-line="29" selection-end-column="12" />
           <folding />
         </state>
       </provider>
@@ -860,14 +862,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/Templates/Framework7/@main_layout.tpl">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="330">
-          <caret line="22" column="33" lean-forward="false" selection-start-line="22" selection-start-column="33" selection-end-line="22" selection-end-column="33" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/register.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="330">
@@ -898,8 +892,42 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/Templates/Lumen/report.tpl">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="120">
-          <caret line="8" column="19" lean-forward="false" selection-start-line="8" selection-start-column="6" selection-end-line="8" selection-end-column="19" />
+        <state relative-caret-position="165">
+          <caret line="11" column="21" lean-forward="false" selection-start-line="11" selection-start-column="21" selection-end-line="11" selection-end-column="21" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Templates/Framework7/images/loading-gear.gif">
+      <provider selected="true" editor-type-id="images">
+        <state />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Templates/Framework7/images/qrcode.png">
+      <provider selected="true" editor-type-id="images">
+        <state />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Templates/Framework7/home.tpl">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="394">
+          <caret line="29" column="12" lean-forward="false" selection-start-line="29" selection-start-column="12" selection-end-line="29" selection-end-column="12" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Templates/Default/@main_layout.tpl">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="417">
+          <caret line="81" column="33" lean-forward="false" selection-start-line="81" selection-start-column="33" selection-end-line="81" selection-end-column="50" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Templates/Framework7/@main_layout.tpl">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="93">
+          <caret line="65" column="52" lean-forward="true" selection-start-line="65" selection-start-column="52" selection-end-line="65" selection-end-column="52" />
           <folding />
         </state>
       </provider>

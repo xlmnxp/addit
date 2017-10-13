@@ -9,7 +9,7 @@
     {$validate->key}
     {if isset($errors)}
         <div class="alert alert-danger" role="alert">
-            {foreach @$errors as $error}
+            {foreach $errors as $error}
                 <span class="ion ion-alert-circled" aria-hidden="true"></span>
                 {$error}
                 <br>
