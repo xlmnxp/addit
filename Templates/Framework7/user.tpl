@@ -14,7 +14,7 @@
                         </div>
                         <div class="item-subtitle">{$user['username']}</div>
                         <div>
-                            <a href="#" class="btn btn-warning fullwidth btn-copy" role="button" data-clipboard-text="{$user["username"]}">
+                            <a href="javascript:void" class="btn btn-warning fullwidth btn-copy" role="button" data-clipboard-text="{$user["username"]}">
                                 <i class="fa fa-copy"></i>&nbsp;{$lang->copy_username}
                             </a>
                         </div>

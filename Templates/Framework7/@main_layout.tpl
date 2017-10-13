@@ -19,7 +19,7 @@
   <script src="{$template_dir}/lib/js/framework7.min.js"></script>
   <script>
     function goback() {
-        if (document.referrer && document.referrer != window.location.href) {
+        if (document.referrer) {
             window.history.back();
         } else {
             window.location.href = '{$default["url"]}';
@@ -61,7 +61,7 @@
             <div class="navbar-inner">
               <div class="left">
                 {if $page != $lang->home}
-                  <a href="#" onclick="goback();" class="link">
+                  <a href="javascript:void" onclick="goback();" class="link">
                     <i class="icon icon-back"></i>
                     <span>{$default["title"]}</span>
                   </a>
