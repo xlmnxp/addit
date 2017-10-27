@@ -1,7 +1,7 @@
 <?php
     $page = 'users';
     include_once ('header.php');
-    global $default, $language;
+    global $default, $language, $template;
 ?>
 	<div class="col-sm-9 col-sm-offset-3 col-lg-10 col-lg-offset-2 main">
 		<div class="row">
@@ -95,7 +95,8 @@
         }
 
         function editUser(data) {
-            data = JSON.parse(unescape(data));
+            var JSONdata = JSON.parse(unescape(data));
+
             var labelFilter = {
                 id: '',
                 username: '<?= $language->username ?>',
@@ -105,8 +106,8 @@
                 sex: '<?= $language->sex ?>',
                 data: 'data'
             };
-            var form = '<form method="post" action="#" onsubmit="return false;">';
-            Object.entries(data).forEach(function (value) {
+            var form = '<form method="post" id="editForm" action="#" onsubmit="return submitUser();">';
+            Object.entries(JSONdata).forEach(function (value) {
                 form += '<div class="form-group">';
                 form += '<label for"'+ value[0] +'">'+ labelFilter[value[0]] +'</label>';
                 if(value[0] == 'message'){
@@ -130,25 +131,69 @@
                 html: form,
                 showCancelButton: true,
                 cancelButtonText: '<?= $language->cancel ?>',
-                confirmButtonText: '<?= $language->edit ?>',
                 showConfirmButton: false
-            }).then(function () {
-//                $.getJSON('delete.user.php?id='+id, function (data) {
-//                    if(data.status == 'success'){
-//                        swal(
-//                            '<?//= $language->success ?>//!',
-//                            '<?//= $language->user_deleted_successfully ?>//.',
-//                            'success'
-//                        );
-//                        $('#users').bootstrapTable('refresh');
-//                    }else{
-//                        swal(
-//                            '<?//= $language->error ?>//!',
-//                            data.message,
-//                            'error'
-//                        );
-//                    }
-//                });
+            }).then(function () {});
+        }
+
+        function submitUser(data){
+            var validateKey = /value\=\'(.*)\'/g.exec("<?= $template->validate->key ?>")[1];
+            var ef = document.getElementById('editForm');
+            var formData = {
+                id: ef['id'].value,
+                username: ef['username'].value,
+                fullname: ef['fullname'].value,
+                avatar: ef['avatar'].value,
+                message: ef['message'].value,
+                sex: ef['sex'].value,
+                data: JSON.stringify(JSON.parse(ef['data'].value)),
+                form_key: validateKey
+            };
+
+            post('edit.user.php',formData,'post');
+
+
+            return false;
+        }
+
+        function post(path, params, method) {
+            method = method || "post"; // Set method to post by default if not specified.
+
+            // The rest of this code assumes you are not using a library.
+            // It can be made less wordy if you use one.
+            var form = document.createElement("form");
+            form.setAttribute("method", method);
+            form.setAttribute("action", path);
+
+            for(var key in params) {
+                if(params.hasOwnProperty(key)) {
+                    var hiddenField = document.createElement("input");
+                    hiddenField.setAttribute("type", "hidden");
+                    hiddenField.setAttribute("name", key);
+                    hiddenField.setAttribute("value", params[key]);
+
+                    form.appendChild(hiddenField);
+                }
+            }
+
+            $.ajax({
+                type: form.getAttribute('method'),
+                url: form.getAttribute('action'),
+                data: $(form).serialize(),
+                success: function (data) {
+                    swal(
+                        '<?= $language->success ?>!',
+                        '<?= $language->user_edited_successfully ?>.',
+                        'success'
+                    );
+                    $('#users').bootstrapTable('refresh');
+                },
+                error: function (data) {
+                    swal(
+                        '<?= $language->error ?>!',
+                        data.message,
+                        'success'
+                    );
+                }
             });
         }
         $(function () {

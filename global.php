@@ -95,10 +95,9 @@
     $template->include_header = '
         <link rel="stylesheet" href="'.$default['url'].'/global-templates/css/sweetalert2.min.css" />
         
-        <script src="'.$default['url'].'/global-templates/javascript/clipboard.min.js"></script>
-        <script src="'.$default['url'].'/global-templates/javascript/sweetalert2.min.js"></script>
-        <script src="https://www.google.com/recaptcha/api.js" async defer></script>
-        ';
+        <script src="'.$default['url'].'/global-templates/javascript/clipboard.min.js" async defer></script>
+        <script src="'.$default['url'].'/global-templates/javascript/sweetalert2.min.js" async defer></script>
+        <script src="https://www.google.com/recaptcha/api.js" async defer></script>';
 
     $template->include_footer = '
         <script>
@@ -116,5 +115,5 @@
             });
 
         </script>
-        <script type="text/javascript" src="//s7.addthis.com/js/300/addthis_widget.js#pubid='.$template->addthis_pubid.'"></script>
+        <script type="text/javascript" src="//s7.addthis.com/js/300/addthis_widget.js#pubid='.$template->addthis_pubid.'" async defer></script>
         ';

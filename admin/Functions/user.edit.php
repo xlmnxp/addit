@@ -10,34 +10,27 @@
 
     header('Content-type: application/json');
 
-    if(!isset($_GET['id'])){
+    if(!isset($_POST['id'])){
         echo json_encode(array(
             'status' => 'error',
             'message' => 'id parameter undefined'
         ));
-        return;
+        exit(0);
     }
 
-    $userid = $_GET['id'];
-    $userid = $_GET['id'] < 0 ? -1 : $userid;
+    $status = $db->table("users")->where('id',$_POST['id'])->update([
+        "username"  => htmlspecialchars($_POST["username"], ENT_QUOTES, 'UTF-8'),
+        "fullname"  => htmlspecialchars($_POST["fullname"], ENT_QUOTES, 'UTF-8'),
+        "avatar"    => htmlspecialchars($_POST["avatar"], ENT_QUOTES, 'UTF-8'),
+        "message"   => htmlspecialchars($_POST["message"], ENT_QUOTES, 'UTF-8'),
+        "sex"       => htmlspecialchars($_POST["sex"], ENT_QUOTES, 'UTF-8'),
+        "data"      => $_POST["data"]
+    ]);
 
-    $user = $db->table('users')->where('id', $userid)->select(['id']);
-
-    if(!$user[0] && ($userid != -1)){
-        echo json_encode(array(
-            'status' => 'error',
-            'message' => 'user undefined'
-        ));
-        return;
-    }
-
-
-    if(count($user) > 0){
-
-        $db->table('users')->find($userid)->delete();
+    if($status){
         echo json_encode(array(
             'status' => 'success',
-            'message' => $language->user_deleted_successfully
+            'message' => 'user was edited.'
         ));
-        return;
+        exit(0);
     }

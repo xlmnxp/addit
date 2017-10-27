@@ -50,7 +50,7 @@
                                     <input class="form-control" type="<?= ($key != 'cp_password') ? 'text' : 'password'; ?>" name="<?= $key ?>" placeholder="<?=($key != 'cp_password') ? $value : 'كلمة السر'; ?>" value="<?= $value ?>"/>
                                 </div>
                             <?php }?>
-                            <input class="btn btn-primary" type="submit" value="<?= $language->submit ?>" />
+                            <input class="btn btn-primary" type="submit" value="<?= $language->edit ?>" />
 
                         </div>
                     </form>

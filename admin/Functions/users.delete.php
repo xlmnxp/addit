@@ -15,7 +15,7 @@
             'status' => 'error',
             'message' => 'id parameter undefined'
         ));
-        return;
+        exit(0);
     }
 
     $userid = $_GET['id'];
@@ -28,7 +28,7 @@
             'status' => 'error',
             'message' => 'user undefined'
         ));
-        return;
+        exit(0);
     }
 
 
@@ -39,5 +39,5 @@
             'status' => 'success',
             'message' => $language->user_deleted_successfully
         ));
-        return;
+        exit(0);
     }

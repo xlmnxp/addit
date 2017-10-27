@@ -66,7 +66,7 @@
                                         } ?>
                                     </div>
                                 <?php }?>
-                                <input class="btn btn-primary" type="submit" value="<?= $language->submit ?>" />
+                                <input class="btn btn-primary" type="submit" value="<?= $language->edit ?>" />
 							</div>
 						</form>
 					</div>
