@@ -2,16 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="8458aa9b-747c-4bc6-8ad3-5992aecb43d7" name="Default" comment="">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Languages/arabic.json" afterPath="$PROJECT_DIR$/Languages/arabic.json" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Languages/english.json" afterPath="$PROJECT_DIR$/Languages/english.json" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/admin/Functions/user.edit.php" afterPath="$PROJECT_DIR$/admin/Functions/user.edit.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/admin/Functions/users.delete.php" afterPath="$PROJECT_DIR$/admin/Functions/users.delete.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/admin/admin_settings.php" afterPath="$PROJECT_DIR$/admin/admin_settings.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/admin/edit.user.php" afterPath="$PROJECT_DIR$/admin/edit.user.php" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/admin/users.php" afterPath="$PROJECT_DIR$/admin/users.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/admin/website_settings.php" afterPath="$PROJECT_DIR$/admin/website_settings.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/global.php" afterPath="$PROJECT_DIR$/global.php" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
@@ -26,17 +17,22 @@
   <component name="ExecutionTargetManager" SELECTED_TARGET="default_target" />
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="users.php" pinned="false" current-in-tab="false">
+      <file leaf-file-name="users.php" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/admin/users.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="424">
-              <caret line="201" column="13" lean-forward="true" selection-start-line="201" selection-start-column="13" selection-end-line="201" selection-end-column="13" />
-              <folding />
+            <state relative-caret-position="484">
+              <caret line="205" column="13" lean-forward="true" selection-start-line="205" selection-start-column="13" selection-end-line="205" selection-end-column="13" />
+              <folding>
+                <element signature="e#1420#1426#1#HTML" expanded="true" />
+                <element signature="e#1545#1551#1#HTML" expanded="true" />
+                <element signature="e#1669#1675#1#HTML" expanded="true" />
+                <element signature="e#1791#1797#1#HTML" expanded="true" />
+              </folding>
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="footer.php" pinned="false" current-in-tab="true">
+      <file leaf-file-name="footer.php" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/admin/footer.php">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="135">
@@ -203,8 +199,8 @@
         <option value="$PROJECT_DIR$/admin/Functions/user.edit.php" />
         <option value="$PROJECT_DIR$/Languages/arabic.json" />
         <option value="$PROJECT_DIR$/Languages/english.json" />
-        <option value="$PROJECT_DIR$/admin/users.php" />
         <option value="$PROJECT_DIR$/admin/footer.php" />
+        <option value="$PROJECT_DIR$/admin/users.php" />
       </list>
     </option>
   </component>
@@ -488,12 +484,12 @@
       <workItem from="1507865803867" duration="10722000" />
       <workItem from="1507913694780" duration="598000" />
       <workItem from="1508104748091" duration="921000" />
-      <workItem from="1509133298050" duration="5326000" />
+      <workItem from="1509133298050" duration="6839000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="259242000" />
+    <option name="totallyTimeSpent" value="260755000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="0" width="1366" height="726" extended-state="6" />
@@ -863,19 +859,24 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/admin/users.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="424">
-          <caret line="201" column="13" lean-forward="true" selection-start-line="201" selection-start-column="13" selection-end-line="201" selection-end-column="13" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/admin/footer.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="135">
           <caret line="14" column="19" lean-forward="false" selection-start-line="14" selection-start-column="0" selection-end-line="15" selection-end-column="0" />
           <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/admin/users.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="484">
+          <caret line="205" column="13" lean-forward="true" selection-start-line="205" selection-start-column="13" selection-end-line="205" selection-end-column="13" />
+          <folding>
+            <element signature="e#1420#1426#1#HTML" expanded="true" />
+            <element signature="e#1545#1551#1#HTML" expanded="true" />
+            <element signature="e#1669#1675#1#HTML" expanded="true" />
+            <element signature="e#1791#1797#1#HTML" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
