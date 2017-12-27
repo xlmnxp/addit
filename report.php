@@ -8,8 +8,8 @@
 
     include_once ("global.php");
     global $db, $template, $templateDirectory, $default, $form, $language;
-
     $user = $db->table("users")->where("id", @$_GET['id'])->select()[0];
+
     $template->page = $language->report;
     $template->user = $user;
     if(isset($_POST["submit"])) {

@@ -82,7 +82,7 @@
                             '<?= $language->user_deleted_successfully ?>.',
                             'success'
                         );
-                        $('#users').bootstrapTable('refresh');
+                        $('button[name="refresh"]').click();
                     }else{
                         swal(
                             '<?= $language->error ?>!',
@@ -90,6 +90,12 @@
                             'error'
                         );
                     }
+                }, function (data) {
+                    swal(
+                        '<?= $language->error ?>!',
+                        data.message,
+                        'success'
+                    );
                 });
             });
         }
@@ -185,7 +191,7 @@
                         '<?= $language->user_edited_successfully ?>.',
                         'success'
                     );
-                    $('#users').bootstrapTable('refresh');
+                    $('button[name="refresh"]').click();
                 },
                 error: function (data) {
                     swal(

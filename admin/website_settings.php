@@ -51,22 +51,23 @@
                                 <?php foreach ( $default as $key => $value) {
                                     if($key == 'cp_username' || $key == 'cp_password'){
                                         continue;
-                                    }
-                                    ?>
+                                    } ?>
+
                                     <div class="form-group">
                                         <label><?= $setting_key_filter[$key]; ?></label>
-                                        <? if ($key == "report_message") {
-                                            ?>
+                                        <?php if($key == "template"){ ?>
+                                            <select class="form-control" name="template">
+                                                <?php echo template_select(); ?>
+                                            </select>
+                                        <?php } else if ($key == "report_message") { ?>
                                             <textarea class="form-control" name="<?= $key; ?>" placeholder="<?= $value; ?>" rows="3"><?= $value; ?></textarea>
-                                            <?php
-                                            }else{
-                                          ?>
+                                        <?php }else{ ?>
                                             <input class="form-control" type="text" name="<?= $key; ?>" placeholder="<?= $value; ?>" value="<?= $value; ?>"/>
                                             <?php
                                         } ?>
                                     </div>
                                 <?php }?>
-                                <input class="btn btn-primary" type="submit" value="<?= $language->edit ?>" />
+                                <button class="btn btn-primary" type="submit" name="submit"><svg class="glyph stroked pencil" style="height: 20px; width: 20px;"><use xlink:href="#stroked-pencil"/></svg>&nbsp;<?= $language->edit ?></button>
 							</div>
 						</form>
 					</div>

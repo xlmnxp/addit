@@ -104,6 +104,16 @@
         return $form;
     }
 
+    function template_select(){
+        global $db;
+        $form = "";
+        foreach (glob("../Templates/*") as $filename) {
+            preg_match('/Templates\/(.*)/', $filename, $matches,PREG_OFFSET_CAPTURE);
+            $form .= "<option value='{$matches[1][0]}'> {$matches[1][0]} </option>";
+        }
+        return $form;
+    }
+
     function getIp(){
         $client  = @$_SERVER['HTTP_CLIENT_IP'];
         $forward = @$_SERVER['HTTP_X_FORWARDED_FOR'];
@@ -138,15 +148,8 @@
         }
         $purpose    = str_replace(array("name", "\n", "\t", " ", "-", "_"), NULL, strtolower(trim($purpose)));
         $support    = array("country", "countrycode", "state", "region", "city", "location", "address");
-        $continents = array(
-            "AF" => "Africa",
-            "AN" => "Antarctica",
-            "AS" => "Asia",
-            "EU" => "Europe",
-            "OC" => "Australia (Oceania)",
-            "NA" => "North America",
-            "SA" => "South America"
-        );
+        $continents = getCountries();
+
         if (filter_var($ip, FILTER_VALIDATE_IP) && in_array($purpose, $support)) {
             $ipdat = @json_decode(file_get_contents("http://www.geoplugin.net/json.gp?ip=" . $ip));
             if (@strlen(trim($ipdat->geoplugin_countryCode)) == 2) {

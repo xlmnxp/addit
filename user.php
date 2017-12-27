@@ -24,7 +24,7 @@
         "message"   => $user->message,
         "data"      => $data,
         "sex"       => ($user->sex == 0? $language->male : $language->female),
-        "url"       => $template->default["url"]."u/".$user->id."-".str_replace(" ","-",$user->fullname)
+        "url"       => $template->default["url"]."user/".$user->id."-".str_replace(" ","-",$user->fullname)
     );
 
     $template->default["page-title"] = $template->default["title"]." | $user->fullname ($user->username)";

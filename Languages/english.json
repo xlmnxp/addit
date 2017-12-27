@@ -39,6 +39,7 @@
   "remember_me": "Remember Me",
   "login" : "Login",
 
+  "empty_field": "You should not leave any empty field",
   "username": "Username",
   "password": "Password",
   "username_or_password_incorrect": "The username or password is incorrect",

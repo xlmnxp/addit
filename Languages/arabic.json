@@ -9,7 +9,7 @@
   "contact": "اتصل بنا",
 
   "new_user": "إضافة حساب",
-  "new_vip": "إضافة حساب VIP",
+  "new_vip": "إضافة حساب مميز",
 
   "follow": "متابعة",
   "report": "إبلاغ",
@@ -39,6 +39,7 @@
   "remember_me": "تذكرني",
   "login" : "تسجيل الدخول",
 
+  "empty_field": "يجب عدم ترك أي حقل فارغ",
   "username" : "اسم المستخدم",
   "password" : "كلمة السر",
   "username_or_password_incorrect": "خطأ في اسم المستخدم أو كلمة السر",

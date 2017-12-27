@@ -19,6 +19,23 @@
         'cp_password' => $default['cp_password']
     );
 
+    $errors = [];
+    $success = false;
+    if(isset($_POST['submit'])){
+        if(empty($_POST['cp_username']) || empty($_POST['cp_password']) || !isset($_POST['cp_username']) || !isset($_POST['cp_password'])){
+            $errors[] = $language->empty_field;
+        }else{
+            $db->table('settings')->where('name','cp_username')->update([
+                "value" => $_POST['cp_username']
+            ]);
+            $db->table('settings')->where('name','cp_password')->update([
+                "value" => md5($_POST['cp_password'])
+            ]);
+
+            $success = true;
+        }
+    }
+
     ?>
 <div class="col-sm-9 col-sm-offset-3 col-lg-10 col-lg-offset-2 main">
     <div class="row">
@@ -41,7 +58,17 @@
             <div class="panel panel-default">
                 <div class="panel-heading">إعدادات الموقع</div>
                 <div class="panel-body">
-                    <form role="form">
+                    <form role="form" method="post">
+                        <?php if($success == true){ ?>
+                            <div class="alert alert-success" role="alert"><strong><?php echo $language->success; ?></strong></div>
+                        <?php }else if(count($errors) != 0){ ?>
+                            <div class="alert alert-danger" role="alert">
+                                <?php foreach (@$errors as $error){ ?>
+                                    <span class="fa fa-exclamation-circle" aria-hidden="true"></span>
+                                    <?php echo $error; ?><br>
+                                <?php } ?>
+                            </div>
+                        <?php } ?>
                         <?= $template->validate->key ?>
                         <div class="col-md-12">
                             <?php foreach ( $admin_account as $key => $value) { ?>
@@ -50,8 +77,7 @@
                                     <input class="form-control" type="<?= ($key != 'cp_password') ? 'text' : 'password'; ?>" name="<?= $key ?>" placeholder="<?=($key != 'cp_password') ? $value : 'كلمة السر'; ?>" value="<?= $value ?>"/>
                                 </div>
                             <?php }?>
-                            <input class="btn btn-primary" type="submit" value="<?= $language->edit ?>" />
-
+                            <button class="btn btn-primary" type="submit" name="submit"><svg class="glyph stroked pencil" style="height: 20px; width: 20px;"><use xlink:href="#stroked-pencil"/></svg>&nbsp;<?= $language->edit ?></button>
                         </div>
                     </form>
                 </div>

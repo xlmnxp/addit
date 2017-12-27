@@ -14,11 +14,11 @@ if(isset($_POST['submit'])){
         $errors[]= 'recaptcha ' . $language->error_validate_key;
     }
 
-    if($_POST['username'] == $default['cp_username'] && $_POST['password'] == $default['cp_password']){
+    if($_POST['username'] == $default['cp_username'] && $default['cp_password'] == md5($_POST['password'])){
         if(!$errors) {
             $_SESSION['login'] = true;
             $_SESSION['username'] = $_POST['username'];
-            $_SESSION['password'] = $_POST['password'];
+            $_SESSION['password'] = md5($_POST['password']);
 
             header('location: index.php');
         }else{
@@ -90,13 +90,8 @@ if(isset($_POST['submit'])){
 								<input class="form-control" placeholder="Password" name="password" type="password" value="">
 							</div>
                             <div class="form-group">
-                                <div id="recaptcha" class="g-recaptcha" data-sitekey="<?= $template->grecaptcha_key; ?>"></div>
+                                <div id="recaptcha" class="g-recaptcha" data-sitekey="<?= $template->grecaptcha_key; ?>" align="center"></div>
                             </div>
-							<div class="checkbox">
-								<label>
-									<input name="remember" type="checkbox" value="Remember Me"><?= $language->remember_me ?>
-								</label>
-							</div>
 							<input class="btn btn-primary" value="<?= $language->login ?>" type="submit" name="submit"/>
 						</fieldset>
 					</form>
