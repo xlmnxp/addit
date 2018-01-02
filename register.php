@@ -12,7 +12,7 @@
     $template->page = $language->new_user;
 
     if(isset($_POST["submit"])){
-            $errors= array();
+            $errors = array();
             $file = $_FILES['avatar'];
             $file_name  = $file['name'];
             $file_size  = $file['size'];
@@ -20,7 +20,7 @@
             $file_type  = $file['type'];
             $file_ext=strtolower(end(explode('.',$file['name'])));
             $dir = "Uploads/".uniqid("img_").".".$file_ext;
-            $expensions= array("jpeg","jpg","png");
+            $expensions = array("jpeg","jpg","png");
 
             if(!isset($_POST['form_key']) || !$form->validate()){
                 $errors[]= $language->error_validate_key;

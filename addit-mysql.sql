@@ -76,7 +76,7 @@ INSERT INTO `settings` (`id`, `name`, `value`) VALUES
 (4, 'language', 'arabic'),
 (5, 'report_message', 'ممنوع كود الـPHP'),
 (6, 'cp_username', 'admin'),
-(7, 'cp_password', 'admin'),
+(7, 'cp_password', '21232f297a57a5a743894a0e4a801fc3'),
 (8, 'recaptcha_site_key', '6LdEay8UAAAAAG4tz7PrqCr3CgfCOG3vcOdw5Rq2'),
 (9, 'recaptcha_secret_key', '6LdEay8UAAAAADNxRLAENc6mk21vcFrYp3wp53bq'),
 (10, 'addthis_pubid', 'ra-58e0111c4be4cfd4'),

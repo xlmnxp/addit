@@ -33,9 +33,9 @@
 
   "control_panel": "لوحة التحكم",
   "users": "مستخدمين",
-  "views_today": "مشاهدات اليوم",
-  "views_month": "مشاهدات الشهر",
-  "views_year": "مشاهدات السنة",
+  "views_today": "زيارات اليوم",
+  "views_month": "زيارات الشهر",
+  "views_year": "زيارات السنة",
   "remember_me": "تذكرني",
   "login" : "تسجيل الدخول",
 

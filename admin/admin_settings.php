@@ -19,9 +19,13 @@
         'cp_password' => $default['cp_password']
     );
 
-    $errors = [];
+    $errors = array();
     $success = false;
     if(isset($_POST['submit'])){
+        if(!isset($_POST['form_key']) || !$form->validate()){
+            $errors[] = $language->error_validate_key;
+        }
+
         if(empty($_POST['cp_username']) || empty($_POST['cp_password']) || !isset($_POST['cp_username']) || !isset($_POST['cp_password'])){
             $errors[] = $language->empty_field;
         }else{

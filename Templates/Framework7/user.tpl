@@ -14,7 +14,7 @@
                         </div>
                         <div class="item-subtitle">{$user['username']}</div>
                         <div>
-                            <a href="javascript:void" class="btn btn-warning fullwidth btn-copy" role="button" data-clipboard-text="{$user["username"]}">
+                            <a href="javascript:void(0)" class="btn btn-warning fullwidth btn-copy" role="button" data-clipboard-text="{$user["username"]}">
                                 <i class="fa fa-copy"></i>&nbsp;{$lang->copy_username}
                             </a>
                         </div>
@@ -53,11 +53,6 @@
     <div class="card-content" style="padding: 20px;">
         <div id="disqus_thread"></div>
         <script>
-
-            /**
-             *  RECOMMENDED CONFIGURATION VARIABLES: EDIT AND UNCOMMENT THE SECTION BELOW TO INSERT DYNAMIC VALUES FROM YOUR PLATFORM OR CMS.
-             *  LEARN WHY DEFINING THESE VARIABLES IS IMPORTANT: https://disqus.com/admin/universalcode/#configuration-variables*/
-
             var disqus_config = function () {
                 this.page.url = "{$user["url"]}";  // Replace PAGE_URL with your page's canonical URL variable
             };

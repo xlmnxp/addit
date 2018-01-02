@@ -59,7 +59,14 @@
     $template->grecaptcha_key   = $default['recaptcha_site_key'];
     $template->disqus_name      = $default["disqus_name"];
     $template->year             = date("Y");
-    $template->language_select = language_select();
+
+    $selectForm                 = "<form class='navbar-form' method='post' id='language_select'>";
+    $selectForm                .= "<select class='form-control' onchange='this.parentNode.submit()' name='language'>";
+    $selectForm                .= language_select();
+    $selectForm                .= "</select>";
+    $selectForm                .= "</form>";
+
+    $template->language_select  = $selectForm;
 
     $template->search           = array(
                                     "value"    =>  "",
@@ -93,17 +100,17 @@
     $template->countries = $countries;
 
     $template->include_header = '
-        <link rel="stylesheet" href="'.$default['url'].'/global-templates/css/sweetalert2.min.css" />
+        <link rel="stylesheet" href="'.$default['url'].'global-templates/css/sweetalert2.min.css" />
         
-        <script src="'.$default['url'].'/global-templates/javascript/clipboard.min.js" async defer></script>
-        <script src="'.$default['url'].'/global-templates/javascript/sweetalert2.min.js" async defer></script>
-        <script src="https://www.google.com/recaptcha/api.js" async defer></script>';
+        <script src="'.$default['url'].'global-templates/javascript/clipboard.min.js"></script>
+        <script src="'.$default['url'].'global-templates/javascript/sweetalert2.min.js"></script>
+        <script src="https://www.google.com/recaptcha/api.js"></script>';
 
     $template->include_footer = '
         <script>
-            var cb = new Clipboard(\'.btn-copy\');
+            var cb = new Clipboard(".btn-copy");
             
-            cb.on(\'success\', function(e) {
+            cb.on("success", function(e) {
                 swal({
                   title: "'.$lang->success.'!",
                   text: "'.$lang->copied.'",

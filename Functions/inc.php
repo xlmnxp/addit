@@ -84,12 +84,11 @@
         }
     }
 
-    function language_select(){
+    function language_select($select = ""){
         global $db;
-        $_default = $db->table("settings")->where("name","language")->select(["id","value"])[0]->value;
-        $form  = "<form class='navbar-form' method='post' id='language_select'>";
-        $form .= "<select class='form-control' onchange='this.parentNode.submit()' name='language'>";
-        foreach (glob("Languages/*.json") as $filename) {
+        $_default   = $db->table("settings")->where("name","language")->select(["id","value"])[0]->value;
+        $form       = "";
+        foreach (glob("{$select}Languages/*.json") as $filename) {
             $file = json_decode(file_get_contents($filename));
             preg_match('/Languages\/(.*)\.json/', $filename, $matches,PREG_OFFSET_CAPTURE);
             if(isset($_COOKIE["language"])){
@@ -99,17 +98,17 @@
             }
             $form .= "<option {$selected}value='{$matches[1][0]}'> {$file->language_name} </option>";
         }
-        $form .= "</select>";
-        $form .= "</form>";
         return $form;
     }
 
-    function template_select(){
-        global $db;
+    function template_select($select = "../"){
+        global $default;
         $form = "";
-        foreach (glob("../Templates/*") as $filename) {
+        foreach (glob("{$select}Templates/*") as $filename) {
             preg_match('/Templates\/(.*)/', $filename, $matches,PREG_OFFSET_CAPTURE);
-            $form .= "<option value='{$matches[1][0]}'> {$matches[1][0]} </option>";
+            $selected = $default['template'] == $matches[1][0] ? 'selected ' : ' ';
+
+            $form .= "<option {$selected}value='{$matches[1][0]}'> {$matches[1][0]} </option>";
         }
         return $form;
     }
