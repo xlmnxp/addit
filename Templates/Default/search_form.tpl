@@ -7,22 +7,22 @@
         </div>
         <div class="col-sm-2">
             <label for="sex" class="ovtxt">{$lang->sex}</label>
-            <select name="sex" id="sex" class="form-control" onload="this.selectedIndex = {$search["sex"]};">
-                <option value="-1"></option>
+            <select name="sex" id="sex" class="form-control">
+                <option value="-1">{$lang->all}</option>
                 {$search_sex}
             </select>
         </div>
         <div class="col-sm-2">
             <label for="category" class="ovtxt">{$lang->category}</label>
             <select name="category" id="category" class="form-control">
-                <option value="-1"></option>
+                <option value="-1">{$lang->all}</option>
                 {$categories}
             </select>
         </div>
         <div class="col-sm-2">
             <label for="country" class="ovtxt">{$lang->country}</label>
             <select name="country" id="country" class="form-control">
-                <option value="-1"></option>
+                <option value="-1">{$lang->all}</option>
                 {$countries}
             </select>
         </div>

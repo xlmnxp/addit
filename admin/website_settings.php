@@ -7,7 +7,7 @@
  */
     $page = 'website_settings';
     include_once ('header.php');
-    global $db, $default, $template, $language;
+    global $db, $form, $default, $template, $language;
 
     $setting_key_filter = [
         'title' => 'عنوان الموقع',
@@ -75,6 +75,7 @@
             $db->table('settings')->where('name','disqus_name')->update([
                 "value" => $_POST['disqus_name']
             ]);
+
             $success = true;
         }
     }
@@ -102,18 +103,19 @@
 					<div class="panel-heading">إعدادات الموقع</div>
 					<div class="panel-body">
                         <form role="form" method="post">
-                            <?php if($success == true){ ?>
-                                <div class="alert alert-success" role="alert"><strong><?php echo $language->success; ?></strong></div>
-                            <?php }else if(count($errors) != 0){ ?>
-                                <div class="alert alert-danger" role="alert">
-                                    <?php foreach (@$errors as $error){ ?>
-                                        <span class="fa fa-exclamation-circle" aria-hidden="true"></span>
-                                        <?php echo $error; ?><br>
-                                    <?php } ?>
-                                </div>
-                            <?php } ?>
                             <?= $template->validate->key ?>
 						    <div class="col-md-12">
+                                <?php if($success == true){ ?>
+                                    <div class="alert alert-success" role="alert"><strong><?php echo $language->success; ?></strong></div>
+                                <?php }else if(count($errors)){ ?>
+                                    <div class="alert alert-danger" role="alert">
+                                        <?php foreach (@$errors as $error){ ?>
+                                            <span class="fa fa-exclamation-circle" aria-hidden="true"></span>
+                                            <?php echo $error; ?><br>
+                                        <?php } ?>
+                                    </div>
+                                <?php } ?>
+
                                 <?php foreach ( $default as $key => $value) {
                                     if($key == 'cp_username' || $key == 'cp_password'){
                                         continue;

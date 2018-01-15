@@ -69,13 +69,15 @@
     $template->language_select  = $selectForm;
 
     $template->search           = array(
-                                    "value"    =>  "",
-                                    "sex"       => -1
-                                    );
+                                    "value"     => "",
+                                    "sex"       => -1,
+                                    "category"   => -1,
+                                    "country"   => -1
+                                );
 
     $template->validate         = json_decode(json_encode(array(
                                     "key" => $form->outputKey()
-                                    )));
+                                )));
 
     $validate                   = $template->validate;
     $search                     = $template->search;

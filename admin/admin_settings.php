@@ -7,7 +7,7 @@
  */
     $page = 'admin_settings';
     include_once ('header.php');
-    global $db, $default, $template, $language;
+    global $db, $form, $default, $template, $language;
 
     $setting_key_filter = [
         'cp_username' => 'اسم المستخدم للوحة التحكم',
@@ -65,7 +65,7 @@
                     <form role="form" method="post">
                         <?php if($success == true){ ?>
                             <div class="alert alert-success" role="alert"><strong><?php echo $language->success; ?></strong></div>
-                        <?php }else if(count($errors) != 0){ ?>
+                        <?php }else if(count($errors)){ ?>
                             <div class="alert alert-danger" role="alert">
                                 <?php foreach (@$errors as $error){ ?>
                                     <span class="fa fa-exclamation-circle" aria-hidden="true"></span>

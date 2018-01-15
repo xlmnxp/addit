@@ -32,7 +32,7 @@
     }
 
 
-    if(count($user) > 0){
+    if(count($user)){
 
         $db->table('users')->find($userid)->delete();
         echo json_encode(array(

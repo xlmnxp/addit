@@ -82,6 +82,23 @@
     <ul class="nav menu">
         <li <?= ($page == 'home') ? 'class="active"' : '' ?>><a href="index.php"><svg class="glyph stroked dashboard-dial"><use xlink:href="#stroked-dashboard-dial"></use></svg> <?= $language->home ?></a></li>
         <li <?= ($page == 'users') ? 'class="active"' : '' ?>><a href="users.php"><svg class="glyph stroked calendar"><use xlink:href="#stroked-calendar"></use></svg> <?= $language->users ?></a></li>
+        <li class="parent <?= ($page == 'add_page' || $page == 'pages') ? 'active' : '' ?>">
+            <a data-toggle="collapse" href="#pages_settings">
+                <span><svg class="glyph stroked clipboard with paper"><use xlink:href="#stroked-clipboard-with-paper"/></svg></span> الصفحات
+            </a>
+            <ul class="children collapse" id="pages_settings">
+                <li <?= ($page == 'add_page') ? "class=\"active\"" : '' ?>>
+                    <a href="add_page.php">
+                        <svg class="glyph stroked chevron-right"><use xlink:href="#stroked-chevron-right"></use></svg> إضافة صفحة
+                    </a>
+                </li>
+                <li <?= ($page == 'pages') ? "class=\"active\"" : '' ?>>
+                    <a href="pages.php">
+                        <svg class="glyph stroked chevron-right"><use xlink:href="#stroked-chevron-right"></use></svg> عرض كافة الصفحات
+                    </a>
+                </li>
+            </ul>
+        </li>
         <li class="parent <?= ($page == 'website_settings' || $page == 'admin_settings') ? 'active' : '' ?>">
             <a data-toggle="collapse" href="#settings">
                 <span><svg class="glyph stroked chevron-down"><use xlink:href="#stroked-chevron-down"></use></svg></span> الإعدادات

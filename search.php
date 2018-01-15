@@ -22,14 +22,18 @@
             $_SESSION['search'] = json_encode($_POST);
         }
     }
+    
     $nPOST->search = htmlspecialchars($nPOST->search, ENT_QUOTES, 'UTF-8');
     $nPOST->sex = htmlspecialchars($nPOST->sex, ENT_QUOTES, 'UTF-8');
+    $nPOST->country = htmlspecialchars($nPOST->country, ENT_QUOTES, 'UTF-8');
 
     if(!($nPOST->sex == -1 OR $nPOST->sex == 0 OR $nPOST->sex == 1)){
         $nPOST->sex = -1;
     }
+
     $template->search["value"] = $nPOST->search;
     $template->search["sex"] = $nPOST->sex;
+    $template->search["country"] = $nPOST->country;
     $search = $template->search;
 
     $page = isset($_GET["page"]) ? $_GET["page"] : 1;
@@ -47,17 +51,20 @@
         ]
     ];
 
-    $users_query = $db;
-
+    $users_query = $db->table("users");
     if($nPOST->sex != -1){
-        $users_query = $users_query->table("users")
-            ->where('sex',$nPOST->sex)->parseWhere($userSearch);
+        $users_query = $users_query->where('sex',$nPOST->sex);
     }else{
-        $users_query = $users_query->table("users")
-            ->where('sex', "LIKE", '%%')->parseWhere($userSearch);
+        $users_query = $users_query->where('sex', "LIKE", '%%');
     }
 
-    $users_query = $users_query->orderBy('`id`','DESC')->limit(12*($page-1),12)->select();
+    if($nPOST->country != -1){
+        $users_query = $users_query->where('data','LIKE',"%\"country\":\"$nPOST->country\"%");
+    }else{
+        $users_query = $users_query->where('data', "LIKE", '%%');
+    }
+
+    $users_query = $users_query->parseWhere($userSearch)->orderBy('`id`','DESC')->limit(12*($page-1),12)->select();
 
 
     $users = Array();
@@ -95,6 +102,14 @@
 
     $search_sex = "<option value=\"0\" ".($nPOST->sex==0?'selected':'').">{$language->male}</option>"
         ."<option value=\"1\" ".($nPOST->sex==1?'selected':'').">{$language->female}</option>";
+    
+    $countries = '';
+
+    foreach (getCountries() as $key => $value)
+    {
+        $countries .= "<option value='$key' ".($nPOST->country==$key?'selected':'').">$value</option>\n";
+    }
+
     ob_start();
     eval ('?> '.$template->compile(file_get_contents($template->template_dir."/search_form.tpl"),true));
     $search_form = ob_get_clean();
