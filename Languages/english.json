@@ -20,6 +20,7 @@
   "are_you_sure": "Are you sure?",
   "user_deleted_successfully": "User deleted successfully",
   "user_edited_successfully": "User edited successfully",
+  "page_deleted_successfully": "Page deleted successfully",
   "copy_username" : "Copy",
 
   "previous": "Previous",
@@ -33,6 +34,10 @@
 
   "control_panel": "Control Panel",
   "users": "Users",
+  "pages": "Pages",
+  "name": "name",
+  "title": "title",
+  "template": "template",
   "views_today": "views today",
   "views_month": "views month",
   "views_year": "views year",

@@ -11,6 +11,7 @@
     <div class="attribution">Template by <a href="http://www.medialoot.com/item/lumino-admin-bootstrap-template/">Medialoot</a> - <a href="http://www.glyphs.co" style="color: #333;">Icons by Glyphs</a></div>
 </div>	<!--/.main-->
 
+<script src="js/ckeditor/ckeditor.js"></script>
 <script src="js/jquery-1.11.1.min.js"></script>
 <script src="js/bootstrap.min.js"></script>
 <script>
@@ -19,14 +20,12 @@
             $(this).find('em:first').toggleClass("glyphicon-minus");
         });
         $(".sidebar span.icon").find('em:first').addClass("glyphicon-plus");
-    }(window.jQuery);
 
-    $(window).on('resize', function () {
-        if ($(window).width() > 768) $('#sidebar-collapse').collapse('show')
-    })
-    $(window).on('resize', function () {
-        if ($(window).width() <= 767) $('#sidebar-collapse').collapse('hide')
-    })
+        if($("#page_template").length){
+            CKEDITOR.replace("page_template");
+            CKEDITOR.config.language = "<?= $lang->language_code ?>";
+        }
+    }(window.jQuery);
 </script>
 </body>
 </html>

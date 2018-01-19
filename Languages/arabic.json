@@ -20,6 +20,7 @@
   "are_you_sure": "هل انت متأكد ؟",
   "user_deleted_successfully": "تم حذف المستخدم بنجاح",
   "user_edited_successfully": "تم تعديل المستخدم بنجاح",
+  "page_deleted_successfully": "تم حذف الصفحة بنجاح",
   "copy_username" : "نسخ",
 
   "previous": "السابق",
@@ -33,6 +34,10 @@
 
   "control_panel": "لوحة التحكم",
   "users": "مستخدمين",
+  "pages": "صفحات",
+  "name": "الأسم",
+  "title": "العنوان",
+  "template": "القالب",
   "views_today": "زيارات اليوم",
   "views_month": "زيارات الشهر",
   "views_year": "زيارات السنة",

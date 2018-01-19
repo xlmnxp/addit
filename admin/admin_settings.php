@@ -45,14 +45,14 @@
     <div class="row">
         <ol class="breadcrumb">
             <li><a href="#"><svg class="glyph stroked home"><use xlink:href="#stroked-home"></use></svg></a></li>
-            <li>إعدادات</li>
+            <li>الإعدادات</li>
             <li class="active">حساب الإداري</li>
         </ol>
     </div><!--/.row-->
 
     <div class="row">
         <div class="col-lg-12">
-            <h1 class="page-header">إعدادات حساب الإداري</h1>
+            <h1 class="page-header">اعدادات حساب الإداري</h1>
         </div>
     </div><!--/.row-->
 
@@ -60,7 +60,7 @@
     <div class="row">
         <div class="col-lg-12">
             <div class="panel panel-default">
-                <div class="panel-heading">إعدادات الموقع</div>
+                <div class="panel-heading">اعدادات الموقع</div>
                 <div class="panel-body">
                     <form role="form" method="post">
                         <?php if($success == true){ ?>

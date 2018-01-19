@@ -25,6 +25,7 @@
     
     $nPOST->search = htmlspecialchars($nPOST->search, ENT_QUOTES, 'UTF-8');
     $nPOST->sex = htmlspecialchars($nPOST->sex, ENT_QUOTES, 'UTF-8');
+    $nPOST->category = htmlspecialchars($nPOST->category, ENT_QUOTES, 'UTF-8');
     $nPOST->country = htmlspecialchars($nPOST->country, ENT_QUOTES, 'UTF-8');
 
     if(!($nPOST->sex == -1 OR $nPOST->sex == 0 OR $nPOST->sex == 1)){
@@ -33,6 +34,7 @@
 
     $template->search["value"] = $nPOST->search;
     $template->search["sex"] = $nPOST->sex;
+    $template->search["category"] = $nPOST->category;
     $template->search["country"] = $nPOST->country;
     $search = $template->search;
 
@@ -86,16 +88,22 @@
     }
 
     $template->users    = $users;
-
+    
+    $search_count = $db->table("users");
     if($nPOST->sex != -1){
-        $search_count = $db->table("users")
-            ->where('sex',$nPOST->sex)->parseWhere($userSearch);
+        $search_count = $users_query->where('sex',$nPOST->sex);
     }else{
-        $search_count = $db->table("users")
-            ->where('sex', "LIKE", '%%')->parseWhere($userSearch);
+        $search_count = $users_query->where('sex', "LIKE", '%%');
     }
 
-    $search_count = $search_count->orderBy('id','desc')->select(["id"])->count();
+    if($nPOST->country != -1){
+        $search_count = $users_query->where('data','LIKE',"%\"country\":\"$nPOST->country\"%");
+    }else{
+        $search_count = $users_query->where('data', "LIKE", '%%');
+    }
+
+    $search_count = $search_count->parseWhere($userSearch)->orderBy('id','desc')->select(["id"])->count();
+
     $template->pages = pagination(5,12,$search_count,$page);
 
     $template->default["page-title"] = $template->default["title"]." | $language->search";
