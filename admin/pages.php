@@ -6,21 +6,25 @@
 	<div class="col-sm-9 col-sm-offset-3 col-lg-10 col-lg-offset-2 main">
 		<div class="row">
 			<ol class="breadcrumb">
-				<li><a href="#"><svg class="glyph stroked home"><use xlink:href="#stroked-home"></use></svg></a></li>
-				<li class="active"><?= $language->pages ?></li>
+				<li><a href="index.php"><svg class="glyph stroked home"><use xlink:href="#stroked-home"></use></svg></a></li>
+				<li><?= $language->pages ?></li>
+				<li class="active"><?= $language->view_all_pages ?></li>
 			</ol>
 		</div><!--/.row-->
 		
 		<div class="row">
 			<div class="col-lg-12">
-				<h1 class="page-header"><?= $language->pages ?></h1>
+				<h1 class="page-header"><?= $language->view_all_pages ?></h1>
 			</div>
 		</div><!--/.row-->
 				
 		
 		<div class="col-lg-12">
 			<div class="panel panel-default">
-				<div class="panel-heading"><?= $language->pages ?></div>
+				<div class="panel-heading">
+                    <?= $language->pages ?>
+                    <a href="add_page" class="btn btn-primary"><?= $language->add_page ?></a>                    
+                </div>
 				<div class="panel-body">
 					<table id="pages" class="table table-striped" data-toggle="table" data-url="tables/pages.php"
                            data-show-refresh="true" data-show-toggle="true" data-show-columns="false"
@@ -45,7 +49,7 @@
 	<script src="js/bootstrap-table.js"></script>
 	<script>
         function editBtns(value,row,index) {
-            return '<a class="btn btn-primary btn-block text-left" style="margin: 2px;" onclick="editUser(\''+ row.id +'\')"><svg class="glyph stroked pencil" style="height: 20px; width: 20px;"><use xlink:href="#stroked-pencil"/></svg>&nbsp;<?= $language->edit ?></a><a class="btn btn-danger btn-block text-left" style="margin: 2px;" onclick="deletePage(\''+row.id+'\')"><svg class="glyph stroked trash" style="height: 20px; width: 20px;"><use xlink:href="#stroked-trash"/></svg>&nbsp;<?= $language->delete ?></a>'
+            return '<a class="btn btn-primary btn-block text-left" style="margin: 2px;" href="edit_page.php?id='+ row.id +'"><svg class="glyph stroked pencil" style="height: 20px; width: 20px;"><use xlink:href="#stroked-pencil"/></svg>&nbsp;<?= $language->edit ?></a><a class="btn btn-danger btn-block text-left" style="margin: 2px;" onclick="deletePage(\''+row.id+'\')"><svg class="glyph stroked trash" style="height: 20px; width: 20px;"><use xlink:href="#stroked-trash"/></svg>&nbsp;<?= $language->delete ?></a>'
         }
 
         function deletePage(id) {
