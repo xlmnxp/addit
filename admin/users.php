@@ -53,7 +53,7 @@
         }
 
         function editBtns(value,row,index) {
-            return '<a class="btn btn-primary btn-block text-left" style="margin: 2px;" onclick="editUser(\''+ escape(JSON.stringify(row)) +'\')"><svg class="glyph stroked pencil" style="height: 20px; width: 20px;"><use xlink:href="#stroked-pencil"/></svg>&nbsp;<?= $language->edit ?></a><a class="btn btn-danger btn-block text-left" style="margin: 2px;" onclick="deleteUser(\''+row.id+'\')"><svg class="glyph stroked trash" style="height: 20px; width: 20px;"><use xlink:href="#stroked-trash"/></svg>&nbsp;<?= $language->delete ?></a>'
+            return '<center></center><a class="btn btn-primary btn-block text-left" style="margin: 2px;width:120px;" onclick="editUser(\''+ escape(JSON.stringify(row)) +'\')"><svg class="glyph stroked pencil" style="height: 20px; width: 20px;"><use xlink:href="#stroked-pencil"/></svg>&nbsp;<?= $language->edit ?></a><a class="btn btn-danger btn-block text-left" style="margin: 2px;width:120px;" onclick="deleteUser(\''+row.id+'\')"><svg class="glyph stroked trash" style="height: 20px; width: 20px;"><use xlink:href="#stroked-trash"/></svg>&nbsp;<?= $language->delete ?></a></center>'
         }
 
         function flags(value,row,index) {
