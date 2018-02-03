@@ -45,7 +45,7 @@
         }
     }
 
-    $template->default["page-title"] = $template->default["title"]." | $language->report (". (isset($user) ? $user->username : $language->user_not_found) .")";
+    $template->default["page-title"] = $template->default["title"]." » $language->report (". (isset($user) ? $user->username : $language->user_not_found) .")";
 
     ob_start();
     eval ('?> '.$template->compile(file_get_contents($template->template_dir."/search_form.tpl"),true));

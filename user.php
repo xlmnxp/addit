@@ -27,7 +27,7 @@
         "url"       => $template->default["url"]."user/".$user->id."-".str_replace(" ","-",$user->fullname)
     );
 
-    $template->default["page-title"] = $template->default["title"]." | $user->fullname ($user->username)";
+    $template->default["page-title"] = $template->default["title"]." » $user->fullname ($user->username)";
 
     ob_start();
     eval ('?> '.$template->compile(file_get_contents($template->template_dir."/search_form.tpl"),true));

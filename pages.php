@@ -12,7 +12,7 @@
     $lang = $language;
     $default = $template->default;
     $template->page = eval('return "'.$queryFile->title.'";');
-    $template->default["page-title"] = $template->default["title"]." | ".eval('return "'.$queryFile->title.'";');
+    $template->default["page-title"] = $template->default["title"]." » ".eval('return "'.$queryFile->title.'";');
     if(!$queryFile){
         header("location: {$default["url"]}404");
     }

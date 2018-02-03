@@ -18,17 +18,19 @@
     </ul>
 </div>
 
-<div class="list-block">
-<center>
-    <div style="padding: 5px;">
+<div class="list-block block">
+    <div class="row no-gap">
         {foreach $pages as $number}
             {if $number["active"]}
-                <a class="button button-fill button-big" href="?page={$number["page"]+1}" style="margin: 2px;"><span class="badge next-badge">{$number["page"]+1}</span> {$lang->next}</a>
+                <div class="col">
+                    <a class="button button-big button-fill" href="?page={$number["page"]+1}" style="margin: 2px;"><span class="badge next-badge">{$number["page"]+1}</span> {$lang->next}</a>
+                </div>
                 {if $number["page"] != 1}
-                <a class="button button-fill button-big" href="?page={$number["page"]-1}" style="margin: 2px;background: #f8f8f8;color: #007aff;"><span class="badge next-badge" style="float: left;">{$number["page"]-1}</span> {$lang->previous}</a>
+                <div class="col">             
+                    <a class="button button-big button-fill" href="?page={$number["page"]-1}" style="margin: 2px;background: #f8f8f8;color: #007aff;"><span class="badge next-badge" style="float: left;">{$number["page"]-1}</span> {$lang->previous}</a>
+                </div>
                 {/if}
             {/if}
         {/foreach}
     </div>
-</center>
 </div>

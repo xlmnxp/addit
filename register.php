@@ -72,7 +72,7 @@
 
     }
 
-    $template->default["page-title"] = $template->default["title"]." | $language->new_user";
+    $template->default["page-title"] = $template->default["title"]." » $language->new_user";
 
     ob_start();
     eval ('?> '.$template->compile(file_get_contents($template->template_dir."/search_form.tpl"),true));

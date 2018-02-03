@@ -53,7 +53,7 @@
         }
 
         function editBtns(value,row,index) {
-            return '<center></center><a class="btn btn-primary btn-block text-left" style="margin: 2px;width:120px;" onclick="editUser(\''+ escape(JSON.stringify(row)) +'\')"><svg class="glyph stroked pencil" style="height: 20px; width: 20px;"><use xlink:href="#stroked-pencil"/></svg>&nbsp;<?= $language->edit ?></a><a class="btn btn-danger btn-block text-left" style="margin: 2px;width:120px;" onclick="deleteUser(\''+row.id+'\')"><svg class="glyph stroked trash" style="height: 20px; width: 20px;"><use xlink:href="#stroked-trash"/></svg>&nbsp;<?= $language->delete ?></a></center>'
+            return '<center><a class="btn btn-primary btn-block text-left" onclick="editUser(\''+ escape(JSON.stringify(row)) +'\')"><svg class="glyph stroked pencil" style="height: 20px; width: 20px;"><use xlink:href="#stroked-pencil"/></svg>&nbsp;<?= $language->edit ?></a><a class="btn btn-danger btn-block text-left" onclick="deleteUser(\''+row.id+'\')"><svg class="glyph stroked trash" style="height: 1.5em;width: 1.5em;margin:2px;"><use xlink:href="#stroked-trash"/></svg>&nbsp;<?= $language->delete ?></a></center>'
         }
 
         function flags(value,row,index) {
@@ -130,7 +130,7 @@
                 }
                 form += '</div>';
             });
-            form += '<button class="btn btn-lg btn-primary btn-block" type="submit" name="submit"><svg class="glyph stroked pencil" style="height: 20px; width: 20px;"><use xlink:href="#stroked-pencil"/></svg>&nbsp;<?= $language->edit ?></button>';
+            form += '<button class="btn btn-lg btn-primary btn-block" type="submit" name="submit"><svg class="glyph stroked pencil" style="height: 1.5em;width: 1.5em;margin:2px;"><use xlink:href="#stroked-pencil"/></svg>&nbsp;<?= $language->edit ?></button>';
             form += '</form>';
 
             swal({

@@ -36,7 +36,7 @@
     $template->users    = $users;
     $template->pages = pagination(5,12,$db->table("users")->select(['id'])->count(),$page);
 
-    $template->default["page-title"] = $template->default["title"]." | $language->home";
+    $template->default["page-title"] = $template->default["title"]." » $language->home";
 
     ob_start();
     eval ('?> '.$template->compile(file_get_contents($template->template_dir."/search_form.tpl"),true));

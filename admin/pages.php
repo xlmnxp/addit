@@ -1,5 +1,5 @@
 <?php
-    $page = 'pages';
+    $page = 'view_all_pages';
     include_once ('header.php');
     global $default, $language, $template;
 ?>
@@ -23,7 +23,7 @@
 			<div class="panel panel-default">
 				<div class="panel-heading">
                     <?= $language->pages ?>
-                    <a href="add_page" class="btn btn-primary"><?= $language->add_page ?></a>                    
+                    <a href="add_page.php" class="btn btn-primary"><svg class="glyph stroked plus sign" style="height: 1.5em;width: 1.5em;margin:2px;"><use xlink:href="#stroked-plus-sign"/></svg>&nbsp;<?= $language->add_page ?></a>                    
                 </div>
 				<div class="panel-body">
 					<table id="pages" class="table table-striped" data-toggle="table" data-url="tables/pages.php"
@@ -49,7 +49,7 @@
 	<script src="js/bootstrap-table.js"></script>
 	<script>
         function editBtns(value,row,index) {
-            return '<center><a class="btn btn-primary btn-block text-left" style="margin: 2px;width:120px;" href="edit_page.php?id='+ row.id +'"><svg class="glyph stroked pencil" style="height: 20px; width: 20px;"><use xlink:href="#stroked-pencil"/></svg>&nbsp;<?= $language->edit ?></a><a class="btn btn-danger btn-block text-left" style="margin: 2px;width:120px;" onclick="deletePage(\''+row.id+'\')"><svg class="glyph stroked trash" style="height: 20px; width: 20px;"><use xlink:href="#stroked-trash"/></svg>&nbsp;<?= $language->delete ?></a></center>'
+            return '<center><a class="btn btn-primary btn-block text-left" href="edit_page.php?id='+ row.id +'"><svg class="glyph stroked pencil" style="height: 1.5em;width: 1.5em;margin:2px;"><use xlink:href="#stroked-pencil"/></svg>&nbsp;<?= $language->edit ?></a><a class="btn btn-danger btn-block text-left" onclick="deletePage(\''+row.id+'\')"><svg class="glyph stroked trash" style="height: 1.5em;width: 1.5em;margin:2px;"><use xlink:href="#stroked-trash"/></svg>&nbsp;<?= $language->delete ?></a></center>'
         }
 
         function deletePage(id) {

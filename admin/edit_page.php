@@ -5,7 +5,7 @@
  * Date: 9/17/17
  * Time: 7:02 PM
  */
-    $page = 'add_page';
+    $page = 'edit_page';
     include_once ('header.php');
     global $db, $form, $default, $template, $language;
 

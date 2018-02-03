@@ -106,7 +106,7 @@
 
     $template->pages = pagination(5,12,$search_count,$page);
 
-    $template->default["page-title"] = $template->default["title"]." | $language->search";
+    $template->default["page-title"] = $template->default["title"]." » $language->search";
 
     $search_sex = "<option value=\"0\" ".($nPOST->sex==0?'selected':'').">{$language->male}</option>"
         ."<option value=\"1\" ".($nPOST->sex==1?'selected':'').">{$language->female}</option>";
