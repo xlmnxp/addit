@@ -1,6 +1,6 @@
 <?php
 /**
- * Created by PhpStorm.
+
  * User: xlmnxp
  * Date: 9/4/17
  * Time: 8:55 AM
@@ -16,9 +16,7 @@
     <meta charset="utf-8"/>
     <meta name="viewport" content="width=device-width, initial-scale=1, zoom=0"/>
     <title><?= $language->control_panel ?> » <?= eval('return $language->'.$page.';') ?></title>
-
     <link href="css/bootstrap.min.css" rel="stylesheet"/>
-    <link href="css/datepicker3.css" rel="stylesheet"/>
     <?php if ($language->rtl) {?>
     <link rel="stylesheet" href="css/bootstrap-flipped.min.css" />
     <link rel="stylesheet" href="css/bootstrap-rtl.min.css" />
@@ -79,7 +77,7 @@
 <!--        </div>-->
 <!--    </form>-->
     <ul class="nav menu">
-        <li <?= ($page == 'home') ? 'class="active"' : '' ?>><a href="index.php"><svg class="glyph stroked dashboard-dial"><use xlink:href="#stroked-dashboard-dial"></use></svg> <?= $language->home ?></a></li>
+        <li <?= ($page == 'home') ? 'class="active"' : '' ?>><a href="index.php"><svg class="glyph stroked home"><use xlink:href="#stroked-home"></use></svg> <?= $language->home ?></a></li>
         <li <?= ($page == 'users') ? 'class="active"' : '' ?>><a href="users.php"><svg class="glyph stroked male user"><use xlink:href="#stroked-male-user"></use></svg> <?= $language->users ?></a></li>
         <li class="parent <?= ($page == 'add_page' || $page == 'view_all_pages' || $page == 'edit_page') ? 'active' : '' ?>">
             <a data-toggle="collapse" href="#pages_settings">
