@@ -9,7 +9,7 @@
     include_once ("global.php");
     global $db,$template, $language,$templateDirectory,$default;
 
-    $template->page = $language->page_not_found;
+    $template->page                 = $language->page_not_found;
 
     $template->default["page-title"] = $template->default["title"]." | $language->page_not_found";
 

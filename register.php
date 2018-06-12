@@ -9,45 +9,45 @@
     include_once ("global.php");
     global $db, $template, $language, $templateDirectory, $default, $form;
 
-    $template->page = $language->new_user;
+    $template->page             = $language->new_user;
 
     if(isset($_POST["submit"])){
-            $errors = array();
-            $file = $_FILES['avatar'];
-            $file_name  = $file['name'];
-            $file_size  = $file['size'];
-            $file_tmp   = $file['tmp_name'];
-            $file_type  = $file['type'];
-            $tmp_ext    = explode('.',$file['name']);
-            $file_ext   = strtolower(end($tmp));
-            $dir        = "Uploads/".uniqid("img_").".".$file_ext;
-            $expensions = array("jpeg","jpg","png");
+            $errors             = array();
+            $file               = $_FILES['avatar'];
+            $file_name          = $file['name'];
+            $file_size          = $file['size'];
+            $file_tmp           = $file['tmp_name'];
+            $file_type          = $file['type'];
+            $tmp_ext            = explode('.',$file['name']);
+            $file_ext           = strtolower(end($tmp));
+            $dir                = "Uploads/".uniqid("img_").".".$file_ext;
+            $expensions         = array("jpeg","jpg","png");
 
             if(!isset($_POST['form_key']) || !$form->validate()){
-                $errors[]= $language->error_validate_key;
+                $errors[]       = $language->error_validate_key;
             }
 
             if(in_array($file_ext,$expensions)=== false){
-                $errors[]= $language->help_avatar;
+                $errors[]       = $language->help_avatar;
             }
 
             if($file_size > 2097152){
-                $errors[]= $language->size_avatar .'2'. $language->mb;
+                $errors[]       = $language->size_avatar .'2'. $language->mb;
             }
 
             if(!isset($_POST['g-recaptcha-response']) || !recaptcha_vaild($default['recaptcha_secret_key'])){
-                $errors[]= 'recaptcha ' . $language->error_validate_key;
+                $errors[]       = 'recaptcha ' . $language->error_validate_key;
             }
 
             if(!trim($_POST['username'])){
-                $errors[]= $language->enter_username;
+                $errors[]       = $language->enter_username;
             }
             if(!trim($_POST['fullname'])){
-                $errors[]= $language->enter_fullname;
+                $errors[]       = $language->enter_fullname;
             }
 
             if(strlen(htmlspecialchars($_POST["message"], ENT_QUOTES, 'UTF-8')) > 450){
-                $errors[]= $language->message_length;
+                $errors[]       = $language->message_length;
             }
             if(empty($errors)){
                 if(move_uploaded_file($file_tmp,$dir)){
@@ -63,11 +63,11 @@
                             "country"  => mb_strtolower(htmlspecialchars($_POST["country"], ENT_QUOTES, 'UTF-8'))
                         ))
                     ]);
-                    $template->success = true;
+                    $template->success  = true;
                 }
             }else{
-                $template->success = false;
-                $template->errors = $errors;
+                $template->success  = false;
+                $template->errors   = $errors;
             }
 
     }
@@ -76,7 +76,7 @@
 
     ob_start();
     eval ('?> '.$template->compile(file_get_contents($template->template_dir."/search_form.tpl"),true));
-    $search_form = ob_get_clean();
-    $template->search_form = $search_form;
+    $search_form                    = ob_get_clean();
+    $template->search_form          = $search_form;
 
     $template->setFile($templateDirectory.'/register.tpl')->setLayout($templateDirectory.'/@main_layout.tpl')->render();
