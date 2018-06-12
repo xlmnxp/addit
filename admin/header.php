@@ -98,17 +98,17 @@
         </li>
         <li class="parent <?= ($page == 'website_settings' || $page == 'admin_settings') ? 'active' : '' ?>">
             <a data-toggle="collapse" href="#settings">
-                <span><svg class="glyph stroked chevron-down"><use xlink:href="#stroked-chevron-down"></use></svg></span> <span><svg class="glyph stroked gear"><use xlink:href="#stroked-gear"></use></svg></span> الإعدادات
+                <span><svg class="glyph stroked chevron-down"><use xlink:href="#stroked-chevron-down"></use></svg></span> <span><svg class="glyph stroked gear"><use xlink:href="#stroked-gear"></use></svg></span> <?= $language->settings ?>
             </a>
             <ul class="children <?= !($page == 'website_settings' || $page == 'admin_settings') ? 'collapse' : '' ?>" id="settings">
                 <li <?= ($page == 'website_settings') ? "class=\"active\"" : '' ?>>
                     <a href="website_settings.php#settings">
-                        <svg class="glyph stroked desktop"><use xlink:href="#stroked-desktop"></use></svg> إعدادات الموقع
+                        <svg class="glyph stroked desktop"><use xlink:href="#stroked-desktop"></use></svg> <?= $language->website_settings ?> 
                     </a>
                 </li>
                 <li <?= ($page == 'admin_settings') ? "class=\"active\"" : '' ?>>
                     <a href="admin_settings.php#settings">
-                        <svg class="glyph stroked key"><use xlink:href="#stroked-key"></use></svg> إعدادات حساب الإداري
+                        <svg class="glyph stroked key"><use xlink:href="#stroked-key"></use></svg> <?= $language->admin_settings ?> 
                     </a>
                 </li>
             </ul>

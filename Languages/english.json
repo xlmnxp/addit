@@ -48,6 +48,11 @@
   "views_month": "views month",
   "views_year": "views year",
   "remember_me": "Remember Me",
+  "settings": "Settings",
+  "website_settings": "Site settings",
+  "admin_settings": "Admin Account Settings",
+  "admin_username": "admin username",
+  "admin_password": "admin password",
   "login" : "Login",
   "logout": "Logout",
 

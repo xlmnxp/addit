@@ -48,6 +48,11 @@
   "views_month": "زيارات الشهر",
   "views_year": "زيارات السنة",
   "remember_me": "تذكرني",
+  "settings": "الإعدادات",
+  "website_settings": "إعدادات الموقع",
+  "admin_settings": "إعدادات حساب الإداري",
+  "admin_username": "اسم المستخدم للإداري",
+  "admin_password": "كلمة السر للإداري",
   "login": "تسجيل الدخول",
   "logout": "تسجيل الخروج",
 

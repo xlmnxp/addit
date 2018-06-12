@@ -85,14 +85,14 @@
 		<div class="row">
 			<ol class="breadcrumb">
 				<li><a href="index.php"><svg class="glyph stroked home"><use xlink:href="#stroked-home"></use></svg></a></li>
-                <li>الإعدادات</li>
-				<li class="active">الموقع</li>
+                <li><?= $language->settings ?></li>
+				<li class="active"><?= $language->website_settings ?></li>
 			</ol>
 		</div><!--/.row-->
 		
 		<div class="row">
 			<div class="col-lg-12">
-				<h1 class="page-header">اعدادات الموقع</h1>
+				<h1 class="page-header"><?= $language->website_settings ?></h1>
 			</div>
 		</div><!--/.row-->
 				
@@ -100,7 +100,7 @@
 		<div class="row">
 			<div class="col-lg-12">
 				<div class="panel panel-default">
-					<div class="panel-heading">اعدادات الموقع</div>
+					<div class="panel-heading"><?= $language->website_settings ?></div>
 					<div class="panel-body">
                         <form role="form" method="post">
                             <?= $template->validate->key ?>

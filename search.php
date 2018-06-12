@@ -10,20 +10,34 @@
     global $db, $template, $language, $templateDirectory, $default;
 
     $template->page                 = $language->search;
-    $template->is_search            = true;
-    $template->search_get_request   = http_build_query($_GET);
-    $nGET = json_decode(json_encode($_GET));
+    $nGET                           = json_decode(json_encode($_GET));
     
+    $template->is_search            = true;
+    
+    if(isset($_GET['page'])){
+        unset($_GET['page']);
+    }
+
+    $template->search_get_request   = http_build_query($_GET);
+
     if(!isset($_GET['q'])){
         header('location: '.$template->default['url']);
     }
     
-    $nGET->search                   = htmlspecialchars($nGET->q || '', ENT_QUOTES, 'UTF-8');
-    $nGET->sex                      = htmlspecialchars($nGET->s || -1, ENT_QUOTES, 'UTF-8');
-    $nGET->category                 = htmlspecialchars($nGET->cat || -1, ENT_QUOTES, 'UTF-8');
-    $nGET->country                  = htmlspecialchars($nGET->cou || -1, ENT_QUOTES, 'UTF-8');
+    $nGET->search                   = htmlspecialchars($nGET->q, ENT_QUOTES, 'UTF-8');
+    $nGET->sex                      = htmlspecialchars($nGET->s, ENT_QUOTES, 'UTF-8');
+    $nGET->category                 = htmlspecialchars($nGET->cat, ENT_QUOTES, 'UTF-8');
+    $nGET->country                  = htmlspecialchars($nGET->cou, ENT_QUOTES, 'UTF-8');
 
     if(!($nGET->sex == -1 OR $nGET->sex == 0 OR $nGET->sex == 1)){
+        $nGET->sex                  = -1;
+    }
+
+    if(!($nGET->category == -1 OR $nGET->category == 0 OR $nGET->category == 1)){
+        $nGET->sex                  = -1;
+    }
+
+    if(!($nGET->country == -1 OR $nGET->country == 0 OR $nGET->country == 1)){
         $nGET->sex                  = -1;
     }
 
@@ -33,7 +47,7 @@
     $template->search["country"]    = $nGET->country;
     $search                         = $template->search;
 
-    $page                           = isset($_GET["page"]) ? $_GET["page"] : 1;
+    $page                           = isset($nGET->page) ? $nGET->page : 1;
     $page                           = $page <= 0 ? 1 : $page;
 
     $userSearch = [

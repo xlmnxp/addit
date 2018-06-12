@@ -10,8 +10,8 @@
     global $db, $form, $default, $template, $language;
 
     $setting_key_filter = [
-        'cp_username' => 'اسم المستخدم للوحة التحكم',
-        'cp_password' => 'كلمة السر للوحة التحكم'
+        'cp_username' => $language->admin_username,
+        'cp_password' => $language->admin_password
     ];
 
     $admin_account = array(
@@ -45,14 +45,14 @@
     <div class="row">
         <ol class="breadcrumb">
             <li><a href="index.php"><svg class="glyph stroked home"><use xlink:href="#stroked-home"></use></svg></a></li>
-            <li>الإعدادات</li>
-            <li class="active">حساب الإداري</li>
+            <li><?= $language->settings ?></li>
+            <li class="active"><?= $language->admin_settings ?></li>
         </ol>
     </div><!--/.row-->
 
     <div class="row">
         <div class="col-lg-12">
-            <h1 class="page-header">اعدادات حساب الإداري</h1>
+            <h1 class="page-header"><?= $language->admin_settings ?></h1>
         </div>
     </div><!--/.row-->
 
@@ -60,7 +60,7 @@
     <div class="row">
         <div class="col-lg-12">
             <div class="panel panel-default">
-                <div class="panel-heading">اعدادات الموقع</div>
+                <div class="panel-heading"><?= $language->admin_settings ?></div>
                 <div class="panel-body">
                     <form role="form" method="post">
                         <?php if($success == true){ ?>
