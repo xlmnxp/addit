@@ -11,13 +11,13 @@
     <!-- Latest compiled and minified CSS -->
 
     <link rel="stylesheet" href="{$template_dir}/css/bootstrap.min.css" />
-    <link href="{$template_dir}/css/journal-bootstrap.min.css" rel="stylesheet" />
+    <link href="{$template_dir}/css/lumen-bootstrap.min.css" rel="stylesheet" />
     {if $rtl}
-    <link rel="stylesheet" href="{$template_dir}/css/bootstrap-flipped.min.css" />
-    <link rel="stylesheet" href="{$template_dir}/css/bootstrap-rtl.min.css" />
+        <link rel="stylesheet" href="{$template_dir}/css/bootstrap-flipped.min.css" />
+        <link rel="stylesheet" href="{$template_dir}/css/bootstrap-rtl.min.css" />
     {/if}
     <link rel="stylesheet" href="{$template_dir}/css/main.css"/>
-    <link href="{$template_dir}/css/font-awesome.min.css" rel="stylesheet" />
+    <link href="{$template_dir}/css/ionicons.min.css" rel="stylesheet" />
 
     {$include_header}
     <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
@@ -38,7 +38,7 @@
                 <span class="icon-bar"></span>
                 <span class="icon-bar"></span>
             </button>
-            <a class="navbar-brand" href="{$default["url"]}">{$default["title"]}</a>
+            <a class="navbar-brand" href="{$default['url']}">{$default['title']}</a>
         </div>
         <div id="navbar" class="navbar-collapse collapse">
             <ul class="nav navbar-nav">
@@ -60,10 +60,10 @@
             </ul>
             <ul class="nav navbar-nav navbar-right">
                 <li>{$language_select}</li>
-                <li {if $page == $lang->new_user }class="active"{/if}><a href="{$default["url"]}register" class="btn-primary nbtn"><i class="fa fa-share-alt" aria-hidden="true"></i>
-                        {$lang->new_user}</a></li>
-                <li {if $page == $lang->new_vip  }class="active"{/if}><a href="{$default["url"]}pages/register-vip" class="btn-warning nbtn"><i class="fa fa-trophy" aria-hidden="true"></i>
-                        {$lang->new_vip}</a></li>
+                <li {if $page == $lang->new_user }class="active"{/if}><a href="{$default["url"]}register" class="btn-primary nbtn"><i class="ion ion-android-share" aria-hidden="true"></i>
+                         {$lang->new_user}</a></li>
+                <li {if $page == $lang->new_vip  }class="active"{/if}><a href="{$default["url"]}pages/register-vip" class="btn-warning nbtn"><i class="ion ion-trophy" aria-hidden="true"></i>
+                         {$lang->new_vip}</a></li>
             </ul>
         </div><!--/.nav-collapse -->
     </div>

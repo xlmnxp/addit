@@ -9,8 +9,8 @@
     {$validate->key}
     {if isset($errors)}
         <div class="alert alert-danger" role="alert">
-            {foreach @$errors as $error}
-                <span class="fa fa-exclamation-circle" aria-hidden="true"></span>
+            {foreach $errors as $error}
+                <span class="ion ion-alert-circled" aria-hidden="true"></span>
                 {$error}
                 <br>
             {/foreach}
@@ -18,6 +18,7 @@
     {elseif isset($success)}
         <div class="alert alert-success" role="alert"><strong>{$lang->success}</strong></div>
     {/if}
+
     <div class="form-group">
         <label for="username">{$lang->report_message}</label>
         <textarea class="form-control" id="MessageTextarea" name="message" rows="3">{$default["report_message"]}</textarea>

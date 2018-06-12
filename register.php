@@ -18,8 +18,9 @@
             $file_size  = $file['size'];
             $file_tmp   = $file['tmp_name'];
             $file_type  = $file['type'];
-            $file_ext=strtolower(end(explode('.',$file['name'])));
-            $dir = "Uploads/".uniqid("img_").".".$file_ext;
+            $tmp_ext    = explode('.',$file['name']);
+            $file_ext   = strtolower(end($tmp));
+            $dir        = "Uploads/".uniqid("img_").".".$file_ext;
             $expensions = array("jpeg","jpg","png");
 
             if(!isset($_POST['form_key']) || !$form->validate()){
@@ -52,7 +53,6 @@
                 if(move_uploaded_file($file_tmp,$dir)){
                     chmod($dir, 0755);
                     $db->table("users")->insert([
-                        "id" => "",
                         "username"  => htmlspecialchars($_POST["username"], ENT_QUOTES, 'UTF-8'),
                         "fullname"  => htmlspecialchars($_POST["fullname"], ENT_QUOTES, 'UTF-8'),
                         "avatar"    => $dir,
@@ -60,7 +60,7 @@
                         "sex"       => htmlspecialchars($_POST["sex"], ENT_QUOTES, 'UTF-8'),
                         "data"      => json_encode(array(
                             "category" => htmlspecialchars($_POST["category"], ENT_QUOTES, 'UTF-8'),
-                            "country"  => htmlspecialchars($_POST["country"], ENT_QUOTES, 'UTF-8')
+                            "country"  => mb_strtolower(htmlspecialchars($_POST["country"], ENT_QUOTES, 'UTF-8'))
                         ))
                     ]);
                     $template->success = true;

@@ -29,7 +29,7 @@
             "message"   => substr(htmlspecialchars($user->message, ENT_QUOTES, 'UTF-8'),0,150),
             "sex"   => ($user->sex == 0? $language->male : $language->female),
             "data"      => $data,
-            "url"       => $template->default["url"]."user/".$user->id."-".str_replace(" ","-",$user->fullname)
+            "url"       => $template->default["url"]."user/".$user->id."-".urlencode(str_replace(" ","-",$user->fullname))
         ));
     }
 

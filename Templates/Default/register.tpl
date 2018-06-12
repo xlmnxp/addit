@@ -14,7 +14,7 @@
     {if isset($errors)}
         <div class="alert alert-danger" role="alert">
         {foreach $errors as $error}
-            <span class="fa fa-exclamation-circle" aria-hidden="true"></span>
+            <span class="ion ion-alert-circled" aria-hidden="true"></span>
             <span class="sr-only">Error:</span>
             {$error}
             <br>
