@@ -18,16 +18,18 @@
         unset($_GET['page']);
     }
 
-    $template->search_get_request   = http_build_query($_GET);
+    $template->search_get_request   = http_build_query(array_filter($_GET, function($value) {
+            return $value != -1;
+        }));
 
     if(!isset($_GET['q'])){
         header('location: '.$template->default['url']);
     }
-    
-    $nGET->search                   = htmlspecialchars($nGET->q, ENT_QUOTES, 'UTF-8');
-    $nGET->sex                      = htmlspecialchars($nGET->s, ENT_QUOTES, 'UTF-8');
-    $nGET->category                 = htmlspecialchars($nGET->cat, ENT_QUOTES, 'UTF-8');
-    $nGET->country                  = htmlspecialchars($nGET->cou, ENT_QUOTES, 'UTF-8');
+
+    $nGET->search                   = htmlspecialchars(!isset($nGET->q) ? -1 : $nGET->q, ENT_QUOTES, 'UTF-8');
+    $nGET->sex                      = htmlspecialchars(!isset($nGET->s) ? -1 : $nGET->s, ENT_QUOTES, 'UTF-8');
+    $nGET->category                 = htmlspecialchars(!isset($nGET->cat) ? -1 : $nGET->cat, ENT_QUOTES, 'UTF-8');
+    $nGET->country                  = htmlspecialchars(!isset($nGET->cots) ? -1 : $nGET->cot, ENT_QUOTES, 'UTF-8');
 
     if(!($nGET->sex == -1 OR $nGET->sex == 0 OR $nGET->sex == 1)){
         $nGET->sex                  = -1;
@@ -113,7 +115,7 @@
 
     $search_count                   = $search_count->parseWhere($userSearch)->orderBy('id','desc')->select(["id"])->count();
 
-    $template->pages                = pagination(5, 12, $search_count, $page, http_build_query($_GET));
+    $template->pages                = pagination(5, 12, $search_count, $page, $template->search_get_request);
 
     $template->default["page-title"] = $template->default["title"]." » $language->search";
 
