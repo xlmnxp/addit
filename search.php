@@ -113,7 +113,7 @@
 
     $search_count                   = $search_count->parseWhere($userSearch)->orderBy('id','desc')->select(["id"])->count();
 
-    $template->pages                = pagination(5,12,$search_count,$page);
+    $template->pages                = pagination(5, 12, $search_count, $page, http_build_query($_GET));
 
     $template->default["page-title"] = $template->default["title"]." » $language->search";
 

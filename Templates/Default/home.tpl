@@ -59,7 +59,7 @@
 <center>
     <ul class="pagination">
         {foreach $pages as $number}
-            <li{if $number["active"]} class="active" {/if}><a href="?page={$number["page"]}{if $is_search}&{$search_get_request}{/if}">{$number["name"]}</a></li>
+            <li{if $number['active']} class="active" {/if}><a href="{$number['page']}">{$number['name']}</a></li>
         {/foreach}
     </ul>
 </center>

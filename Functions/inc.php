@@ -13,7 +13,7 @@
     use PHPtricks\Orm\Database;
     $db = Database::connect();
 
-    function pagination($pages,$results,$total,$page){
+    function pagination($pages,$results,$total,$page,$args = ""){
         global $language;
 
         $result = array();
@@ -51,22 +51,22 @@
         }
 
         if($page > 1){
-            array_push($result,array("page" => 1, "name" => ($language->first), "active" => false ));
-            array_push($result,array("page" => ($page - 1), "name" => ($language->previous), "active" => false ));
+            array_push($result,array("page" => '?page=1' . ($args ? '&' . $args : ''), "name" => ($language->first), "active" => false ));
+            array_push($result,array("page" => '?page=' . ($page - 1) . ($args ? '&' . $args : ''), "name" => ($language->previous), "active" => false ));
         }
         for ($i = $range['start']; $i <= $range['end']; $i++)
         {
             if($i == $page){
-                array_push($result,array("page" => ($i), "name" => $i, "active" => true ));
+                array_push($result,array("page" => "?page=$i" . ($args ? '&' . $args : ''), "name" => $i, "active" => true ));
             }else{
-                array_push($result,array("page" => ($i), "name" => $i, "active" => false ));
+                array_push($result,array("page" => "?page=$i" . ($args ? '&' . $args : ''), "name" => $i, "active" => false ));
             }
         }
 
 
         if ($page < $totalPages){
-            array_push($result,array("page" => ($page + 1), "name" => ($language->next), "active" => false ));
-            array_push($result,array("page" => $totalPages, "name" => ($language->last), "active" => false ));
+            array_push($result,array("page" => '?page=' . ($page + 1) . ($args ? '&' . $args : ''), "name" => ($language->next), "active" => false ));
+            array_push($result,array("page" => "?page=$totalPages" . ($args ? '&' . $args : ''), "name" => ($language->last), "active" => false ));
         }
 
         return $result;
