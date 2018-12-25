@@ -79,6 +79,23 @@
     <ul class="nav menu">
         <li <?= ($page == 'home') ? 'class="active"' : '' ?>><a href="index.php"><svg class="glyph stroked home"><use xlink:href="#stroked-home"></use></svg> <?= $language->home ?></a></li>
         <li <?= ($page == 'users') ? 'class="active"' : '' ?>><a href="users.php"><svg class="glyph stroked male user"><use xlink:href="#stroked-male-user"></use></svg> <?= $language->users ?></a></li>
+        <li class="parent <?= ($page == 'add_category' || $page == 'view_all_categories' || $page == 'edit_category') ? 'active' : '' ?>">
+            <a data-toggle="collapse" href="#categories_settings">
+            <span><svg class="glyph stroked chevron-down"><use xlink:href="#stroked-chevron-down"></use></svg></span> <span><svg class="glyph stroked tag"><use xlink:href="#stroked-tag"/></svg></span> <?= $language->add_category ?>
+            </a>
+            <ul class="children <?= !($page == 'add_category' || $page == 'view_all_categories' || $page == 'edit_category') ? 'collapse' : '' ?>" id="categories_settings">
+                <li <?= ($page == 'add_category') ? "class=\"active\"" : '' ?>>
+                    <a href="add_category.php#categories_settings">
+                        <svg class="glyph stroked plus sign"><use xlink:href="#stroked-plus-sign"></use></svg> <?= $language->add_category ?> 
+                    </a>
+                </li>
+                <li <?= ($page == 'view_all_categories' || $page == 'edit_category') ? "class=\"active\"" : '' ?>>
+                    <a href="categories.php#categories_settings">
+                        <svg class="glyph stroked eye"><use xlink:href="#stroked-eye"></use></svg> <?= $language->view_all_categories ?>
+                    </a>
+                </li>
+            </ul>
+        </li>
         <li class="parent <?= ($page == 'add_page' || $page == 'view_all_pages' || $page == 'edit_page') ? 'active' : '' ?>">
             <a data-toggle="collapse" href="#pages_settings">
             <span><svg class="glyph stroked chevron-down"><use xlink:href="#stroked-chevron-down"></use></svg></span> <span><svg class="glyph stroked blank document"><use xlink:href="#stroked-blank-document"/></svg></span> <?= $language->pages ?>

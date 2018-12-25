@@ -25,6 +25,11 @@
             CKEDITOR.replace("page_template");
             CKEDITOR.config.language = "<?= $lang->language_code ?>";
         }
+
+        if($("#category_description").length){
+            CKEDITOR.replace("category_description");
+            CKEDITOR.config.language = "<?= $lang->language_code ?>";
+        }
     }(window.jQuery);
 </script>
 </body>

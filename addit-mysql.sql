@@ -1,13 +1,15 @@
 -- phpMyAdmin SQL Dump
--- version 4.6.5.2
+-- version 4.8.0.1
 -- https://www.phpmyadmin.net/
 --
 -- Host: localhost
--- Generation Time: Sep 05, 2017 at 08:26 AM
--- Server version: 10.1.21-MariaDB
--- PHP Version: 5.6.30
+-- Generation Time: 25 ديسمبر 2018 الساعة 03:31
+-- إصدار الخادم: 10.1.32-MariaDB
+-- PHP Version: 7.2.5
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
+SET AUTOCOMMIT = 0;
+START TRANSACTION;
 SET time_zone = "+00:00";
 
 
@@ -23,7 +25,19 @@ SET time_zone = "+00:00";
 -- --------------------------------------------------------
 
 --
--- Table structure for table `pages`
+-- بنية الجدول `categories`
+--
+
+CREATE TABLE `categories` (
+  `id` int(11) NOT NULL,
+  `name` varchar(255) COLLATE utf8_unicode_ci NOT NULL,
+  `description` longtext COLLATE utf8_unicode_ci NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
+
+-- --------------------------------------------------------
+
+--
+-- بنية الجدول `pages`
 --
 
 CREATE TABLE `pages` (
@@ -34,16 +48,16 @@ CREATE TABLE `pages` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
 
 --
--- Dumping data for table `pages`
+-- إرجاع أو استيراد بيانات الجدول `pages`
 --
 
 INSERT INTO `pages` (`id`, `name`, `title`, `template`) VALUES
-(1, 'register-vip', '$lang->new_vip', '{$lang->message}');
+(1, 'register-vip', '$lang->new_vip', '<p>{$lang->message} {if $is_search} انت في خانة البحث {else} انت لست في خانة البحث {/if}</p>\r\n');
 
 -- --------------------------------------------------------
 
 --
--- Table structure for table `reports`
+-- بنية الجدول `reports`
 --
 
 CREATE TABLE `reports` (
@@ -56,7 +70,7 @@ CREATE TABLE `reports` (
 -- --------------------------------------------------------
 
 --
--- Table structure for table `settings`
+-- بنية الجدول `settings`
 --
 
 CREATE TABLE `settings` (
@@ -66,12 +80,12 @@ CREATE TABLE `settings` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
 
 --
--- Dumping data for table `settings`
+-- إرجاع أو استيراد بيانات الجدول `settings`
 --
 
 INSERT INTO `settings` (`id`, `name`, `value`) VALUES
 (1, 'title', 'Addit (سكربت إضافات سناب شات)'),
-(2, 'template', 'Lumen'),
+(2, 'template', 'Default'),
 (3, 'url', 'http://localhost/addit/'),
 (4, 'language', 'arabic'),
 (5, 'report_message', 'ممنوع كود الـPHP'),
@@ -85,7 +99,7 @@ INSERT INTO `settings` (`id`, `name`, `value`) VALUES
 -- --------------------------------------------------------
 
 --
--- Table structure for table `statistics`
+-- بنية الجدول `statistics`
 --
 
 CREATE TABLE `statistics` (
@@ -99,7 +113,7 @@ CREATE TABLE `statistics` (
 -- --------------------------------------------------------
 
 --
--- Table structure for table `users`
+-- بنية الجدول `users`
 --
 
 CREATE TABLE `users` (
@@ -157,35 +171,41 @@ ALTER TABLE `users`
 --
 ALTER TABLE `pages`
   MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
+
 --
 -- AUTO_INCREMENT for table `reports`
 --
 ALTER TABLE `reports`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
+
 --
 -- AUTO_INCREMENT for table `settings`
 --
 ALTER TABLE `settings`
   MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=12;
+
 --
 -- AUTO_INCREMENT for table `statistics`
 --
 ALTER TABLE `statistics`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=628;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=1048;
+
 --
 -- AUTO_INCREMENT for table `users`
 --
 ALTER TABLE `users`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=188;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=443;
+
 --
--- Constraints for dumped tables
+-- قيود الجداول المحفوظة
 --
 
 --
--- Constraints for table `reports`
+-- القيود للجدول `reports`
 --
 ALTER TABLE `reports`
   ADD CONSTRAINT `reports_ibfk_1` FOREIGN KEY (`userid`) REFERENCES `users` (`id`);
+COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
 /*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;
