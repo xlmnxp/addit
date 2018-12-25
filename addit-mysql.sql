@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: localhost
--- Generation Time: 25 ديسمبر 2018 الساعة 03:31
+-- Generation Time: 25 ديسمبر 2018 الساعة 03:43
 -- إصدار الخادم: 10.1.32-MariaDB
 -- PHP Version: 7.2.5
 
@@ -131,6 +131,12 @@ CREATE TABLE `users` (
 --
 
 --
+-- Indexes for table `categories`
+--
+ALTER TABLE `categories`
+  ADD PRIMARY KEY (`id`);
+
+--
 -- Indexes for table `pages`
 --
 ALTER TABLE `pages`
@@ -167,6 +173,12 @@ ALTER TABLE `users`
 --
 
 --
+-- AUTO_INCREMENT for table `categories`
+--
+ALTER TABLE `categories`
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
+
+--
 -- AUTO_INCREMENT for table `pages`
 --
 ALTER TABLE `pages`
@@ -188,7 +200,7 @@ ALTER TABLE `settings`
 -- AUTO_INCREMENT for table `statistics`
 --
 ALTER TABLE `statistics`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=1048;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=1088;
 
 --
 -- AUTO_INCREMENT for table `users`
