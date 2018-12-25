@@ -18,12 +18,12 @@
         exit(0);
     }
 
-    $userid = $_GET['id'];
-    $userid = $_GET['id'] < 0 ? -1 : $userid;
+    $page_id = $_GET['id'];
+    $page_id = $_GET['id'] < 0 ? -1 : $page_id;
 
-    $user = $db->table('pages')->where('id', $userid)->select(['id']);
+    $page = $db->table('pages')->where('id', $page_id)->select(['id']);
 
-    if(!$user[0] && ($userid != -1)){
+    if(!$page[0] && ($page_id != -1)){
         echo json_encode(array(
             'status' => 'error',
             'message' => 'page undefined'
@@ -32,9 +32,9 @@
     }
 
 
-    if(count($user)){
+    if(@count($page)){
 
-        $db->table('pages')->find($userid)->delete();
+        $db->table('pages')->find($page_id)->delete();
         echo json_encode(array(
             'status' => 'success',
             'message' => $language->page_deleted_successfully

@@ -18,12 +18,12 @@
         exit(0);
     }
 
-    $userid = $_GET['id'];
-    $userid = $_GET['id'] < 0 ? -1 : $userid;
+    $user_id = $_GET['id'];
+    $user_id = $_GET['id'] < 0 ? -1 : $user_id;
 
-    $user = $db->table('users')->where('id', $userid)->select(['id']);
+    $user = $db->table('users')->where('id', $user_id)->select(['id']);
 
-    if(!$user[0] && ($userid != -1)){
+    if(!$user[0] && ($user_id != -1)){
         echo json_encode(array(
             'status' => 'error',
             'message' => 'user undefined'
@@ -32,9 +32,9 @@
     }
 
 
-    if(count($user)){
+    if(@count($user)){
 
-        $db->table('users')->find($userid)->delete();
+        $db->table('users')->find($user_id)->delete();
         echo json_encode(array(
             'status' => 'success',
             'message' => $language->user_deleted_successfully

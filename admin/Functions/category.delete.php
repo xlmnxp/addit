@@ -18,12 +18,12 @@
         exit(0);
     }
 
-    $userid = $_GET['id'];
-    $userid = $_GET['id'] < 0 ? -1 : $userid;
+    $category_id = $_GET['id'];
+    $category_id = $_GET['id'] < 0 ? -1 : $category_id;
 
-    $user = $db->table('categories')->where('id', $userid)->select(['id']);
+    $category = $db->table('categories')->where('id', $category_id)->select(['id']);
 
-    if(!$user[0] && ($userid != -1)){
+    if(!$category[0] && ($category_id != -1)){
         echo json_encode(array(
             'status' => 'error',
             'message' => 'page undefined'
@@ -32,9 +32,9 @@
     }
 
 
-    if(count($user)){
+    if(@count($category)){
 
-        $db->table('categories')->find($userid)->delete();
+        $db->table('categories')->find($category_id)->delete();
         echo json_encode(array(
             'status' => 'success',
             'message' => $language->page_deleted_successfully
