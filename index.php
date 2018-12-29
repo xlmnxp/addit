@@ -18,18 +18,19 @@
     $users                      = Array();
     foreach ($users_query as $user){
         $data                       = json_decode($user->data);
-        $data->country_name         = getCountries()[$data->country];
-        $data->country              = mb_strtolower($data->country);
 
         array_push($users, array(
-            "id"        => $user->id,
-            "username"  => substr(htmlspecialchars($user->username, ENT_QUOTES, 'UTF-8'),0,50),
-            "fullname"  => $user->fullname,
-            "avatar"    => (substr( $user->avatar, 0, 4 ) === "http" ? $user->avatar : $template->default["url"].$user->avatar),
-            "message"   => substr(htmlspecialchars($user->message, ENT_QUOTES, 'UTF-8'),0,150),
-            "sex"   => ($user->sex == 0? $language->male : $language->female),
-            "data"      => $data,
-            "url"       => $template->default["url"]."user/".$user->id."-".urlencode(str_replace(" ","-",$user->fullname))
+            "id"            => $user->id,
+            "username"      => substr(htmlspecialchars($user->username, ENT_QUOTES, 'UTF-8'),0,50),
+            "fullname"      => $user->fullname,
+            "avatar"        => (substr( $user->avatar, 0, 4 ) === "http" ? $user->avatar : $template->default["url"].$user->avatar),
+            "message"       => substr(htmlspecialchars($user->message, ENT_QUOTES, 'UTF-8'),0,150),
+            "sex"           => ($user->sex == 0? $language->male : $language->female),
+            "country_name"  => getCountries()[$user->country],
+            "country"       => mb_strtolower($user->country),
+            "category"      => $user->category,
+            "data"          => $data,
+            "url"           => $template->default["url"]."user/".$user->id."-".urlencode(str_replace(" ","-",$user->fullname))
         ));
     }
 

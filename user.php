@@ -13,18 +13,19 @@
     $template->page                 = $user->fullname;
 
     $data                           = json_decode($user->data);
-    $data->country_name             = getCountries()[$data->country];
-    $data->country                  = mb_strtolower($data->country);
 
     $template->user                 = array(
-                                        "id"        => $user->id,
-                                        "username"  => htmlspecialchars($user->username),
-                                        "fullname"  => $user->fullname,
-                                        "avatar"    => (substr( $user->avatar, 0, 4 ) === "http" ? $user->avatar : $template->default["url"].$user->avatar),
-                                        "message"   => $user->message,
-                                        "data"      => $data,
-                                        "sex"       => ($user->sex == 0? $language->male : $language->female),
-                                        "url"       => $template->default["url"]."user/".$user->id."-".str_replace(" ","-",$user->fullname)
+                                        "id"            => $user->id,
+                                        "username"      => htmlspecialchars($user->username),
+                                        "fullname"      => $user->fullname,
+                                        "avatar"        => (substr( $user->avatar, 0, 4 ) === "http" ? $user->avatar : $template->default["url"].$user->avatar),
+                                        "message"       => $user->message,
+                                        "country_name"  => getCountries()[$user->country],
+                                        "country"       => mb_strtolower($user->country),
+                                        "category"      => $user->category,
+                                        "data"          => $data,
+                                        "sex"           => ($user->sex == 0? $language->male : $language->female),
+                                        "url"           => $template->default["url"]."user/".$user->id."-".str_replace(" ","-",$user->fullname)
                                     );
 
     $template->default["page-title"] = $template->default["title"]." » $user->fullname ($user->username)";

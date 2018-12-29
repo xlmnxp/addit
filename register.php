@@ -19,7 +19,7 @@
             $file_tmp           = $file['tmp_name'];
             $file_type          = $file['type'];
             $tmp_ext            = explode('.',$file['name']);
-            $file_ext           = strtolower(end($tmp));
+            $file_ext           = strtolower(end($tmp_ext));
             $dir                = "Uploads/".uniqid("img_").".".$file_ext;
             $expensions         = array("jpeg","jpg","png");
 
@@ -58,10 +58,9 @@
                         "avatar"    => $dir,
                         "message"   => htmlspecialchars($_POST["message"], ENT_QUOTES, 'UTF-8'),
                         "sex"       => htmlspecialchars($_POST["sex"], ENT_QUOTES, 'UTF-8'),
-                        "data"      => json_encode(array(
-                            "category" => htmlspecialchars($_POST["category"], ENT_QUOTES, 'UTF-8'),
-                            "country"  => mb_strtolower(htmlspecialchars($_POST["country"], ENT_QUOTES, 'UTF-8'))
-                        ))
+                        "category"  => htmlspecialchars($_POST["category"], ENT_QUOTES, 'UTF-8'),
+                        "country"   => htmlspecialchars($_POST["country"], ENT_QUOTES, 'UTF-8'),
+                        "data"      => "{}"
                     ]);
                     $template->success  = true;
                 }

@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: localhost
--- Generation Time: 25 ديسمبر 2018 الساعة 03:43
+-- Generation Time: 29 ديسمبر 2018 الساعة 09:39
 -- إصدار الخادم: 10.1.32-MariaDB
 -- PHP Version: 7.2.5
 
@@ -123,6 +123,8 @@ CREATE TABLE `users` (
   `avatar` varchar(535) COLLATE utf8_unicode_ci NOT NULL,
   `message` varchar(450) COLLATE utf8_unicode_ci NOT NULL,
   `sex` int(21) NOT NULL,
+  `category` int(11) NOT NULL,
+  `country` varchar(2) COLLATE utf8_unicode_ci NOT NULL,
   `data` longtext COLLATE utf8_unicode_ci NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
 
@@ -200,13 +202,13 @@ ALTER TABLE `settings`
 -- AUTO_INCREMENT for table `statistics`
 --
 ALTER TABLE `statistics`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=1088;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=1328;
 
 --
 -- AUTO_INCREMENT for table `users`
 --
 ALTER TABLE `users`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=443;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=445;
 
 --
 -- قيود الجداول المحفوظة

@@ -8,7 +8,7 @@
 <div class="col-md-12">
     <div class="col-md-3 thumbnail">
         <a href="{$user["url"]}">
-            <img class="avatar" src="{if $user["avatar"] != $default["url"]}{$user["avatar"]}{else}https://feelinsonice-hrd.appspot.com/web/deeplink/snapcode?username={$user["username"]}&type=PNG{/if}" alt="{$user["username"]}"/>
+            <img class="avatar" src="{if $user['avatar'] != $default['url']}{$user['avatar']}{else}https://feelinsonice-hrd.appspot.com/web/deeplink/snapcode?username={$user['username']}&type=PNG{/if}" alt="{$user['username']}"/>
         </a>
         <hr/>
         <p>
@@ -40,7 +40,7 @@
             {$user["username"]}</h5>
         <hr/>
         <p class="ovtxt"><strong><i class="ion ion-ios-world"></i>&nbsp;{$lang->country} </strong>
-            <br/> <img src="{$default['url']}Flags/{$user["data"]->country}.png" alt="{$user["data"]->country_name}" width="30" height="20"> {$user["data"]->country_name}</p>
+            <br/> <img src="{$default['url']}Flags/{$user['country']}.png" alt="{$user['country_name']}" width="30" height="20"> {$user['country_name']}</p>
         <hr/>
         <p><strong><i class="ion ion-ios-paper"></i>&nbsp;{$lang->message}<br/> </strong>
             {$user["message"]}</p>

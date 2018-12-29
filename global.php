@@ -92,9 +92,13 @@
     $template->is_search            = false;
     $template->search_get_request   = "";
 
-    $categories                     = "<option></option>";
-    $countries                      = '';
+    $categories                     = '';
+    foreach (getCategories() as $value)
+    {
+        $categories                  .= "<option value='{$value->id}'>{$value->name}</option>\n";
+    }
 
+    $countries                      = '';
     foreach (getCountries() as $key => $value)
     {
         $countries                  .= "<option value='$key'>$value</option>\n";

@@ -10,7 +10,7 @@
     global $db, $template, $language, $templateDirectory, $default;
 
     $template->page                 = $language->search;
-    $nGET                           = json_decode(json_encode($_GET));
+    $temp_get                       = json_decode(json_encode($_GET));
     
     $template->is_search            = true;
     
@@ -26,55 +26,57 @@
         header('location: '.$template->default['url']);
     }
 
-    $nGET->search                   = htmlspecialchars(!isset($nGET->q) ? -1 : $nGET->q, ENT_QUOTES, 'UTF-8');
-    $nGET->sex                      = htmlspecialchars(!isset($nGET->s) ? -1 : $nGET->s, ENT_QUOTES, 'UTF-8');
-    $nGET->category                 = htmlspecialchars(!isset($nGET->cat) ? -1 : $nGET->cat, ENT_QUOTES, 'UTF-8');
-    $nGET->country                  = htmlspecialchars(!isset($nGET->cots) ? -1 : $nGET->cot, ENT_QUOTES, 'UTF-8');
+    $temp_get->search                   = htmlspecialchars(!isset($temp_get->q) ? -1 : $temp_get->q, ENT_QUOTES, 'UTF-8');
+    $temp_get->sex                      = htmlspecialchars(!isset($temp_get->s) ? -1 : $temp_get->s, ENT_QUOTES, 'UTF-8');
+    $temp_get->category                 = htmlspecialchars(!isset($temp_get->cat) ? -1 : $temp_get->cat, ENT_QUOTES, 'UTF-8');
+    $temp_get->country                  = htmlspecialchars(!isset($temp_get->cou) ? -1 : $temp_get->cou, ENT_QUOTES, 'UTF-8');
 
-    if(!($nGET->sex == -1 OR $nGET->sex == 0 OR $nGET->sex == 1)){
-        $nGET->sex                  = -1;
+    if(!($temp_get->sex == -1 OR $temp_get->sex == 0 OR $temp_get->sex == 1)){
+        $temp_get->sex                  = -1;
     }
 
-    if(!($nGET->category == -1 OR $nGET->category == 0 OR $nGET->category == 1)){
-        $nGET->sex                  = -1;
+    if(!($temp_get->category == -1 OR $temp_get->category == 0 OR $temp_get->category == 1)){
+        $temp_get->sex                  = -1;
     }
 
-    if(!($nGET->country == -1 OR $nGET->country == 0 OR $nGET->country == 1)){
-        $nGET->sex                  = -1;
+    if(!($temp_get->country == -1 OR $temp_get->country == 0 OR $temp_get->country == 1)){
+        $temp_get->sex                  = -1;
     }
 
-    $template->search["value"]      = $nGET->search;
-    $template->search["sex"]        = $nGET->sex;
-    $template->search["category"]   = $nGET->category;
-    $template->search["country"]    = $nGET->country;
+    $template->search["value"]      = $temp_get->search;
+    $template->search["sex"]        = $temp_get->sex;
+    $template->search["category"]   = $temp_get->category;
+    $template->search["country"]    = $temp_get->country;
     $search                         = $template->search;
 
-    $page                           = isset($nGET->page) ? $nGET->page : 1;
+    $page                           = isset($temp_get->page) ? $temp_get->page : 1;
     $page                           = $page <= 0 ? 1 : $page;
 
     $userSearch = [
         [
-            'username', 'LIKE', '%'.$nGET->search.'%'
+            'username', 'LIKE', '%'.$temp_get->search.'%'
         ],
         'Or' => [
-            'message', 'LIKE', '%'.$nGET->search.'%'
+            'message', 'LIKE', '%'.$temp_get->search.'%'
         ],
         'OR' => [
-            'fullname', 'LIKE', '%'.$nGET->search.'%'
+            'fullname', 'LIKE', '%'.$temp_get->search.'%'
         ]
     ];
 
     $users_query = $db->table("users");
-    if($nGET->sex != -1){
-        $users_query                = $users_query->where('sex',$nGET->sex);
+    if($temp_get->sex != -1){
+        $users_query                = $users_query->where('sex',$temp_get->sex);
     }else{
         $users_query                = $users_query->where('sex', "LIKE", '%%');
     }
 
-    if($nGET->country != -1){
-        $users_query                = $users_query->where('data','LIKE',"%\"country\":\"". mb_strtolower($nGET->country) ."\"%");
-    }else{
-        $users_query                = $users_query->where('data', "LIKE", '%%');
+    if($temp_get->country != -1){
+        $users_query                = $users_query->where('country', $temp_get->country);
+    }
+
+    if($temp_get->category != -1){
+        $users_query                = $users_query->where('category', $temp_get->category);
     }
 
     $users_query                    = $users_query->parseWhere($userSearch)->orderBy('`id`','DESC')->limit(12*($page-1),12)->select();
@@ -83,34 +85,37 @@
     $users = Array();
     foreach ($users_query as $user){
         $data = json_decode($user->data);
-        $data->country_name = getCountries()[$data->country];
-        $data->country = mb_strtolower($data->country);
 
         array_push($users, array(
-            "id"        => $user->id,
-            "username"  => substr(htmlspecialchars($user->username, ENT_QUOTES, 'UTF-8'),0,50),
-            "fullname"  => $user->fullname,
-            "avatar"    => (substr( $user->avatar, 0, 4 ) === "http" ? $user->avatar : $template->default["url"].$user->avatar),
-            "message"   => substr(htmlspecialchars($user->message, ENT_QUOTES, 'UTF-8'),0,150),
-            "sex"       => ($user->sex == 0? $language->male : $language->female),
-            "data"      => $data,
-            "url"       => $template->default["url"]."user/".$user->id."-".urlencode(str_replace(" ","-",$user->fullname))
+            "id"            => $user->id,
+            "username"      => substr(htmlspecialchars($user->username, ENT_QUOTES, 'UTF-8'),0,50),
+            "fullname"      => $user->fullname,
+            "avatar"        => (substr( $user->avatar, 0, 4 ) === "http" ? $user->avatar : $template->default["url"].$user->avatar),
+            "message"       => substr(htmlspecialchars($user->message, ENT_QUOTES, 'UTF-8'),0,150),
+            "sex"           => ($user->sex == 0? $language->male : $language->female),
+            "country_name"  => mb_strtolower(getCountries()[$user->country]),
+            "country"       => mb_strtolower($user->country),
+            "category"      => $user->category,
+            "data"          => $data,
+            "url"           => $template->default["url"]."user/".$user->id."-".urlencode(str_replace(" ","-",$user->fullname))
         ));
     }
 
     $template->users    = $users;
     
     $search_count = $db->table("users");
-    if($nGET->sex != -1){
-        $search_count               = $users_query->where('sex',$nGET->sex);
+    if($temp_get->sex != -1){
+        $search_count               = $users_query->where('sex',$temp_get->sex);
     }else{
         $search_count               = $users_query->where('sex', "LIKE", '%%');
     }
 
-    if($nGET->country != -1){
-        $search_count               = $users_query->where('data','LIKE',"%\"country\":\"$nGET->country\"%");
-    }else{
-        $search_count               = $users_query->where('data', "LIKE", '%%');
+    if($temp_get->country != -1){
+        $users_query                = $users_query->where('country', $temp_get->country);
+    }
+
+    if($temp_get->category != -1){
+        $users_query                = $users_query->where('category', $temp_get->category);
     }
 
     $search_count                   = $search_count->parseWhere($userSearch)->orderBy('id','desc')->select(["id"])->count();
@@ -119,14 +124,19 @@
 
     $template->default["page-title"] = $template->default["title"]." » $language->search";
 
-    $search_sex                     = "<option value=\"0\" ".($nGET->sex==0?'selected':'').">{$language->male}</option>"
-                                    ."<option value=\"1\" ".($nGET->sex==1?'selected':'').">{$language->female}</option>";
+    $search_sex                     = "<option value=\"0\" ".($temp_get->sex==0?'selected':'').">{$language->male}</option>"
+                                    ."<option value=\"1\" ".($temp_get->sex==1?'selected':'').">{$language->female}</option>";
     
-    $countries = '';
-
+    $countries                      = '';
     foreach (getCountries() as $key => $value)
     {
-        $countries                  .= "<option value='$key' ".($nGET->country==$key?'selected':'').">$value</option>\n";
+        $countries                  .= "<option value='$key' ".($temp_get->country==$key?'selected':'').">$value</option>\n";
+    }
+
+    $categories                     = '';
+    foreach (getCategories() as $value)
+    {
+        $categories                  .= "<option value='{$value->id}' ".($temp_get->category==$value->id?'selected':'').">{$value->name}</option>\n";
     }
 
     ob_start();

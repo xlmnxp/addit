@@ -47,6 +47,9 @@
 	<script src="js/jquery-1.11.1.min.js"></script>
 	<script src="js/bootstrap-table.js"></script>
 	<script>
+        var countries = JSON.parse('<?= json_encode(getCountries(), JSON_HEX_TAG | JSON_HEX_APOS | JSON_HEX_QUOT | JSON_HEX_AMP | JSON_UNESCAPED_UNICODE) ?>');
+        var categories = JSON.parse('<?= getCategories() ?>');
+
         function imageRow(value,row,index) {
             var image = row.avatar.indexOf('http') > -1 ? row.avatar : '<?= $default['url']; ?>' + row.avatar;
             return '<center><img height="50" width="50" src="'+image+'"/></center>';
@@ -57,7 +60,7 @@
         }
 
         function flags(value,row,index) {
-            var flag = JSON.parse(row.data).country.toLowerCase();
+            var flag = row.country.toLowerCase();
 
             return '<center><img src="<?= $default['url']; ?>Flags/'+ flag +'.png" width="30" height="20"/></center>'
         }
@@ -110,6 +113,8 @@
                 avatar: '<?= $language->avatar ?>',
                 message: '<?= $language->message ?>',
                 sex: '<?= $language->sex ?>',
+                country: '<?= $language->country ?>',
+                category: '<?= $language->category ?>',
                 data: 'data'
             };
             var form = '<form method="post" id="editForm" action="#" onsubmit="return submitUser();">';
@@ -120,6 +125,20 @@
                     form += '<textarea class="form-control" id="'+ value[0] +'" name="'+ value[0] +'" placeholder="'+ value[1] +'" rows="3">'+ value[1] +'</textarea>';
                 }else if(value[0] == 'sex'){
                     form += '<div class="radio"><label for="sex-0"><input type="radio" name="sex" id="sex-0" value="0" checked="checked"><?= $language->male ?></label><label for="sex-1"><input type="radio" name="sex" id="sex-1" value="1"><?= $language->female ?></label></div>';
+                }else if(value[0] == 'country'){
+                    form += '<select class="form-control" id="'+ value[0] +'" name="'+ value[0] +'">';
+                    for (let index = 0; index < Object.keys(countries).length; index++) {
+                        const country = countries[Object.keys(countries)[index]];
+                        form += '<option value="'+Object.keys(countries)[index]+'" '+ (Object.keys(countries)[index] == value[1] ? 'selected' : '') +'>'+country+'</option>';
+                    }
+                    form += '</select>';
+                }else if(value[0] == 'category'){
+                    form += '<select class="form-control" id="'+ value[0] +'" name="'+ value[0] +'">';
+                    for (let index = 0; index < categories.length; index++) {
+                        const category = categories[index];
+                        form += '<option value="'+category.id+'" '+ (category.id == value[1] ? 'selected' : '') +'>'+category.name+'</option>';
+                    }
+                    form += '</select>';
                 }else if(value[0] == 'data'){
                     var user_data = JSON.parse(eval(JSON.stringify(value[1])));
                     form += '<textarea class="form-control" id="'+ value[0] +'" name="'+ value[0] +'" placeholder="'+ JSON.stringify(value[1]) +'" rows="5" dir="ltr">'+ JSON.stringify(user_data,null,4) +'</textarea>';
@@ -138,7 +157,7 @@
                 showCancelButton: true,
                 cancelButtonText: '<?= $language->cancel ?>',
                 showConfirmButton: false
-            }).then(function () {});
+            });
         }
 
         function submitUser(data){
