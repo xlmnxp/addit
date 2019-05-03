@@ -113,6 +113,18 @@
                 </li>
             </ul>
         </li>
+        <li class="parent <?= ($page == 'view_all_reports') ? 'active' : '' ?>">
+            <a data-toggle="collapse" href="#reports_settings">
+            <span><svg class="glyph stroked chevron-down"><use xlink:href="#stroked-chevron-down"></use></svg></span> <span><svg class="glyph stroked flag"><use xlink:href="#stroked-flag"/></svg></span> <?= $language->reports ?>
+            </a>
+            <ul class="children <?= !($page == 'view_all_reports') ? 'collapse' : '' ?>" id="reports_settings">
+                <li <?= ($page == 'view_all_reports') ? "class=\"active\"" : '' ?>>
+                    <a href="reports.php#reports_settings">
+                        <svg class="glyph stroked eye"><use xlink:href="#stroked-eye"></use></svg> <?= $language->view_all_reports ?> 
+                    </a>
+                </li>
+            </ul>
+        </li>
         <li class="parent <?= ($page == 'website_settings' || $page == 'admin_settings') ? 'active' : '' ?>">
             <a data-toggle="collapse" href="#settings">
                 <span><svg class="glyph stroked chevron-down"><use xlink:href="#stroked-chevron-down"></use></svg></span> <span><svg class="glyph stroked gear"><use xlink:href="#stroked-gear"></use></svg></span> <?= $language->settings ?>

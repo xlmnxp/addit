@@ -42,8 +42,13 @@
             if(!trim($_POST['username'])){
                 $errors[]       = $language->enter_username;
             }
+
             if(!trim($_POST['fullname'])){
                 $errors[]       = $language->enter_fullname;
+            }
+
+            if(!trim($_POST['category'])){
+                $errors[]       = $language->enter_category;
             }
 
             if(strlen(htmlspecialchars($_POST["message"], ENT_QUOTES, 'UTF-8')) > 450){

@@ -108,10 +108,10 @@
     $template->countries            = $countries;
 
     $template->include_header       = '
-        <link rel="stylesheet" href="'.$default['url'].'global-templates/css/sweetalert2.min.css" />
+        <link rel="stylesheet" href="'.$default['url'].'public/css/sweetalert2.min.css" />
         
-        <script src="'.$default['url'].'global-templates/javascript/clipboard.min.js"></script>
-        <script src="'.$default['url'].'global-templates/javascript/sweetalert2.min.js"></script>
+        <script src="'.$default['url'].'public/javascript/clipboard.min.js"></script>
+        <script src="'.$default['url'].'public/javascript/sweetalert2.min.js"></script>
         <script src="https://www.google.com/recaptcha/api.js"></script>';
 
     $template->include_footer       = '
