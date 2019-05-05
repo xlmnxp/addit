@@ -47,8 +47,8 @@
 	<script src="js/jquery-1.11.1.min.js"></script>
 	<script src="js/bootstrap-table.js"></script>
 	<script>
-        var countries = JSON.parse('<?= json_encode(getCountries(), JSON_HEX_TAG | JSON_HEX_APOS | JSON_HEX_QUOT | JSON_HEX_AMP | JSON_UNESCAPED_UNICODE) ?>');
-        var categories = JSON.parse('<?= getCategories() ?>');
+        var countries = JSON.parse('<?= json_encode(getCountries(), JSON_HEX_TAG | JSON_HEX_APOS | JSON_HEX_QUOT | JSON_HEX_AMP | JSON_UNESCAPED_UNICODE) ?>'.replace(/\n/g, "\\\\n").replace(/\r/g, "\\\\r").replace(/\t/g, "\\\\t"));
+        var categories = JSON.parse('<?= getCategories() ?>'.replace(/\n/g, "\\\\n").replace(/\r/g, "\\\\r").replace(/\t/g, "\\\\t"));
 
         function imageRow(value,row,index) {
             var image = row.avatar.indexOf('http') > -1 ? row.avatar : '<?= $default['url']; ?>' + row.avatar;
