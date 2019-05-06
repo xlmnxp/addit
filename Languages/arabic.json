@@ -39,7 +39,7 @@
 
   "control_panel": "لوحة التحكم",
   "users": "مستخدمين",
-  "pages": "صفحات",
+  "pages": "الصفحات",
   "view_all_pages": "عرض كافة الصفحات",
   "add_page": "إضافة صفحة",
   "edit_page": "تعديل الصفحة",
@@ -65,6 +65,7 @@
   "admin_settings": "إعدادات حساب الإداري",
   "admin_username": "اسم المستخدم للإداري",
   "admin_password": "كلمة السر للإداري",
+  "repeat_admin_password": "اعادة كلمة السر للإداري",
   "login": "تسجيل الدخول",
   "logout": "تسجيل الخروج",
 

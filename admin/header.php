@@ -81,7 +81,7 @@
         <li <?= ($page == 'users') ? 'class="active"' : '' ?>><a href="users.php"><svg class="glyph stroked male user"><use xlink:href="#stroked-male-user"></use></svg> <?= $language->users ?></a></li>
         <li class="parent <?= ($page == 'add_category' || $page == 'view_all_categories' || $page == 'edit_category') ? 'active' : '' ?>">
             <a data-toggle="collapse" href="#categories_settings">
-            <span><svg class="glyph stroked chevron-down"><use xlink:href="#stroked-chevron-down"></use></svg></span> <span><svg class="glyph stroked tag"><use xlink:href="#stroked-tag"/></svg></span> <?= $language->add_category ?>
+            <span><svg class="glyph stroked chevron-down"><use xlink:href="#stroked-chevron-down"></use></svg></span> <span><svg class="glyph stroked tag"><use xlink:href="#stroked-tag"/></svg></span> <?= $language->categories ?>
             </a>
             <ul class="children <?= !($page == 'add_category' || $page == 'view_all_categories' || $page == 'edit_category') ? 'collapse' : '' ?>" id="categories_settings">
                 <li <?= ($page == 'add_category') ? "class=\"active\"" : '' ?>>

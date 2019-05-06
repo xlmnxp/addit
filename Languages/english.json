@@ -65,6 +65,7 @@
   "admin_settings": "Admin Account Settings",
   "admin_username": "admin username",
   "admin_password": "admin password",
+  "repeat_admin_password": "repeat admin password",
   "login" : "Login",
   "logout": "Logout",
 
