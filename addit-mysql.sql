@@ -63,6 +63,7 @@ INSERT INTO `pages` (`id`, `name`, `title`, `template`) VALUES
 CREATE TABLE `reports` (
   `id` int(11) NOT NULL,
   `userid` int(11) NOT NULL,
+  `checked` int(1) NOT NULL,
   `message` longtext COLLATE utf8_unicode_ci NOT NULL,
   `date` varchar(255) COLLATE utf8_unicode_ci NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
@@ -150,7 +151,6 @@ ALTER TABLE `pages`
 ALTER TABLE `reports`
   ADD PRIMARY KEY (`id`),
   ADD KEY `id` (`id`),
-  ADD KEY `userid` (`userid`);
 
 --
 -- Indexes for table `settings`
@@ -210,16 +210,6 @@ ALTER TABLE `statistics`
 ALTER TABLE `users`
   MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=445;
 
---
--- قيود الجداول المحفوظة
---
-
---
--- القيود للجدول `reports`
---
-ALTER TABLE `reports`
-  ADD CONSTRAINT `reports_ibfk_1` FOREIGN KEY (`userid`) REFERENCES `users` (`id`);
-COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
 /*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;
