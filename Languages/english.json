@@ -68,6 +68,7 @@
   "repeat_admin_password": "repeat admin password",
   "login" : "Login",
   "logout": "Logout",
+  "view_website": "View Website",
 
   "empty_field": "You should not leave any empty field",
   "username": "Username",

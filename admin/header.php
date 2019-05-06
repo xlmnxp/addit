@@ -58,6 +58,7 @@
                 <span class="icon-bar"></span>
             </button>
             <a class="navbar-brand" href="#"><?= $language->control_panel ?></a>
+            <a class="navbar-brand" href="<?= $template->default["url"] ?>" target="_blank"><?= $language->view_website ?></a>
             <ul class="user-menu">
                 <li class="dropdown pull-right">
                     <a href="#" class="dropdown-toggle" data-toggle="dropdown"><svg class="glyph stroked male-user"><use xlink:href="#stroked-male-user"></use></svg> <?= $_SESSION['username'] ?> <span class="caret"></span></a>
@@ -71,11 +72,6 @@
     </div><!-- /.container-fluid -->
 </nav>
 <div id="sidebar-collapse" class="col-sm-3 col-lg-2 sidebar">
-<!--    <form role="search">-->
-<!--        <div class="form-group">-->
-<!--            <input type="text" class="form-control" placeholder="Search">-->
-<!--        </div>-->
-<!--    </form>-->
     <ul class="nav menu">
         <li <?= ($page == 'home') ? 'class="active"' : '' ?>><a href="index.php"><svg class="glyph stroked home"><use xlink:href="#stroked-home"></use></svg> <?= $language->home ?></a></li>
         <li <?= ($page == 'users') ? 'class="active"' : '' ?>><a href="users.php"><svg class="glyph stroked male user"><use xlink:href="#stroked-male-user"></use></svg> <?= $language->users ?></a></li>

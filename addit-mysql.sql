@@ -1,11 +1,11 @@
 -- phpMyAdmin SQL Dump
--- version 4.8.0.1
+-- version 4.8.5
 -- https://www.phpmyadmin.net/
 --
 -- Host: localhost
--- Generation Time: 29 ديسمبر 2018 الساعة 09:39
--- إصدار الخادم: 10.1.32-MariaDB
--- PHP Version: 7.2.5
+-- Generation Time: 06 مايو 2019 الساعة 23:16
+-- إصدار الخادم: 10.1.38-MariaDB
+-- PHP Version: 7.1.28
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 SET AUTOCOMMIT = 0;
@@ -34,6 +34,15 @@ CREATE TABLE `categories` (
   `description` longtext COLLATE utf8_unicode_ci NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
 
+--
+-- إرجاع أو استيراد بيانات الجدول `categories`
+--
+
+INSERT INTO `categories` (`id`, `name`, `description`) VALUES
+(2, 'ديني', '<p>حساب يختص في الدين&nbsp;</p>\r\n'),
+(3, 'تسلية', '<p>حساب ترفيهي</p>\r\n'),
+(4, 'منوع', '<p>حساب منوع لا يختص بمجال واحد</p>\r\n');
+
 -- --------------------------------------------------------
 
 --
@@ -52,21 +61,14 @@ CREATE TABLE `pages` (
 --
 
 INSERT INTO `pages` (`id`, `name`, `title`, `template`) VALUES
-(1, 'register-vip', '$lang->new_vip', '<p>{$lang->message} {if $is_search} انت في خانة البحث {else} انت لست في خانة البحث {/if}</p>\r\n');
+(1, 'register-vip', '$lang->new_vip', '<table align=\"center\" border=\"1\" cellpadding=\"1\" cellspacing=\"1\" style=\"width:500px\">\r\n	<tbody>\r\n		<tr>\r\n			<td style=\"text-align:center\">\r\n			<h1>{if false} الرسالة لن تظهر للمستخدم {else} الرسالة تظهر للمستخدم {/if}</h1>\r\n			</td>\r\n		</tr>\r\n		<tr>\r\n			<td style=\"text-align:center\">\r\n			<hr />\r\n			<p><input name=\"ارسال\" type=\"submit\" value=\"submit\" /></p>\r\n			</td>\r\n		</tr>\r\n	</tbody>\r\n</table>\r\n\r\n<h1 style=\"text-align:center\">&nbsp;</h1>\r\n');
 
 -- --------------------------------------------------------
 
 --
 -- بنية الجدول `reports`
 --
-
-CREATE TABLE `reports` (
-  `id` int(11) NOT NULL,
-  `userid` int(11) NOT NULL,
-  `checked` int(1) NOT NULL,
-  `message` longtext COLLATE utf8_unicode_ci NOT NULL,
-  `date` varchar(255) COLLATE utf8_unicode_ci NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
+-- Error reading structure for table addit.reports: #1932 - Table 'addit.reports' doesn't exist in engine
 
 -- --------------------------------------------------------
 
@@ -85,11 +87,11 @@ CREATE TABLE `settings` (
 --
 
 INSERT INTO `settings` (`id`, `name`, `value`) VALUES
-(1, 'title', 'Addit (سكربت إضافات سناب شات)'),
+(1, 'title', 'Addit (سكربت إضافات)'),
 (2, 'template', 'Default'),
 (3, 'url', 'http://localhost/addit/'),
 (4, 'language', 'arabic'),
-(5, 'report_message', 'ممنوع كود الـPHP'),
+(5, 'report_message', 'سبب البلاغ: \nهل انتهك قوانين الموقع: '),
 (6, 'cp_username', 'admin'),
 (7, 'cp_password', '21232f297a57a5a743894a0e4a801fc3'),
 (8, 'recaptcha_site_key', '6LdEay8UAAAAAG4tz7PrqCr3CgfCOG3vcOdw5Rq2'),
@@ -146,13 +148,6 @@ ALTER TABLE `pages`
   ADD PRIMARY KEY (`id`);
 
 --
--- Indexes for table `reports`
---
-ALTER TABLE `reports`
-  ADD PRIMARY KEY (`id`),
-  ADD KEY `id` (`id`),
-
---
 -- Indexes for table `settings`
 --
 ALTER TABLE `settings`
@@ -178,19 +173,13 @@ ALTER TABLE `users`
 -- AUTO_INCREMENT for table `categories`
 --
 ALTER TABLE `categories`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
 
 --
 -- AUTO_INCREMENT for table `pages`
 --
 ALTER TABLE `pages`
   MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
-
---
--- AUTO_INCREMENT for table `reports`
---
-ALTER TABLE `reports`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
 
 --
 -- AUTO_INCREMENT for table `settings`
@@ -202,14 +191,14 @@ ALTER TABLE `settings`
 -- AUTO_INCREMENT for table `statistics`
 --
 ALTER TABLE `statistics`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=1328;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
 
 --
 -- AUTO_INCREMENT for table `users`
 --
 ALTER TABLE `users`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=445;
-
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
+COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
 /*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;
