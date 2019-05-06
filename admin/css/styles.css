@@ -969,3 +969,27 @@ html[dir="rtl"] .widget-left{
 	border-top-left-radius: 0;
     border-bottom-left-radius: 0;
 }
+
+.check{
+	padding: 0 !important;
+	text-align: center;
+	align-content: center;
+}
+
+.check .true, .check .false{
+	padding: 0;
+	margin: 0;
+	text-align: center;
+	width: 100px;
+	padding-top: 50px;
+	padding-bottom: 50px;
+	color: white;
+}
+
+.check .true{
+	background: #8ad919;
+}
+
+.check .false{
+	background: #f9243f;
+}

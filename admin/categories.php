@@ -68,7 +68,7 @@
                     if(data.status == 'success'){
                         swal(
                             '<?= $language->success ?>!',
-                            '<?= $language->user_deleted_successfully ?>.',
+                            '<?= $language->category_deleted_successfully ?>.',
                             'success'
                         );
                         $('button[name="refresh"]').click();

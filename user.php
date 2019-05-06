@@ -10,6 +10,14 @@
     global $db,$template,$templateDirectory,$default;
 
     $user                           = $db->table("users")->where("id",(@$_GET['id'] ? @$_GET['id'] : 1))->select()[0];
+
+    if(!isset($user)){
+        if(!$queryFile){
+            header("location: {$default["url"]}404");
+        }
+        return;
+    };
+
     $template->page                 = $user->fullname;
 
     $data                           = json_decode($user->data);

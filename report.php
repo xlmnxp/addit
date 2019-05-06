@@ -35,6 +35,7 @@
             $db->table("reports")->insert([
                 "id" => null,
                 "userid" => $user->id,
+                "checked" => 0,
                 "message" => htmlspecialchars($_POST["message"], ENT_QUOTES, 'UTF-8'),
                 "date" => date("Y-m-d H:i:s")
             ]);
