@@ -58,7 +58,7 @@
                 <span class="icon-bar"></span>
             </button>
             <a class="navbar-brand" href="#"><?= $language->control_panel ?></a>
-            <a class="navbar-brand" href="<?= $template->default["url"] ?>" target="_blank"><?= $language->view_website ?></a>
+            <a class="navbar-brand btn btn-primary view-website" href="<?= $template->default["url"] ?>" target="_blank"><?= $language->view_website ?></a>
             <ul class="user-menu">
                 <li class="dropdown pull-right">
                     <a href="#" class="dropdown-toggle" data-toggle="dropdown"><svg class="glyph stroked male-user"><use xlink:href="#stroked-male-user"></use></svg> <?= $_SESSION['username'] ?> <span class="caret"></span></a>

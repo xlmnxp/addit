@@ -1,4 +1,4 @@
-<div class="col-sm-12" style="margin-bottom: 10px;">
+<div class="col-sm-12 thumbnail search-form">
 <form id="search" action="{$default['url']}search" method="get">
     <div class="form-group">
         <div class="col-sm-4">
@@ -33,5 +33,4 @@
     </div>
 </form>
 </div>
-
 <div class="clear"></div>

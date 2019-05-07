@@ -3,7 +3,7 @@
     font-family: 'Cairo', serif, FontAwesome !important;
 }
 
-body { padding-top: 70px; }
+body {}
 .ovtxt{
     overflow:hidden;
     white-space:nowrap;
@@ -45,3 +45,11 @@ body { padding-top: 70px; }
 .error-template {padding: 40px 15px;text-align: center;}
 .error-actions {margin-top:15px;margin-bottom:15px;}
 .error-actions .btn { margin-right:10px; }
+
+body > .container{
+    padding-top: 70px;
+}
+
+.clear{
+    clear: both;
+}

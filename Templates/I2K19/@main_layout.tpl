@@ -11,7 +11,6 @@
     <!-- Latest compiled and minified CSS -->
 
     <link rel="stylesheet" href="{$template_dir}/css/bootstrap.min.css" />
-    <link href="{$template_dir}/css/lumen-bootstrap.min.css" rel="stylesheet" />
     {if $rtl}
         <link rel="stylesheet" href="{$template_dir}/css/bootstrap-flipped.min.css" />
         <link rel="stylesheet" href="{$template_dir}/css/bootstrap-rtl.min.css" />
@@ -19,6 +18,11 @@
     <link rel="stylesheet" href="{$template_dir}/css/main.css"/>
     <link href="{$template_dir}/css/ionicons.min.css" rel="stylesheet" />
 
+    <style>
+        body:before {
+            background-image: url('{$template_dir}/images/bgimg.jpeg');
+        }
+    </style>
     {$include_header}
     <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
     <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
@@ -29,7 +33,7 @@
 </head>
 <body>
 
-<nav class="navbar navbar-default navbar-fixed-top">
+<nav class="navbar navbar-default">
     <div class="container">
         <div class="navbar-header">
             <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
@@ -42,21 +46,9 @@
         </div>
         <div id="navbar" class="navbar-collapse collapse">
             <ul class="nav navbar-nav">
-                <li {if $page == $lang->home   }class="active"{/if}><a href="{$default["url"]}">{$lang->home}</a></li>
-                <li {if $page == $lang->about  }class="active"{/if}><a href="#about">{$lang->about}</a></li>
-                <li {if $page == $lang->contact}class="active"{/if}><a href="#contact">{$lang->contact}</a></li>
-                <!--li class="dropdown">
-                    <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Dropdown <span class="caret"></span></a>
-                    <ul class="dropdown-menu">
-                        <li><a href="#">Action</a></li>
-                        <li><a href="#">Another action</a></li>
-                        <li><a href="#">Something else here</a></li>
-                        <li role="separator" class="divider"></li>
-                        <li class="dropdown-header">Nav header</li>
-                        <li><a href="#">Separated link</a></li>
-                        <li><a href="#">One more separated link</a></li>
-                    </ul>
-                </li -->
+                <li {if $page == $lang->home} class="active"{/if}><a href="{$default["url"]}">{$lang->home}</a></li>
+                <li {if $page == $lang->about} class="active"{/if}><a href="#about">{$lang->about}</a></li>
+                <li {if $page == $lang->contact} class="active"{/if}><a href="#contact">{$lang->contact}</a></li>
             </ul>
             <ul class="nav navbar-nav navbar-right">
                 <li>{$language_select}</li>

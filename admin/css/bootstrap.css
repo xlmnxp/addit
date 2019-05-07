@@ -3890,9 +3890,7 @@ select[multiple].input-group-sm > .input-group-btn > .btn {
 }
 @media (min-width: 768px) {
   .navbar > .container .navbar-brand,
-  .navbar > .container-fluid .navbar-brand {
-    margin-left: -15px;
-  }
+  .navbar > .container-fluid .navbar-brand {}
 }
 .navbar-toggle {
   position: relative;
@@ -4005,9 +4003,7 @@ select[multiple].input-group-sm > .input-group-btn > .btn {
     -webkit-box-shadow: none;
             box-shadow: none;
   }
-  .navbar-form.navbar-right:last-child {
-    margin-right: -15px;
-  }
+  .navbar-form.navbar-right:last-child {}
 }
 .navbar-nav > li > .dropdown-menu {
   margin-top: 0;

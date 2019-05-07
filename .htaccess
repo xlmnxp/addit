@@ -7,7 +7,7 @@ RewriteCond %{REQUEST_FILENAME} !-d
 
 RewriteRule ^user/(.*)-(.*)$ user.php?id=$1&username=$2 [NC]
 RewriteRule ^u/(.*)$ user.php?id=$1 [NC]
-RewriteRule ^pages/(.*)$ pages.php?name=$1 [NC]
+RewriteRule ^p/(.*)$ pages.php?name=$1 [NC]
 RewriteRule ^report/(.*)$ report.php?id=$1 [NC]
 RewriteRule ^register$ register.php [NC,L]
 RewriteRule ^404$ 404.php [NC,L]

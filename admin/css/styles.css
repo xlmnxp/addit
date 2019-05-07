@@ -993,3 +993,9 @@ html[dir="rtl"] .widget-left{
 .check .false{
 	background: #f9243f;
 }
+
+.view-website{
+	margin: 9px;
+    padding: 5px;
+	height: auto;
+}

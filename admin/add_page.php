@@ -67,7 +67,7 @@
                             <div class="form-group">
                                 <label><?= $language->page_name ?></label>
                                 <div class="input-group" dir="ltr">
-                                    <span class="input-group-addon"><?= $default['url'] ?>pages/</span>
+                                    <span class="input-group-addon"><?= $default['url'] ?>p/</span>
                                     <input class="form-control" type="text" name="name" placeholder="<?= $language->page_name ?>" />
                                 </div>
                             </div>
