@@ -18,7 +18,7 @@
                         <h5 class="ovtxt"><i class="ion ion-ios-person"></i>&nbsp;{$user['username']}</h5>
                     </div>
                     <div class="col-sm-3">
-                        <h5 style="text-align: center;"><img src="{$default['url']}Flags/{$user['country']}.png" alt="{$user['country_name']}" width="30" height="20" /></h5>
+                        <h5 style="text-align: center;"><img src="{$default['url']}public/images/flags/{$user['country']}.png" alt="{$user['country_name']}" width="30" height="20" /></h5>
                     </div>
                 </div>
                 <p class="ovtxt"><i class="ion ion-ios-paper"></i>&nbsp;{$user['message']}</p>

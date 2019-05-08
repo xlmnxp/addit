@@ -36,11 +36,11 @@
     <div class="col-md-9 caption">
 
         <a href="{$user["url"]}"><h3 style="padding: 5px;" class="ovtxt"><i class="ion ion-card"></i>&nbsp;{$user["fullname"]}</h3></a>
-        <h5 class="ovtxt"><strong><i class="ion ion-ios-person"></i>&nbsp;{$lang->username} </strong><br/>
-            {$user["username"]}</h5>
+        <p class="ovtxt"><strong><i class="ion ion-ios-person"></i>&nbsp;{$lang->username} </strong><br/>
+            {$user["username"]}</p>
         <hr/>
         <p class="ovtxt"><strong><i class="ion ion-ios-world"></i>&nbsp;{$lang->country} </strong>
-            <br/> <img src="{$default['url']}Flags/{$user['country']}.png" alt="{$user['country_name']}" width="30" height="20"> {$user['country_name']}</p>
+            <br/> <img src="{$default['url']}public/images/flags/{$user['country']}.png" alt="{$user['country_name']}" width="30" height="20"> {$user['country_name']}</p>
         <hr/>
         <p><strong><i class="ion ion-ios-paper"></i>&nbsp;{$lang->message}<br/> </strong>
             {$user["message"]}</p>

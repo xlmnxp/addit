@@ -62,7 +62,7 @@
         function flags(value,row,index) {
             var flag = row.country.toLowerCase();
 
-            return '<center><img src="<?= $default['url']; ?>Flags/'+ flag +'.png" width="30" height="20"/></center>'
+            return '<center><img src="<?= $default['url']; ?>public/images/flags/'+ flag +'.png" width="30" height="20"/></center>'
         }
 
         function deleteUser(id) {
