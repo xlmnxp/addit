@@ -200,7 +200,7 @@
         $day = date("Y-m-d");
         $month = date("Y-m");
         $year = date("Y");
-        $path = $_SERVER['REQUEST_URI'];
+        $path = "".$_SERVER['REQUEST_URI'];
 
         $getYear = $db->table("statistics")->where('name',$year)->select(['id','value']);
         $getMonth = $db->table("statistics")->where('name',$month)->select(['id','value']);
