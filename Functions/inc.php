@@ -131,7 +131,7 @@
             $ip = $remote;
         }
 
-        return $ip;
+        return "".$ip;
     }
 
     function ip_info($ip = NULL, $purpose = "location", $deep_detect = TRUE) {
