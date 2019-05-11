@@ -29,8 +29,8 @@
 
     $template->default["page-title"]= $template->default["title"];
 
-
-    $default['url']                 = $template->default["url"] =  "http://".$_SERVER['SERVER_NAME']."/addit/";
+    // enable it on debug only!
+    // $default['url']                 = $template->default["url"] =  "http://".$_SERVER['SERVER_NAME']."/addit/";
 
     if(isset($_POST["language"])){
         setcookie('language', ($_POST["language"]), time() + (86400 * 360), "/"); // 86400 = 1 day
