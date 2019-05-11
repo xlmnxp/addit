@@ -216,7 +216,8 @@
                 'id' => null,
                 'date' => date('Y-m-d H:i:s'),
                 'name' => $year,
-                'value' => 1
+                'value' => 1,
+                'ip' => getIp()
             ]);
         }
 
@@ -230,7 +231,8 @@
                 'id' => null,
                 'date' => date('Y-m-d H:i:s'),
                 'name' => $month,
-                'value' => 1
+                'value' => 1,
+                'ip' => getIp()
             ]);
         }
 
@@ -244,7 +246,8 @@
                 'id' => null,
                 'date' => date('Y-m-d H:i:s'),
                 'name' => $day,
-                'value' => 1
+                'value' => 1,
+                'ip' => getIp()
             ]);
         }
 
